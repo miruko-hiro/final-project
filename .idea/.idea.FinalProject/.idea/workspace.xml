@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="44998bfc-4b45-4a53-9d09-9eba23699c9d" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Installers/ProjectInstaller.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerCreation/PlayerCreationManager.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/HeadCollection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/BodyCollection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/BootsCollection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/RightHandCollection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/LeftHandCollection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/Hair/HairCollection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/Hair/HairLength.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Types/HumanoidType.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Types/HairLength.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Types/HumanoidRace.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Types/HairColor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Types/BeardLength.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/Hair/BeardCollection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/Hair/HairHeadCollection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Types/ArmorType.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Types/HumanoidGender.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/Armor/BodyCollection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Humanoid.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Types/WeaponType.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/HumanoidCollection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/Armor/PantsCollection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/Armor/HeadCollection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/Armor/BootsCollection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Types/MagicType.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Types/ShieldType.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/Weapon/RightHandCollection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/Weapon/LeftHandCollection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/AppearanceIssuanceSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Types/ArmorType.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Types/WeaponType.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Types/ShieldType.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Types/MagicType.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Types/HumanoidRace.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Types/HumanoidGender.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Types/HairLength.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Types/HairColor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Types/BeardLength.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Appearance/HumanoidCollection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Appearance/Weapon/RightHandCollection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Appearance/Weapon/LeftHandCollection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Appearance/Hair/HairHeadCollection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Appearance/Hair/BeardCollection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Appearance/Armor/PantsCollection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Appearance/Armor/HeadCollection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Appearance/Armor/BootsCollection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Appearance/Armor/BodyCollection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Humanoid.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/UI/UIManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Appearance/AppearanceIssuanceSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Installers/ProjectInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/PlayerCreationManager.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="20iptL6nGSFHWtkKS7Tgek6PwJH" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="44998bfc-4b45-4a53-9d09-9eba23699c9d" name="Default Changelist" comment="" />
+      <created>1636537478599</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1636537478599</updated>
+      <workItem from="1636537489558" duration="18453000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
