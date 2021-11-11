@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Template.Creatures.Types;
 using UnityEngine;
 

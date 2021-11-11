@@ -1,46 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="44998bfc-4b45-4a53-9d09-9eba23699c9d" name="Default Changelist" comment="" />
+    <list default="true" id="44998bfc-4b45-4a53-9d09-9eba23699c9d" name="Default Changelist" comment="Init commit">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Helpers.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Helpers/ExitHelper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Helpers/ExitHelper.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Helpers/GameStateHelper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Helpers/GameStateHelper.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Helpers/InjectionObjectFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Helpers/InjectionObjectFactory.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Helpers/PrefabFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Helpers/PrefabFactory.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Interfaces/IButton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Interfaces/IButton.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Interfaces/IManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Interfaces/IManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Player.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/Main.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/Main/BeardColorChanger.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/Main/BeardColorChanger.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/Main/BeardStyleChanger.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/Main/BeardStyleChanger.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/Main/GenderTypeChanger.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/Main/GenderTypeChanger.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/Main/HairColorChanger.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/Main/HairColorChanger.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/Main/HairStyleChanger.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/Main/HairStyleChanger.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/Main/IChanger.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/Main/IChanger.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/Main/PlayerCreationManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/UI/Selectors.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/UI/Selectors/BaseSelector.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/UI/Selectors/BaseSelector.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/UI/Selectors/SelectionType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/UI/Selectors/SelectionType.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Types/Limits.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Types/Limits.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.FinalProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FinalProject/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.FinalProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FinalProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Template/Humanoid.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Template/Humanoid.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PlayerCreation.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PlayerCreation.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/PlayerCreationInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/PlayerCreationInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/ProjectInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/ProjectInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/PlayerCreation.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/PlayerCreation.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/PlayerCreationManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/PlayerCreationManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/Main/PlayerCreationManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/UI/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/UI/UIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Appearance/Hair/HairHeadCollection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Appearance/Hair/HairHeadCollection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenu/MainMenuManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Installers/ProjectInstaller.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerCreation/PlayerCreationManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerCreation/Main/PlayerCreationManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/HeadCollection.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/BodyCollection.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/BootsCollection.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/RightHandCollection.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/LeftHandCollection.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/Hair/HairCollection.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/Hair/HairLength.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Types/HumanoidType.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Types/HairLength.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Types/HumanoidRace.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Types/HairColor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Types/BeardLength.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/Hair/BeardCollection.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/Hair/HairHeadCollection.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Types/ArmorType.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Types/HumanoidGender.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/Armor/BodyCollection.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Humanoid.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Types/WeaponType.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/HumanoidCollection.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/Armor/PantsCollection.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/Armor/HeadCollection.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/Armor/BootsCollection.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Types/MagicType.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Types/ShieldType.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/Weapon/RightHandCollection.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/Weapon/LeftHandCollection.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Creatures/Appearance/AppearanceIssuanceSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Types/ArmorType.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Types/WeaponType.cs" />
@@ -54,21 +90,49 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Appearance/HumanoidCollection.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Appearance/Weapon/RightHandCollection.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Appearance/Weapon/LeftHandCollection.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Appearance/Hair/HairHeadCollection.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Appearance/Hair/BeardCollection.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Appearance/Armor/PantsCollection.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Appearance/Armor/HeadCollection.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Appearance/Armor/BootsCollection.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Appearance/Armor/BodyCollection.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Humanoid.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/UI/UIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Appearance/AppearanceIssuanceSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Installers/ProjectInstaller.cs" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Installers/PlayerCreationInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Interfaces/IButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/UI/Selectors/LeftButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/UI/Selectors/RightButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Interfaces/IManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/UI/Selectors/HairColorSelector.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/UI/Selectors/HairStyleSelector.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/UI/Selectors/GenderTypeSelector.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/UI/Selectors/BeardStyleSelector.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/UI/Selectors/BeardColorSelector.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/UI/Selectors/SelectionType.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/UI/UIManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Player/PlayerData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Types/Limits.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Template/Creatures/Appearance/Hair/HairHeadCollection.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/PlayerCreationManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/Main/IChanger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/Main/BeardStyleChanger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/Main/GenderTypeChanger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/Main/HairStyleChanger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/Main/HairColorChanger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/Main/PlayerCreationManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/Main/BeardColorChanger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Helpers/PrefabFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Helpers/InjectionObjectFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Helpers/GameStateHelper.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Helpers/ExitHelper.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Installers/ProjectInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MainMenu/MainMenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerCreation/UI/Selectors/BaseSelector.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="20iptL6nGSFHWtkKS7Tgek6PwJH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -77,6 +141,7 @@
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -108,8 +173,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1636537478599</updated>
-      <workItem from="1636537489558" duration="18453000" />
+      <workItem from="1636537489558" duration="19429000" />
+      <workItem from="1636572139840" duration="9312000" />
+      <workItem from="1636637363007" duration="5797000" />
     </task>
+    <task id="LOCAL-00001" summary="Init commit">
+      <created>1636560270843</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1636560270843</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Init commit">
+      <created>1636560283938</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1636560283938</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,13 +199,47 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Init commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Init commit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="834" y="418" key="Github.ShareDialog" timestamp="1636559940538">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="834" y="418" key="Github.ShareDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1636559940538" />
+    <state x="794" y="220" key="RiderGenerateDialog" timestamp="1636638830820">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="794" y="220" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1636638830820" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1636643387767">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1636643387767" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1636572725002">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1636572725002" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1636578528582">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1636578528582" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1636640692311">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1636640692311" />
   </component>
 </project>

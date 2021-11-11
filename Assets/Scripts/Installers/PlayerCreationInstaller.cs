@@ -1,9 +1,15 @@
+using PlayerCreation.UI;
 using UnityEngine;
 using Zenject;
 
-public class PlayerCreationInstaller : MonoInstaller
+namespace Installers
 {
-    public override void InstallBindings()
+    public class PlayerCreationInstaller : MonoInstaller
     {
+        [SerializeField] private UIManager uiManager;
+        public override void InstallBindings()
+        {
+            Container.Bind<UIManager>().FromInstance(uiManager).AsSingle();
+        }
     }
 }

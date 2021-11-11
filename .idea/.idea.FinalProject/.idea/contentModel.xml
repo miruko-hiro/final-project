@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Unity\FinalProject" t="IncludeRecursive">
-      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Plugins" t="Include">
           <e p="Zenject" t="Include">
@@ -925,14 +924,47 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Core" t="Include">
+            <e p="Core.asmdef" t="Include" />
+            <e p="Helpers" t="Include">
+              <e p="ExitHelper.cs" t="Include" />
+              <e p="GameStateHelper.cs" t="Include" />
+              <e p="InjectionObjectFactory.cs" t="Include" />
+              <e p="PrefabFactory.cs" t="Include" />
+            </e>
+            <e p="Interfaces" t="Include">
+              <e p="IButton.cs" t="Include" />
+              <e p="IManager.cs" t="Include" />
+            </e>
+            <e p="Player" t="Include">
+              <e p="PlayerData.cs" t="Include" />
+            </e>
+          </e>
           <e p="Installers" t="Include">
+            <e p="Installer.asmdef" t="Include" />
             <e p="PlayerCreationInstaller.cs" t="Include" />
             <e p="ProjectInstaller.cs" t="Include" />
           </e>
+          <e p="MainMenu" t="Include">
+            <e p="MainMenu.asmdef" t="Include" />
+            <e p="MainMenuManager.cs" t="Include" />
+          </e>
           <e p="PlayerCreation" t="Include">
+            <e p="Main" t="Include">
+              <e p="BeardColorChanger.cs" t="Include" />
+              <e p="BeardStyleChanger.cs" t="Include" />
+              <e p="GenderTypeChanger.cs" t="Include" />
+              <e p="HairColorChanger.cs" t="Include" />
+              <e p="HairStyleChanger.cs" t="Include" />
+              <e p="IChanger.cs" t="Include" />
+              <e p="PlayerCreationManager.cs" t="Include" />
+            </e>
             <e p="PlayerCreation.asmdef" t="Include" />
-            <e p="PlayerCreationManager.cs" t="Include" />
             <e p="UI" t="Include">
+              <e p="Selectors" t="Include">
+                <e p="BaseSelector.cs" t="Include" />
+                <e p="SelectionType.cs" t="Include" />
+              </e>
               <e p="UIManager.cs" t="Include" />
             </e>
           </e>
@@ -964,6 +996,7 @@
                 <e p="HairLength.cs" t="Include" />
                 <e p="HumanoidGender.cs" t="Include" />
                 <e p="HumanoidRace.cs" t="Include" />
+                <e p="Limits.cs" t="Include" />
                 <e p="MagicType.cs" t="Include" />
                 <e p="ShieldType.cs" t="Include" />
                 <e p="WeaponType.cs" t="Include" />
@@ -973,7 +1006,10 @@
           </e>
         </e>
       </e>
+      <e p="Core.csproj" t="IncludeRecursive" />
       <e p="FinalProject.sln" t="IncludeFlat" />
+      <e p="Installer.csproj" t="IncludeRecursive" />
+      <e p="MainMenu.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
       <e p="PlayerCreation.csproj" t="IncludeRecursive" />
