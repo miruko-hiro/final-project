@@ -17,11 +17,9 @@ namespace PlayerCreation.Main
         private UIManager _uiManager;
         private PlayerData _pData;
 
-        private IChanger _genderTypeChanger;
-        private IChanger _hairStyleChanger;
-        private IChanger _hairColorChanger;
-        private IChanger _beardStyleChanger;
-        private IChanger _beardColorChanger;
+        private GenderTypeChanger _genderTypeChanger;
+        private HairChanger _hairChanger;
+        private BeardChanger _beardChanger;
 
         [Inject]
         private void Construct(AppearanceIssuanceSystem dispenser, UIManager uiManager, PlayerData playerData)
@@ -37,17 +35,17 @@ namespace PlayerCreation.Main
             _player.transform.position = new Vector2(-4.5f, 0f);
             _player.transform.localScale = new Vector3(20f, 20f, 1f);
             
-            _pData.IndexHumanoidRace = 0;
             _pData.HumanoidRace = HumanoidRace.Orc;
-            
-            _player.Race = _dispenser.GetHumanoid(_pData.IndexHumanoidRace, _pData.HumanoidRace, _pData.HumanoidGender);
-            _player.BodyArmor = _dispenser.GetBodyArmor(_pData.IndexBodyArmor, _pData.BodyArmorType);
+            _pData.HumanoidGender = HumanoidGender.Male;
+            _pData.HumanoidRaceSprite = _dispenser.GetHumanoid(0, _pData.HumanoidRace, _pData.HumanoidGender);
+            _player.Race = _pData.HumanoidRaceSprite;
+
+            _pData.BodyArmorSprite = _dispenser.GetBodyArmor(0, ArmorType.Light);
+            _player.BodyArmor = _pData.BodyArmorSprite;
             
             _genderTypeChanger = new GenderTypeChanger(_pData, _player, _dispenser);
-            _hairStyleChanger = new HairStyleChanger(_pData, _player, _dispenser);
-            _hairColorChanger = new HairColorChanger(_pData, _player, _dispenser);
-            _beardStyleChanger = new BeardStyleChanger(_pData, _player, _dispenser);
-            _beardColorChanger = new BeardColorChanger(_pData, _player, _dispenser);
+            _hairChanger = new HairChanger(_pData, _player, _dispenser);
+            _beardChanger = new BeardChanger(_pData, _player, _dispenser);
 
             OnOpen();
         }
@@ -55,19 +53,19 @@ namespace PlayerCreation.Main
         public void OnOpen()
         {
             _uiManager.ChangedGenderType += _genderTypeChanger.Change;
-            _uiManager.ChangedHairStyle += _hairStyleChanger.Change;
-            _uiManager.ChangedHairColor += _hairColorChanger.Change;
-            _uiManager.ChangedBeardStyle += _beardStyleChanger.Change;
-            _uiManager.ChangedBeardColor += _beardColorChanger.Change;
+            _uiManager.ChangedHairStyle += _hairChanger.ChangeStyle;
+            _uiManager.ChangedHairColor += _hairChanger.ChangeColor;
+            _uiManager.ChangedBeardStyle += _beardChanger.ChangeStyle;
+            _uiManager.ChangedBeardColor += _beardChanger.ChangeColor;
         }
 
         public void OnClose()
         {
             _uiManager.ChangedGenderType -= _genderTypeChanger.Change;
-            _uiManager.ChangedHairStyle -= _hairStyleChanger.Change;
-            _uiManager.ChangedHairColor -= _hairColorChanger.Change;
-            _uiManager.ChangedBeardStyle -= _beardStyleChanger.Change;
-            _uiManager.ChangedBeardColor -= _beardColorChanger.Change;
+            _uiManager.ChangedHairStyle -= _hairChanger.ChangeStyle;
+            _uiManager.ChangedHairColor -= _hairChanger.ChangeColor;
+            _uiManager.ChangedBeardStyle -= _beardChanger.ChangeStyle;
+            _uiManager.ChangedBeardColor -= _beardChanger.ChangeColor;
         }
 
         private void OnDestroy()

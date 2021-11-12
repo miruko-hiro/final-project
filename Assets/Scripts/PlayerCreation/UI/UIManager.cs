@@ -2,6 +2,7 @@
 using Core.Interfaces;
 using PlayerCreation.UI.Selectors;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace PlayerCreation.UI
 {
@@ -56,6 +57,11 @@ namespace PlayerCreation.UI
         private void NotifyAboutChangeBeardColor(SelectionType type)
         {
             ChangedBeardColor?.Invoke(type);
+        }
+
+        public void OnCreate()
+        {
+            SceneManager.LoadScene("Battle");
         }
 
         public void OnClose()

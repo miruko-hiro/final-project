@@ -924,6 +924,11 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Battle" t="Include">
+            <e p="Battle.asmdef" t="Include" />
+            <e p="Player.cs" t="Include" />
+            <e p="PlayerManager.cs" t="Include" />
+          </e>
           <e p="Core" t="Include">
             <e p="Core.asmdef" t="Include" />
             <e p="Helpers" t="Include">
@@ -934,9 +939,11 @@
             </e>
             <e p="Interfaces" t="Include">
               <e p="IButton.cs" t="Include" />
+              <e p="ICharacterData.cs" t="Include" />
               <e p="IManager.cs" t="Include" />
             </e>
             <e p="Player" t="Include">
+              <e p="CharacterDataInstaller.cs" t="Include" />
               <e p="PlayerData.cs" t="Include" />
             </e>
           </e>
@@ -951,12 +958,9 @@
           </e>
           <e p="PlayerCreation" t="Include">
             <e p="Main" t="Include">
-              <e p="BeardColorChanger.cs" t="Include" />
-              <e p="BeardStyleChanger.cs" t="Include" />
+              <e p="BeardChanger.cs" t="Include" />
               <e p="GenderTypeChanger.cs" t="Include" />
-              <e p="HairColorChanger.cs" t="Include" />
-              <e p="HairStyleChanger.cs" t="Include" />
-              <e p="IChanger.cs" t="Include" />
+              <e p="HairChanger.cs" t="Include" />
               <e p="PlayerCreationManager.cs" t="Include" />
             </e>
             <e p="PlayerCreation.asmdef" t="Include" />
@@ -1006,6 +1010,7 @@
           </e>
         </e>
       </e>
+      <e p="Battle.csproj" t="IncludeRecursive" />
       <e p="Core.csproj" t="IncludeRecursive" />
       <e p="FinalProject.sln" t="IncludeFlat" />
       <e p="Installer.csproj" t="IncludeRecursive" />

@@ -3,6 +3,7 @@ using Template.Creatures.Appearance.Hair;
 using Template.Creatures.Appearance.Weapon;
 using Template.Creatures.Types;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace Template.Creatures.Appearance
 {

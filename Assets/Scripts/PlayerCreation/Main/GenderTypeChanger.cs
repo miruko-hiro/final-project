@@ -6,7 +6,7 @@ using Template.Creatures.Types;
 
 namespace PlayerCreation.Main
 {
-    public class GenderTypeChanger: IChanger
+    public class GenderTypeChanger
     {
         private readonly PlayerData _pData;
         private readonly Humanoid _player;
@@ -47,14 +47,15 @@ namespace PlayerCreation.Main
         private void SetGenderType(HumanoidGender gender)
         {
             _pData.HumanoidGender = gender;
-            _player.Race = _dispenser.GetHumanoid(_pData.IndexHumanoidRace, _pData.HumanoidRace, _pData.HumanoidGender);
+            _pData.HumanoidRaceSprite =
+                _dispenser.GetHumanoid(0, _pData.HumanoidRace, _pData.HumanoidGender);
+            _player.Race = _pData.HumanoidRaceSprite;
         }
 
         private void SetBodyArmor(int index, ArmorType type)
         {
-            _pData.IndexBodyArmor = index;
-            _pData.BodyArmorType = type;
-            _player.BodyArmor = _dispenser.GetBodyArmor(_pData.IndexBodyArmor, _pData.BodyArmorType);
+            _pData.BodyArmorSprite = _dispenser.GetBodyArmor(index, type);
+            _player.BodyArmor = _pData.BodyArmorSprite;
         }
     }
 }

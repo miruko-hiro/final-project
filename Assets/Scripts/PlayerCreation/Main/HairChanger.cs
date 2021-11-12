@@ -7,34 +7,72 @@ using Template.Creatures.Types;
 
 namespace PlayerCreation.Main
 {
-    public class HairColorChanger: IChanger
+    public class HairChanger
     {
         private readonly PlayerData _pData;
         private readonly Humanoid _player;
         private readonly AppearanceIssuanceSystem _dispenser;
+        private HairColor _hairColor = HairColor.Black;
+        private int _index =  0;
+        private HairLength _hairLength = HairLength.Short;
 
-        public HairColorChanger(PlayerData pData, Humanoid player, AppearanceIssuanceSystem dispenser)
+        public HairChanger(PlayerData pData, Humanoid player, AppearanceIssuanceSystem dispenser)
         {
             _pData = pData;
             _player = player;
             _dispenser = dispenser;
         }
         
-        public void Change(SelectionType type)
+        public void ChangeStyle(SelectionType type)
         {
             if (type == SelectionType.Prev)
             {
-                DoWhenPerv();
+                DoStyleWhenPerv();
             }
             else
             {
-                DoWhenNext();
+                DoStyleWhenNext();
             }
         }
         
-        private void DoWhenPerv()
+        private void DoStyleWhenPerv()
         {
-            switch (_pData.HairColor)
+            if (_index == 0)
+            {
+                if (_hairLength == HairLength.Long)
+                    SetHairStyle(Limits.ShortHairIndex - 1, HairLength.Short);
+                else
+                    SetHairStyle(Limits.LongHairIndex - 1, HairLength.Long);
+            }
+            else
+                SetHairStyle(_index - 1, _hairLength);
+        }
+
+        private void DoStyleWhenNext()
+        {
+            if (_index == Limits.LongHairIndex - 1 && _hairLength == HairLength.Long)
+                SetHairStyle(0, HairLength.Short);
+            else if (_index == Limits.ShortHairIndex - 1 && _hairLength == HairLength.Short)
+                SetHairStyle(0, HairLength.Long);
+            else
+                SetHairStyle(_index + 1, _hairLength);
+        }
+        
+        public void ChangeColor(SelectionType type)
+        {
+            if (type == SelectionType.Prev)
+            {
+                DoColorWhenPerv();
+            }
+            else
+            {
+                DoColorWhenNext();
+            }
+        }
+        
+        private void DoColorWhenPerv()
+        {
+            switch (_hairColor)
             {
                 case HairColor.Black:
                     SetHairColor(HairColor.White);
@@ -56,9 +94,9 @@ namespace PlayerCreation.Main
             }
         }
 
-        private void DoWhenNext()
+        private void DoColorWhenNext()
         {
-            switch (_pData.HairColor)
+            switch (_hairColor)
             {
                 case HairColor.Black:
                     SetHairColor(HairColor.Ginger);
@@ -82,8 +120,21 @@ namespace PlayerCreation.Main
 
         private void SetHairColor(HairColor color)
         {
-            _pData.HairColor = color;
-            _player.HairHead = _dispenser.GetHairHead(_pData.IndexHair, _pData.HairLength, _pData.HairColor);
+            _hairColor = color;
+            SetHair();
+        }
+
+        private void SetHairStyle(int index, HairLength length)
+        {
+            _index = index;
+            _hairLength = length;
+            SetHair();
+        }
+
+        private void SetHair()
+        {
+            _pData.HairSprite = _dispenser.GetHairHead(_index, _hairLength, _hairColor);
+            _player.Hair = _pData.HairSprite;
         }
     }
 }
