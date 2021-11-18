@@ -9,7 +9,7 @@ using Zenject;
 
 namespace PlayerCreation.Main
 {
-    public class PlayerCreationManager : MonoBehaviour, IManager
+    public class PlayerCreationManager : MonoBehaviour
     {
         [SerializeField] private GameObject humanoidPrefab;
         private Humanoid _player;
@@ -37,11 +37,14 @@ namespace PlayerCreation.Main
             
             _pData.HumanoidRace = HumanoidRace.Orc;
             _pData.HumanoidGender = HumanoidGender.Male;
-            _pData.HumanoidRaceSprite = _dispenser.GetHumanoid(0, _pData.HumanoidRace, _pData.HumanoidGender);
-            _player.Race = _pData.HumanoidRaceSprite;
+            _pData.HumanoidRaceSprite.Value = _dispenser.GetHumanoid(0, _pData.HumanoidRace, _pData.HumanoidGender);
+            _player.Race = _pData.HumanoidRaceSprite.Value;
 
-            _pData.BodyArmorSprite = _dispenser.GetBodyArmor(0, ArmorType.Light);
-            _player.BodyArmor = _pData.BodyArmorSprite;
+            _pData.BodyArmorSprite.Value = _dispenser.GetBodyArmor(0, ArmorType.Light);
+            _player.BodyArmor = _pData.BodyArmorSprite.Value;
+
+            _pData.RightHandSprite.Value = _dispenser.GetWeapon(0, WeaponType.Sword);
+            _player.RightHand = _pData.RightHandSprite.Value;
             
             _genderTypeChanger = new GenderTypeChanger(_pData, _player, _dispenser);
             _hairChanger = new HairChanger(_pData, _player, _dispenser);
@@ -50,7 +53,7 @@ namespace PlayerCreation.Main
             OnOpen();
         }
 
-        public void OnOpen()
+        private void OnOpen()
         {
             _uiManager.ChangedGenderType += _genderTypeChanger.Change;
             _uiManager.ChangedHairStyle += _hairChanger.ChangeStyle;
@@ -59,7 +62,7 @@ namespace PlayerCreation.Main
             _uiManager.ChangedBeardColor += _beardChanger.ChangeColor;
         }
 
-        public void OnClose()
+        private void OnClose()
         {
             _uiManager.ChangedGenderType -= _genderTypeChanger.Change;
             _uiManager.ChangedHairStyle -= _hairChanger.ChangeStyle;

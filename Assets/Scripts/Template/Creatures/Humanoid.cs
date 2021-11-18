@@ -2,30 +2,31 @@ using UnityEngine;
 
 namespace Template.Creatures
 {
-    public class Humanoid : MonoBehaviour
+    public abstract class Humanoid : MonoBehaviour
     {
         [Space(10)] 
-        [SerializeField] private SpriteRenderer race;
+        [SerializeField] protected SpriteRenderer race;
         [Space(10)]
-        [SerializeField] private SpriteRenderer hairHead;
-        [SerializeField] private SpriteRenderer beard;
+        [SerializeField] protected SpriteRenderer hairHead;
+        [SerializeField] protected SpriteRenderer beard;
         [Space(10)]
-        [SerializeField] private SpriteRenderer head;
-        [SerializeField] private SpriteRenderer body;
-        [SerializeField] private SpriteRenderer pants;
-        [SerializeField] private SpriteRenderer boots;
+        [SerializeField] protected SpriteRenderer head;
+        [SerializeField] protected SpriteRenderer body;
+        [SerializeField] protected SpriteRenderer pants;
+        [SerializeField] protected SpriteRenderer boots;
         [Space(10)]
-        [SerializeField] private SpriteRenderer rightHand;
-        [SerializeField] private SpriteRenderer leftHand;
+        [SerializeField] protected SpriteRenderer rightHand;
+        [SerializeField] protected SpriteRenderer leftHand;
         
-        public Sprite Race { get => race.sprite; set => race.sprite = value; }
-        public Sprite Hair { get => hairHead.sprite; set => hairHead.sprite = value; }
-        public Sprite Beard { get => beard.sprite; set => beard.sprite = value; }
-        public Sprite HeadArmor { get => head.sprite; set => head.sprite = value; }
-        public Sprite BodyArmor { get => body.sprite; set => body.sprite = value; }
-        public Sprite PantsArmor { get => pants.sprite; set => pants.sprite = value; }
-        public Sprite BootsArmor { get => boots.sprite; set => boots.sprite = value; }
-        public Sprite RightHand { get => rightHand.sprite; set => rightHand.sprite = value; }
-        public Sprite LeftHand { get => leftHand.sprite; set => leftHand.sprite = value; }
+        public abstract Sprite Race { get; set; }
+
+        public abstract Sprite Hair { get; set; }
+        public abstract Sprite Beard { get; set; }
+        public abstract Sprite HeadArmor { get; set; }
+        public abstract Sprite BodyArmor { get; set; }
+        public abstract Sprite PantsArmor { get; set; }
+        public abstract Sprite BootsArmor { get; set; }
+        public abstract Sprite RightHand { get; set; }
+        public abstract Sprite LeftHand { get; set; }
     }
 }

@@ -47,15 +47,15 @@ namespace PlayerCreation.Main
         private void SetGenderType(HumanoidGender gender)
         {
             _pData.HumanoidGender = gender;
-            _pData.HumanoidRaceSprite =
+            _pData.HumanoidRaceSprite.Value =
                 _dispenser.GetHumanoid(0, _pData.HumanoidRace, _pData.HumanoidGender);
-            _player.Race = _pData.HumanoidRaceSprite;
+            _player.Race = _pData.HumanoidRaceSprite.Value;
         }
 
         private void SetBodyArmor(int index, ArmorType type)
         {
-            _pData.BodyArmorSprite = _dispenser.GetBodyArmor(index, type);
-            _player.BodyArmor = _pData.BodyArmorSprite;
+            _pData.BodyArmorSprite.Value = _dispenser.GetBodyArmor(index, type);
+            _player.BodyArmor = _pData.BodyArmorSprite.Value;
         }
     }
 }

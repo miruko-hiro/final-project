@@ -1,4 +1,5 @@
 ﻿using Core.Interfaces;
+using Core.Parameters;
 using Template.Creatures.Types;
 using UnityEngine;
 
@@ -7,16 +8,16 @@ namespace Core.Player
     public class PlayerData: ICharacterData
     {
         public HumanoidRace HumanoidRace { get; set; }
-        public Sprite HumanoidRaceSprite { get; set; }
         public HumanoidGender HumanoidGender { get; set; }
-        public Sprite HairSprite { get; set; }
-        public Sprite BeardSprite { get; set; }
-        public Sprite HeadArmorSprite { get; set; }
-        public Sprite BodyArmorSprite { get; set; }
-        public Sprite PantsArmorSprite { get; set; }
-        public Sprite BootsArmorSprite { get; set; }
-        public Sprite ShieldSprite { get; set; }
-        public Sprite WeaponSprite { get; set; }
-        public Sprite MagicWeaponSprite { get; set; }
+        public Parameter<Sprite> HumanoidRaceSprite { get; set; } = new Parameter<Sprite>();
+        public Parameter<Sprite> HairSprite { get; set; } = new Parameter<Sprite>();
+        public Parameter<Sprite> BeardSprite { get; set; } = new Parameter<Sprite>();
+        public Parameter<Sprite> HeadArmorSprite { get; set; } = new Parameter<Sprite>();
+        public Parameter<Sprite> BodyArmorSprite { get; set; } = new Parameter<Sprite>();
+        public Parameter<Sprite> PantsArmorSprite { get; set; } = new Parameter<Sprite>();
+        public Parameter<Sprite> BootsArmorSprite { get; set; } = new Parameter<Sprite>();
+        public Parameter<Sprite> LeftHandSprite { get; set; } = new Parameter<Sprite>();
+        public Parameter<Sprite> RightHandSprite { get; set; } = new Parameter<Sprite>();
+        public Parameter<int> Health { get; set; } = new Parameter<int>();
     }
 }

@@ -134,8 +134,8 @@ namespace PlayerCreation.Main
 
         private void SetBeard()
         {
-            _pData.BeardSprite = _dispenser.GetBeard(_index, _beardLength, _beardColor);
-            _player.Beard = _pData.BeardSprite;
+            _pData.BeardSprite.Value = _dispenser.GetBeard(_index, _beardLength, _beardColor);
+            _player.Beard = _pData.BeardSprite.Value;
         }
     }
 }

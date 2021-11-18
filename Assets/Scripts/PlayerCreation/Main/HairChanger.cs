@@ -133,8 +133,8 @@ namespace PlayerCreation.Main
 
         private void SetHair()
         {
-            _pData.HairSprite = _dispenser.GetHairHead(_index, _hairLength, _hairColor);
-            _player.Hair = _pData.HairSprite;
+            _pData.HairSprite.Value = _dispenser.GetHairHead(_index, _hairLength, _hairColor);
+            _player.Hair = _pData.HairSprite.Value;
         }
     }
 }

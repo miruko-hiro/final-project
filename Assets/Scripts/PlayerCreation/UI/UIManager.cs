@@ -1,12 +1,11 @@
 ﻿using System;
-using Core.Interfaces;
 using PlayerCreation.UI.Selectors;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace PlayerCreation.UI
 {
-    public class UIManager : MonoBehaviour, IManager
+    public class UIManager : MonoBehaviour
     {
         [SerializeField] private BaseSelector genderTypeSelector;
         [SerializeField] private BaseSelector hairStyleSelector;
@@ -25,7 +24,7 @@ namespace PlayerCreation.UI
             OnOpen();
         }
 
-        public void OnOpen()
+        private void OnOpen()
         {
             genderTypeSelector.Changed += NotifyAboutChangeGenderType;
             hairStyleSelector.Changed += NotifyAboutChangeHairStyle;
@@ -64,7 +63,7 @@ namespace PlayerCreation.UI
             SceneManager.LoadScene("Battle");
         }
 
-        public void OnClose()
+        private void OnClose()
         {
             genderTypeSelector.Changed -= NotifyAboutChangeGenderType;
             hairStyleSelector.Changed -= NotifyAboutChangeHairStyle;
