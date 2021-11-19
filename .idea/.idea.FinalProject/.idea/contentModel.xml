@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Unity\FinalProject" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="AstarPathfindingProject" t="Include">
           <e p="AstarPathfindingProject.asmdef" t="Include" />
@@ -208,6 +209,45 @@
             <e p="ProfileHelper.cs" t="Include" />
             <e p="RetainedGizmos.cs" t="Include" />
             <e p="UnityReferenceHelper.cs" t="Include" />
+          </e>
+        </e>
+        <e p="FinalProject" t="Include">
+          <e p="Architecture" t="Include">
+            <e p="Game" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="Bank.cs" t="Include" />
+                <e p="GameManager.cs" t="Include" />
+                <e p="Test.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Helpers" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="Coroutines.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Interactors" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="BankInteractor.cs" t="Include" />
+                <e p="Interactor.cs" t="Include" />
+                <e p="InteractorsBase.cs" t="Include" />
+              </e>
+            </e>
+            <e p="repositories" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="BankRepository.cs" t="Include" />
+                <e p="RepositoriesBase.cs" t="Include" />
+                <e p="Repository.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Scenes" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="Scene.cs" t="Include" />
+                <e p="SceneConfig.cs" t="Include" />
+                <e p="SceneConfigExample.cs" t="Include" />
+                <e p="SceneManagerBase.cs" t="Include" />
+                <e p="SceneManagerExample.cs" t="Include" />
+              </e>
+            </e>
           </e>
         </e>
         <e p="Joystick Pack" t="Include">
