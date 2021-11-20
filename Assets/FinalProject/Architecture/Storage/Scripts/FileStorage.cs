@@ -11,13 +11,9 @@ namespace FinalProject.Architecture.Storage.Scripts
     public class FileStorage: StorageBase
     {
         public string FilePath { get; }
-
-        private Coroutines _coroutines;
 		
-        [Inject]
-        public FileStorage(Coroutines coroutines, string fileName)
+        public FileStorage(string fileName)
         {
-            _coroutines = coroutines;
             var folder = "Saves";
             var folderPath = $"{Application.persistentDataPath}/{folder}";
             if (!Directory.Exists(folderPath)) 
@@ -44,9 +40,9 @@ namespace FinalProject.Architecture.Storage.Scripts
             callback?.Invoke();
         }
 
-        protected override Coroutine SaveStarterInternal(Action callback = null)
+        protected override Coroutine SaveStarterInternal(Coroutines coroutines, Action callback = null)
         {
-            return _coroutines.StartRoutine(SaveCoroutine(callback));
+            return coroutines.StartRoutine(SaveCoroutine(callback));
         }
 		
         private IEnumerator SaveCoroutine(Action callback) {
@@ -86,9 +82,9 @@ namespace FinalProject.Architecture.Storage.Scripts
             callback?.Invoke(GameData);
         }
 
-        protected override Coroutine LoadStarterInternal(Action<GameData> callback = null)
+        protected override Coroutine LoadStarterInternal(Coroutines coroutines, Action<GameData> callback = null)
         {
-            return _coroutines.StartRoutine(LoadCoroutine(callback));
+            return coroutines.StartRoutine(LoadCoroutine(callback));
         }
         
         private IEnumerator LoadCoroutine(Action<GameData> callback) {

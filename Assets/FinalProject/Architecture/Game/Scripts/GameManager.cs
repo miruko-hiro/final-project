@@ -6,6 +6,7 @@ using FinalProject.Architecture.Interactors.Scripts;
 using FinalProject.Architecture.Repositories.Scripts;
 using FinalProject.Architecture.Scenes.Scripts;
 using FinalProject.Architecture.Settings.Scripts;
+using UnityEngine;
 using Zenject;
 
 namespace FinalProject.Architecture.Game.Scripts
@@ -17,23 +18,13 @@ namespace FinalProject.Architecture.Game.Scripts
         public ArchitectureComponentState state { get; private set; } = ArchitectureComponentState.NotInitialized;
         public ISceneController SceneController { get; private set; }
         public IGameSettings GameSettings { get; private set; }
-
-        private Coroutines _coroutines;
-        private InjectionClassFactory _injectionClassFactory;
-
-        [Inject]
-        public GameManager(Coroutines coroutines, InjectionClassFactory injectionClassFactory)
+        
+        public void Run(Coroutines coroutines)
         {
-            _coroutines = coroutines;
-            _injectionClassFactory = injectionClassFactory;
+            coroutines.StartRoutine(RunGameCoroutine(coroutines));
         }
         
-        public void Run()
-        {
-            _coroutines.StartRoutine(RunGameCoroutine());
-        }
-        
-        private IEnumerator RunGameCoroutine() {
+        private IEnumerator RunGameCoroutine(Coroutines coroutines) {
             state = ArchitectureComponentState.Initializing;
 
             InitGameSettings();
@@ -42,18 +33,18 @@ namespace FinalProject.Architecture.Game.Scripts
             InitSceneManager();
             yield return null;
 
-            yield return SceneController.InitializeCurrentScene();
+            yield return SceneController.InitializeCurrentScene(coroutines);
 
             state = ArchitectureComponentState.Initialized;
             OnGameInitializedEvent?.Invoke();
         }
         
         private void InitGameSettings() {
-            GameSettings = _injectionClassFactory.Create<GameSettings>();
+            GameSettings = new GameSettings();
         }
 
         private void InitSceneManager() {
-            SceneController = _injectionClassFactory.Create<SceneController>();
+            SceneController = new SceneController();
         }
         
         public T GetInteractor<T>() where T : IInteractor {
@@ -73,15 +64,18 @@ namespace FinalProject.Architecture.Game.Scripts
         }
         
         public void SaveGame() {
-            SceneController.SceneActual.Storage.Save();
+            Debug.Log(SceneController);
+            Debug.Log(SceneController.SceneActual);
+            Debug.Log(SceneController.SceneActual.Storage);
+            SceneController.SceneActual.Save();
         }
 
         public void SaveGameAsync(Action callback) {
-            SceneController.SceneActual.Storage.SaveAsync(callback);
+            SceneController.SceneActual.SaveAsync(callback);
         }
 
-        public IEnumerator SaveGameStarter(Action callback) {
-            yield return SceneController.SceneActual.Storage.SaveStarter();
+        public IEnumerator SaveGameStarter(Coroutines coroutines, Action callback) {
+            yield return SceneController.SceneActual.Storage.SaveStarter(coroutines);
         }
     }
 }

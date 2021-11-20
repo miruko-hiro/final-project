@@ -10,13 +10,8 @@ namespace FinalProject.Architecture
     public sealed class ComponentsBase<T> where T : IArchitectureComponent
     {
         private Dictionary<Type, T> _componentMap;
-
-        private Coroutines _coroutines;
-        
-        [Inject]
-        public ComponentsBase(Coroutines coroutines, string[] classReferences)
+        public ComponentsBase(string[] classReferences)
         {
-            _coroutines = coroutines;
             _componentMap = CreateInstances<T>(classReferences);
         }
 
@@ -56,17 +51,17 @@ namespace FinalProject.Architecture
                 component.OnStart();
         }
 
-        public Coroutine InitializeAllComponentsStarter()
+        public Coroutine InitializeAllComponentsStarter(Coroutines coroutines)
         {
-            return _coroutines.StartRoutine(InitializeAllComponentsCoroutine());
+            return coroutines.StartRoutine(InitializeAllComponentsCoroutine(coroutines));
         }
 
-        private IEnumerator InitializeAllComponentsCoroutine()
+        private IEnumerator InitializeAllComponentsCoroutine(Coroutines coroutines)
         {
             var allComponents = _componentMap.Values;
             foreach (var component in allComponents)
                 if (!component.IsInitialized)
-                    yield return component.InitializeStarter();
+                    yield return component.InitializeStarter(coroutines);
         }
 
         public TP GetComponent<TP>() where TP : T

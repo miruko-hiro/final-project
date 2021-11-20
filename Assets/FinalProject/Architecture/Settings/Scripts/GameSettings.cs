@@ -19,11 +19,10 @@ namespace FinalProject.Architecture.Settings.Scripts
 
         private StorageBase _settingsStorage;
         
-        [Inject]
-        public GameSettings(InjectionClassFactory injectionClassFactory, bool isLoggingEnabled = false) {
+        public GameSettings(bool isLoggingEnabled = false) {
             IsLoggingEnabled = isLoggingEnabled;
 			
-            _settingsStorage = injectionClassFactory.CreateWithParameters<FileStorage>(new object[] {SettingsFileName});
+            _settingsStorage = new FileStorage(SettingsFileName);
             _settingsStorage.Load();
 			
             MusicSettings = new MusicSettings(_settingsStorage);

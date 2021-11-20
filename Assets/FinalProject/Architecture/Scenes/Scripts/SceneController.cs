@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using FinalProject.Architecture.Helpers.Scripts;
-using FinalProject.Architecture.Scenes.Configs;
+using FinalProject.Architecture.Scenes.Scripts.Config;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -20,14 +20,8 @@ namespace FinalProject.Architecture.Scenes.Scripts
         public Dictionary<string, SceneConfig> SceneConfigMap { get; }
         public bool IsLoading { get; private set; }
 
-        private Coroutines _coroutines;
-        private InjectionClassFactory _injectionClassFactory;
-
-        [Inject]
-        public SceneController(Coroutines coroutines, InjectionClassFactory injectionClassFactory)
+        public SceneController()
         {
-            _coroutines = coroutines;
-            _injectionClassFactory = injectionClassFactory;
             SceneConfigMap = new Dictionary<string, SceneConfig>();
             InitializeSceneConfigs();
         }
@@ -38,32 +32,32 @@ namespace FinalProject.Architecture.Scenes.Scripts
                 SceneConfigMap[sceneConfig.SceneName] = sceneConfig;
         }
 
-        public Coroutine LoadScene(string sceneName, UnityAction<SceneConfig> sceneLoadedCallback = null) {
-            return LoadAndInitializeSceneStarter(sceneName, sceneLoadedCallback, true);
+        public Coroutine LoadScene(Coroutines coroutines, string sceneName, UnityAction<SceneConfig> sceneLoadedCallback = null) {
+            return LoadAndInitializeSceneStarter(coroutines, sceneName, sceneLoadedCallback, true);
         }
         
-        public Coroutine InitializeCurrentScene(UnityAction<SceneConfig> sceneLoadedCallback = null) {
+        public Coroutine InitializeCurrentScene(Coroutines coroutines, UnityAction<SceneConfig> sceneLoadedCallback = null) {
             var sceneName = SceneManager.GetActiveScene().name;
-            return LoadAndInitializeSceneStarter(sceneName, sceneLoadedCallback, false);
+            return LoadAndInitializeSceneStarter(coroutines, sceneName, sceneLoadedCallback, false);
         }
         
-        protected Coroutine LoadAndInitializeSceneStarter(string sceneName, UnityAction<SceneConfig> sceneLoadedCallback, bool loadNewScene) {
+        protected Coroutine LoadAndInitializeSceneStarter(Coroutines coroutines, string sceneName, UnityAction<SceneConfig> sceneLoadedCallback, bool loadNewScene) {
             SceneConfigMap.TryGetValue(sceneName, out SceneConfig config);
             
             if (config == null)
                 throw new NullReferenceException(
                     $"There is no scene ({sceneName}) in the scenes list. The name is wrong or you forget to add it o the list.");
 
-            return _coroutines.StartRoutine(LoadSceneCoroutine(config, sceneLoadedCallback, loadNewScene));
+            return coroutines.StartRoutine(LoadSceneCoroutine(coroutines, config, sceneLoadedCallback, loadNewScene));
         }
         
-        protected virtual IEnumerator LoadSceneCoroutine(SceneConfig config, UnityAction<SceneConfig> sceneLoadedCallback, bool loadNewScene = true) {
+        protected virtual IEnumerator LoadSceneCoroutine(Coroutines coroutines, SceneConfig config, UnityAction<SceneConfig> sceneLoadedCallback, bool loadNewScene = true) {
             IsLoading = true;
             OnSceneLoadStartedEvent?.Invoke(config);
             
             if (loadNewScene)
-                yield return _coroutines.StartRoutine(LoadSceneAsyncCoroutine(config));
-            yield return _coroutines.StartRoutine(InitializeSceneCoroutine(config, sceneLoadedCallback));
+                yield return coroutines.StartRoutine(LoadSceneAsyncCoroutine(config));
+            yield return coroutines.StartRoutine(InitializeSceneCoroutine(coroutines, config, sceneLoadedCallback));
 
             yield return new WaitForSecondsRealtime(1f);
             IsLoading = false;
@@ -85,16 +79,15 @@ namespace FinalProject.Architecture.Scenes.Scripts
 
             asyncOperation.allowSceneActivation = true;
         }
-        
-        protected virtual IEnumerator InitializeSceneCoroutine(SceneConfig config, UnityAction<SceneConfig> sceneLoadedCallback) {
+        protected virtual IEnumerator InitializeSceneCoroutine(Coroutines coroutines, SceneConfig config, UnityAction<SceneConfig> sceneLoadedCallback) {
 
-            SceneActual = _injectionClassFactory.CreateWithParameters<Scene>(new object[] {config});
+            SceneActual = new Scene(config);
             yield return null;
 
             SceneActual.SendMessageOnCreate();
             yield return null;
             
-            yield return SceneActual.InitializeStarter();
+            yield return SceneActual.InitializeStarter(coroutines);
 
             SceneActual.Start();
         }

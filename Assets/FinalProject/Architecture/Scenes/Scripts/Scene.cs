@@ -1,9 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using FinalProject.Architecture.Helpers.Scripts;
 using FinalProject.Architecture.Interactors.Scripts;
 using FinalProject.Architecture.Repositories.Scripts;
-using FinalProject.Architecture.Scenes.Configs;
+using FinalProject.Architecture.Scenes.Scripts.Config;
 using FinalProject.Architecture.Storage.Scripts;
 using UnityEngine;
 using Zenject;
@@ -16,18 +17,12 @@ namespace FinalProject.Architecture.Scenes.Scripts
         public ComponentsBase<IRepository> RepositoriesBase { get; }
         public ComponentsBase<IInteractor> InteractorsBase { get; }
         public StorageBase Storage { get; private set; }
-
-        private Coroutines _coroutines;
-        private InjectionClassFactory _injectionClassFactory;
         
-        [Inject]
-        public Scene(Coroutines coroutines, InjectionClassFactory injectionClassFactory, SceneConfig config)
+        public Scene(SceneConfig config)
         {
-            _coroutines = coroutines;
-            _injectionClassFactory = injectionClassFactory;
             SceneConfig = config;
-            RepositoriesBase = injectionClassFactory.CreateWithParameters<ComponentsBase<IRepository>>(new object[] {config.RepositoriesReferences});
-            InteractorsBase = injectionClassFactory.CreateWithParameters<ComponentsBase<IInteractor>>(new object[] {config.InteractorsReferences});
+            RepositoriesBase = new ComponentsBase<IRepository>(config.RepositoriesReferences);
+            InteractorsBase = new ComponentsBase<IInteractor>(config.InteractorsReferences);
         }
         
         public void SendMessageOnCreate() {
@@ -35,20 +30,20 @@ namespace FinalProject.Architecture.Scenes.Scripts
             InteractorsBase.SendMessageOnCreate();
         }
 
-        public Coroutine InitializeStarter()
+        public Coroutine InitializeStarter(Coroutines coroutines)
         {
-            return _coroutines.StartRoutine(InitializeCoroutine());
+            return coroutines.StartRoutine(InitializeCoroutine(coroutines));
         }
         
-        private IEnumerator InitializeCoroutine() {
+        private IEnumerator InitializeCoroutine(Coroutines coroutines) {
             // TODO: Load storage here if needed.
             if (SceneConfig.SaveDataForThisScene) {
-                Storage = _injectionClassFactory.CreateWithParameters<FileStorage>(new object[] {SceneConfig.SaveName});
+                Storage = new FileStorage(SceneConfig.SaveName);
                 Storage.Load();
             }
 
-            yield return RepositoriesBase.InitializeAllComponentsStarter();
-            yield return InteractorsBase.InitializeAllComponentsStarter();
+            yield return RepositoriesBase.InitializeAllComponentsStarter(coroutines);
+            yield return InteractorsBase.InitializeAllComponentsStarter(coroutines);
             
             RepositoriesBase.SendMessageOnInitialize();
             InteractorsBase.SendMessageOnInitialize();
@@ -63,6 +58,11 @@ namespace FinalProject.Architecture.Scenes.Scripts
         public void Save()
         {
             Storage?.Save();
+        }
+
+        public void SaveAsync(Action callback = null)
+        {
+            Storage?.SaveAsync(callback);
         }
 
         public T GetRepository<T>() where T : IRepository {

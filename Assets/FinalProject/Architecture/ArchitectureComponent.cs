@@ -14,18 +14,14 @@ namespace FinalProject.Architecture
         public bool IsInitialized => State == ArchitectureComponentState.Initialized;
         public bool IsLoggingEnabled { get; set; }
 
-        private Coroutines _coroutines;
-
-        [Inject]
-        public ArchitectureComponent(Coroutines coroutines)
+        public ArchitectureComponent()
         {
-            _coroutines = coroutines;
             State = ArchitectureComponentState.NotInitialized;
         }
 
         public virtual void OnCreate() { }
 
-        public Coroutine InitializeStarter()
+        public Coroutine InitializeStarter(Coroutines coroutines)
         {
             if (IsInitialized)
                 throw new Exception($"Component {this.GetType().Name} is already initialized");
@@ -33,12 +29,12 @@ namespace FinalProject.Architecture
             if (State == ArchitectureComponentState.Initializing)
                 throw new Exception($"Component {this.GetType().Name} is initializing now");
 
-            return _coroutines.StartRoutine(InitializeCoroutineInternal());
+            return coroutines.StartRoutine(InitializeCoroutineInternal(coroutines));
         }
         
-        private IEnumerator InitializeCoroutineInternal() {
+        private IEnumerator InitializeCoroutineInternal(Coroutines coroutines) {
             State = ArchitectureComponentState.Initializing;
-            yield return _coroutines.StartRoutine(InitializeCoroutine());
+            yield return coroutines.StartRoutine(InitializeCoroutine());
             Initialize();
 
             State = ArchitectureComponentState.Initialized;

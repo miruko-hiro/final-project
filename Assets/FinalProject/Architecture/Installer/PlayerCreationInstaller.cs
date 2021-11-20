@@ -1,4 +1,4 @@
-using PlayerCreation.UI;
+using FinalProject.Architecture.Scenes.PlayerCreation.Scripts.UI;
 using UnityEngine;
 using Zenject;
 

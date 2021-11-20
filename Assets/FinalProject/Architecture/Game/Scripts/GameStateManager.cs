@@ -1,4 +1,5 @@
 ﻿using System;
+using FinalProject.Architecture.Helpers.Scripts;
 using UnityEngine;
 using Zenject;
 
@@ -18,20 +19,22 @@ namespace FinalProject.Architecture.Game.Scripts
         [SerializeField] private bool _isLoggingEnabled;
 
         private GameManager _gameManager;
-
+        private Coroutines _coroutines;
+        
         [Inject]
-        private void Construct(GameManager gameManager)
+        private void Construct(GameManager gameManager, Coroutines coroutines)
         {
             _gameManager = gameManager;
+            _coroutines = coroutines;
         }
         
         private void Start() {
-            DontDestroyOnLoad(gameObject);
-            
-            _gameManager.Run();
+            _gameManager.Run(_coroutines);
             
             if (_isLoggingEnabled)
                 Debug.Log($"GAME MANAGER: Game launched: {Application.productName}");
+            
+            Debug.Log(123);
         }
         
         private void OnApplicationPause(bool pauseStatus) {

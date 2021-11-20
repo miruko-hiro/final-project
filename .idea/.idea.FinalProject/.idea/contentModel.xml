@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Unity\FinalProject" t="IncludeRecursive">
-      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="AstarPathfindingProject" t="Include">
           <e p="AstarPathfindingProject.asmdef" t="Include" />
@@ -215,6 +214,77 @@
           <e p="Architecture" t="Include">
             <e p="ArchitectureComponent.cs" t="Include" />
             <e p="ArchitectureComponentState.cs" t="Include" />
+            <e p="Characters" t="Include">
+              <e p="Enemy" t="Include">
+                <e p="EnemyData.cs" t="Include" />
+                <e p="EnemyPresenter.cs" t="Include" />
+                <e p="EnemySpawner.cs" t="Include" />
+                <e p="EnemyView.cs" t="Include" />
+                <e p="GeneratorEnemyData.cs" t="Include" />
+                <e p="Health" t="Include">
+                  <e p="HealthEnemyBarPresenter.cs" t="Include" />
+                  <e p="HealthEnemyBarView.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Player" t="Include">
+                <e p="Animation" t="Include">
+                  <e p="MeleeAttackAnimation.cs" t="Include" />
+                  <e p="MovementAnimation.cs" t="Include" />
+                </e>
+                <e p="PlayerData.cs" t="Include" />
+                <e p="PlayerPresenter.cs" t="Include" />
+                <e p="PlayerView.cs" t="Include" />
+              </e>
+              <e p="Scripts" t="Include">
+                <e p="AnimationHumanoid.cs" t="Include" />
+                <e p="Appearance" t="Include">
+                  <e p="AppearanceIssuanceSystem.cs" t="Include" />
+                  <e p="HumanoidCollection.cs" t="Include" />
+                </e>
+                <e p="Armor" t="Include">
+                  <e p="BodyCollection.cs" t="Include" />
+                  <e p="BootsCollection.cs" t="Include" />
+                  <e p="HeadCollection.cs" t="Include" />
+                  <e p="PantsCollection.cs" t="Include" />
+                </e>
+                <e p="Hair" t="Include">
+                  <e p="BeardCollection.cs" t="Include" />
+                  <e p="HairHeadCollection.cs" t="Include" />
+                </e>
+                <e p="Humanoid.cs" t="Include" />
+                <e p="ICharacterData.cs" t="Include" />
+                <e p="Parameter.cs" t="Include" />
+                <e p="Systems" t="Include">
+                  <e p="Attack" t="Include">
+                    <e p="AttackSystem.cs" t="Include" />
+                    <e p="RangeAttackSystem.cs" t="Include" />
+                  </e>
+                  <e p="Movement" t="Include">
+                    <e p="AStarPathfindingSystem.cs" t="Include" />
+                    <e p="InputControl.cs" t="Include" />
+                    <e p="KeyboardInputSystem.cs" t="Include" />
+                    <e p="MovementSystem.cs" t="Include" />
+                    <e p="TouchInputSystem.cs" t="Include" />
+                  </e>
+                </e>
+                <e p="Types" t="Include">
+                  <e p="ArmorType.cs" t="Include" />
+                  <e p="BeardLength.cs" t="Include" />
+                  <e p="HairColor.cs" t="Include" />
+                  <e p="HairLength.cs" t="Include" />
+                  <e p="HumanoidGender.cs" t="Include" />
+                  <e p="HumanoidRace.cs" t="Include" />
+                  <e p="Limits.cs" t="Include" />
+                  <e p="MagicType.cs" t="Include" />
+                  <e p="ShieldType.cs" t="Include" />
+                  <e p="WeaponType.cs" t="Include" />
+                </e>
+                <e p="Weapon" t="Include">
+                  <e p="LeftHandCollection.cs" t="Include" />
+                  <e p="RightHandCollection.cs" t="Include" />
+                </e>
+              </e>
+            </e>
             <e p="ComponentsBase.cs" t="Include" />
             <e p="Game" t="Include">
               <e p="Scripts" t="Include">
@@ -225,6 +295,8 @@
             <e p="Helpers" t="Include">
               <e p="Scripts" t="Include">
                 <e p="Coroutines.cs" t="Include" />
+                <e p="ExitHelper.cs" t="Include" />
+                <e p="GameStateHelper.cs" t="Include" />
                 <e p="InjectionClassFactory.cs" t="Include" />
                 <e p="PrefabFactory.cs" t="Include" />
               </e>
@@ -233,6 +305,7 @@
             <e p="IArchitectureComponent.cs" t="Include" />
             <e p="Installer" t="Include">
               <e p="BattleInstaller.cs" t="Include" />
+              <e p="MainMenuInstaller.cs" t="Include" />
               <e p="PlayerCreationInstaller.cs" t="Include" />
               <e p="ProjectInstaller.cs" t="Include" />
             </e>
@@ -249,10 +322,28 @@
               </e>
             </e>
             <e p="Scenes" t="Include">
-              <e p="Configs" t="Include">
-                <e p="SceneConfig.cs" t="Include" />
+              <e p="MainMenu" t="Include">
+                <e p="MainMenuManager.cs" t="Include" />
+              </e>
+              <e p="PlayerCreation" t="Include">
+                <e p="Scripts" t="Include">
+                  <e p="BeardChanger.cs" t="Include" />
+                  <e p="GenderTypeChanger.cs" t="Include" />
+                  <e p="HairChanger.cs" t="Include" />
+                  <e p="PlayerCreationManager.cs" t="Include" />
+                  <e p="UI" t="Include">
+                    <e p="Selectors" t="Include">
+                      <e p="BaseSelector.cs" t="Include" />
+                      <e p="SelectionType.cs" t="Include" />
+                    </e>
+                    <e p="UIManager.cs" t="Include" />
+                  </e>
+                </e>
               </e>
               <e p="Scripts" t="Include">
+                <e p="Config" t="Include">
+                  <e p="SceneConfig.cs" t="Include" />
+                </e>
                 <e p="IScene.cs" t="Include" />
                 <e p="ISceneController.cs" t="Include" />
                 <e p="Scene.cs" t="Include" />
@@ -293,15 +384,42 @@
                 </e>
               </e>
             </e>
+            <e p="UI" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="HealthBar.cs" t="Include" />
+                <e p="IButton.cs" t="Include" />
+              </e>
+            </e>
             <e p="Utils" t="Include">
               <e p="Attributes" t="Include">
-                <e p="ClassReferenceAttribute.cs" t="Include" />
-                <e p="GameObjectOfTypeAttribute.cs" t="Include" />
-                <e p="SceneNameAttribute.cs" t="Include" />
+                <e p="ClassReference" t="Include">
+                  <e p="ClassReferenceAttribute.cs" t="Include" />
+                  <e p="Editor" t="Include">
+                    <e p="ClassReferenceAttributeDrawer.cs" t="Include" />
+                  </e>
+                </e>
+                <e p="GameObjectOfType" t="Include">
+                  <e p="Editor" t="Include">
+                    <e p="GameObjectOfTypeDrawer.cs" t="Include" />
+                  </e>
+                  <e p="GameObjectOfTypeAttribute.cs" t="Include" />
+                </e>
+                <e p="SceneName" t="Include">
+                  <e p="Editor" t="Include">
+                    <e p="SceneNameAttributeDrawer.cs" t="Include" />
+                  </e>
+                  <e p="SceneNameAttribute.cs" t="Include" />
+                </e>
               </e>
               <e p="PoolMono.cs" t="Include" />
+              <e p="Scripts" t="Include">
+                <e p="Editor" t="Include">
+                  <e p="UIEditorExtensions.cs" t="Include" />
+                </e>
+              </e>
             </e>
           </e>
+          <e p="Project.asmdef" t="Include" />
         </e>
         <e p="Joystick Pack" t="Include">
           <e p="Scripts" t="Include">
@@ -1161,137 +1279,17 @@
             <e p="zenject.asmdef" t="Include" />
           </e>
         </e>
-        <e p="Scripts" t="Include">
-          <e p="Battle" t="Include">
-            <e p="Battle.asmdef" t="Include" />
-            <e p="Enemy" t="Include">
-              <e p="EnemyData.cs" t="Include" />
-              <e p="EnemyPresenter.cs" t="Include" />
-              <e p="EnemySpawner.cs" t="Include" />
-              <e p="EnemyView.cs" t="Include" />
-              <e p="GeneratorEnemyData.cs" t="Include" />
-              <e p="Health" t="Include">
-                <e p="HealthEnemyBarPresenter.cs" t="Include" />
-                <e p="HealthEnemyBarView.cs" t="Include" />
-              </e>
-            </e>
-            <e p="Player" t="Include">
-              <e p="Animation" t="Include">
-                <e p="MeleeAttackAnimation.cs" t="Include" />
-                <e p="MovementAnimation.cs" t="Include" />
-              </e>
-              <e p="PlayerPresenter.cs" t="Include" />
-              <e p="PlayerView.cs" t="Include" />
-            </e>
-          </e>
-          <e p="Core" t="Include">
-            <e p="Animation" t="Include">
-              <e p="AnimationHumanoid.cs" t="Include" />
-            </e>
-            <e p="Core.asmdef" t="Include" />
-            <e p="Helpers" t="Include">
-              <e p="ExitHelper.cs" t="Include" />
-              <e p="GameStateHelper.cs" t="Include" />
-            </e>
-            <e p="Interfaces" t="Include">
-              <e p="IButton.cs" t="Include" />
-              <e p="ICharacterData.cs" t="Include" />
-            </e>
-            <e p="Parameters" t="Include">
-              <e p="Parameter.cs" t="Include" />
-            </e>
-            <e p="Player" t="Include">
-              <e p="PlayerData.cs" t="Include" />
-            </e>
-            <e p="Systems" t="Include">
-              <e p="Attack" t="Include">
-                <e p="AttackSystem.cs" t="Include" />
-                <e p="RangeAttackSystem.cs" t="Include" />
-              </e>
-              <e p="Movement" t="Include">
-                <e p="AStarPathfindingSystem.cs" t="Include" />
-                <e p="InputControl.cs" t="Include" />
-                <e p="KeyboardInputSystem.cs" t="Include" />
-                <e p="MovementSystem.cs" t="Include" />
-                <e p="TouchInputSystem.cs" t="Include" />
-              </e>
-            </e>
-            <e p="UI" t="Include">
-              <e p="HealthBar.cs" t="Include" />
-            </e>
-          </e>
-          <e p="MainMenu" t="Include">
-            <e p="MainMenu.asmdef" t="Include" />
-            <e p="MainMenuManager.cs" t="Include" />
-          </e>
-          <e p="PlayerCreation" t="Include">
-            <e p="Main" t="Include">
-              <e p="BeardChanger.cs" t="Include" />
-              <e p="GenderTypeChanger.cs" t="Include" />
-              <e p="HairChanger.cs" t="Include" />
-              <e p="PlayerCreationManager.cs" t="Include" />
-            </e>
-            <e p="PlayerCreation.asmdef" t="Include" />
-            <e p="UI" t="Include">
-              <e p="Selectors" t="Include">
-                <e p="BaseSelector.cs" t="Include" />
-                <e p="SelectionType.cs" t="Include" />
-              </e>
-              <e p="UIManager.cs" t="Include" />
-            </e>
-          </e>
-          <e p="Template" t="Include">
-            <e p="Creatures" t="Include">
-              <e p="Appearance" t="Include">
-                <e p="AppearanceIssuanceSystem.cs" t="Include" />
-                <e p="Armor" t="Include">
-                  <e p="BodyCollection.cs" t="Include" />
-                  <e p="BootsCollection.cs" t="Include" />
-                  <e p="HeadCollection.cs" t="Include" />
-                  <e p="PantsCollection.cs" t="Include" />
-                </e>
-                <e p="Hair" t="Include">
-                  <e p="BeardCollection.cs" t="Include" />
-                  <e p="HairHeadCollection.cs" t="Include" />
-                </e>
-                <e p="HumanoidCollection.cs" t="Include" />
-                <e p="Weapon" t="Include">
-                  <e p="LeftHandCollection.cs" t="Include" />
-                  <e p="RightHandCollection.cs" t="Include" />
-                </e>
-              </e>
-              <e p="Humanoid.cs" t="Include" />
-              <e p="Types" t="Include">
-                <e p="ArmorType.cs" t="Include" />
-                <e p="BeardLength.cs" t="Include" />
-                <e p="HairColor.cs" t="Include" />
-                <e p="HairLength.cs" t="Include" />
-                <e p="HumanoidGender.cs" t="Include" />
-                <e p="HumanoidRace.cs" t="Include" />
-                <e p="Limits.cs" t="Include" />
-                <e p="MagicType.cs" t="Include" />
-                <e p="ShieldType.cs" t="Include" />
-                <e p="WeaponType.cs" t="Include" />
-              </e>
-            </e>
-            <e p="Template.asmdef" t="Include" />
-          </e>
-        </e>
       </e>
       <e p="AstarPathfindingProject.csproj" t="IncludeRecursive" />
       <e p="AstarPathfindingProjectEditor.csproj" t="IncludeRecursive" />
-      <e p="Battle.csproj" t="IncludeRecursive" />
-      <e p="Core.csproj" t="IncludeRecursive" />
       <e p="DOTween.Modules.csproj" t="IncludeRecursive" />
       <e p="FinalProject.sln" t="IncludeFlat" />
       <e p="Joystick.csproj" t="IncludeRecursive" />
-      <e p="MainMenu.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
       <e p="PackageToolsEditor.csproj" t="IncludeRecursive" />
-      <e p="PlayerCreation.csproj" t="IncludeRecursive" />
+      <e p="Project.csproj" t="IncludeRecursive" />
       <e p="Temp\Bin" t="ExcludeRecursive" />
-      <e p="Template.csproj" t="IncludeRecursive" />
       <e p="Zenject-Editor.csproj" t="IncludeRecursive" />
       <e p="Zenject-IntegrationTests-Editor.csproj" t="IncludeRecursive" />
       <e p="Zenject-IntegrationTests.csproj" t="IncludeRecursive" />

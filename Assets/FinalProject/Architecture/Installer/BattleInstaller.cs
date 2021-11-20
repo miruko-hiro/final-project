@@ -1,4 +1,4 @@
-using Battle.Enemy;
+using FinalProject.Architecture.Characters.Enemy;
 using Zenject;
 
 namespace FinalProject.Architecture.Installer

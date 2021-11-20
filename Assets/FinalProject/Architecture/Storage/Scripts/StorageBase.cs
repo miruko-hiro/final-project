@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using FinalProject.Architecture.Helpers.Scripts;
 using FinalProject.Architecture.Storage.Scripts.Surrogates;
 using UnityEngine;
 
@@ -58,16 +59,17 @@ namespace FinalProject.Architecture.Storage.Scripts
         
         protected abstract void SaveAsyncInternal(Action callback = null);
 
-        public Coroutine SaveStarter(Action callback = null)
+        public Coroutine SaveStarter(Coroutines coroutines, Action callback = null)
         {
             OnStorageSaveStartedEvent?.Invoke();
-            return SaveStarterInternal(() => {
+            return SaveStarterInternal(coroutines,
+                () => {
                 callback?.Invoke();
                 OnStorageSaveCompletedEvent?.Invoke();
             });
         }
         
-        protected abstract Coroutine SaveStarterInternal(Action callback = null);
+        protected abstract Coroutine SaveStarterInternal(Coroutines coroutines, Action callback = null);
 
         public void Load()
         {
@@ -86,14 +88,15 @@ namespace FinalProject.Architecture.Storage.Scripts
         
         protected abstract void LoadAsyncInternal(Action<GameData> callback = null);
         
-        public Coroutine LoadStarter(Action<GameData> callback = null) {
-            return LoadStarterInternal(loadedData => {
+        public Coroutine LoadStarter(Coroutines coroutines, Action<GameData> callback = null) {
+            return LoadStarterInternal(coroutines,
+                loadedData => {
                 callback?.Invoke(GameData);
                 OnStorageLoadedEvent?.Invoke(GameData);
             });
         }
 
-        protected abstract Coroutine LoadStarterInternal(Action<GameData> callback = null);
+        protected abstract Coroutine LoadStarterInternal(Coroutines coroutines, Action<GameData> callback = null);
         
         public T Get<T>(string key) {
             return GameData.Get<T>(key);

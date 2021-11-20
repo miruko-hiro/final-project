@@ -1,5 +1,5 @@
-using Core.Helpers;
-using Core.Player;
+using FinalProject.Architecture.Characters.Player;
+using FinalProject.Architecture.Characters.Scripts.Appearance;
 using FinalProject.Architecture.Game.Scripts;
 using FinalProject.Architecture.Helpers.Scripts;
 using Template.Creatures.Appearance;
@@ -11,11 +11,10 @@ namespace FinalProject.Architecture.Installer
     public class ProjectInstaller : MonoInstaller
     {
         [SerializeField] private AppearanceIssuanceSystem appearanceIssuanceSystem;
-        [SerializeField] private Coroutines coroutines;
+        
         public override void InstallBindings()
         {
             Container.Bind<GameManager>().AsSingle();
-            Container.Bind<Coroutines>().FromInstance(coroutines).AsSingle();
             
             Container.Bind<ExitHelper>().AsSingle();
             Container.Bind<GameStateHelper>().AsSingle();
@@ -24,6 +23,9 @@ namespace FinalProject.Architecture.Installer
             
             Container.Bind<PlayerData>().AsSingle();
             Container.Bind<AppearanceIssuanceSystem>().FromInstance(appearanceIssuanceSystem).AsSingle();
+
+            Container.Bind<Coroutines>().FromNewComponentOnNewGameObject().AsSingle().NonLazy();
+            Container.Bind<GameStateManager>().FromNewComponentOnNewGameObject().AsSingle().NonLazy();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using FinalProject.Architecture.Helpers.Scripts;
 using UnityEngine;
 
 namespace FinalProject.Architecture
@@ -11,6 +12,6 @@ namespace FinalProject.Architecture
         public bool IsInitialized { get; }
         public bool IsLoggingEnabled { get; set; }
 
-        public Coroutine InitializeStarter();
+        public Coroutine InitializeStarter(Coroutines coroutines);
     }
 }
