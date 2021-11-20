@@ -6,23 +6,34 @@ using FinalProject.Architecture.Interactors.Scripts;
 using FinalProject.Architecture.Repositories.Scripts;
 using FinalProject.Architecture.Scenes.Scripts;
 using FinalProject.Architecture.Settings.Scripts;
+using Zenject;
 
 namespace FinalProject.Architecture.Game.Scripts
 {
-    public static class GameManager
+    public class GameManager
     {
-        public static event Action OnGameInitializedEvent;
+        public event Action OnGameInitializedEvent;
 
-        public static ArchitectureComponentState state { get; private set; } = ArchitectureComponentState.NotInitialized;
-        public static ISceneController SceneController { get; private set; }
-        public static IGameSettings GameSettings { get; private set; }
-        
-        public static void Run()
+        public ArchitectureComponentState state { get; private set; } = ArchitectureComponentState.NotInitialized;
+        public ISceneController SceneController { get; private set; }
+        public IGameSettings GameSettings { get; private set; }
+
+        private Coroutines _coroutines;
+        private InjectionClassFactory _injectionClassFactory;
+
+        [Inject]
+        public GameManager(Coroutines coroutines, InjectionClassFactory injectionClassFactory)
         {
-            Coroutines.StartRoutine(RunGameCoroutine());
+            _coroutines = coroutines;
+            _injectionClassFactory = injectionClassFactory;
         }
         
-        private static IEnumerator RunGameCoroutine() {
+        public void Run()
+        {
+            _coroutines.StartRoutine(RunGameCoroutine());
+        }
+        
+        private IEnumerator RunGameCoroutine() {
             state = ArchitectureComponentState.Initializing;
 
             InitGameSettings();
@@ -37,39 +48,39 @@ namespace FinalProject.Architecture.Game.Scripts
             OnGameInitializedEvent?.Invoke();
         }
         
-        private static void InitGameSettings() {
-            GameSettings = new GameSettings();
+        private void InitGameSettings() {
+            GameSettings = _injectionClassFactory.Create<GameSettings>();
         }
 
-        private static void InitSceneManager() {
-            SceneController = new SceneController();
+        private void InitSceneManager() {
+            SceneController = _injectionClassFactory.Create<SceneController>();
         }
         
-        public static T GetInteractor<T>() where T : IInteractor {
+        public T GetInteractor<T>() where T : IInteractor {
             return SceneController.SceneActual.GetInteractor<T>();
         }
 
-        public static IEnumerable<T> GetInteractors<T>() where T : IInteractor {
+        public IEnumerable<T> GetInteractors<T>() where T : IInteractor {
             return SceneController.SceneActual.GetInteractors<T>();
         }
 
-        public static T GetRepository<T>() where T : IRepository {
+        public T GetRepository<T>() where T : IRepository {
             return SceneController.SceneActual.GetRepository<T>();
         }
         
-        public static IEnumerable<T> GetRepositories<T>() where T : IRepository {
+        public IEnumerable<T> GetRepositories<T>() where T : IRepository {
             return SceneController.SceneActual.GetRepositories<T>();
         }
         
-        public static void SaveGame() {
+        public void SaveGame() {
             SceneController.SceneActual.Storage.Save();
         }
 
-        public static void SaveGameAsync(Action callback) {
+        public void SaveGameAsync(Action callback) {
             SceneController.SceneActual.Storage.SaveAsync(callback);
         }
 
-        public static IEnumerator SaveGameStarter(Action callback) {
+        public IEnumerator SaveGameStarter(Action callback) {
             yield return SceneController.SceneActual.Storage.SaveStarter();
         }
     }

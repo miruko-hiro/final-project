@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Zenject;
 
-namespace Core.Helpers
+namespace FinalProject.Architecture.Helpers.Scripts
 {
     public class PrefabFactory
     {

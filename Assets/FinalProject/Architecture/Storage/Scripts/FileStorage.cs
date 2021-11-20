@@ -4,14 +4,20 @@ using System.IO;
 using System.Threading;
 using FinalProject.Architecture.Helpers.Scripts;
 using UnityEngine;
+using Zenject;
 
 namespace FinalProject.Architecture.Storage.Scripts
 {
     public class FileStorage: StorageBase
     {
         public string FilePath { get; }
+
+        private Coroutines _coroutines;
 		
-        public FileStorage(string fileName) {
+        [Inject]
+        public FileStorage(Coroutines coroutines, string fileName)
+        {
+            _coroutines = coroutines;
             var folder = "Saves";
             var folderPath = $"{Application.persistentDataPath}/{folder}";
             if (!Directory.Exists(folderPath)) 
@@ -40,7 +46,7 @@ namespace FinalProject.Architecture.Storage.Scripts
 
         protected override Coroutine SaveStarterInternal(Action callback = null)
         {
-            return Coroutines.StartRoutine(SaveCoroutine(callback));
+            return _coroutines.StartRoutine(SaveCoroutine(callback));
         }
 		
         private IEnumerator SaveCoroutine(Action callback) {
@@ -82,7 +88,7 @@ namespace FinalProject.Architecture.Storage.Scripts
 
         protected override Coroutine LoadStarterInternal(Action<GameData> callback = null)
         {
-            return Coroutines.StartRoutine(LoadCoroutine(callback));
+            return _coroutines.StartRoutine(LoadCoroutine(callback));
         }
         
         private IEnumerator LoadCoroutine(Action<GameData> callback) {

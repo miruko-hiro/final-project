@@ -10,104 +10,36 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44998bfc-4b45-4a53-9d09-9eba23699c9d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/ArchitectureComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/ArchitectureComponent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/ArchitectureComponentState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/ArchitectureComponentState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/ComponentsBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/ComponentsBase.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Game/Scripts/GameStateManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Game/Scripts/GameStateManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/IArchitectureCaptureEvents.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/IArchitectureCaptureEvents.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/IArchitectureComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/IArchitectureComponent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Interactors/Scripts/IInteractor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Interactors/Scripts/IInteractor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Repositories/Scripts/IRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Repositories/Scripts/IRepository.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Configs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Configs/SceneConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/IScene.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/IScene.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/ISceneController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/ISceneController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/Music/MusicSettings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/Music/MusicSettings.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/Music/MusicSettingsData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/Music/MusicSettingsData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/Scripts/GameSettings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/Scripts/GameSettings.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/Scripts/IGameSettings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/Scripts/IGameSettings.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/Scripts/ISettings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/Scripts/ISettings.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/SoundEffects.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/SoundEffects/ISoundEffectsSettings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/SoundEffects/ISoundEffectsSettings.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/SoundEffects/SoundEffectsSettings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/SoundEffects/SoundEffectsSettings.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/SoundEffects/SoundEffectsSettingsData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/SoundEffects/SoundEffectsSettingsData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/Vibration.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/Vibration/IVibrationSettings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/Vibration/IVibrationSettings.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/Vibration/VibrationSettings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/Vibration/VibrationSettings.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/Vibration/VibrationSettingsData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/Vibration/VibrationSettingsData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Storage.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Storage/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Storage/Scripts/FileStorage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Storage/Scripts/FileStorage.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Storage/Scripts/GameData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Storage/Scripts/GameData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Storage/Scripts/StorageBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Storage/Scripts/StorageBase.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Storage/Scripts/Surrogates.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Storage/Scripts/Surrogates/QuaternionSerializationSurrogate.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Storage/Scripts/Surrogates/QuaternionSerializationSurrogate.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Storage/Scripts/Surrogates/Vector2SerializationSurrogate.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Storage/Scripts/Surrogates/Vector2SerializationSurrogate.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Storage/Scripts/Surrogates/Vector3SerializationSurrogate.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Storage/Scripts/Surrogates/Vector3SerializationSurrogate.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Utils.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Utils/Attributes.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Utils/Attributes/ClassReferenceAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Utils/Attributes/ClassReferenceAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Utils/Attributes/GameObjectOfTypeAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Utils/Attributes/GameObjectOfTypeAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Utils/Attributes/SceneNameAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Utils/Attributes/SceneNameAttribute.cs.meta" afterDir="false" />
+    <list default="true" id="44998bfc-4b45-4a53-9d09-9eba23699c9d" name="Default Changelist" comment="Обновлена архитектура">
+      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Installer.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Utils/PoolMono.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Utils/PoolMono.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FinalProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FinalProject/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FinalProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FinalProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Game/Scripts/Bank.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Game/Scripts/Bank.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/ArchitectureComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/ArchitectureComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/ComponentsBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/ComponentsBase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Game/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Game/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Game/Scripts/Test.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Game/Scripts/Test.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Interactors/Scripts/BankInteractor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Interactors/Scripts/BankInteractor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Game/Scripts/GameStateManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Game/Scripts/GameStateManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Helpers/Scripts/Coroutines.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Helpers/Scripts/Coroutines.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Interactors/Scripts/Interactor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Interactors/Scripts/Interactor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Interactors/Scripts/InteractorsBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Interactors/Scripts/InteractorsBase.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Repositories/Scripts/BankRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Repositories/Scripts/BankRepository.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Repositories/Scripts/RepositoriesBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Repositories/Scripts/RepositoriesBase.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Repositories/Scripts/Repository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Repositories/Scripts/Repository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/Scene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/Scene.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/SceneConfig.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/SceneConfig.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Configs/SceneConfig.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/SceneConfigExample.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/SceneConfigExample.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/SceneManagerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/SceneController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/SceneManagerBase.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/SceneController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/SceneManagerExample.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/SceneManagerExample.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/SceneController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/SceneController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/Scripts/GameSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/Scripts/GameSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Storage/Scripts/FileStorage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Storage/Scripts/FileStorage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Helpers/InjectionObjectFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Helpers/Scripts/InjectionClassFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Helpers/InjectionObjectFactory.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Helpers/Scripts/InjectionClassFactory.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Helpers/PrefabFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Helpers/Scripts/PrefabFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Helpers/PrefabFactory.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Helpers/Scripts/PrefabFactory.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/BattleInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Installer/BattleInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/BattleInstaller.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Installer/BattleInstaller.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/Installer.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/Installer.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/PlayerCreationInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Installer/PlayerCreationInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/PlayerCreationInstaller.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Installer/PlayerCreationInstaller.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/ProjectInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Installer/ProjectInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/ProjectInstaller.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Installer/ProjectInstaller.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,9 +52,9 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenu/MainMenuManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F2625FD8-44AA-4DD5-B6A3-882F24F14D79/59/bbcef32c/Random.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Installers/ProjectInstaller.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/FinalProject/Architecture/Installer/ProjectInstaller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerCreation/Main/PlayerCreationManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Installers/BattleInstaller.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/FinalProject/Architecture/Installer/BattleInstaller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD3EAA08-78D9-4CBE-8E45-F9C494D71647/98/ccb795e7/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DE1F8EF4-975B-4EAC-BEB0-ACCC1B22C9B0/f7/12649c0b/ShortcutExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/FinalProject/Architecture/Repositories/Scripts/Repository.cs" root0="FORCE_HIGHLIGHTING" />
@@ -136,16 +68,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/GameSettings/Audio/AudioSettingsData.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/GameSettings/Audio/SoundEffectsSettingsData.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/GameSettings/Audio/ISoundEffectsSettings.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/GameSettings/Vibration/VibrationSettingsData.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/GameSettings/Music/MusicSettingsData.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/GameSettings/SoundEffects/SoundEffectsSettingsData.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/GameSettings/SoundEffects/SoundEffectsSettings.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/GameSettings/Music/MusicSettings.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/GameSettings/Vibration/VibrationSettings.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/GameSettings/Scripts/ISettings.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/GameSettings/Scripts/IGameSettings.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/GameSettings/Music/IMusicSettings.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/GameSettings/SoundEffects/ISoundEffectsSettings.cs" />
@@ -155,7 +77,6 @@
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Storage/Scripts/Surrogates/Vector2SerializationSurrogate.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Storage/Scripts/Surrogates/Vector3SerializationSurrogate.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Storage/Scripts/StorageBase.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Storage/Scripts/FileStorage.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/Vibration/VibrationSettingsData.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/Vibration/VibrationSettings.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/Vibration/IVibrationSettings.cs" />
@@ -164,7 +85,6 @@
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/SoundEffects/SoundEffectsSettings.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/Scripts/ISettings.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/Scripts/IGameSettings.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/Scripts/GameSettings.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/Music/MusicSettingsData.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/Music/MusicSettings.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/Music/IMusicSettings.cs" />
@@ -174,19 +94,31 @@
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Utils/Attributes/GameObjectOfTypeAttribute.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/SceneConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Loading/LoadingScreen.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/Scene.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/SceneController.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/IScene.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Game/Scripts/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Game/Scripts/GameStateManager.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/IArchitectureComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/ArchitectureComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Interactors/Scripts/Interactor.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Repositories/Scripts/Repository.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Configs/SceneConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/ISceneManager.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/ISceneController.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Utils/PoolMono.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Utils/BigPoolMono.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Installers/ProjectInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Installer/PlayerCreationInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Installer/BattleInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Game/Scripts/GameStateManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Installer/ProjectInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Helpers/Scripts/Coroutines.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Helpers/Scripts/InjectionObjectFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Helpers/Scripts/PrefabFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Helpers/Scripts/InjectionClassFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/SceneController.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/ComponentsBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Interactors/Scripts/Interactor.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/ArchitectureComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Repositories/Scripts/Repository.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Storage/Scripts/FileStorage.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Settings/Scripts/GameSettings.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/Scene.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Game/Scripts/GameManager.cs" />
       </list>
     </option>
   </component>
@@ -241,7 +173,7 @@
       <workItem from="1637215318168" duration="23682000" />
       <workItem from="1637308681856" duration="23814000" />
       <workItem from="1637346253070" duration="6000" />
-      <workItem from="1637397377643" duration="4751000" />
+      <workItem from="1637397377643" duration="14608000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1636560270843</created>
@@ -292,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637329646797</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Обновлена архитектура">
+      <created>1637402804368</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1637402804368</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,17 +259,18 @@
     <MESSAGE value="Добавлены джойстики, движение и анимация боя" />
     <MESSAGE value="Добавлен DoTween и анимация, игровая сцена, А* поиск пути, враги" />
     <MESSAGE value="Добавлена новая архитектура" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена новая архитектура" />
+    <MESSAGE value="Обновлена архитектура" />
+    <option name="LAST_COMMIT_MESSAGE" value="Обновлена архитектура" />
   </component>
   <component name="WindowStateProjectService">
     <state x="834" y="418" key="Github.ShareDialog" timestamp="1636559940538">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="834" y="418" key="Github.ShareDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1636559940538" />
-    <state x="794" y="220" key="RiderGenerateDialog" timestamp="1637401721857">
+    <state x="794" y="220" key="RiderGenerateDialog" timestamp="1637403160502">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="220" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1637401721857" />
+    <state x="794" y="220" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1637403160502" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1636643387767">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -339,10 +279,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1637399480662" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1637329650022">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1637402809869">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1637329650022" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1637402809869" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1637235994141">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

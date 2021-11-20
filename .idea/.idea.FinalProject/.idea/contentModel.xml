@@ -225,10 +225,17 @@
             <e p="Helpers" t="Include">
               <e p="Scripts" t="Include">
                 <e p="Coroutines.cs" t="Include" />
+                <e p="InjectionClassFactory.cs" t="Include" />
+                <e p="PrefabFactory.cs" t="Include" />
               </e>
             </e>
             <e p="IArchitectureCaptureEvents.cs" t="Include" />
             <e p="IArchitectureComponent.cs" t="Include" />
+            <e p="Installer" t="Include">
+              <e p="BattleInstaller.cs" t="Include" />
+              <e p="PlayerCreationInstaller.cs" t="Include" />
+              <e p="ProjectInstaller.cs" t="Include" />
+            </e>
             <e p="Interactors" t="Include">
               <e p="Scripts" t="Include">
                 <e p="IInteractor.cs" t="Include" />
@@ -292,6 +299,7 @@
                 <e p="GameObjectOfTypeAttribute.cs" t="Include" />
                 <e p="SceneNameAttribute.cs" t="Include" />
               </e>
+              <e p="PoolMono.cs" t="Include" />
             </e>
           </e>
         </e>
@@ -1184,8 +1192,6 @@
             <e p="Helpers" t="Include">
               <e p="ExitHelper.cs" t="Include" />
               <e p="GameStateHelper.cs" t="Include" />
-              <e p="InjectionObjectFactory.cs" t="Include" />
-              <e p="PrefabFactory.cs" t="Include" />
             </e>
             <e p="Interfaces" t="Include">
               <e p="IButton.cs" t="Include" />
@@ -1213,12 +1219,6 @@
             <e p="UI" t="Include">
               <e p="HealthBar.cs" t="Include" />
             </e>
-          </e>
-          <e p="Installers" t="Include">
-            <e p="BattleInstaller.cs" t="Include" />
-            <e p="Installer.asmdef" t="Include" />
-            <e p="PlayerCreationInstaller.cs" t="Include" />
-            <e p="ProjectInstaller.cs" t="Include" />
           </e>
           <e p="MainMenu" t="Include">
             <e p="MainMenu.asmdef" t="Include" />
@@ -1284,7 +1284,6 @@
       <e p="Core.csproj" t="IncludeRecursive" />
       <e p="DOTween.Modules.csproj" t="IncludeRecursive" />
       <e p="FinalProject.sln" t="IncludeFlat" />
-      <e p="Installer.csproj" t="IncludeRecursive" />
       <e p="Joystick.csproj" t="IncludeRecursive" />
       <e p="MainMenu.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />

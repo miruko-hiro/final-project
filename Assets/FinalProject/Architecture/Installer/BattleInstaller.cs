@@ -1,7 +1,7 @@
 using Battle.Enemy;
 using Zenject;
 
-namespace Installers
+namespace FinalProject.Architecture.Installer
 {
     public class BattleInstaller : MonoInstaller
     {

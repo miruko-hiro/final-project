@@ -6,6 +6,7 @@ using FinalProject.Architecture.Repositories.Scripts;
 using FinalProject.Architecture.Scenes.Configs;
 using FinalProject.Architecture.Storage.Scripts;
 using UnityEngine;
+using Zenject;
 
 namespace FinalProject.Architecture.Scenes.Scripts
 {
@@ -14,15 +15,21 @@ namespace FinalProject.Architecture.Scenes.Scripts
         public SceneConfig SceneConfig { get; }
         public ComponentsBase<IRepository> RepositoriesBase { get; }
         public ComponentsBase<IInteractor> InteractorsBase { get; }
-        
         public StorageBase Storage { get; private set; }
-        
-        public Scene(SceneConfig config) {
-            SceneConfig = config;
-            RepositoriesBase = new ComponentsBase<IRepository>(config.RepositoriesReferences);
-            InteractorsBase = new ComponentsBase<IInteractor>(config.InteractorsReferences);
-        }
 
+        private Coroutines _coroutines;
+        private InjectionClassFactory _injectionClassFactory;
+        
+        [Inject]
+        public Scene(Coroutines coroutines, InjectionClassFactory injectionClassFactory, SceneConfig config)
+        {
+            _coroutines = coroutines;
+            _injectionClassFactory = injectionClassFactory;
+            SceneConfig = config;
+            RepositoriesBase = injectionClassFactory.CreateWithParameters<ComponentsBase<IRepository>>(new object[] {config.RepositoriesReferences});
+            InteractorsBase = injectionClassFactory.CreateWithParameters<ComponentsBase<IInteractor>>(new object[] {config.InteractorsReferences});
+        }
+        
         public void SendMessageOnCreate() {
             RepositoriesBase.SendMessageOnCreate();
             InteractorsBase.SendMessageOnCreate();
@@ -30,13 +37,13 @@ namespace FinalProject.Architecture.Scenes.Scripts
 
         public Coroutine InitializeStarter()
         {
-            return Coroutines.StartRoutine(InitializeCoroutine());
+            return _coroutines.StartRoutine(InitializeCoroutine());
         }
         
         private IEnumerator InitializeCoroutine() {
             // TODO: Load storage here if needed.
             if (SceneConfig.SaveDataForThisScene) {
-                Storage = new FileStorage(SceneConfig.SaveName);
+                Storage = _injectionClassFactory.CreateWithParameters<FileStorage>(new object[] {SceneConfig.SaveName});
                 Storage.Load();
             }
 

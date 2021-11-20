@@ -5,31 +5,19 @@ namespace FinalProject.Architecture.Helpers.Scripts
 {
     public sealed class Coroutines : MonoBehaviour
     {
-        private static Coroutines Instance
+        private void Awake()
         {
-            get
-            {    
-                if (m_instance == null)
-                {
-                    var go = new GameObject("[COROUTINE MANAGER]");
-                    m_instance = go.AddComponent<Coroutines>();
-                    DontDestroyOnLoad(go);
-                }
-
-                return m_instance;
-            }
+            DontDestroyOnLoad(gameObject);
         }
 
-        private static Coroutines m_instance;
-
-        public static Coroutine StartRoutine(IEnumerator enumerator)
+        public Coroutine StartRoutine(IEnumerator enumerator)
         {
-            return Instance.StartCoroutine(enumerator);
+            return StartCoroutine(enumerator);
         }
 
-        public static void StopRoutine(Coroutine routine)
+        public void StopRoutine(Coroutine routine)
         {
-            Instance.StopCoroutine(routine);
+            StopCoroutine(routine);
         }
     }
 }

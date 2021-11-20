@@ -2,7 +2,7 @@ using PlayerCreation.UI;
 using UnityEngine;
 using Zenject;
 
-namespace Installers
+namespace FinalProject.Architecture.Installer
 {
     public class PlayerCreationInstaller : MonoInstaller
     {

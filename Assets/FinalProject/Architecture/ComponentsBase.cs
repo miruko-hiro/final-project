@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using FinalProject.Architecture.Helpers.Scripts;
 using UnityEngine;
+using Zenject;
 
 namespace FinalProject.Architecture
 {
@@ -10,8 +11,12 @@ namespace FinalProject.Architecture
     {
         private Dictionary<Type, T> _componentMap;
 
-        public ComponentsBase(string[] classReferences)
+        private Coroutines _coroutines;
+        
+        [Inject]
+        public ComponentsBase(Coroutines coroutines, string[] classReferences)
         {
+            _coroutines = coroutines;
             _componentMap = CreateInstances<T>(classReferences);
         }
 
@@ -53,7 +58,7 @@ namespace FinalProject.Architecture
 
         public Coroutine InitializeAllComponentsStarter()
         {
-            return Coroutines.StartRoutine(InitializeAllComponentsCoroutine());
+            return _coroutines.StartRoutine(InitializeAllComponentsCoroutine());
         }
 
         private IEnumerator InitializeAllComponentsCoroutine()

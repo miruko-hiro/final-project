@@ -6,6 +6,7 @@ using FinalProject.Architecture.Scenes.Configs;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using Zenject;
 
 namespace FinalProject.Architecture.Scenes.Scripts
 {
@@ -19,8 +20,14 @@ namespace FinalProject.Architecture.Scenes.Scripts
         public Dictionary<string, SceneConfig> SceneConfigMap { get; }
         public bool IsLoading { get; private set; }
 
-        public SceneController()
+        private Coroutines _coroutines;
+        private InjectionClassFactory _injectionClassFactory;
+
+        [Inject]
+        public SceneController(Coroutines coroutines, InjectionClassFactory injectionClassFactory)
         {
+            _coroutines = coroutines;
+            _injectionClassFactory = injectionClassFactory;
             SceneConfigMap = new Dictionary<string, SceneConfig>();
             InitializeSceneConfigs();
         }
@@ -47,7 +54,7 @@ namespace FinalProject.Architecture.Scenes.Scripts
                 throw new NullReferenceException(
                     $"There is no scene ({sceneName}) in the scenes list. The name is wrong or you forget to add it o the list.");
 
-            return Coroutines.StartRoutine(LoadSceneCoroutine(config, sceneLoadedCallback, loadNewScene));
+            return _coroutines.StartRoutine(LoadSceneCoroutine(config, sceneLoadedCallback, loadNewScene));
         }
         
         protected virtual IEnumerator LoadSceneCoroutine(SceneConfig config, UnityAction<SceneConfig> sceneLoadedCallback, bool loadNewScene = true) {
@@ -55,8 +62,8 @@ namespace FinalProject.Architecture.Scenes.Scripts
             OnSceneLoadStartedEvent?.Invoke(config);
             
             if (loadNewScene)
-                yield return Coroutines.StartRoutine(LoadSceneAsyncCoroutine(config));
-            yield return Coroutines.StartRoutine(InitializeSceneCoroutine(config, sceneLoadedCallback));
+                yield return _coroutines.StartRoutine(LoadSceneAsyncCoroutine(config));
+            yield return _coroutines.StartRoutine(InitializeSceneCoroutine(config, sceneLoadedCallback));
 
             yield return new WaitForSecondsRealtime(1f);
             IsLoading = false;
@@ -81,7 +88,7 @@ namespace FinalProject.Architecture.Scenes.Scripts
         
         protected virtual IEnumerator InitializeSceneCoroutine(SceneConfig config, UnityAction<SceneConfig> sceneLoadedCallback) {
 
-            SceneActual = new Scene(config);
+            SceneActual = _injectionClassFactory.CreateWithParameters<Scene>(new object[] {config});
             yield return null;
 
             SceneActual.SendMessageOnCreate();

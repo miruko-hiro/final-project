@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using Zenject;
 
 namespace FinalProject.Architecture.Game.Scripts
 {
@@ -15,11 +16,19 @@ namespace FinalProject.Architecture.Game.Scripts
         [SerializeField] private bool _saveOnUnfocus = true;
         [SerializeField] private bool _saveOnExit = true;
         [SerializeField] private bool _isLoggingEnabled;
+
+        private GameManager _gameManager;
+
+        [Inject]
+        private void Construct(GameManager gameManager)
+        {
+            _gameManager = gameManager;
+        }
         
         private void Start() {
             DontDestroyOnLoad(gameObject);
             
-            GameManager.Run();
+            _gameManager.Run();
             
             if (_isLoggingEnabled)
                 Debug.Log($"GAME MANAGER: Game launched: {Application.productName}");
@@ -31,7 +40,7 @@ namespace FinalProject.Architecture.Game.Scripts
                     Debug.Log("GAME MANAGER: Paused");
                 
                 if (_saveOnPause)
-                    GameManager.SaveGame();
+                    _gameManager.SaveGame();
                 
                 OnApplicationPausedEvent?.Invoke();
             }
@@ -49,7 +58,7 @@ namespace FinalProject.Architecture.Game.Scripts
                     Debug.Log("GAME MANAGER: Game focused");
                 
                 if (_saveOnUnfocus)
-                    GameManager.SaveGame();
+                    _gameManager.SaveGame();
                 
                 OnApplicationUnfocusedEvent?.Invoke();
             }
@@ -66,7 +75,7 @@ namespace FinalProject.Architecture.Game.Scripts
                 Debug.Log("GAME MANAGER: Game exited");
             
             if (_saveOnExit)
-                GameManager.SaveGame();
+                _gameManager.SaveGame();
             
             OnApplicationQuitEvent?.Invoke();
         }

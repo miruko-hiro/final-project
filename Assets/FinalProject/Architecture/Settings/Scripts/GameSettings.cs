@@ -1,8 +1,10 @@
-﻿using FinalProject.Architecture.Settings.Music;
+﻿using FinalProject.Architecture.Helpers.Scripts;
+using FinalProject.Architecture.Settings.Music;
 using FinalProject.Architecture.Settings.SoundEffects;
 using FinalProject.Architecture.Settings.Vibration;
 using FinalProject.Architecture.Storage.Scripts;
 using UnityEngine;
+using Zenject;
 
 namespace FinalProject.Architecture.Settings.Scripts
 {
@@ -17,10 +19,11 @@ namespace FinalProject.Architecture.Settings.Scripts
 
         private StorageBase _settingsStorage;
         
-        public GameSettings(bool isLoggingEnabled = false) {
+        [Inject]
+        public GameSettings(InjectionClassFactory injectionClassFactory, bool isLoggingEnabled = false) {
             IsLoggingEnabled = isLoggingEnabled;
 			
-            _settingsStorage = new FileStorage(SettingsFileName);
+            _settingsStorage = injectionClassFactory.CreateWithParameters<FileStorage>(new object[] {SettingsFileName});
             _settingsStorage.Load();
 			
             MusicSettings = new MusicSettings(_settingsStorage);

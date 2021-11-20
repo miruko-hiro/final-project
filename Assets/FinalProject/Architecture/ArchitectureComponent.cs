@@ -2,6 +2,7 @@
 using System.Collections;
 using FinalProject.Architecture.Helpers.Scripts;
 using UnityEngine;
+using Zenject;
 
 namespace FinalProject.Architecture
 {
@@ -13,8 +14,12 @@ namespace FinalProject.Architecture
         public bool IsInitialized => State == ArchitectureComponentState.Initialized;
         public bool IsLoggingEnabled { get; set; }
 
-        public ArchitectureComponent()
+        private Coroutines _coroutines;
+
+        [Inject]
+        public ArchitectureComponent(Coroutines coroutines)
         {
+            _coroutines = coroutines;
             State = ArchitectureComponentState.NotInitialized;
         }
 
@@ -28,12 +33,12 @@ namespace FinalProject.Architecture
             if (State == ArchitectureComponentState.Initializing)
                 throw new Exception($"Component {this.GetType().Name} is initializing now");
 
-            return Coroutines.StartRoutine(InitializeCoroutineInternal());
+            return _coroutines.StartRoutine(InitializeCoroutineInternal());
         }
         
         private IEnumerator InitializeCoroutineInternal() {
             State = ArchitectureComponentState.Initializing;
-            yield return Coroutines.StartRoutine(InitializeCoroutine());
+            yield return _coroutines.StartRoutine(InitializeCoroutine());
             Initialize();
 
             State = ArchitectureComponentState.Initialized;
