@@ -1,57 +1,77 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using FinalProject.Architecture.Helpers.Scripts;
 using FinalProject.Architecture.Interactors.Scripts;
 using FinalProject.Architecture.Repositories.Scripts;
+using FinalProject.Architecture.Scenes.Configs;
+using FinalProject.Architecture.Storage.Scripts;
 using UnityEngine;
 
 namespace FinalProject.Architecture.Scenes.Scripts
 {
-    public class Scene
+    public class Scene: IScene
     {
-        private InteractorsBase _interactorsBase;
-        private RepositoriesBase _repositoriesBase;
-        private SceneConfig _sceneConfig;
-
-        public Scene(SceneConfig sceneConfig)
-        {
-            _sceneConfig = sceneConfig;
-            
-            _interactorsBase = new InteractorsBase(_sceneConfig);
-            _repositoriesBase = new RepositoriesBase(_sceneConfig);
+        public SceneConfig SceneConfig { get; }
+        public ComponentsBase<IRepository> RepositoriesBase { get; }
+        public ComponentsBase<IInteractor> InteractorsBase { get; }
+        
+        public StorageBase Storage { get; private set; }
+        
+        public Scene(SceneConfig config) {
+            SceneConfig = config;
+            RepositoriesBase = new ComponentsBase<IRepository>(config.RepositoriesReferences);
+            InteractorsBase = new ComponentsBase<IInteractor>(config.InteractorsReferences);
         }
 
-        public Coroutine InitializeAsync()
-        {
-            return Coroutines.StartRoutine(InitializeRoutine());
+        public void SendMessageOnCreate() {
+            RepositoriesBase.SendMessageOnCreate();
+            InteractorsBase.SendMessageOnCreate();
         }
 
-        private IEnumerator InitializeRoutine()
+        public Coroutine InitializeStarter()
         {
-            _interactorsBase.CreateAllInteractors();
-            _repositoriesBase.CreateAllRepositories();
-            yield return null;
+            return Coroutines.StartRoutine(InitializeCoroutine());
+        }
+        
+        private IEnumerator InitializeCoroutine() {
+            // TODO: Load storage here if needed.
+            if (SceneConfig.SaveDataForThisScene) {
+                Storage = new FileStorage(SceneConfig.SaveName);
+                Storage.Load();
+            }
+
+            yield return RepositoriesBase.InitializeAllComponentsStarter();
+            yield return InteractorsBase.InitializeAllComponentsStarter();
             
-            _interactorsBase.SendOnCreateToAllInteractors();
-            _repositoriesBase.SendOnCreateToAllRepositories();
-            yield return null;
-            
-            _interactorsBase.InitializeToAllInteractors();
-            _repositoriesBase.InitializeToAllRepositories();
-            yield return null;
-            
-            _interactorsBase.SendOnStartToAllInteractors();
-            _repositoriesBase.SendOnStartToAllRepositories();
-            yield return null;
+            RepositoriesBase.SendMessageOnInitialize();
+            InteractorsBase.SendMessageOnInitialize();
         }
 
-        public T GetRepository<T>() where T : Repository
+        public void Start()
         {
-            return _repositoriesBase.GetRepository<T>();
+            RepositoriesBase.SendMessageOnStart();
+            InteractorsBase.SendMessageOnStart();
         }
 
-        public T GetInteractor<T>() where T : Interactor
+        public void Save()
         {
-            return _interactorsBase.GetInteractor<T>();
+            Storage?.Save();
+        }
+
+        public T GetRepository<T>() where T : IRepository {
+            return RepositoriesBase.GetComponent<T>();
+        }
+
+        public IEnumerable<T> GetRepositories<T>() where T : IRepository {
+            return RepositoriesBase.GetComponents<T>();
+        }
+
+        public T GetInteractor<T>() where T : IInteractor {
+            return InteractorsBase.GetComponent<T>();
+        }
+        
+        public IEnumerable<T> GetInteractors<T>() where T : IInteractor {
+            return InteractorsBase.GetComponents<T>();
         }
     }
 }

@@ -213,11 +213,13 @@
         </e>
         <e p="FinalProject" t="Include">
           <e p="Architecture" t="Include">
+            <e p="ArchitectureComponent.cs" t="Include" />
+            <e p="ArchitectureComponentState.cs" t="Include" />
+            <e p="ComponentsBase.cs" t="Include" />
             <e p="Game" t="Include">
               <e p="Scripts" t="Include">
-                <e p="Bank.cs" t="Include" />
                 <e p="GameManager.cs" t="Include" />
-                <e p="Test.cs" t="Include" />
+                <e p="GameStateManager.cs" t="Include" />
               </e>
             </e>
             <e p="Helpers" t="Include">
@@ -225,27 +227,70 @@
                 <e p="Coroutines.cs" t="Include" />
               </e>
             </e>
+            <e p="IArchitectureCaptureEvents.cs" t="Include" />
+            <e p="IArchitectureComponent.cs" t="Include" />
             <e p="Interactors" t="Include">
               <e p="Scripts" t="Include">
-                <e p="BankInteractor.cs" t="Include" />
+                <e p="IInteractor.cs" t="Include" />
                 <e p="Interactor.cs" t="Include" />
-                <e p="InteractorsBase.cs" t="Include" />
               </e>
             </e>
             <e p="repositories" t="Include">
               <e p="Scripts" t="Include">
-                <e p="BankRepository.cs" t="Include" />
-                <e p="RepositoriesBase.cs" t="Include" />
+                <e p="IRepository.cs" t="Include" />
                 <e p="Repository.cs" t="Include" />
               </e>
             </e>
             <e p="Scenes" t="Include">
-              <e p="Scripts" t="Include">
-                <e p="Scene.cs" t="Include" />
+              <e p="Configs" t="Include">
                 <e p="SceneConfig.cs" t="Include" />
-                <e p="SceneConfigExample.cs" t="Include" />
-                <e p="SceneManagerBase.cs" t="Include" />
-                <e p="SceneManagerExample.cs" t="Include" />
+              </e>
+              <e p="Scripts" t="Include">
+                <e p="IScene.cs" t="Include" />
+                <e p="ISceneController.cs" t="Include" />
+                <e p="Scene.cs" t="Include" />
+                <e p="SceneController.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Settings" t="Include">
+              <e p="Music" t="Include">
+                <e p="IMusicSettings.cs" t="Include" />
+                <e p="MusicSettings.cs" t="Include" />
+                <e p="MusicSettingsData.cs" t="Include" />
+              </e>
+              <e p="Scripts" t="Include">
+                <e p="GameSettings.cs" t="Include" />
+                <e p="IGameSettings.cs" t="Include" />
+                <e p="ISettings.cs" t="Include" />
+              </e>
+              <e p="SoundEffects" t="Include">
+                <e p="ISoundEffectsSettings.cs" t="Include" />
+                <e p="SoundEffectsSettings.cs" t="Include" />
+                <e p="SoundEffectsSettingsData.cs" t="Include" />
+              </e>
+              <e p="Vibration" t="Include">
+                <e p="IVibrationSettings.cs" t="Include" />
+                <e p="VibrationSettings.cs" t="Include" />
+                <e p="VibrationSettingsData.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Storage" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="FileStorage.cs" t="Include" />
+                <e p="GameData.cs" t="Include" />
+                <e p="StorageBase.cs" t="Include" />
+                <e p="Surrogates" t="Include">
+                  <e p="QuaternionSerializationSurrogate.cs" t="Include" />
+                  <e p="Vector2SerializationSurrogate.cs" t="Include" />
+                  <e p="Vector3SerializationSurrogate.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="Utils" t="Include">
+              <e p="Attributes" t="Include">
+                <e p="ClassReferenceAttribute.cs" t="Include" />
+                <e p="GameObjectOfTypeAttribute.cs" t="Include" />
+                <e p="SceneNameAttribute.cs" t="Include" />
               </e>
             </e>
           </e>
