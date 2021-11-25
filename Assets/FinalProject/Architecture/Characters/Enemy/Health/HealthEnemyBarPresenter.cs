@@ -1,14 +1,13 @@
-﻿using FinalProject.Architecture.Characters.Scripts;
-using FinalProject.Architecture.UI.Scripts;
+﻿using FinalProject.Architecture.UI.Scripts;
 
 namespace FinalProject.Architecture.Characters.Enemy.Health
 {
     public class HealthEnemyBarPresenter
     {
         private readonly HealthBar _view;
-        private readonly ICharacterData _model;
+        private readonly EnemyData _model;
 
-        public HealthEnemyBarPresenter(HealthBar view, ICharacterData model)
+        public HealthEnemyBarPresenter(HealthBar view, EnemyData model)
         {
             _view = view;
             _model = model;

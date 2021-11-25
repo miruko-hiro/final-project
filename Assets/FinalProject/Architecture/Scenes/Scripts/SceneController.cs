@@ -6,7 +6,6 @@ using FinalProject.Architecture.Scenes.Scripts.Config;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
-using Zenject;
 
 namespace FinalProject.Architecture.Scenes.Scripts
 {
@@ -15,6 +14,7 @@ namespace FinalProject.Architecture.Scenes.Scripts
         private const string ConfigFolder = "SceneConfigs";
         public event Action<SceneConfig> OnSceneLoadStartedEvent;
         public event Action<SceneConfig> OnSceneLoadCompletedEvent;
+        public event Action<float> OnChangeProgressLoadEvent;
         
         public IScene SceneActual { get; private set; }
         public Dictionary<string, SceneConfig> SceneConfigMap { get; }
@@ -28,7 +28,7 @@ namespace FinalProject.Architecture.Scenes.Scripts
         
         private void InitializeSceneConfigs() {
             var allSceneConfigs = Resources.LoadAll<SceneConfig>(ConfigFolder);
-            foreach (var sceneConfig in allSceneConfigs) 
+            foreach (var sceneConfig in allSceneConfigs)
                 SceneConfigMap[sceneConfig.SceneName] = sceneConfig;
         }
 
@@ -55,9 +55,9 @@ namespace FinalProject.Architecture.Scenes.Scripts
             IsLoading = true;
             OnSceneLoadStartedEvent?.Invoke(config);
             
+            yield return coroutines.StartRoutine(InitializeSceneCoroutine(coroutines, config, sceneLoadedCallback));
             if (loadNewScene)
                 yield return coroutines.StartRoutine(LoadSceneAsyncCoroutine(config));
-            yield return coroutines.StartRoutine(InitializeSceneCoroutine(coroutines, config, sceneLoadedCallback));
 
             yield return new WaitForSecondsRealtime(1f);
             IsLoading = false;
@@ -71,16 +71,19 @@ namespace FinalProject.Architecture.Scenes.Scripts
 
             var progressDivider = 0.9f;
             var progress = asyncOperation.progress / progressDivider;
+            OnChangeProgressLoadEvent?.Invoke(progress);
             
             while (progress < 1f) {
                 yield return null;
                 progress = asyncOperation.progress / progressDivider;
+                OnChangeProgressLoadEvent?.Invoke(progress);
             }
 
             asyncOperation.allowSceneActivation = true;
         }
-        protected virtual IEnumerator InitializeSceneCoroutine(Coroutines coroutines, SceneConfig config, UnityAction<SceneConfig> sceneLoadedCallback) {
-
+        protected virtual IEnumerator InitializeSceneCoroutine(Coroutines coroutines, SceneConfig config, UnityAction<SceneConfig> sceneLoadedCallback) 
+        {
+            Debug.Log(Time.deltaTime);
             SceneActual = new Scene(config);
             yield return null;
 

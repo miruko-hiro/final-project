@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Template.Creatures.Appearance.Armor
+namespace FinalProject.Architecture.Characters.Scripts.Armor
 {
     public class PantsCollection : MonoBehaviour
     {
@@ -9,7 +9,7 @@ namespace Template.Creatures.Appearance.Armor
 
         public Sprite GetSprite(int index)
         {
-            return pants[index];
+            return index < 0 ? null : pants[index];
         }
     }
 }

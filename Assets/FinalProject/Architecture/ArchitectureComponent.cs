@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using FinalProject.Architecture.Helpers.Scripts;
+using FinalProject.Architecture.Scenes.Scripts;
+using FinalProject.Architecture.Storage.Scripts;
 using UnityEngine;
 using Zenject;
 
@@ -55,7 +57,7 @@ namespace FinalProject.Architecture
         /// </summary>
         protected virtual void Initialize() { }
 
-        public virtual void OnInitialize() { }
+        public virtual void OnInitialize(StorageBase storageBase, IScene scene) { }
 
         public virtual void OnStart() { }
 

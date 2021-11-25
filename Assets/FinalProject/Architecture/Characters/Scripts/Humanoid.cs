@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Template.Creatures
+namespace FinalProject.Architecture.Characters.Scripts
 {
     public abstract class Humanoid : MonoBehaviour
     {

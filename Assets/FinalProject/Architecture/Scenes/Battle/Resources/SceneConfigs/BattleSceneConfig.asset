@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e647e7498064b31a03424bb1f18a8d8, type: 3}
+  m_Name: BattleSceneConfig
+  m_EditorClassIdentifier: 
+  _sceneName: Battle
+  _repositoryReferences:
+  - FinalProject.Architecture.Characters.Player.Repositories.PlayerBeardRepository
+  - FinalProject.Architecture.Characters.Player.Repositories.PlayerBodyRepository
+  - FinalProject.Architecture.Characters.Player.Repositories.PlayerBootsRepository
+  - FinalProject.Architecture.Characters.Player.Repositories.PlayerHairRepository
+  - FinalProject.Architecture.Characters.Player.Repositories.PlayerHeadRepository
+  - FinalProject.Architecture.Characters.Player.Repositories.PlayerHealthRepository
+  - FinalProject.Architecture.Characters.Player.Repositories.PlayerPantsRepository
+  - FinalProject.Architecture.Characters.Player.Repositories.PlayerRaceRepository
+  - FinalProject.Architecture.Characters.Player.Repositories.PlayerShieldRepository
+  - FinalProject.Architecture.Characters.Player.Repositories.PlayerWeaponRepository
+  _interactorsReferences:
+  - FinalProject.Architecture.Characters.Player.Interactors.PlayerBeardInteractor
+  - FinalProject.Architecture.Characters.Player.Interactors.PlayerBodyInteractor
+  - FinalProject.Architecture.Characters.Player.Interactors.PlayerBootsInteractor
+  - FinalProject.Architecture.Characters.Player.Interactors.PlayerHairInteractor
+  - FinalProject.Architecture.Characters.Player.Interactors.PlayerHeadInteractor
+  - FinalProject.Architecture.Characters.Player.Interactors.PlayerHealthInspector
+  - FinalProject.Architecture.Characters.Player.Interactors.PlayerPantsInteractor
+  - FinalProject.Architecture.Characters.Player.Interactors.PlayerRaceInteractor
+  - FinalProject.Architecture.Characters.Player.Interactors.PlayerShieldInteractor
+  - FinalProject.Architecture.Characters.Player.Interactors.PlayerWeaponInteractor
+  _saveDataForThisScene: 1
+  _saveName: Player.data

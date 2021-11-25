@@ -1,4 +1,4 @@
-﻿using Template.Creatures;
+﻿using FinalProject.Architecture.Characters.Scripts;
 using UnityEngine;
 
 namespace FinalProject.Architecture.Characters.Enemy

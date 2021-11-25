@@ -1,9 +1,7 @@
-﻿using System;
+﻿using FinalProject.Architecture.Characters.Scripts.Armor;
+using FinalProject.Architecture.Characters.Scripts.Hair;
 using FinalProject.Architecture.Characters.Scripts.Types;
 using FinalProject.Architecture.Characters.Scripts.Weapon;
-using Template.Creatures.Appearance;
-using Template.Creatures.Appearance.Armor;
-using Template.Creatures.Appearance.Hair;
 using UnityEngine;
 
 namespace FinalProject.Architecture.Characters.Scripts.Appearance
@@ -23,54 +21,49 @@ namespace FinalProject.Architecture.Characters.Scripts.Appearance
         [SerializeField] private RightHandCollection rightHandCollection;
         [SerializeField] private LeftHandCollection leftHandCollection;
 
-        public Sprite GetHumanoid(int index, HumanoidRace race, HumanoidGender gender)
+        public Sprite GetHumanoid(HumanoidRaceProperties raceProperties)
         {
-            return humanoidCollection.GetSprite(index, race, gender);
+            return humanoidCollection.GetSprite(raceProperties.SpriteIndex, raceProperties.Race, raceProperties.Gender);
         }
 
-        public Sprite GetHairHead(int index, HairLength type, HairColor color)
+        public Sprite GetHairHead(HairProperties hairProperties)
         {
-            return hairHeadCollection.GetSprite(index, type, color);
+            return hairHeadCollection.GetSprite(hairProperties.SpriteIndex, hairProperties.HairLength, hairProperties.HairColor);
         }
 
-        public Sprite GetBeard(int index, BeardLength type, HairColor color)
+        public Sprite GetBeard(BeardProperties beardProperties)
         {
-            return beardCollection.GetSprite(index, type, color);
+            return beardCollection.GetSprite(beardProperties.SpriteIndex, beardProperties.BeardLength, beardProperties.BeardColor);
         }
 
-        public Sprite GetHeadArmor(int index, ArmorType type)
+        public Sprite GetHeadArmor(HeadProperties headProperties)
         {
-            return headCollection.GetSprite(index, type);
+            return headCollection.GetSprite(headProperties.SpriteIndex, headProperties.ArmorType);
         }
 
-        public Sprite GetBodyArmor(int index, ArmorType type)
+        public Sprite GetBodyArmor(BodyProperties bodyProperties)
         {
-            return bodyCollection.GetSprite(index, type);
+            return bodyCollection.GetSprite(bodyProperties.SpriteIndex, bodyProperties.ArmorType);
         }
 
-        public Sprite GetPantsArmor(int index)
+        public Sprite GetPantsArmor(PantsProperties pantsProperties)
         {
-            return pantsCollection.GetSprite(index);
+            return pantsCollection.GetSprite(pantsProperties.SpriteIndex);
         }
 
-        public Sprite GetBootsArmor(int index)
+        public Sprite GetBootsArmor(BootsProperties bootsProperties)
         {
-            return bootsCollection.GetSprite(index);
+            return bootsCollection.GetSprite(bootsProperties.SpriteIndex);
         }
 
-        public Sprite GetMagicalWeapon(int index, MagicType type)
+        public Sprite GetWeapon(WeaponProperties weaponProperties)
         {
-            return rightHandCollection.GetMagicSprite(index, type);
+            return rightHandCollection.GetSprite(weaponProperties.SpriteIndex, weaponProperties.WeaponType, weaponProperties.MagicType);
         }
 
-        public Sprite GetWeapon(int index, WeaponType type)
+        public Sprite GetShield(ShieldProperties shieldProperties)
         {
-            return rightHandCollection.GetSprite(index, type);
-        }
-
-        public Sprite GetShield(int index, ShieldType type)
-        {
-            return leftHandCollection.GetSprite(index, type);
+            return leftHandCollection.GetSprite(shieldProperties.SpriteIndex, shieldProperties.ShieldType);
         }
     }
 }

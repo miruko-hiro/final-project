@@ -1,5 +1,4 @@
 ﻿using FinalProject.Architecture.Characters.Scripts;
-using Template.Creatures;
 using UnityEngine;
 
 namespace FinalProject.Architecture.Characters.Enemy
@@ -7,9 +6,9 @@ namespace FinalProject.Architecture.Characters.Enemy
     public class EnemyPresenter
     {
         private readonly Humanoid _view;
-        private readonly ICharacterData _model;
+        private readonly EnemyData _model;
 
-        public EnemyPresenter(Humanoid view, ICharacterData model)
+        public EnemyPresenter(Humanoid view, EnemyData model)
         {
             _view = view;
             _model = model;

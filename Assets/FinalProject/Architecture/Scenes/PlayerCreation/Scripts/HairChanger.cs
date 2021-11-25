@@ -1,25 +1,26 @@
 ﻿using System;
 using FinalProject.Architecture.Characters.Player;
+using FinalProject.Architecture.Characters.Player.Interactors;
+using FinalProject.Architecture.Characters.Scripts;
 using FinalProject.Architecture.Characters.Scripts.Appearance;
 using FinalProject.Architecture.Characters.Scripts.Types;
+using FinalProject.Architecture.Game.Scripts;
 using FinalProject.Architecture.Scenes.PlayerCreation.Scripts.UI.Selectors;
-using Template.Creatures;
-using Template.Creatures.Appearance;
 
 namespace FinalProject.Architecture.Scenes.PlayerCreation.Scripts
 {
     public class HairChanger
     {
-        private readonly PlayerData _pData;
-        private readonly Humanoid _player;
+        private readonly PlayerCreationView _player;
         private readonly AppearanceIssuanceSystem _dispenser;
         private HairColor _hairColor = HairColor.Black;
         private int _index =  0;
         private HairLength _hairLength = HairLength.Short;
+        private PlayerHairInteractor _playerHairInteractor;
 
-        public HairChanger(PlayerData pData, Humanoid player, AppearanceIssuanceSystem dispenser)
+        public HairChanger(GameManager gameManager, PlayerCreationView player, AppearanceIssuanceSystem dispenser)
         {
-            _pData = pData;
+            _playerHairInteractor = gameManager.GetInteractor<PlayerHairInteractor>();
             _player = player;
             _dispenser = dispenser;
         }
@@ -40,10 +41,18 @@ namespace FinalProject.Architecture.Scenes.PlayerCreation.Scripts
         {
             if (_index == 0)
             {
-                if (_hairLength == HairLength.Long)
-                    SetHairStyle(Limits.ShortHairIndex - 1, HairLength.Short);
-                else
-                    SetHairStyle(Limits.LongHairIndex - 1, HairLength.Long);
+                switch (_hairLength)
+                {
+                    case HairLength.Long:
+                        SetHairStyle(Limits.ShortHairIndex - 1, HairLength.Short);
+                        break;
+                    case HairLength.Short:
+                        SetHairStyle(0, HairLength.None);
+                        break;
+                    case HairLength.None:
+                        SetHairStyle(Limits.LongHairIndex - 1, HairLength.Long);
+                        break;
+                }
             }
             else
                 SetHairStyle(_index - 1, _hairLength);
@@ -52,9 +61,11 @@ namespace FinalProject.Architecture.Scenes.PlayerCreation.Scripts
         private void DoStyleWhenNext()
         {
             if (_index == Limits.LongHairIndex - 1 && _hairLength == HairLength.Long)
-                SetHairStyle(0, HairLength.Short);
+                SetHairStyle(0, HairLength.None);
             else if (_index == Limits.ShortHairIndex - 1 && _hairLength == HairLength.Short)
                 SetHairStyle(0, HairLength.Long);
+            else if (_index == 0 && _hairLength == HairLength.None)
+                SetHairStyle(0, HairLength.Short);
             else
                 SetHairStyle(_index + 1, _hairLength);
         }
@@ -134,8 +145,13 @@ namespace FinalProject.Architecture.Scenes.PlayerCreation.Scripts
 
         private void SetHair()
         {
-            _pData.HairSprite.Value = _dispenser.GetHairHead(_index, _hairLength, _hairColor);
-            _player.Hair = _pData.HairSprite.Value;
+            var hairProperties = _playerHairInteractor.GetHairProperties();
+            hairProperties.HairColor = _hairColor;
+            hairProperties.HairLength = _hairLength;
+            hairProperties.SpriteIndex = _index;
+            _playerHairInteractor.ChangeHair(hairProperties);
+            
+            _player.Hair = _dispenser.GetHairHead(hairProperties);
         }
     }
 }

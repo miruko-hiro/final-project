@@ -1,5 +1,4 @@
 ﻿using System;
-using FinalProject.Architecture.Helpers.Scripts;
 using UnityEngine;
 using Zenject;
 
@@ -14,27 +13,22 @@ namespace FinalProject.Architecture.Game.Scripts
         public static event Action OnApplicationQuitEvent;
         
         [SerializeField] private bool _saveOnPause;
-        [SerializeField] private bool _saveOnUnfocus = true;
+        [SerializeField] private bool _saveOnUnfocus;
         [SerializeField] private bool _saveOnExit = true;
-        [SerializeField] private bool _isLoggingEnabled;
+        [SerializeField] private bool _isLoggingEnabled = true;
 
         private GameManager _gameManager;
-        private Coroutines _coroutines;
         
         [Inject]
-        private void Construct(GameManager gameManager, Coroutines coroutines)
+        private void Construct(GameManager gameManager)
         {
             _gameManager = gameManager;
-            _coroutines = coroutines;
         }
         
         private void Start() {
-            _gameManager.Run(_coroutines);
             
             if (_isLoggingEnabled)
                 Debug.Log($"GAME MANAGER: Game launched: {Application.productName}");
-            
-            Debug.Log(123);
         }
         
         private void OnApplicationPause(bool pauseStatus) {
@@ -58,7 +52,7 @@ namespace FinalProject.Architecture.Game.Scripts
         private void OnApplicationFocus(bool hasFocus) {
             if (!hasFocus) {
                 if (_isLoggingEnabled)
-                    Debug.Log("GAME MANAGER: Game focused");
+                    Debug.Log("GAME MANAGER: Game unfocused");
                 
                 if (_saveOnUnfocus)
                     _gameManager.SaveGame();
@@ -67,7 +61,7 @@ namespace FinalProject.Architecture.Game.Scripts
             }
             else {
                 if (_isLoggingEnabled)
-                    Debug.Log("GAME MANAGER: Game unfocused");
+                    Debug.Log("GAME MANAGER: Game focused");
                 
                 OnApplicationFocusedEvent?.Invoke();
             }

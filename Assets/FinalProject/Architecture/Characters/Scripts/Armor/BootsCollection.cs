@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Template.Creatures.Appearance.Armor
+namespace FinalProject.Architecture.Characters.Scripts.Armor
 {
     public class BootsCollection : MonoBehaviour
     {
@@ -8,7 +8,7 @@ namespace Template.Creatures.Appearance.Armor
         [SerializeField] private Sprite[] boots = new Sprite[12];
         public Sprite GetSprite(int index)
         {
-            return boots[index];
+            return index < 0 ? null : boots[index];
         }
     }
 }

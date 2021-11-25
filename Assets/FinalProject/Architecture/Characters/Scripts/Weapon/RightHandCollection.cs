@@ -19,7 +19,7 @@ namespace FinalProject.Architecture.Characters.Scripts.Weapon
         [SerializeField] private Sprite[] lances = new Sprite[12];
         [SerializeField] private Sprite[] poleaxes = new Sprite[18];
 
-        public Sprite GetMagicSprite(int index, MagicType type)
+        private Sprite GetMagicSprite(int index, MagicType type)
         {
             return type switch
             {
@@ -31,7 +31,7 @@ namespace FinalProject.Architecture.Characters.Scripts.Weapon
             };
         }
         
-        public Sprite GetSprite(int index, WeaponType type)
+        public Sprite GetSprite(int index, WeaponType type, MagicType magicType)
         {
             return type switch
             {
@@ -41,6 +41,7 @@ namespace FinalProject.Architecture.Characters.Scripts.Weapon
                 WeaponType.Club => clubs[index],
                 WeaponType.Lance => lances[index],
                 WeaponType.Poleaxe => poleaxes[index],
+                WeaponType.Staff => GetMagicSprite(index, magicType),
                 _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
             };
         }

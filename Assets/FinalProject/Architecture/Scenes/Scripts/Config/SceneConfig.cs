@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace FinalProject.Architecture.Scenes.Scripts.Config
 {
-    [CreateAssetMenu(fileName = "SceneConfig", menuName = "Architecture/Scenes/Resources/SceneConfigs")]
+    [CreateAssetMenu(fileName = "SceneConfig", menuName = "Architecture/Scenes/New SceneConfig")]
     public sealed class SceneConfig: ScriptableObject
     {
         [SerializeField, SceneName] private string _sceneName;

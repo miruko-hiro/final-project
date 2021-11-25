@@ -1,25 +1,26 @@
 ﻿using System;
 using FinalProject.Architecture.Characters.Player;
+using FinalProject.Architecture.Characters.Player.Interactors;
+using FinalProject.Architecture.Characters.Scripts;
 using FinalProject.Architecture.Characters.Scripts.Appearance;
 using FinalProject.Architecture.Characters.Scripts.Types;
+using FinalProject.Architecture.Game.Scripts;
 using FinalProject.Architecture.Scenes.PlayerCreation.Scripts.UI.Selectors;
-using Template.Creatures;
-using Template.Creatures.Appearance;
 
 namespace FinalProject.Architecture.Scenes.PlayerCreation.Scripts
 {
     public class BeardChanger
     {
-        private readonly PlayerData _pData;
-        private readonly Humanoid _player;
+        private readonly PlayerCreationView _player;
         private readonly AppearanceIssuanceSystem _dispenser;
         private int _index =  0;
         private BeardLength _beardLength = BeardLength.Mustache;
         private HairColor _beardColor = HairColor.Black;
+        private PlayerBeardInteractor _playerBeardInteractor;
 
-        public BeardChanger(PlayerData pData, Humanoid player, AppearanceIssuanceSystem dispenser)
+        public BeardChanger(GameManager gameManager, PlayerCreationView player, AppearanceIssuanceSystem dispenser)
         {
-            _pData = pData;
+            _playerBeardInteractor = gameManager.GetInteractor<PlayerBeardInteractor>();
             _player = player;
             _dispenser = dispenser;
         }
@@ -40,10 +41,20 @@ namespace FinalProject.Architecture.Scenes.PlayerCreation.Scripts
         {
             if (_index == 0)
             {
-                if (_beardLength == BeardLength.Beard)
-                    SetBeardStyle(Limits.MustacheIndex - 1, BeardLength.Mustache);
-                else
-                    SetBeardStyle(Limits.BeardIndex - 1, BeardLength.Beard);
+                switch (_beardLength)
+                {
+                    case BeardLength.Beard:
+                        SetBeardStyle(Limits.MustacheIndex - 1, BeardLength.Mustache);
+                        break;
+                    case BeardLength.Mustache:
+                        SetBeardStyle(0, BeardLength.None);
+                        break;
+                    case BeardLength.None:
+                        SetBeardStyle(Limits.BeardIndex - 1, BeardLength.Beard);
+                        break;
+                    default: 
+                        throw new ArgumentOutOfRangeException(nameof(_beardLength), _beardLength, null);
+                }
                     
             }
             else
@@ -53,9 +64,11 @@ namespace FinalProject.Architecture.Scenes.PlayerCreation.Scripts
         private void DoStyleWhenNext()
         {
             if (_index == Limits.BeardIndex - 1 && _beardLength == BeardLength.Beard)
-                SetBeardStyle(0, BeardLength.Mustache);
+                SetBeardStyle(0, BeardLength.None);
             else if (_index == Limits.MustacheIndex - 1 && _beardLength == BeardLength.Mustache)
                 SetBeardStyle(0, BeardLength.Beard);
+            else if (_index == 0 && _beardLength == BeardLength.None)
+                SetBeardStyle(0, BeardLength.Mustache);
             else
                 SetBeardStyle(_index + 1, _beardLength);
         }
@@ -135,8 +148,13 @@ namespace FinalProject.Architecture.Scenes.PlayerCreation.Scripts
 
         private void SetBeard()
         {
-            _pData.BeardSprite.Value = _dispenser.GetBeard(_index, _beardLength, _beardColor);
-            _player.Beard = _pData.BeardSprite.Value;
+            var beardProperties = _playerBeardInteractor.GetBeardProperties();
+            beardProperties.BeardColor = _beardColor;
+            beardProperties.BeardLength = _beardLength;
+            beardProperties.SpriteIndex = _index;
+            _playerBeardInteractor.ChangeBeard(beardProperties);
+            
+            _player.Beard = _dispenser.GetBeard(beardProperties);
         }
     }
 }

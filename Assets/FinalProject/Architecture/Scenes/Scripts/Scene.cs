@@ -45,8 +45,8 @@ namespace FinalProject.Architecture.Scenes.Scripts
             yield return RepositoriesBase.InitializeAllComponentsStarter(coroutines);
             yield return InteractorsBase.InitializeAllComponentsStarter(coroutines);
             
-            RepositoriesBase.SendMessageOnInitialize();
-            InteractorsBase.SendMessageOnInitialize();
+            RepositoriesBase.SendMessageOnInitialize(Storage, this);
+            InteractorsBase.SendMessageOnInitialize(Storage, this);
         }
 
         public void Start()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace FinalProject.Architecture.Characters.Enemy
 {
-    public class EnemyData: ICharacterData
+    public class EnemyData
     {
         public HumanoidRace HumanoidRace { get; set; }
         public HumanoidGender HumanoidGender { get; set; }

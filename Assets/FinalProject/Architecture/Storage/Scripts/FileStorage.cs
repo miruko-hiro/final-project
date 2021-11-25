@@ -20,6 +20,7 @@ namespace FinalProject.Architecture.Storage.Scripts
                 Directory.CreateDirectory(folderPath);
 
             FilePath = $"{folderPath}/{fileName}";
+            Debug.Log(FilePath);
         }
             
         protected override void SaveInternal()

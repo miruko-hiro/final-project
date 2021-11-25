@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using FinalProject.Architecture.Helpers.Scripts;
+using FinalProject.Architecture.Scenes.Scripts;
+using FinalProject.Architecture.Storage.Scripts;
 using UnityEngine;
 using Zenject;
 
@@ -37,11 +39,11 @@ namespace FinalProject.Architecture
                 component.OnCreate();
         }
 
-        public void SendMessageOnInitialize()
+        public void SendMessageOnInitialize(StorageBase storage, IScene scene)
         {
             var allComponents = _componentMap.Values;
             foreach (var component in allComponents) 
-                component.OnInitialize();
+                component.OnInitialize(storage, scene);
         }
 
         public void SendMessageOnStart()

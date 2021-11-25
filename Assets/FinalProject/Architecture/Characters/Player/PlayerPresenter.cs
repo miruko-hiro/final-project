@@ -1,34 +1,58 @@
-﻿using FinalProject.Architecture.Characters.Scripts;
-using Template.Creatures;
-using UnityEngine;
+﻿using FinalProject.Architecture.Characters.Player.Interactors;
+using FinalProject.Architecture.Characters.Scripts;
+using FinalProject.Architecture.Characters.Scripts.Appearance;
+using FinalProject.Architecture.Characters.Scripts.Armor;
+using FinalProject.Architecture.Characters.Scripts.Hair;
+using FinalProject.Architecture.Characters.Scripts.Weapon;
+using FinalProject.Architecture.Game.Scripts;
 
 namespace FinalProject.Architecture.Characters.Player
 {
     public class PlayerPresenter
     {
         private readonly Humanoid _view;
-        private readonly ICharacterData _model;
+        private readonly PlayerRaceInteractor _raceInteractor;
+        private readonly PlayerHairInteractor _hairInteractor;
+        private readonly PlayerBeardInteractor _beardInteractor;
+        private readonly PlayerHeadInteractor _headInteractor;
+        private readonly PlayerBodyInteractor _bodyInteractor;
+        private readonly PlayerPantsInteractor _pantsInteractor;
+        private readonly PlayerBootsInteractor _bootsInteractor;
+        private readonly PlayerShieldInteractor _shieldInteractor;
+        private readonly PlayerWeaponInteractor _weaponInteractor;
+        private readonly PlayerHealthInspector _healthInspector;
+        private AppearanceIssuanceSystem _dispenser;
 
-        public PlayerPresenter(Humanoid view, ICharacterData model)
+        public PlayerPresenter(Humanoid view, GameManager gameManager, AppearanceIssuanceSystem dispenser)
         {
             _view = view;
-            _model = model;
+            _dispenser = dispenser;
+            _raceInteractor = gameManager.GetInteractor<PlayerRaceInteractor>();
+            _hairInteractor = gameManager.GetInteractor<PlayerHairInteractor>();
+            _beardInteractor = gameManager.GetInteractor<PlayerBeardInteractor>();
+            _headInteractor = gameManager.GetInteractor<PlayerHeadInteractor>();
+            _bodyInteractor = gameManager.GetInteractor<PlayerBodyInteractor>();
+            _pantsInteractor = gameManager.GetInteractor<PlayerPantsInteractor>();
+            _bootsInteractor = gameManager.GetInteractor<PlayerBootsInteractor>();
+            _shieldInteractor = gameManager.GetInteractor<PlayerShieldInteractor>();
+            _weaponInteractor = gameManager.GetInteractor<PlayerWeaponInteractor>();
+            _healthInspector = gameManager.GetInteractor<PlayerHealthInspector>();
             OnOpen();
         }
 
         private void LoadData()
         {
-            SetRace(_model.HumanoidRaceSprite.Value);
-            SetHair(_model.HairSprite.Value);
-            SetBeard(_model.BeardSprite.Value);
+            SetRace(_raceInteractor.GetRaceProperties());
+            SetHair(_hairInteractor.GetHairProperties());
+            SetBeard(_beardInteractor.GetBeardProperties());
             
-            SetHeadArmor(_model.HeadArmorSprite.Value);
-            SetBodyArmor(_model.BodyArmorSprite.Value);
-            SetPantsArmor(_model.PantsArmorSprite.Value);
-            SetBootsArmor(_model.BootsArmorSprite.Value);
+            SetHeadArmor(_headInteractor.GetHeadProperties());
+            SetBodyArmor(_bodyInteractor.GetBodyProperties());
+            SetPantsArmor(_pantsInteractor.GetPantsProperties());
+            SetBootsArmor(_bootsInteractor.GetBootsProperties());
 
-            SetLeftHand(_model.LeftHandSprite.Value);
-            SetRightHand(_model.RightHandSprite.Value);
+            SetLeftHand(_shieldInteractor.GetShieldProperties());
+            SetRightHand(_weaponInteractor.GetWeaponProperties());
         }
 
         private void SaveData()
@@ -40,75 +64,75 @@ namespace FinalProject.Architecture.Characters.Player
         {
             LoadData();
 
-            _model.HumanoidRaceSprite.Change += SetRace;
-            _model.HairSprite.Change += SetHair;
-            _model.BeardSprite.Change += SetBeard;
-            _model.HeadArmorSprite.Change += SetHeadArmor;
-            _model.BodyArmorSprite.Change += SetBodyArmor;
-            _model.PantsArmorSprite.Change += SetPantsArmor;
-            _model.BootsArmorSprite.Change += SetBootsArmor;
-            _model.LeftHandSprite.Change += SetLeftHand;
-            _model.RightHandSprite.Change += SetRightHand;
+            _raceInteractor.ChangeRaceEvent += SetRace;
+            _hairInteractor.ChangeHairEvent += SetHair;
+            _beardInteractor.ChangeBeardEvent += SetBeard;
+            _headInteractor.ChangeHeadEvent += SetHeadArmor;
+            _bodyInteractor.ChangeBodyEvent += SetBodyArmor;
+            _pantsInteractor.ChangePantsEvent += SetPantsArmor;
+            _bootsInteractor.ChangeBootsEvent += SetBootsArmor;
+            _shieldInteractor.ChangeShieldEvent += SetLeftHand;
+            _weaponInteractor.ChangeWeaponEvent += SetRightHand;
         }
 
         private void OnClose()
         {
             SaveData();
 
-            _model.HumanoidRaceSprite.Change -= SetRace;
-            _model.HairSprite.Change -= SetHair;
-            _model.BeardSprite.Change -= SetBeard;
-            _model.HeadArmorSprite.Change -= SetHeadArmor;
-            _model.BodyArmorSprite.Change -= SetBodyArmor;
-            _model.PantsArmorSprite.Change -= SetPantsArmor;
-            _model.BootsArmorSprite.Change -= SetBootsArmor;
-            _model.LeftHandSprite.Change -= SetLeftHand;
-            _model.RightHandSprite.Change -= SetRightHand;
+            _raceInteractor.ChangeRaceEvent -= SetRace;
+            _hairInteractor.ChangeHairEvent -= SetHair;
+            _beardInteractor.ChangeBeardEvent -= SetBeard;
+            _headInteractor.ChangeHeadEvent -= SetHeadArmor;
+            _bodyInteractor.ChangeBodyEvent -= SetBodyArmor;
+            _pantsInteractor.ChangePantsEvent -= SetPantsArmor;
+            _bootsInteractor.ChangeBootsEvent -= SetBootsArmor;
+            _shieldInteractor.ChangeShieldEvent -= SetLeftHand;
+            _weaponInteractor.ChangeWeaponEvent -= SetRightHand;
         }
 
-        private void SetRace(Sprite sprite)
+        private void SetRace(HumanoidRaceProperties raceProperties)
         {
-            _view.Race = sprite;
+            _view.Race = _dispenser.GetHumanoid(raceProperties);
         }
 
-        private void SetHair(Sprite sprite)
+        private void SetHair(HairProperties hairProperties)
         {
-            _view.Hair = sprite;
+            _view.Hair = _dispenser.GetHairHead(hairProperties);;
         }
 
-        private void SetBeard(Sprite sprite)
+        private void SetBeard(BeardProperties beardProperties)
         {
-            _view.Beard = sprite;
+            _view.Beard = _dispenser.GetBeard(beardProperties);
         }
 
-        private void SetHeadArmor(Sprite sprite)
+        private void SetHeadArmor(HeadProperties headProperties)
         {
-            _view.HeadArmor = sprite;
+            _view.HeadArmor = _dispenser.GetHeadArmor(headProperties);
         }
 
-        private void SetBodyArmor(Sprite sprite)
+        private void SetBodyArmor(BodyProperties bodyProperties)
         {
-            _view.BodyArmor = sprite;
+            _view.BodyArmor = _dispenser.GetBodyArmor(bodyProperties);
         }
 
-        private void SetPantsArmor(Sprite sprite)
+        private void SetPantsArmor(PantsProperties pantsProperties)
         {
-            _view.PantsArmor = sprite;
+            _view.PantsArmor = _dispenser.GetPantsArmor(pantsProperties);
         }
 
-        private void SetBootsArmor(Sprite sprite)
+        private void SetBootsArmor(BootsProperties bootsProperties)
         {
-            _view.BootsArmor = sprite;
+            _view.BootsArmor = _dispenser.GetBootsArmor(bootsProperties);
         }
 
-        private void SetRightHand(Sprite sprite)
+        private void SetRightHand(WeaponProperties weaponProperties)
         {
-            _view.RightHand = sprite;
+            _view.RightHand = _dispenser.GetWeapon(weaponProperties);
         }
 
-        private void SetLeftHand(Sprite sprite)
+        private void SetLeftHand(ShieldProperties shieldProperties)
         {
-            _view.LeftHand = sprite;
+            _view.LeftHand = _dispenser.GetShield(shieldProperties);
         }
 
         ~PlayerPresenter()

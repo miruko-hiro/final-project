@@ -2,7 +2,7 @@
 using FinalProject.Architecture.Characters.Scripts.Types;
 using UnityEngine;
 
-namespace Template.Creatures.Appearance.Armor
+namespace FinalProject.Architecture.Characters.Scripts.Armor
 {
     public class BodyCollection : MonoBehaviour
     {

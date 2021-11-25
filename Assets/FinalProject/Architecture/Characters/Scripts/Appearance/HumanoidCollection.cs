@@ -2,7 +2,7 @@
 using FinalProject.Architecture.Characters.Scripts.Types;
 using UnityEngine;
 
-namespace Template.Creatures.Appearance
+namespace FinalProject.Architecture.Characters.Scripts.Appearance
 {
     public class HumanoidCollection : MonoBehaviour
     {

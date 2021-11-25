@@ -2,7 +2,7 @@
 using FinalProject.Architecture.Characters.Scripts.Types;
 using UnityEngine;
 
-namespace Template.Creatures.Appearance.Armor
+namespace FinalProject.Architecture.Characters.Scripts.Armor
 {
     public class HeadCollection : MonoBehaviour
     {
@@ -18,6 +18,7 @@ namespace Template.Creatures.Appearance.Armor
                 ArmorType.Light => lightArmors[index],
                 ArmorType.Medium => mediumArmors[index],
                 ArmorType.Heavy => heavyArmors[index],
+                ArmorType.None => null,
                 _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
             };
         }

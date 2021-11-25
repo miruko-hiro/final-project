@@ -11,6 +11,7 @@ namespace FinalProject.Architecture.Scenes.Scripts
     {
         public event Action<SceneConfig> OnSceneLoadStartedEvent;
         public event Action<SceneConfig> OnSceneLoadCompletedEvent;
+        public event Action<float> OnChangeProgressLoadEvent;
         
         public IScene SceneActual { get; }
         public Dictionary<string, SceneConfig> SceneConfigMap { get; }

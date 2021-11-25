@@ -1,4 +1,7 @@
-﻿using Template.Creatures;
+﻿using FinalProject.Architecture.Characters.Scripts;
+using FinalProject.Architecture.Characters.Scripts.Appearance;
+using FinalProject.Architecture.Game.Scripts;
+using FinalProject.Architecture.Scenes.Scripts.Config;
 using UnityEngine;
 using Zenject;
 
@@ -18,9 +21,9 @@ namespace FinalProject.Architecture.Characters.Player
         public override Sprite LeftHand { get => leftHand.sprite; set => leftHand.sprite = value; }
 
         [Inject]
-        private void Construct(PlayerData playerData)
+        private void Construct(GameManager gameManager, AppearanceIssuanceSystem dispenser)
         {
-            _presenter = new PlayerPresenter(this, playerData);
+            _presenter = new PlayerPresenter(this, gameManager, dispenser);
         }
 
         private void OnDestroy()

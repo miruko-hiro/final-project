@@ -2,6 +2,7 @@
 {
     public enum BeardLength
     {
+        None,
         Mustache,
         Beard
     }

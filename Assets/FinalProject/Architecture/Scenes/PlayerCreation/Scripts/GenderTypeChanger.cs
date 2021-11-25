@@ -1,21 +1,25 @@
 ﻿using FinalProject.Architecture.Characters.Player;
+using FinalProject.Architecture.Characters.Player.Interactors;
+using FinalProject.Architecture.Characters.Scripts;
 using FinalProject.Architecture.Characters.Scripts.Appearance;
 using FinalProject.Architecture.Characters.Scripts.Types;
+using FinalProject.Architecture.Game.Scripts;
 using FinalProject.Architecture.Scenes.PlayerCreation.Scripts.UI.Selectors;
-using Template.Creatures;
-using Template.Creatures.Appearance;
+using UnityEngine;
 
 namespace FinalProject.Architecture.Scenes.PlayerCreation.Scripts
 {
     public class GenderTypeChanger
     {
-        private readonly PlayerData _pData;
-        private readonly Humanoid _player;
+        private readonly PlayerRaceInteractor _raceInteractor;
+        private readonly PlayerBodyInteractor _bodyInteractor;
+        private readonly PlayerCreationView _player;
         private readonly AppearanceIssuanceSystem _dispenser;
 
-        public GenderTypeChanger(PlayerData pData, Humanoid player, AppearanceIssuanceSystem dispenser)
+        public GenderTypeChanger(GameManager gameManager, PlayerCreationView player, AppearanceIssuanceSystem dispenser)
         {
-            _pData = pData;
+            _raceInteractor = gameManager.GetInteractor<PlayerRaceInteractor>();
+            _bodyInteractor = gameManager.GetInteractor<PlayerBodyInteractor>();
             _player = player;
             _dispenser = dispenser;
         }
@@ -23,7 +27,7 @@ namespace FinalProject.Architecture.Scenes.PlayerCreation.Scripts
 
         public void Change(SelectionType type)
         {
-            if (_pData.HumanoidGender == HumanoidGender.Female)
+            if (_raceInteractor.GetRaceProperties().Gender == HumanoidGender.Female)
             {
                 DoWhenPerv();
             }
@@ -47,16 +51,19 @@ namespace FinalProject.Architecture.Scenes.PlayerCreation.Scripts
 
         private void SetGenderType(HumanoidGender gender)
         {
-            _pData.HumanoidGender = gender;
-            _pData.HumanoidRaceSprite.Value =
-                _dispenser.GetHumanoid(0, _pData.HumanoidRace, _pData.HumanoidGender);
-            _player.Race = _pData.HumanoidRaceSprite.Value;
+            var raceProperties = _raceInteractor.GetRaceProperties();
+            raceProperties.Gender = gender;
+            _raceInteractor.ChangeRace(raceProperties);
+            _player.Race = _dispenser.GetHumanoid(raceProperties);
         }
 
         private void SetBodyArmor(int index, ArmorType type)
         {
-            _pData.BodyArmorSprite.Value = _dispenser.GetBodyArmor(index, type);
-            _player.BodyArmor = _pData.BodyArmorSprite.Value;
+            var bodyArmorProperties = _bodyInteractor.GetBodyProperties();
+            bodyArmorProperties.ArmorType = type;
+            bodyArmorProperties.SpriteIndex = index;
+            _bodyInteractor.ChangeBody(bodyArmorProperties);
+            _player.BodyArmor = _dispenser.GetBodyArmor(bodyArmorProperties);
         }
     }
 }

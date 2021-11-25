@@ -2,7 +2,7 @@
 using FinalProject.Architecture.Characters.Scripts.Types;
 using UnityEngine;
 
-namespace Template.Creatures.Appearance.Hair
+namespace FinalProject.Architecture.Characters.Scripts.Hair
 {
     public class BeardCollection : MonoBehaviour
     {
@@ -41,6 +41,7 @@ namespace Template.Creatures.Appearance.Hair
                     HairColor.Black => blackBeards[index],
                     _ => throw new ArgumentOutOfRangeException(nameof(color), color, null)
                 },
+                BeardLength.None => null,
                 _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
             };
         }

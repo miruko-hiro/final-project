@@ -21,6 +21,7 @@ namespace FinalProject.Architecture.Characters.Scripts.Weapon
                 ShieldType.Knights => knightsShields[index],
                 ShieldType.Square => squareShields[index],
                 ShieldType.Tower => towerShields[index],
+                ShieldType.None => null,
                 _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
             };
         }

@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using FinalProject.Architecture.Characters.Scripts.Types;
 using UnityEngine;
 
-namespace Template.Creatures.Appearance.Hair
+namespace FinalProject.Architecture.Characters.Scripts.Hair
 {
     public class HairHeadCollection : MonoBehaviour
     {
@@ -42,6 +41,7 @@ namespace Template.Creatures.Appearance.Hair
                     HairColor.Black => blackShortHair[index],
                     _ => throw new ArgumentOutOfRangeException(nameof(color), color, null)
                 },
+                HairLength.None => null,
                 _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
             };
         }

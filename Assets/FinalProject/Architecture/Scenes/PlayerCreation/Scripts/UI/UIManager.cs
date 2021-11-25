@@ -1,7 +1,10 @@
 ﻿using System;
+using FinalProject.Architecture.Game.Scripts;
+using FinalProject.Architecture.Helpers.Scripts;
 using FinalProject.Architecture.Scenes.PlayerCreation.Scripts.UI.Selectors;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Zenject;
 
 namespace FinalProject.Architecture.Scenes.PlayerCreation.Scripts.UI
 {
@@ -18,6 +21,16 @@ namespace FinalProject.Architecture.Scenes.PlayerCreation.Scripts.UI
         public event Action<SelectionType> ChangedHairColor;
         public event Action<SelectionType> ChangedBeardStyle;
         public event Action<SelectionType> ChangedBeardColor;
+        
+        private GameManager _gameManager;
+        private Coroutines _coroutines;
+
+        [Inject]
+        private void Construct(GameManager gameManager, Coroutines coroutines)
+        {
+            _gameManager = gameManager;
+            _coroutines = coroutines;
+        }
 
         private void Awake()
         {
@@ -60,7 +73,8 @@ namespace FinalProject.Architecture.Scenes.PlayerCreation.Scripts.UI
 
         public void OnCreate()
         {
-            SceneManager.LoadScene("Battle");
+            _gameManager.SaveGame();
+            _gameManager.SceneController.LoadScene(_coroutines, "Battle");
         }
 
         private void OnClose()

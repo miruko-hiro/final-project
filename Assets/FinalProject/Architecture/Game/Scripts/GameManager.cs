@@ -6,7 +6,6 @@ using FinalProject.Architecture.Interactors.Scripts;
 using FinalProject.Architecture.Repositories.Scripts;
 using FinalProject.Architecture.Scenes.Scripts;
 using FinalProject.Architecture.Settings.Scripts;
-using UnityEngine;
 using Zenject;
 
 namespace FinalProject.Architecture.Game.Scripts
@@ -18,6 +17,12 @@ namespace FinalProject.Architecture.Game.Scripts
         public ArchitectureComponentState state { get; private set; } = ArchitectureComponentState.NotInitialized;
         public ISceneController SceneController { get; private set; }
         public IGameSettings GameSettings { get; private set; }
+
+        [Inject]
+        public GameManager(Coroutines coroutines)
+        {
+            Run(coroutines);
+        }
         
         public void Run(Coroutines coroutines)
         {
@@ -64,9 +69,6 @@ namespace FinalProject.Architecture.Game.Scripts
         }
         
         public void SaveGame() {
-            Debug.Log(SceneController);
-            Debug.Log(SceneController.SceneActual);
-            Debug.Log(SceneController.SceneActual.Storage);
             SceneController.SceneActual.Save();
         }
 
@@ -74,7 +76,7 @@ namespace FinalProject.Architecture.Game.Scripts
             SceneController.SceneActual.SaveAsync(callback);
         }
 
-        public IEnumerator SaveGameStarter(Coroutines coroutines, Action callback) {
+        public IEnumerator SaveGameStarter(Coroutines coroutines, Action callback = null) {
             yield return SceneController.SceneActual.Storage.SaveStarter(coroutines);
         }
     }
