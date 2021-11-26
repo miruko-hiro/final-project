@@ -8,17 +8,14 @@ namespace FinalProject.Architecture.Characters.Player.Animation
     {
         [SerializeField] private Transform _transformOwn;
         private Sequence _sequence;
-        public override void Play()
+        public override void Play(Vector2 direction = default)
         {
             if(IsPlaying) return;
 
             IsPlaying = true;
             
             if(_sequence != null) _sequence.Restart();
-            else _sequence = DOTween.Sequence()
-                .Append(_transformOwn.DOLocalRotate(new Vector3(0f, 0f, 4f), 0.05f))
-                .Append(_transformOwn.DOLocalRotate(new Vector3(0f, 0f, -4f), 0.05f))
-                .Append(_transformOwn.DOLocalRotate(Vector3.zero, 0.02f))
+            else _sequence = _transformOwn.DOLocalJump(direction, 0.2f, 1, 0.3f)
                 .AppendCallback(() => IsPlaying = false)
                 .SetAutoKill(false);
         }

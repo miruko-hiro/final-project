@@ -1,4 +1,3 @@
-using FinalProject.Architecture.Characters.Enemy;
 using Zenject;
 
 namespace FinalProject.Architecture.Installer
@@ -7,7 +6,6 @@ namespace FinalProject.Architecture.Installer
     {
         public override void InstallBindings()
         {
-            Container.Bind<GeneratorEnemyData>().AsSingle();
         }
     }
 }

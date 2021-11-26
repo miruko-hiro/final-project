@@ -2161,13 +2161,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efb4a55ff907445ca782518618a68c63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _level: 1
-  _enemyPrefab: {fileID: 8571212742990573423, guid: 6b97c2f901e38934e97973632b51b9ab, type: 3}
-  _healthEnemyBar: {fileID: 2474477653067038858, guid: 606b42bd2e6008c418370ea608e07b44, type: 3}
+  _enemyPrefabs:
+  - {fileID: 6961518362336591503, guid: d0601f992909d5e429b31de82f86b095, type: 3}
+  - {fileID: 6961518362336591503, guid: dc3c00648724a14458b120133d127604, type: 3}
+  - {fileID: 6961518362336591503, guid: 135aeea0f08235145aa677ba29b31cb9, type: 3}
   _positions:
   - {x: -7, y: -2, z: 0}
   - {x: 6, y: 1, z: 0}
+  - {x: -4, y: 1, z: 0}
   _target: {fileID: 1076069654}
+  _healthBarPrefab: {fileID: 2474477653067038858, guid: 606b42bd2e6008c418370ea608e07b44, type: 3}
+  _canvas: {fileID: 86991557}
+  _camera: {fileID: 2121405934}
 --- !u!4 &1754370033
 Transform:
   m_ObjectHideFlags: 0
@@ -4942,7 +4947,7 @@ MonoBehaviour:
   manualDebugFloorRoof: 0
   showSearchTree: 0
   unwalkableNodeDebugSize: 0.3
-  logPathResults: 1
+  logPathResults: 0
   maxNearestNodeDistance: 100
   scanOnStartup: 1
   fullGetNearestSearch: 0
@@ -4993,7 +4998,7 @@ MonoBehaviour:
   heuristic: 2
   heuristicScale: 1
   threadCount: 1
-  maxFrameTime: 1
+  maxFrameTime: 10
   batchGraphUpdates: 0
   graphUpdateBatchingInterval: 0.2
   euclideanEmbedding:

@@ -10,169 +10,45 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44998bfc-4b45-4a53-9d09-9eba23699c9d" name="Default Changelist" comment="Объединение новой архитектуры и MainMenu сцены">
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerBeardInteractor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerBeardInteractor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerBodyInteractor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerBodyInteractor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerBootsInteractor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerBootsInteractor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerHairInteractor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerHairInteractor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerHeadInteractor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerHeadInteractor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerHealthInspector.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerHealthInspector.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerPantsInteractor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerPantsInteractor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerRaceInteractor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerRaceInteractor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerShieldInteractor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerShieldInteractor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerWeaponInteractor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerWeaponInteractor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/PlayerCreationView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/PlayerCreationView.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Repositories.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Repositories/PlayerBeardRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Repositories/PlayerBeardRepository.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Repositories/PlayerBodyRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Repositories/PlayerBodyRepository.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Repositories/PlayerBootsRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Repositories/PlayerBootsRepository.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Repositories/PlayerHairRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Repositories/PlayerHairRepository.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Repositories/PlayerHeadRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Repositories/PlayerHeadRepository.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Repositories/PlayerHealthRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Repositories/PlayerHealthRepository.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Repositories/PlayerPantsRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Repositories/PlayerPantsRepository.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Repositories/PlayerRaceRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Repositories/PlayerRaceRepository.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Repositories/PlayerShieldRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Repositories/PlayerShieldRepository.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Repositories/PlayerWeaponRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Repositories/PlayerWeaponRepository.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Appearance/HumanoidRaceProperties.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Appearance/HumanoidRaceProperties.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Armor/BodyProperties.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Armor/BodyProperties.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Armor/BootsProperties.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Armor/BootsProperties.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Armor/HeadProperties.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Armor/HeadProperties.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Armor/PantsProperties.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Armor/PantsProperties.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Hair/BeardProperties.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Hair/BeardProperties.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Hair/HairProperties.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Hair/HairProperties.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Weapon/ShieldProperties.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Weapon/ShieldProperties.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Weapon/WeaponProperties.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Weapon/WeaponProperties.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Helpers/Scripts/TranslatorScreenToWorld.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Helpers/Scripts/TranslatorScreenToWorld.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Battle/Resources/SceneConfigs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Battle/Resources/SceneConfigs/BattleSceneConfig.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/LoadingScreen.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/LoadingScreen/Animation.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/LoadingScreen/Animation/Dino.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/LoadingScreen/Animation/Dino.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/LoadingScreen/Animation/DinoAnimation.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/LoadingScreen/Animation/DinoAnimation.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/LoadingScreen/Animation/DinoUIAnimation.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/LoadingScreen/Animation/DinoUIAnimation.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/LoadingScreen/Animation/Loading.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/LoadingScreen/Animation/Loading.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/LoadingScreen/LoadingScreen.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/LoadingScreen/LoadingScreen.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/LoadingScreen/Prefabs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/LoadingScreen/Prefabs/Loading Bar Manager.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/LoadingScreen/Prefabs/Loading Bar Manager.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/LoadingScreen/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/LoadingScreen/Scripts/LoadingBarManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/LoadingScreen/Scripts/LoadingBarManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/LoadingScreen/Sprites.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/LoadingScreen/Sprites/02-min2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/LoadingScreen/Sprites/02-min2.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/LoadingScreen/Sprites/DinoSprites - vita.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/LoadingScreen/Sprites/DinoSprites - vita.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/Resources.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/Resources/SceneConfigs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/PlayerCreation/Resources.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/PlayerCreation/Resources/SceneConfigs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/PlayerCreation/Resources/SceneConfigs/PlayerCreationSceneConfig.asset" afterDir="false" />
+    <list default="true" id="44998bfc-4b45-4a53-9d09-9eba23699c9d" name="Default Changelist" comment="Прототип полностью перенесен на новую архитектуру">
+      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Helpers/Scripts/TranslatorWorldToScreen.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Helpers/Scripts/TranslatorWorldToScreen.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FinalProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FinalProject/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FinalProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FinalProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/ArchitectureComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/ArchitectureComponent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/EnemyData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/EnemyData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/EnemyPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/EnemyPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/EnemySpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/EnemySpawner.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/EnemyView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/EnemyView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/GeneratorEnemyData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/GeneratorEnemyData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/Health/HealthEnemyBarPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/Health/HealthEnemyBarPresenter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/PlayerData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/PlayerData.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/PlayerPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/PlayerPresenter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/PlayerView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/PlayerView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Prefabs/PlayerSceen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Prefabs/Player Creation.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Prefabs/PlayerSceen.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Prefabs/Player Creation.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Appearance/AppearanceIssuanceSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Appearance/AppearanceIssuanceSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Appearance/HumanoidCollection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Appearance/HumanoidCollection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Armor/BodyCollection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Armor/BodyCollection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Armor/BootsCollection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Armor/BootsCollection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Armor/HeadCollection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Armor/HeadCollection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Armor/PantsCollection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Armor/PantsCollection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Hair/BeardCollection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Hair/BeardCollection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Hair/HairHeadCollection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Hair/HairHeadCollection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Humanoid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Humanoid.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/ICharacterData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/ICharacterData.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Types/ArmorType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Types/ArmorType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Types/BeardLength.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Types/BeardLength.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Types/HairColor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Types/HairColor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Types/HairLength.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Types/HairLength.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Types/HumanoidGender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Types/HumanoidGender.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Types/HumanoidRace.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Types/HumanoidRace.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Types/MagicType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Types/MagicType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Types/ShieldType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Types/ShieldType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Types/WeaponType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Types/WeaponType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Weapon/LeftHandCollection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Weapon/LeftHandCollection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Weapon/RightHandCollection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Weapon/RightHandCollection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/ComponentsBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/ComponentsBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Game/Prefabs/GameStateManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Game/Prefabs/GameStateManager.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Game/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Game/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Game/Scripts/GameStateManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Game/Scripts/GameStateManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/IArchitectureCaptureEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/IArchitectureCaptureEvents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Installer/ProjectInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Installer/ProjectInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/GeneratorEnemyData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/GeneratorEnemyData.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/Health.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Health.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/Health/HealthEnemyBarPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Health/HealthEnemyBarPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/Health/HealthEnemyBarPresenter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Health/HealthEnemyBarPresenter.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/Health/HealthEnemyBarView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Health/HealthEnemyBarView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/Health/HealthEnemyBarView.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Health/HealthEnemyBarView.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/Prefabs/Enemy Object.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/Prefabs/Enemy Object.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Animation/MeleeAttackAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Animation/MeleeAttackAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Animation/MovementAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Animation/MovementAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Prefabs/Player Object.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Prefabs/Player Object.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/AnimationHumanoid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/AnimationHumanoid.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Systems/Attack/AttackSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Systems/Attack/AttackSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Helpers/Scripts/TranslatorScreenToWorld.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Helpers/Scripts/TranslatorScreenToWorld.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Installer/BattleInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Installer/BattleInstaller.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Battle/Battle.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Battle/Battle.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/LoadingScreen/Prefabs/Loading Bar Manager.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/LoadingScreen/Prefabs/Loading Bar Manager.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/LoadingScreen/Scripts/LoadingBarManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/LoadingScreen/Scripts/LoadingBarManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/MainMenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/Scripts/MainMenuManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/MainMenuManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/Scripts/MainMenuManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/Scripts/MainMenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/Scripts/MainMenuManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/PlayerCreation/PlayerCreation.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/PlayerCreation/PlayerCreation.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/PlayerCreation/Scripts/BeardChanger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/PlayerCreation/Scripts/BeardChanger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/PlayerCreation/Scripts/GenderTypeChanger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/PlayerCreation/Scripts/GenderTypeChanger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/PlayerCreation/Scripts/HairChanger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/PlayerCreation/Scripts/HairChanger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/PlayerCreation/Scripts/PlayerCreationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/PlayerCreation/Scripts/PlayerCreationManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/PlayerCreation/Scripts/UI/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/PlayerCreation/Scripts/UI/UIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Resources.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Battle/Resources.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Resources/SceneConfigs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Resources/SceneConfigs/BattleSceneConfig.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Resources/SceneConfigs/BattleSceneConfig.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Battle/Resources/SceneConfigs/BattleSceneConfig.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Resources/SceneConfigs/MainMenuSceneConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/Resources/SceneConfigs/MainMenuSceneConfig.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Resources/SceneConfigs/MainMenuSceneConfig.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/Resources/SceneConfigs/MainMenuSceneConfig.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Resources/SceneConfigs/PlayerCreationSceneConfig.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Resources/SceneConfigs/PlayerCreationSceneConfig.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/PlayerCreation/Resources/SceneConfigs/PlayerCreationSceneConfig.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/Config/SceneConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/Config/SceneConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/ISceneController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/ISceneController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/Scene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/Scene.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/SceneController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/SceneController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Storage/Scripts/FileStorage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Storage/Scripts/FileStorage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Sprites/UI/UIpackSheet_transparent.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Sprites/UI/UIpackSheet_transparent.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/UI/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/UI/Prefabs/HealthEnemyBar.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/UI/Prefabs/HealthEnemyBar.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Effects/Prefabs/Coin.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Effects/Prefabs/Coin.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,45 +59,37 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/Scripts/MainMenuManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/FinalProject/Architecture/Utils/Scripts/Editor/UIEditorExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/FinalProject/Architecture/Installer/MainMenuInstaller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F2625FD8-44AA-4DD5-B6A3-882F24F14D79/59/bbcef32c/Random.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/FinalProject/Architecture/Installer/ProjectInstaller.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/PlayerCreation/Scripts/PlayerCreationManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/FinalProject/Architecture/Installer/BattleInstaller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD3EAA08-78D9-4CBE-8E45-F9C494D71647/98/ccb795e7/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD3EAA08-78D9-4CBE-8E45-F9C494D71647/c3/f2fea8e0/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD3EAA08-78D9-4CBE-8E45-F9C494D71647/19/1670f7e6/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/FinalProject/Architecture/Game/Scripts/GameStateManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/FinalProject/Architecture/Utils/Attributes/SceneName/Editor/SceneNameAttributeDrawer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F2625FD8-44AA-4DD5-B6A3-882F24F14D79/4c/afba6437/Activator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/LoadingScreen/Scripts/LoadingBarManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD3EAA08-78D9-4CBE-8E45-F9C494D71647/b0/def01e4a/LayerMask.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.tilemap@1.0.0/Editor/GridPaintPaletteWindow.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.tilemap@1.0.0/Editor/GridPaintPaletteClipboard.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F2625FD8-44AA-4DD5-B6A3-882F24F14D79/30/d867ec52/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/FinalProject/Architecture/Utils/Attributes/ClassReference/Editor/ClassReferenceAttributeDrawer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/Scripts/MainMenuManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/PlayerCreation/Scripts/PlayerCreationManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/83A38F53-97D9-4E36-A22E-FA3369C82390/6e/bad454b2/EditorGUI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F2625FD8-44AA-4DD5-B6A3-882F24F14D79/dc/15707c59/Assembly.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DE1F8EF4-975B-4EAC-BEB0-ACCC1B22C9B0/f7/12649c0b/ShortcutExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/FinalProject/Architecture/Repositories/Scripts/Repository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/FinalProject/Architecture/Game/Scripts/GameStateManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/FinalProject/Architecture/Utils/Attributes/GameObjectOfType/Editor/GameObjectOfTypeDrawer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD3EAA08-78D9-4CBE-8E45-F9C494D71647/04/f3a9865e/Vector2.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/FinalProject/Architecture/Utils/Attributes/SceneName/Editor/SceneNameAttributeDrawer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F2625FD8-44AA-4DD5-B6A3-882F24F14D79/4c/afba6437/Activator.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/LoadingScreen/Scripts/LoadingBarManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.tilemap@1.0.0/Editor/GridPaintPaletteWindow.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD3EAA08-78D9-4CBE-8E45-F9C494D71647/39/5bdecc59/SceneManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.tilemap@1.0.0/Editor/GridPaintPaletteClipboard.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/FinalProject/Architecture/Interactors/Scripts/Interactor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F2625FD8-44AA-4DD5-B6A3-882F24F14D79/30/d867ec52/Object.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/FinalProject/Architecture/Utils/Attributes/ClassReference/Editor/ClassReferenceAttributeDrawer.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Weapon/LeftHandCollection.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Armor/BodyProperties.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Armor/HeadProperties.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Repositories/PlayerBodyRepository.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Repositories/PlayerHeadRepository.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Types/ArmorType.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Armor/HeadCollection.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Armor/PantsProperties.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Repositories/PlayerPantsRepository.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/PlayerData.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Armor/PantsCollection.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Armor/BootsProperties.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Repositories/PlayerBootsRepository.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Appearance/AppearanceIssuanceSystem.cs" />
@@ -237,15 +105,10 @@
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerPantsInteractor.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerShieldInteractor.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerWeaponInteractor.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/EnemyData.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/EnemyPresenter.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/GeneratorEnemyData.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/Health/HealthEnemyBarPresenter.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/EnemyView.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Helpers/Scripts/TranslatorWorldToScreen.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Helpers/Scripts/TranslatorScreenToWorld.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/ISceneController.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/LoadingScreen/Scripts/LoadingBarManager.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Installer/ProjectInstaller.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/PlayerPresenter.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerRaceInteractor.cs" />
@@ -256,12 +119,28 @@
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Storage/Scripts/StorageBase.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/Scene.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Game/Scripts/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Game/Scripts/GameStateManager.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Storage/Scripts/FileStorage.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/PlayerCreation/Scripts/UI/UIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/PlayerView.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/PlayerCreation/Scripts/PlayerCreationManager.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/SceneController.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/LoadingScreen/Scripts/LoadingBarManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Game/Scripts/GameStateManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/Scripts/MainMenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Animation/MovementAnimation.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/AnimationHumanoid.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Animation/MeleeAttackAnimation.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Helpers/Scripts/TranslatorWorldToScreen.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/Enemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/EnemyData.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/EnemyBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Installer/BattleInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Systems/Attack/AttackSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/EnemySpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Health/HealthEnemyBarView.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Health/HealthEnemyBarPresenter.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/EnemyPresenter.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/EnemyView.cs" />
       </list>
     </option>
   </component>
@@ -320,7 +199,9 @@
       <workItem from="1637433290116" duration="11862000" />
       <workItem from="1637445638683" duration="220000" />
       <workItem from="1637739908590" duration="17701000" />
-      <workItem from="1637836651664" duration="23266000" />
+      <workItem from="1637836651664" duration="23322000" />
+      <workItem from="1637870681352" duration="488000" />
+      <workItem from="1637913921719" duration="16196000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1636560270843</created>
@@ -392,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637445832060</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Прототип полностью перенесен на новую архитектуру">
+      <created>1637870398731</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1637870398731</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -423,7 +311,8 @@
     <MESSAGE value="Обновлена архитектура" />
     <MESSAGE value="Добавлены инъекции в архитектуру, уход от статиков" />
     <MESSAGE value="Объединение новой архитектуры и MainMenu сцены" />
-    <option name="LAST_COMMIT_MESSAGE" value="Объединение новой архитектуры и MainMenu сцены" />
+    <MESSAGE value="Прототип полностью перенесен на новую архитектуру" />
+    <option name="LAST_COMMIT_MESSAGE" value="Прототип полностью перенесен на новую архитектуру" />
   </component>
   <component name="WindowStateProjectService">
     <state x="834" y="418" key="Github.ShareDialog" timestamp="1636559940538">
@@ -442,10 +331,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1637445503630" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1637445849057">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1637870400948">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1637445849057" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1637870400948" />
     <state x="438" y="0" width="1332" height="1027" key="dock-window-1" timestamp="1637749233215">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -454,9 +343,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1637235994141" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1637863180195">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1637930639697">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1637863180195" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1637930639697" />
   </component>
 </project>

@@ -1,48 +1,35 @@
 ﻿using System.Collections.Generic;
-using FinalProject.Architecture.Characters.Enemy.Health;
+using FinalProject.Architecture.Health;
 using Pathfinding;
 using UnityEngine;
-using Zenject;
 
 namespace FinalProject.Architecture.Characters.Enemy
 {
     public class EnemySpawner : MonoBehaviour
     {
-        [Range(1, 2)] [SerializeField] private int _level;
-        [SerializeField] private GameObject _enemyPrefab;
-        [SerializeField] private GameObject _healthEnemyBar;
+        [SerializeField] private List<GameObject> _enemyPrefabs;
         [SerializeField] private List<Vector3> _positions;
         [SerializeField] private Transform _target;
-        private List<EnemyPresenter> _presenters;
-        private List<HealthEnemyBarPresenter> _healthPresenters;
-        private GeneratorEnemyData _generator;
-
-        [Inject]
-        private void Construct(GeneratorEnemyData generator)
-        {
-            _generator = generator;
-        }
+        [SerializeField] private GameObject _healthBarPrefab;
+        [SerializeField] private Canvas _canvas;
+        [SerializeField] private Camera _camera;
         
         private void Awake()
         {
-            _presenters = new List<EnemyPresenter>();
-            _healthPresenters = new List<HealthEnemyBarPresenter>();
-            
-            foreach (var pos in _positions)
+            for (var i = 0; i < _enemyPrefabs.Count; i++)
             {
-                var enemy = Instantiate(_enemyPrefab, pos, Quaternion.identity);
+                var enemyData = new EnemyData {Health = {Value = 5}};
+                var enemy = Instantiate(_enemyPrefabs[i], _positions[i], Quaternion.identity);
                 enemy.GetComponent<AIDestinationSetter>().target = _target;
-                var data = _generator.GetData(_level);
-                _presenters.Add(new EnemyPresenter(enemy.GetComponentInChildren<EnemyView>(), data));
                 
-                _healthPresenters.Add(new HealthEnemyBarPresenter(Instantiate(_healthEnemyBar).GetComponent<HealthEnemyBarView>(), data));
+                var enemyView = enemy.GetComponent<EnemyView>();
+                var enemyPresenter = new EnemyPresenter(enemyView, enemyData);
+                enemyView.Initialize(enemyPresenter);
+                
+                var healthBar = Instantiate(_healthBarPrefab, _canvas.transform).GetComponent<HealthEnemyBarView>();
+                var healthBarPresenter = new HealthEnemyBarPresenter(healthBar, enemyData);
+                healthBar.Initialize(healthBarPresenter, enemy.GetComponent<Transform>(), _camera, _canvas.GetComponent<RectTransform>());
             }
-        }
-
-        private void OnDestroy()
-        {
-            _presenters.Clear();
-            _healthPresenters.Clear();
         }
     }
 }

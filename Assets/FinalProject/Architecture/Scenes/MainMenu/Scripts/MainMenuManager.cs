@@ -3,7 +3,7 @@ using FinalProject.Architecture.Helpers.Scripts;
 using UnityEngine;
 using Zenject;
 
-namespace FinalProject.Architecture.Scenes.MainMenu
+namespace FinalProject.Architecture.Scenes.MainMenu.Scripts
 {
     public class MainMenuManager : MonoBehaviour
     {
@@ -19,9 +19,14 @@ namespace FinalProject.Architecture.Scenes.MainMenu
             _coroutines = coroutines;
         }
         
-        public void OnContinue()
+        public void OnNewGame()
         {
             _gameManager.SceneController.LoadScene(_coroutines, "PlayerCreation");
+        }
+        
+        public void OnContinue()
+        {
+            _gameManager.SceneController.LoadScene(_coroutines, "Battle");
         }
 
         public void OnExit()

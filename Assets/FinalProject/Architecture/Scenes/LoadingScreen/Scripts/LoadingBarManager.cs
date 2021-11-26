@@ -1,4 +1,3 @@
-using System;
 using FinalProject.Architecture.Game.Scripts;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +7,7 @@ namespace FinalProject.Architecture.Scenes.LoadingScreen.Scripts
 {
     public class LoadingBarManager : MonoBehaviour
     {
+        [SerializeField] private GameObject _panel;
         [SerializeField] private RectTransform _dino;
         [SerializeField] private Image _loadingBar;
         [SerializeField] private RectTransform _leftBackground;
@@ -25,6 +25,7 @@ namespace FinalProject.Architecture.Scenes.LoadingScreen.Scripts
 
         private void Awake()
         {
+            _panel.SetActive(false);
             var leftPosition =  _leftBackground.position;
             var rightPosition =  _rightBackground.position;
             
@@ -33,8 +34,10 @@ namespace FinalProject.Architecture.Scenes.LoadingScreen.Scripts
             _pos = _dino.position;
         }
 
-        public void SetFill(float amount)
+        private void SetFill(float amount)
         {
+            if(!_panel.activeInHierarchy)
+                _panel.SetActive(true);
             _loadingBar.fillAmount = amount;
             _dino.position = new Vector3(_pos.x + (_x * amount), _pos.y, _pos.z);
         }

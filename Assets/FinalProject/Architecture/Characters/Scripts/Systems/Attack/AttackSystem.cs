@@ -1,5 +1,5 @@
 ﻿using System;
-using DG.Tweening;
+using FinalProject.Architecture.Characters.Enemy;
 using FinalProject.Architecture.Characters.Scripts.Systems.Movement;
 using UnityEngine;
 
@@ -9,10 +9,15 @@ namespace FinalProject.Architecture.Characters.Scripts.Systems.Attack
     {
         [SerializeField] private InputControl _inputControl;
         [SerializeField] private Transform _attackTransform;
-        [SerializeField] private Transform _playerTransform;
         [SerializeField] private AnimationHumanoid _animationAttack;
-        private bool IsPlaying = false;
-        
+        [SerializeField] private Transform _transformPlayer;
+        private int _enemyLayerIndex;
+
+        private void Awake()
+        {
+            _enemyLayerIndex = LayerMask.GetMask("Enemy");
+        }
+
         private void Update()
         {
             Attack(_inputControl.CurrentInput());
@@ -26,29 +31,31 @@ namespace FinalProject.Architecture.Characters.Scripts.Systems.Attack
                 return;
             }
 
-            if (!IsPlaying)
+            if (!_animationAttack.IsPlaying)
             {
-                IsPlaying = true;
-                
                 float angle = Mathf.Atan2(direction.x, -direction.y) * Mathf.Rad2Deg;
                 _attackTransform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
                 var denominator = Math.Abs(Mathf.Abs(direction.x) - Mathf.Abs(direction.y)) < 0.01f ? 2f : 1.5f;
 
                 _attackTransform.localPosition = direction / denominator;
-                _animationAttack.Play();
+                _animationAttack.Play(direction);
 
-                _playerTransform.DOLocalJump(direction / 2f, 0.5f,1,0.5f)
-                    .Append(_playerTransform.DOLocalMove(Vector3.zero, 0.5f))
-                    .AppendCallback(() =>
-                    {
-                        _animationAttack.Stop();
-                        IsPlaying = false;
-                    });
-
+                Hit(direction);
             }
+        }
 
+        private void Hit(Vector2 direction)
+        {
+            var pos = (Vector2) _transformPlayer.position;
+            var hits = Physics2D.RaycastAll(pos, direction, 3f, _enemyLayerIndex);
             
+            if (hits.Length <= 0) return;
+            
+            foreach (var hit in hits)
+            {
+                hit.collider.GetComponent<EnemyView>().TakeHit(1);
+            }
         }
     }
 }

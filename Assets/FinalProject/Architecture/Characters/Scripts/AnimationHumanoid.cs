@@ -4,8 +4,8 @@ namespace FinalProject.Architecture.Characters.Scripts
 {
     public abstract class AnimationHumanoid : MonoBehaviour
     {
-        protected bool IsPlaying;
-        public abstract void Play();
+        public bool IsPlaying { get; protected set; }
+        public abstract void Play(Vector2 direction = default);
         public abstract void Stop();
     }
 }
