@@ -16,8 +16,6 @@ namespace FinalProject.Architecture.Installer
             
             Container.Bind<ExitHelper>().AsSingle();
             Container.Bind<GameStateHelper>().AsSingle();
-            Container.Bind<InjectionClassFactory>().AsSingle();
-            Container.Bind<PrefabFactory>().AsSingle();
             
             Container.Bind<AppearanceIssuanceSystem>().FromInstance(appearanceIssuanceSystem).AsSingle();
 

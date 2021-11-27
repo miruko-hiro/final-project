@@ -24,6 +24,7 @@ MonoBehaviour:
   - FinalProject.Architecture.Characters.Player.Repositories.PlayerRaceRepository
   - FinalProject.Architecture.Characters.Player.Repositories.PlayerShieldRepository
   - FinalProject.Architecture.Characters.Player.Repositories.PlayerWeaponRepository
+  - FinalProject.Architecture.Characters.Player.Repositories.PlayerLevelRepository
   _interactorsReferences:
   - FinalProject.Architecture.Characters.Player.Interactors.PlayerBeardInteractor
   - FinalProject.Architecture.Characters.Player.Interactors.PlayerBodyInteractor
@@ -35,5 +36,6 @@ MonoBehaviour:
   - FinalProject.Architecture.Characters.Player.Interactors.PlayerRaceInteractor
   - FinalProject.Architecture.Characters.Player.Interactors.PlayerShieldInteractor
   - FinalProject.Architecture.Characters.Player.Interactors.PlayerWeaponInteractor
+  - FinalProject.Architecture.Characters.Player.Interactors.PlayerLevelInteractor
   _saveDataForThisScene: 1
   _saveName: Player.data

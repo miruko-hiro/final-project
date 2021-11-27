@@ -8,7 +8,7 @@ namespace FinalProject.Architecture.Utils
     public class PoolMono<T> where T: MonoBehaviour
     {
         public T Prefab { get; }
-        public bool AutoExpand { get; set; }
+        public bool AutoExpand { get; set; } = true;
         public Transform Container { get; }
 
         private List<T> _pool;

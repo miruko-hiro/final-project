@@ -1,4 +1,5 @@
 ﻿using FinalProject.Architecture.Characters.Enemy;
+using FinalProject.Architecture.Characters.Enemy.Scripts;
 using FinalProject.Architecture.UI.Scripts;
 
 namespace FinalProject.Architecture.Health

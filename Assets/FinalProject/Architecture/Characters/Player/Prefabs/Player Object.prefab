@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transformOwn: {fileID: 909307855020142694}
-  _effectPrefab: {fileID: 565274555784171338, guid: 403fc49e224d11749a2fb3701b3efb97, type: 3}
+  _effectPrefab: {fileID: 513301210528144938, guid: e534fcc1b90623948bd4a59535ecd6e8, type: 3}
 --- !u!1 &5878064037215581738
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,7 +259,7 @@ GameObject:
   - component: {fileID: 6183768842691305762}
   m_Layer: 0
   m_Name: Player Object
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

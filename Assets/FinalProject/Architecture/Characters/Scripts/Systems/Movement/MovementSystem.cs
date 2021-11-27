@@ -17,8 +17,12 @@ namespace FinalProject.Architecture.Characters.Scripts.Systems.Movement
         private void Move(Vector2 vector2)
         {
             _rigidbody2D.velocity = vector2 * _speed;
-            
-            if (vector2 == Vector2.zero) return;
+
+            if (vector2 == Vector2.zero)
+            {
+                _animation.Stop();
+                return;
+            }
             _animation.Play();
         }
     }

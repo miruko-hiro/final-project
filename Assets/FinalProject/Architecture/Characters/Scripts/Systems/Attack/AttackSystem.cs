@@ -1,5 +1,6 @@
 ﻿using System;
 using FinalProject.Architecture.Characters.Enemy;
+using FinalProject.Architecture.Characters.Enemy.Scripts;
 using FinalProject.Architecture.Characters.Scripts.Systems.Movement;
 using UnityEngine;
 
@@ -48,14 +49,22 @@ namespace FinalProject.Architecture.Characters.Scripts.Systems.Attack
         private void Hit(Vector2 direction)
         {
             var pos = (Vector2) _transformPlayer.position;
-            var hits = Physics2D.RaycastAll(pos, direction, 3f, _enemyLayerIndex);
-            
+            var hits = Physics2D.BoxCastAll(
+                pos,
+                new Vector2(2.2f, 2.2f),
+                0f,
+                direction,
+                1f,
+                _enemyLayerIndex);
+
             if (hits.Length <= 0) return;
-            
+
             foreach (var hit in hits)
             {
                 hit.collider.GetComponent<EnemyView>().TakeHit(1);
             }
         }
+
+        
     }
 }

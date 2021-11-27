@@ -44,11 +44,11 @@ TagManager:
   - name: Tilemap
     uniqueID: 3106804705
     locked: 0
-  - name: Humanoid
-    uniqueID: 1191499947
-    locked: 0
   - name: Item
     uniqueID: 1268998615
+    locked: 0
+  - name: Humanoid
+    uniqueID: 1191499947
     locked: 0
   - name: MainUI
     uniqueID: 986334883

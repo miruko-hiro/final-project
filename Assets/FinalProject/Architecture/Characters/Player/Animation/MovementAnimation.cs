@@ -16,13 +16,14 @@ namespace FinalProject.Architecture.Characters.Player.Animation
             
             if(_sequence != null) _sequence.Restart();
             else _sequence = _transformOwn.DOLocalJump(direction, 0.2f, 1, 0.3f)
+                .SetLoops(-1, LoopType.Restart)
                 .AppendCallback(() => IsPlaying = false)
                 .SetAutoKill(false);
         }
 
         public override void Stop()
         {
-            _sequence?.Kill(true);
+            _sequence?.Pause();
             IsPlaying = false;
         }
 

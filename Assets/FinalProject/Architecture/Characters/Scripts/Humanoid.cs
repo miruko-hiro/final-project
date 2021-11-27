@@ -1,9 +1,13 @@
+using System;
 using UnityEngine;
 
 namespace FinalProject.Architecture.Characters.Scripts
 {
     public abstract class Humanoid : MonoBehaviour
     {
+        public abstract event Action<int> OnTakeDamageEvent;
+        public abstract event Action<int> OnAddMoneyEvent;
+        
         [Space(10)] 
         [SerializeField] protected SpriteRenderer race;
         [Space(10)]
@@ -28,5 +32,13 @@ namespace FinalProject.Architecture.Characters.Scripts
         public abstract Sprite BootsArmor { get; set; }
         public abstract Sprite RightHand { get; set; }
         public abstract Sprite LeftHand { get; set; }
+
+        public abstract void TakeHit(int damage);
+
+        public abstract void ShowReceivedDamage(int damage);
+
+        public abstract void Die();
+
+        public abstract void AddMoney(int money);
     }
 }

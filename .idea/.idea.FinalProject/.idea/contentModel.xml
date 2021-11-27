@@ -216,10 +216,26 @@
             <e p="ArchitectureComponentState.cs" t="Include" />
             <e p="Characters" t="Include">
               <e p="Enemy" t="Include">
-                <e p="EnemyData.cs" t="Include" />
-                <e p="EnemyPresenter.cs" t="Include" />
-                <e p="EnemySpawner.cs" t="Include" />
-                <e p="EnemyView.cs" t="Include" />
+                <e p="Scripts" t="Include">
+                  <e p="EnemyData.cs" t="Include" />
+                  <e p="EnemyPresenter.cs" t="Include" />
+                  <e p="EnemySpawner.cs" t="Include" />
+                  <e p="EnemyView.cs" t="Include" />
+                </e>
+                <e p="UtilityAI" t="Include">
+                  <e p="Action" t="Include">
+                    <e p="BaseAction.cs" t="Include" />
+                    <e p="RunToEnemy.cs" t="Include" />
+                  </e>
+                  <e p="EnemyAI.cs" t="Include" />
+                  <e p="Score" t="Include">
+                    <e p="ScoreKeeper.cs" t="Include" />
+                  </e>
+                  <e p="Scorers" t="Include">
+                    <e p="DistanceToDynamicPosition.cs" t="Include" />
+                    <e p="Scorer.cs" t="Include" />
+                  </e>
+                </e>
               </e>
               <e p="Player" t="Include">
                 <e p="Animation" t="Include">
@@ -233,14 +249,12 @@
                   <e p="PlayerHairInteractor.cs" t="Include" />
                   <e p="PlayerHeadInteractor.cs" t="Include" />
                   <e p="PlayerHealthInspector.cs" t="Include" />
+                  <e p="PlayerLevelInteractor.cs" t="Include" />
                   <e p="PlayerPantsInteractor.cs" t="Include" />
                   <e p="PlayerRaceInteractor.cs" t="Include" />
                   <e p="PlayerShieldInteractor.cs" t="Include" />
                   <e p="PlayerWeaponInteractor.cs" t="Include" />
                 </e>
-                <e p="PlayerCreationView.cs" t="Include" />
-                <e p="PlayerPresenter.cs" t="Include" />
-                <e p="PlayerView.cs" t="Include" />
                 <e p="repositories" t="Include">
                   <e p="PlayerBeardRepository.cs" t="Include" />
                   <e p="PlayerBodyRepository.cs" t="Include" />
@@ -248,10 +262,16 @@
                   <e p="PlayerHairRepository.cs" t="Include" />
                   <e p="PlayerHeadRepository.cs" t="Include" />
                   <e p="PlayerHealthRepository.cs" t="Include" />
+                  <e p="PlayerLevelRepository.cs" t="Include" />
                   <e p="PlayerPantsRepository.cs" t="Include" />
                   <e p="PlayerRaceRepository.cs" t="Include" />
                   <e p="PlayerShieldRepository.cs" t="Include" />
                   <e p="PlayerWeaponRepository.cs" t="Include" />
+                </e>
+                <e p="Scripts" t="Include">
+                  <e p="PlayerCreationView.cs" t="Include" />
+                  <e p="PlayerPresenter.cs" t="Include" />
+                  <e p="PlayerView.cs" t="Include" />
                 </e>
               </e>
               <e p="Scripts" t="Include">
@@ -313,6 +333,12 @@
               </e>
             </e>
             <e p="ComponentsBase.cs" t="Include" />
+            <e p="DamageText" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="DamageText.cs" t="Include" />
+                <e p="DamageTextManager.cs" t="Include" />
+              </e>
+            </e>
             <e p="Game" t="Include">
               <e p="Scripts" t="Include">
                 <e p="GameManager.cs" t="Include" />
@@ -345,6 +371,13 @@
               <e p="Scripts" t="Include">
                 <e p="IInteractor.cs" t="Include" />
                 <e p="Interactor.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Items" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="Coin.cs" t="Include" />
+                <e p="Item.cs" t="Include" />
+                <e p="ItemManager.cs" t="Include" />
               </e>
             </e>
             <e p="repositories" t="Include">

@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using System;
+using DG.Tweening;
 using FinalProject.Architecture.Helpers.Scripts;
 using FinalProject.Architecture.UI.Scripts;
 using UnityEngine;
@@ -27,8 +28,8 @@ namespace FinalProject.Architecture.Health
             _rectTransformParent = rectTransform;
             _presenter = presenter;
             _transformOwn = transformOwn;
-            _savePosition = transformOwn.position;
             _camera = mainCamera;
+            SetPosition(transformOwn.position);
         }
 
         public override void ReduceHealth(float amount)
@@ -39,9 +40,14 @@ namespace FinalProject.Architecture.Health
         private void Update()
         {
             if (_savePosition == _transformOwn.position) return;
-            var position = _transformOwn.position;
-            _rectTransform.anchoredPosition = _translator.WorldToScreenSpace(position + Vector3.up, _camera, _rectTransformParent);
-            _savePosition = position;
+            SetPosition(_transformOwn.position);
+            
+        }
+
+        private void SetPosition(Vector3 newPosition)
+        {
+            _rectTransform.anchoredPosition = _translator.WorldToScreenSpace(newPosition + Vector3.up, _camera, _rectTransformParent);
+            _savePosition = newPosition;
         }
 
         private void OnDestroy()

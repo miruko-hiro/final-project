@@ -1,4 +1,5 @@
 ﻿using System;
+using FinalProject.Architecture.Helpers.Scripts;
 using UnityEngine;
 using Zenject;
 
@@ -26,7 +27,6 @@ namespace FinalProject.Architecture.Game.Scripts
         }
         
         private void Start() {
-            
             if (_isLoggingEnabled)
                 Debug.Log($"GAME MANAGER: Game launched: {Application.productName}");
         }
