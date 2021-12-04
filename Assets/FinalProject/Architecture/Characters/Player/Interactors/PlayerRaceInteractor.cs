@@ -1,8 +1,7 @@
 ﻿using System;
-using FinalProject.Architecture.Characters.Player.Repositories;
 using FinalProject.Architecture.Characters.Scripts.Appearance;
+using FinalProject.Architecture.Characters.Scripts.Types;
 using FinalProject.Architecture.Interactors.Scripts;
-using FinalProject.Architecture.Scenes.Scripts;
 using FinalProject.Architecture.Storage.Scripts;
 
 namespace FinalProject.Architecture.Characters.Player.Interactors
@@ -10,22 +9,23 @@ namespace FinalProject.Architecture.Characters.Player.Interactors
     public class PlayerRaceInteractor: Interactor
     {
         public event Action<HumanoidRaceProperties> ChangeRaceEvent;
-        private PlayerRaceRepository _repository;
+        
+        private const string Key = "PLAYER_RACE_PROPERTIES";
+        private StorageBase _storage;
 
-        public void ChangeRace(HumanoidRaceProperties raceProperties)
+        public HumanoidRaceProperties RaceProperties
         {
-            _repository.RaceProperties = raceProperties;
-            ChangeRaceEvent?.Invoke(raceProperties);
-        }
-
-        public HumanoidRaceProperties GetRaceProperties()
-        {
-            return _repository.RaceProperties;
+            get => _storage.Get(Key, new HumanoidRaceProperties(HumanoidRace.Orc, HumanoidGender.Male, 0));
+            set
+            {
+                ChangeRaceEvent?.Invoke(value);
+                _storage.Set(Key, value);
+            } 
         }
         
-        public override void OnInitialize(StorageBase storageBase, IScene scene)
+        public override void OnInitialize(StorageBase storageBase)
         {
-            _repository = scene.GetRepository<PlayerRaceRepository>();
+            _storage = storageBase;
         }
     }
 }

@@ -4,14 +4,16 @@ using UnityEngine;
 
 namespace FinalProject.Architecture.Characters.Player.Animation
 {
-    public class MeleeAttackAnimation : AnimationHumanoid
+    public class MeleeAttackAnimation : AnimationBase
     {
         [SerializeField] private Transform _transformOwn;
         [SerializeField] private GameObject _effectPrefab;
         private Animator _animator;
         private static readonly int IsAttack = Animator.StringToHash("isAttack");
 
-        private void Start()
+        public override bool IsPlaying { get; protected set; }
+
+        private void Awake()
         {
             _animator = Instantiate(_effectPrefab, transform).GetComponent<Animator>();
         }

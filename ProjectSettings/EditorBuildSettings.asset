@@ -17,7 +17,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/FinalProject/Architecture/Scenes/Battle/Battle.unity
     guid: 8fb28f3365afdf34ca287899ca739870
-  - enabled: 0
-    path: Assets/FinalProject/Architecture/Scenes/LoadingScreen/LoadingScreen.unity
-    guid: 8c0b5f58c0b69a7429c9515f9930e514
   m_configObjects: {}

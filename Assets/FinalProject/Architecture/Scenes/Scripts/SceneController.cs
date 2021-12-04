@@ -83,7 +83,6 @@ namespace FinalProject.Architecture.Scenes.Scripts
         }
         protected virtual IEnumerator InitializeSceneCoroutine(Coroutines coroutines, SceneConfig config, UnityAction<SceneConfig> sceneLoadedCallback) 
         {
-            Debug.Log(Time.deltaTime);
             SceneActual = new Scene(config);
             yield return null;
 

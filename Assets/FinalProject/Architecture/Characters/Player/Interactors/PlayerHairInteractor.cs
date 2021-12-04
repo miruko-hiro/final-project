@@ -1,8 +1,7 @@
 ﻿using System;
-using FinalProject.Architecture.Characters.Player.Repositories;
 using FinalProject.Architecture.Characters.Scripts.Hair;
+using FinalProject.Architecture.Characters.Scripts.Types;
 using FinalProject.Architecture.Interactors.Scripts;
-using FinalProject.Architecture.Scenes.Scripts;
 using FinalProject.Architecture.Storage.Scripts;
 
 namespace FinalProject.Architecture.Characters.Player.Interactors
@@ -10,21 +9,23 @@ namespace FinalProject.Architecture.Characters.Player.Interactors
     public class PlayerHairInteractor: Interactor
     {
         public event Action<HairProperties> ChangeHairEvent;
-        private PlayerHairRepository _repository;
         
-        public void ChangeHair(HairProperties hairProperties)
+        private const string Key = "PLAYER_HAIR_PROPERTIES";
+        private StorageBase _storage;
+        
+        public HairProperties HairProperties
         {
-            _repository.HairProperties = hairProperties;
-            ChangeHairEvent?.Invoke(hairProperties);
+            get => _storage.Get(Key, new HairProperties(HairColor.Black, HairLength.None, 0));
+            set
+            {
+                ChangeHairEvent?.Invoke(value);
+                _storage.Set(Key, value);
+            } 
         }
-
-        public HairProperties GetHairProperties()
+        
+        public override void OnInitialize(StorageBase storageBase)
         {
-            return _repository.HairProperties;
-        }
-        public override void OnInitialize(StorageBase storageBase, IScene scene)
-        {
-            _repository = scene.GetRepository<PlayerHairRepository>();
+            _storage = storageBase;
         }
     }
 }

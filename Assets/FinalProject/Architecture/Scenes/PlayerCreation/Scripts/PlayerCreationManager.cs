@@ -35,13 +35,13 @@ namespace FinalProject.Architecture.Scenes.PlayerCreation.Scripts
             _player.transform.position = new Vector2(-4.5f, 0f);
             _player.transform.localScale = new Vector3(20f, 20f, 1f);
 
-            var raceProperties = _gameManager.GetInteractor<PlayerRaceInteractor>().GetRaceProperties();
+            var raceProperties = _gameManager.GetInteractor<PlayerRaceInteractor>().RaceProperties;
             _player.Race = _dispenser.GetHumanoid(raceProperties);
 
-            var bodyProperties = _gameManager.GetInteractor<PlayerBodyInteractor>().GetBodyProperties();
+            var bodyProperties = _gameManager.GetInteractor<PlayerBodyInteractor>().BodyProperties;
             _player.BodyArmor = _dispenser.GetBodyArmor(bodyProperties);
 
-            var weaponProperties = _gameManager.GetInteractor<PlayerWeaponInteractor>().GetWeaponProperties();
+            var weaponProperties = _gameManager.GetInteractor<PlayerWeaponInteractor>().WeaponProperties;
             _player.RightHand = _dispenser.GetWeapon(weaponProperties);
             
             _genderTypeChanger = new GenderTypeChanger(_gameManager, _player, _dispenser);

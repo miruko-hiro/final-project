@@ -1,5 +1,4 @@
 ﻿using System;
-using FinalProject.Architecture.Characters.Enemy;
 using FinalProject.Architecture.Characters.Enemy.Scripts;
 using FinalProject.Architecture.Characters.Scripts.Systems.Movement;
 using UnityEngine;
@@ -10,13 +9,15 @@ namespace FinalProject.Architecture.Characters.Scripts.Systems.Attack
     {
         [SerializeField] private InputControl _inputControl;
         [SerializeField] private Transform _attackTransform;
-        [SerializeField] private AnimationHumanoid _animationAttack;
+        [SerializeField] private AnimationBase _animationAttack;
         [SerializeField] private Transform _transformPlayer;
         private int _enemyLayerIndex;
+        private int _staticsLayerIndex;
 
         private void Awake()
         {
             _enemyLayerIndex = LayerMask.GetMask("Enemy");
+            _staticsLayerIndex = LayerMask.GetMask("Statics");
         }
 
         private void Update()
@@ -55,13 +56,13 @@ namespace FinalProject.Architecture.Characters.Scripts.Systems.Attack
                 0f,
                 direction,
                 1f,
-                _enemyLayerIndex);
+                _enemyLayerIndex | _staticsLayerIndex);
 
             if (hits.Length <= 0) return;
 
             foreach (var hit in hits)
             {
-                hit.collider.GetComponent<EnemyView>().TakeHit(1);
+                hit.collider.GetComponent<IAttackTrigger>().TakeHit(1);
             }
         }
 

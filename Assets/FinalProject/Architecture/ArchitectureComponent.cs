@@ -57,7 +57,7 @@ namespace FinalProject.Architecture
         /// </summary>
         protected virtual void Initialize() { }
 
-        public virtual void OnInitialize(StorageBase storageBase, IScene scene) { }
+        public virtual void OnInitialize(StorageBase storageBase) { }
 
         public virtual void OnStart() { }
 

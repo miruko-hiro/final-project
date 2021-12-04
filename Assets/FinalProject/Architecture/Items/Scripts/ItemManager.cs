@@ -27,7 +27,7 @@ namespace FinalProject.Architecture.Items.Scripts
 
         public void ThrowItem(Vector2 position)
         {
-            var pool = SelectItem(_levelInteractor.GetLevel());
+            var pool = SelectItem(_levelInteractor.Level);
             var item = pool.GetFreeElement();
             item.transform.position = position;
             item.Jump();

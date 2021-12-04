@@ -1,8 +1,6 @@
 ﻿using System;
-using FinalProject.Architecture.Characters.Player.Repositories;
 using FinalProject.Architecture.Characters.Scripts.Armor;
 using FinalProject.Architecture.Interactors.Scripts;
-using FinalProject.Architecture.Scenes.Scripts;
 using FinalProject.Architecture.Storage.Scripts;
 
 namespace FinalProject.Architecture.Characters.Player.Interactors
@@ -10,22 +8,23 @@ namespace FinalProject.Architecture.Characters.Player.Interactors
     public class PlayerBootsInteractor: Interactor
     {
         public event Action<BootsProperties> ChangeBootsEvent;
-        private PlayerBootsRepository _repository;
+        
+        private const string Key = "PLAYER_BOOTS_PROPERTIES";
+        private StorageBase _storage;
 
-        public void ChangeBoots(BootsProperties bootsProperties)
+        public BootsProperties BootsProperties
         {
-            _repository.BootsProperties = bootsProperties;
-            ChangeBootsEvent?.Invoke(bootsProperties);
-        }
-
-        public BootsProperties GetBootsProperties()
-        {
-            return _repository.BootsProperties;
+            get => _storage.Get(Key, new BootsProperties(-1, 0));
+            set
+            {
+                ChangeBootsEvent?.Invoke(value);
+                _storage.Set(Key, value);
+            } 
         }
         
-        public override void OnInitialize(StorageBase storageBase, IScene scene)
+        public override void OnInitialize(StorageBase storageBase)
         {
-            _repository = scene.GetRepository<PlayerBootsRepository>();
+            _storage = storageBase;
         }
     }
 }

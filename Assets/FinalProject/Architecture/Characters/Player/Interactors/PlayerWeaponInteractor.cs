@@ -1,31 +1,31 @@
 ﻿using System;
-using FinalProject.Architecture.Characters.Player.Repositories;
+using FinalProject.Architecture.Characters.Scripts.Types;
 using FinalProject.Architecture.Characters.Scripts.Weapon;
 using FinalProject.Architecture.Interactors.Scripts;
-using FinalProject.Architecture.Scenes.Scripts;
 using FinalProject.Architecture.Storage.Scripts;
 
 namespace FinalProject.Architecture.Characters.Player.Interactors
 {
     public class PlayerWeaponInteractor: Interactor
     {
-        public event Action<WeaponProperties> ChangeWeaponEvent;
-        private PlayerWeaponRepository _repository;
-
-        public void ChangeWeapon(WeaponProperties weaponProperties)
+        public event Action<WeaponProperties> ChangeWeaponEvent; 
+        
+        private const string Key = "PLAYER_WEAPON_PROPERTIES";
+        private StorageBase _storage;
+        
+        public WeaponProperties WeaponProperties
         {
-            _repository.WeaponProperties = weaponProperties;
-            ChangeWeaponEvent?.Invoke(weaponProperties);
+            get => _storage.Get(Key, new WeaponProperties(WeaponType.Sword, MagicType.None, 0, 1));
+            set
+            {
+                ChangeWeaponEvent?.Invoke(value);
+                _storage.Set(Key, value);
+            } 
         }
 
-        public WeaponProperties GetWeaponProperties()
+        public override void OnInitialize(StorageBase storageBase)
         {
-            return _repository.WeaponProperties;
-        }
-
-        public override void OnInitialize(StorageBase storageBase, IScene scene)
-        {
-            _repository = scene.GetRepository<PlayerWeaponRepository>();
+            _storage = storageBase;
         }
     }
 }

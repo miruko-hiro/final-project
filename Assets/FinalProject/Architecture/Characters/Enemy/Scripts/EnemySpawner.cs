@@ -31,7 +31,7 @@ namespace FinalProject.Architecture.Characters.Enemy.Scripts
                 var enemyData = new EnemyData {Health = {Value = 5}};
                 var enemy = _prefabFactory.Spawn(_enemyPrefabs[i], _positions[i], Quaternion.identity, transform);
                 enemy.GetComponent<AIDestinationSetter>().target = _target;
-                var children = enemy.GetComponentsInChildren<DistanceToDynamicPosition>();
+                var children = enemy.GetComponentsInChildren<ScorerDistanceToDynamicPosition>();
                 foreach (var child in children)
                 {
                     child.TransformEnemy = _target;

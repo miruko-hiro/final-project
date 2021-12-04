@@ -35,25 +35,29 @@ namespace FinalProject.Architecture.Characters.Enemy.UtilityAI
 
         private IEnumerator SelectActionAI()
         {
-            bool someoneIsActive;
+            BaseAction actionInProgress = _actions.OrderBy(p => p.GetScores()).Last();
+
+                
             while (_isEnable)
             {
                 yield return new WaitForSeconds(updateTime);
-                someoneIsActive = false;
                 
-                foreach (BaseAction action in _actions)
+                var biggestAction = _actions.OrderBy(p => p.GetScores()).Last();
+                if (!biggestAction.Equals(actionInProgress))
                 {
-                    if (action.IsEnabled)
+                    if ((actionInProgress.IsEnabled && actionInProgress.IsInterrupted || !actionInProgress.IsEnabled) && biggestAction.GetScores() > 0)
                     {
-                        someoneIsActive = true;
-                        break;
+                        actionInProgress.Stop();
+                        biggestAction.Play();
+                        actionInProgress = biggestAction;
                     }
                 }
-
-                if (!someoneIsActive)
+                else
                 {
-                    var action = _actions.OrderBy(p => p.GetScores()).Last();
-                    if(action.GetScores() > 0) action.Play();
+                    if(!actionInProgress.IsEnabled && actionInProgress.GetScores() > 0)
+                    {
+                        actionInProgress.Play();
+                    }
                 }
             }
             

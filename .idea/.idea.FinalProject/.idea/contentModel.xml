@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Unity\FinalProject" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="AstarPathfindingProject" t="Include">
           <e p="AstarPathfindingProject.asmdef" t="Include" />
@@ -214,17 +215,32 @@
           <e p="Architecture" t="Include">
             <e p="ArchitectureComponent.cs" t="Include" />
             <e p="ArchitectureComponentState.cs" t="Include" />
+            <e p="Barrels" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="BarrelData.cs" t="Include" />
+                <e p="BarrelPresenter.cs" t="Include" />
+                <e p="BarrelSpawner.cs" t="Include" />
+                <e p="BarrelView.cs" t="Include" />
+              </e>
+            </e>
             <e p="Characters" t="Include">
               <e p="Enemy" t="Include">
+                <e p="Animation" t="Include">
+                  <e p="IdleSlimeAnimation.cs" t="Include" />
+                  <e p="MeleeAttackSlimeAnimation.cs" t="Include" />
+                </e>
                 <e p="Scripts" t="Include">
                   <e p="EnemyData.cs" t="Include" />
                   <e p="EnemyPresenter.cs" t="Include" />
                   <e p="EnemySpawner.cs" t="Include" />
                   <e p="EnemyView.cs" t="Include" />
+                  <e p="IAttackTrigger.cs" t="Include" />
                 </e>
                 <e p="UtilityAI" t="Include">
                   <e p="Action" t="Include">
+                    <e p="AttackEnemy.cs" t="Include" />
                     <e p="BaseAction.cs" t="Include" />
+                    <e p="Idle.cs" t="Include" />
                     <e p="RunToEnemy.cs" t="Include" />
                   </e>
                   <e p="EnemyAI.cs" t="Include" />
@@ -232,8 +248,9 @@
                     <e p="ScoreKeeper.cs" t="Include" />
                   </e>
                   <e p="Scorers" t="Include">
-                    <e p="DistanceToDynamicPosition.cs" t="Include" />
                     <e p="Scorer.cs" t="Include" />
+                    <e p="ScorerDistanceToDynamicPosition.cs" t="Include" />
+                    <e p="ScorerWithoutCondition.cs" t="Include" />
                   </e>
                 </e>
               </e>
@@ -255,19 +272,6 @@
                   <e p="PlayerShieldInteractor.cs" t="Include" />
                   <e p="PlayerWeaponInteractor.cs" t="Include" />
                 </e>
-                <e p="repositories" t="Include">
-                  <e p="PlayerBeardRepository.cs" t="Include" />
-                  <e p="PlayerBodyRepository.cs" t="Include" />
-                  <e p="PlayerBootsRepository.cs" t="Include" />
-                  <e p="PlayerHairRepository.cs" t="Include" />
-                  <e p="PlayerHeadRepository.cs" t="Include" />
-                  <e p="PlayerHealthRepository.cs" t="Include" />
-                  <e p="PlayerLevelRepository.cs" t="Include" />
-                  <e p="PlayerPantsRepository.cs" t="Include" />
-                  <e p="PlayerRaceRepository.cs" t="Include" />
-                  <e p="PlayerShieldRepository.cs" t="Include" />
-                  <e p="PlayerWeaponRepository.cs" t="Include" />
-                </e>
                 <e p="Scripts" t="Include">
                   <e p="PlayerCreationView.cs" t="Include" />
                   <e p="PlayerPresenter.cs" t="Include" />
@@ -275,7 +279,7 @@
                 </e>
               </e>
               <e p="Scripts" t="Include">
-                <e p="AnimationHumanoid.cs" t="Include" />
+                <e p="AnimationBase.cs" t="Include" />
                 <e p="Appearance" t="Include">
                   <e p="AppearanceIssuanceSystem.cs" t="Include" />
                   <e p="HumanoidCollection.cs" t="Include" />
@@ -380,12 +384,6 @@
                 <e p="ItemManager.cs" t="Include" />
               </e>
             </e>
-            <e p="repositories" t="Include">
-              <e p="Scripts" t="Include">
-                <e p="IRepository.cs" t="Include" />
-                <e p="Repository.cs" t="Include" />
-              </e>
-            </e>
             <e p="Scenes" t="Include">
               <e p="LoadingScreen" t="Include">
                 <e p="Scripts" t="Include">
@@ -466,20 +464,11 @@
               <e p="Attributes" t="Include">
                 <e p="ClassReference" t="Include">
                   <e p="ClassReferenceAttribute.cs" t="Include" />
-                  <e p="Editor" t="Include">
-                    <e p="ClassReferenceAttributeDrawer.cs" t="Include" />
-                  </e>
                 </e>
                 <e p="GameObjectOfType" t="Include">
-                  <e p="Editor" t="Include">
-                    <e p="GameObjectOfTypeDrawer.cs" t="Include" />
-                  </e>
                   <e p="GameObjectOfTypeAttribute.cs" t="Include" />
                 </e>
                 <e p="SceneName" t="Include">
-                  <e p="Editor" t="Include">
-                    <e p="SceneNameAttributeDrawer.cs" t="Include" />
-                  </e>
                   <e p="SceneNameAttribute.cs" t="Include" />
                 </e>
               </e>
@@ -493,16 +482,23 @@
           </e>
           <e p="Project.asmdef" t="Include" />
         </e>
+        <e p="FinalProjectEditor" t="Include">
+          <e p="Editor" t="Include">
+            <e p="ClassReferenceAttributeDrawer.cs" t="Include" />
+            <e p="GameObjectOfTypeDrawer.cs" t="Include" />
+            <e p="SceneNameAttributeDrawer.cs" t="Include" />
+          </e>
+        </e>
         <e p="Joystick Pack" t="Include">
+          <e p="Editor" t="Include">
+            <e p="DynamicJoystickEditor.cs" t="Include" />
+            <e p="FloatingJoystickEditor.cs" t="Include" />
+            <e p="JoystickEditor.cs" t="Include" />
+            <e p="VariableJoystickEditor.cs" t="Include" />
+          </e>
           <e p="Scripts" t="Include">
             <e p="Base" t="Include">
               <e p="Joystick.cs" t="Include" />
-            </e>
-            <e p="Editor" t="Include">
-              <e p="DynamicJoystickEditor.cs" t="Include" />
-              <e p="FloatingJoystickEditor.cs" t="Include" />
-              <e p="JoystickEditor.cs" t="Include" />
-              <e p="VariableJoystickEditor.cs" t="Include" />
             </e>
             <e p="Joystick.asmdef" t="Include" />
             <e p="Joysticks" t="Include">

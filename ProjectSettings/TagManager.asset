@@ -16,8 +16,8 @@ TagManager:
   - MainUI
   - Item
   - Enemy
-  - 
-  - 
+  - Player
+  - Statics
   - 
   - 
   - 

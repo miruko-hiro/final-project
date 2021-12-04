@@ -145,11 +145,11 @@ namespace FinalProject.Architecture.Scenes.PlayerCreation.Scripts
 
         private void SetHair()
         {
-            var hairProperties = _playerHairInteractor.GetHairProperties();
+            var hairProperties = _playerHairInteractor.HairProperties;
             hairProperties.HairColor = _hairColor;
             hairProperties.HairLength = _hairLength;
             hairProperties.SpriteIndex = _index;
-            _playerHairInteractor.ChangeHair(hairProperties);
+            _playerHairInteractor.HairProperties = hairProperties;
             
             _player.Hair = _dispenser.GetHairHead(hairProperties);
         }

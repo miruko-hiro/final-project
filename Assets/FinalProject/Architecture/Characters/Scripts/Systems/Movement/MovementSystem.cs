@@ -7,7 +7,7 @@ namespace FinalProject.Architecture.Characters.Scripts.Systems.Movement
         [SerializeField] private float _speed;
         [SerializeField] private InputControl _inputControl;
         [SerializeField] private Rigidbody2D _rigidbody2D;
-        [SerializeField] private AnimationHumanoid _animation;
+        [SerializeField] private AnimationBase _animation;
 
         private void Update()
         {

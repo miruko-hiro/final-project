@@ -10,12 +10,14 @@ using Zenject;
 
 namespace FinalProject.Architecture.Characters.Enemy.Scripts
 {
-    public class EnemyView: MonoBehaviour
+    public class EnemyView: MonoBehaviour, IAttackTrigger
     {
+        [SerializeField] private ParticleSystem _deathEffect;
         [SerializeField] private EnemyAI _enemyAI;
         public event Action<int> OnTakeDamageEvent;
 
         private Transform _transform;
+        private Collider2D _collider;
         private EnemyPresenter _presenter;
         private ItemManager _itemManager;
         private DamageTextManager _damageTextManager;
@@ -23,6 +25,7 @@ namespace FinalProject.Architecture.Characters.Enemy.Scripts
         private void Awake()
         {
             _transform = GetComponent<Transform>();
+            _collider = GetComponent<CircleCollider2D>();
         }
 
         [Inject]
@@ -50,6 +53,7 @@ namespace FinalProject.Architecture.Characters.Enemy.Scripts
         public void Die()
         {
             _enemyAI.IsEnable = false;
+            _collider.enabled = false;
             var spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
             var sequence = DOTween.Sequence();
             GetComponent<AIPath>().canMove = false;
@@ -65,6 +69,8 @@ namespace FinalProject.Architecture.Characters.Enemy.Scripts
                 .InsertCallback(1f, () =>
                 {
                     _itemManager.ThrowItem(transform.position);
+                    _deathEffect.transform.SetParent(null);
+                    _deathEffect.Emit(15);
                     Destroy(gameObject);
                 })
                 .Play();

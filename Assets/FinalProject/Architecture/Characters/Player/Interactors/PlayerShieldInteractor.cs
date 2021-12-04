@@ -1,31 +1,31 @@
 ﻿using System;
-using FinalProject.Architecture.Characters.Player.Repositories;
+using FinalProject.Architecture.Characters.Scripts.Types;
 using FinalProject.Architecture.Characters.Scripts.Weapon;
 using FinalProject.Architecture.Interactors.Scripts;
-using FinalProject.Architecture.Scenes.Scripts;
 using FinalProject.Architecture.Storage.Scripts;
 
 namespace FinalProject.Architecture.Characters.Player.Interactors
 {
     public class PlayerShieldInteractor: Interactor
     {
-        public event Action<ShieldProperties> ChangeShieldEvent;
-        private PlayerShieldRepository _repository;
-
-        public void ChangeShield(ShieldProperties shieldProperties)
+        public event Action<ShieldProperties> ChangeShieldEvent; 
+        
+        private const string Key = "PLAYER_SHIELD_PROPERTIES";
+        private StorageBase _storage;
+        
+        public ShieldProperties ShieldProperties
         {
-            _repository.ShieldProperties = shieldProperties;
-            ChangeShieldEvent?.Invoke(shieldProperties);
+            get => _storage.Get(Key, new ShieldProperties(ShieldType.None, 0, 0));
+            set
+            {
+                ChangeShieldEvent?.Invoke(value);
+                _storage.Set(Key, value);
+            } 
         }
 
-        public ShieldProperties GetShieldProperties()
+        public override void OnInitialize(StorageBase storageBase)
         {
-            return _repository.ShieldProperties;
-        }
-
-        public override void OnInitialize(StorageBase storageBase, IScene scene)
-        {
-            _repository = scene.GetRepository<PlayerShieldRepository>();
+            _storage = storageBase;
         }
     }
 }

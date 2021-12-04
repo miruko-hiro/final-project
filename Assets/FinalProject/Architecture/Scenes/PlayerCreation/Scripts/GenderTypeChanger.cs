@@ -27,7 +27,7 @@ namespace FinalProject.Architecture.Scenes.PlayerCreation.Scripts
 
         public void Change(SelectionType type)
         {
-            if (_raceInteractor.GetRaceProperties().Gender == HumanoidGender.Female)
+            if (_raceInteractor.RaceProperties.Gender == HumanoidGender.Female)
             {
                 DoWhenPerv();
             }
@@ -51,18 +51,18 @@ namespace FinalProject.Architecture.Scenes.PlayerCreation.Scripts
 
         private void SetGenderType(HumanoidGender gender)
         {
-            var raceProperties = _raceInteractor.GetRaceProperties();
+            var raceProperties = _raceInteractor.RaceProperties;
             raceProperties.Gender = gender;
-            _raceInteractor.ChangeRace(raceProperties);
+            _raceInteractor.RaceProperties = raceProperties;
             _player.Race = _dispenser.GetHumanoid(raceProperties);
         }
 
         private void SetBodyArmor(int index, ArmorType type)
         {
-            var bodyArmorProperties = _bodyInteractor.GetBodyProperties();
+            var bodyArmorProperties = _bodyInteractor.BodyProperties;
             bodyArmorProperties.ArmorType = type;
             bodyArmorProperties.SpriteIndex = index;
-            _bodyInteractor.ChangeBody(bodyArmorProperties);
+            _bodyInteractor.BodyProperties = bodyArmorProperties;
             _player.BodyArmor = _dispenser.GetBodyArmor(bodyArmorProperties);
         }
     }

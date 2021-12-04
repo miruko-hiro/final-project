@@ -1,7 +1,5 @@
 ﻿using System;
-using FinalProject.Architecture.Characters.Player.Repositories;
 using FinalProject.Architecture.Interactors.Scripts;
-using FinalProject.Architecture.Scenes.Scripts;
 using FinalProject.Architecture.Storage.Scripts;
 
 namespace FinalProject.Architecture.Characters.Player.Interactors
@@ -10,28 +8,22 @@ namespace FinalProject.Architecture.Characters.Player.Interactors
     {
         public event Action<int> ChangeLevelEvent;
         
-        private PlayerLevelRepository _repository;
-
-        public void ChangeLevel(int level)
+        private const string Key = "PLAYER_LEVEL_PROPERTIES";
+        private StorageBase _storage;
+        
+        public int Level
         {
-            _repository.Level = level;
-            ChangeLevelEvent?.Invoke(level);
-        }
-
-        public void IncreaseLevel(int increaseBy)
-        {
-            _repository.Level += increaseBy;
-            ChangeLevelEvent?.Invoke(increaseBy);
-        }
-
-        public int GetLevel()
-        {
-            return _repository.Level;
+            get => _storage.Get(Key, 0);
+            set
+            {
+                ChangeLevelEvent?.Invoke(value);
+                _storage.Set(Key, value);
+            } 
         }
         
-        public override void OnInitialize(StorageBase storageBase, IScene scene)
+        public override void OnInitialize(StorageBase storageBase)
         {
-            _repository = scene.GetRepository<PlayerLevelRepository>();
+            _storage = storageBase;
         }
     }
 }

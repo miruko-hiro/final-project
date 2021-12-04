@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using FinalProject.Architecture.Helpers.Scripts;
 using FinalProject.Architecture.Interactors.Scripts;
-using FinalProject.Architecture.Repositories.Scripts;
 using FinalProject.Architecture.Scenes.Scripts;
 using FinalProject.Architecture.Settings.Scripts;
 using Zenject;
@@ -58,14 +57,6 @@ namespace FinalProject.Architecture.Game.Scripts
 
         public IEnumerable<T> GetInteractors<T>() where T : IInteractor {
             return SceneController.SceneActual.GetInteractors<T>();
-        }
-
-        public T GetRepository<T>() where T : IRepository {
-            return SceneController.SceneActual.GetRepository<T>();
-        }
-        
-        public IEnumerable<T> GetRepositories<T>() where T : IRepository {
-            return SceneController.SceneActual.GetRepositories<T>();
         }
         
         public void SaveGame() {

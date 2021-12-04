@@ -39,11 +39,11 @@ namespace FinalProject.Architecture
                 component.OnCreate();
         }
 
-        public void SendMessageOnInitialize(StorageBase storage, IScene scene)
+        public void SendMessageOnInitialize(StorageBase storage)
         {
             var allComponents = _componentMap.Values;
             foreach (var component in allComponents) 
-                component.OnInitialize(storage, scene);
+                component.OnInitialize(storage);
         }
 
         public void SendMessageOnStart()

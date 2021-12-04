@@ -42,17 +42,17 @@ namespace FinalProject.Architecture.Characters.Player.Scripts
 
         private void LoadData()
         {
-            SetRace(_raceInteractor.GetRaceProperties());
-            SetHair(_hairInteractor.GetHairProperties());
-            SetBeard(_beardInteractor.GetBeardProperties());
+            SetRace(_raceInteractor.RaceProperties);
+            SetHair(_hairInteractor.HairProperties);
+            SetBeard(_beardInteractor.BeardProperties);
             
-            SetHeadArmor(_headInteractor.GetHeadProperties());
-            SetBodyArmor(_bodyInteractor.GetBodyProperties());
-            SetPantsArmor(_pantsInteractor.GetPantsProperties());
-            SetBootsArmor(_bootsInteractor.GetBootsProperties());
+            SetHeadArmor(_headInteractor.HeadProperties);
+            SetBodyArmor(_bodyInteractor.BodyProperties);
+            SetPantsArmor(_pantsInteractor.PantsProperties);
+            SetBootsArmor(_bootsInteractor.BootsProperties);
 
-            SetLeftHand(_shieldInteractor.GetShieldProperties());
-            SetRightHand(_weaponInteractor.GetWeaponProperties());
+            SetLeftHand(_shieldInteractor.ShieldProperties);
+            SetRightHand(_weaponInteractor.WeaponProperties);
         }
 
         private void SaveData()
@@ -150,7 +150,7 @@ namespace FinalProject.Architecture.Characters.Player.Scripts
 
         private void ChangeHealth(int damage)
         {
-            _healthInspector.ReduceHealth(damage);
+            _healthInspector.Health -= damage;
             _view.ShowReceivedDamage(damage);
         }
 

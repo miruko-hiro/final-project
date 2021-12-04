@@ -1,7 +1,5 @@
 ﻿using System;
-using FinalProject.Architecture.Characters.Player.Repositories;
 using FinalProject.Architecture.Interactors.Scripts;
-using FinalProject.Architecture.Scenes.Scripts;
 using FinalProject.Architecture.Storage.Scripts;
 
 namespace FinalProject.Architecture.Characters.Player.Interactors
@@ -12,34 +10,26 @@ namespace FinalProject.Architecture.Characters.Player.Interactors
         public event Action<int> IncreaseHealthEvent;
         public event Action<int> ReduceHealthEvent;
         
-        private PlayerHealthRepository _repository;
-
-        public void ChangeHealth(int health)
+        private const string Key = "PLAYER_HEALTH_PROPERTIES";
+        private StorageBase _storage;
+        
+        public int Health
         {
-            _repository.Health = health;
-            ChangeHealthEvent?.Invoke(health);
-        }
-
-        public void IncreaseHealth(int increaseBy)
-        {
-            _repository.Health += increaseBy;
-            IncreaseHealthEvent?.Invoke(increaseBy);
-        }
-
-        public void ReduceHealth(int reduceBy)
-        {
-            _repository.Health -= reduceBy;
-            ReduceHealthEvent?.Invoke(reduceBy);
-        }
-
-        public int GetHealth()
-        {
-            return _repository.Health;
+            get => _storage.Get(Key, 5);
+            set
+            {
+               var val = _storage.Get<int>(Key);
+               if(val == value) return;
+               if (val > value) ReduceHealthEvent?.Invoke(val - value);
+               else IncreaseHealthEvent?.Invoke(value - val);
+               ChangeHealthEvent?.Invoke(value);
+               _storage.Set(Key, value);
+            }
         }
         
-        public override void OnInitialize(StorageBase storageBase, IScene scene)
+        public override void OnInitialize(StorageBase storageBase)
         {
-            _repository = scene.GetRepository<PlayerHealthRepository>();
+            _storage = storageBase;
         }
     }
 }

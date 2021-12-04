@@ -4,10 +4,12 @@ using UnityEngine;
 
 namespace FinalProject.Architecture.Characters.Player.Animation
 {
-    public class MovementAnimation: AnimationHumanoid
+    public class MovementAnimation: AnimationBase
     {
         [SerializeField] private Transform _transformOwn;
         private Sequence _sequence;
+        public override bool IsPlaying { get; protected set; }
+
         public override void Play(Vector2 direction = default)
         {
             if(IsPlaying) return;

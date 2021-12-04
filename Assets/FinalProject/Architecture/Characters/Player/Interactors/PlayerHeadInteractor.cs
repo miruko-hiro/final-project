@@ -1,8 +1,7 @@
 ﻿using System;
-using FinalProject.Architecture.Characters.Player.Repositories;
 using FinalProject.Architecture.Characters.Scripts.Armor;
+using FinalProject.Architecture.Characters.Scripts.Types;
 using FinalProject.Architecture.Interactors.Scripts;
-using FinalProject.Architecture.Scenes.Scripts;
 using FinalProject.Architecture.Storage.Scripts;
 
 namespace FinalProject.Architecture.Characters.Player.Interactors
@@ -10,22 +9,23 @@ namespace FinalProject.Architecture.Characters.Player.Interactors
     public class PlayerHeadInteractor: Interactor
     {
         public event Action<HeadProperties> ChangeHeadEvent;
-        private PlayerHeadRepository _repository;
+        
+        private const string Key = "PLAYER_HEAD_PROPERTIES";
+        private StorageBase _storage;
 
-        public void ChangeHead(HeadProperties headProperties)
+        public HeadProperties HeadProperties
         {
-            _repository.HeadProperties = headProperties;
-            ChangeHeadEvent?.Invoke(headProperties);
-        }
-
-        public HeadProperties GetHeadProperties()
-        {
-            return _repository.HeadProperties;
+            get => _storage.Get(Key, new HeadProperties(ArmorType.None, 0, 0));
+            set
+            {
+                ChangeHeadEvent?.Invoke(value);
+                _storage.Set(Key, value);
+            }
         }
         
-        public override void OnInitialize(StorageBase storageBase, IScene scene)
+        public override void OnInitialize(StorageBase storageBase)
         {
-            _repository = scene.GetRepository<PlayerHeadRepository>();
+            _storage = storageBase;
         }
     }
 }

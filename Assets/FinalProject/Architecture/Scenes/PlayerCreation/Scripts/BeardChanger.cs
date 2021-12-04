@@ -148,11 +148,11 @@ namespace FinalProject.Architecture.Scenes.PlayerCreation.Scripts
 
         private void SetBeard()
         {
-            var beardProperties = _playerBeardInteractor.GetBeardProperties();
+            var beardProperties = _playerBeardInteractor.BeardProperties;
             beardProperties.BeardColor = _beardColor;
             beardProperties.BeardLength = _beardLength;
             beardProperties.SpriteIndex = _index;
-            _playerBeardInteractor.ChangeBeard(beardProperties);
+            _playerBeardInteractor.BeardProperties = beardProperties;
             
             _player.Beard = _dispenser.GetBeard(beardProperties);
         }

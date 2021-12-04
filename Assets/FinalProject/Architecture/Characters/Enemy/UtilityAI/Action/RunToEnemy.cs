@@ -9,13 +9,16 @@ namespace FinalProject.Architecture.Characters.Enemy.UtilityAI.Action
     public class RunToEnemy : BaseAction
     {
         [SerializeField] private AIPath _aiPath;
-        [SerializeField] private AnimationHumanoid _animation;
+        [SerializeField] private AnimationBase _animation;
+        
+        public override bool IsInterrupted { get; protected set; }
         public override bool IsEnabled { get; protected set; }
 
         private ScoreKeeper _scoreKeeper;
 
         private void Awake()
         {
+            IsInterrupted = true;
             _scoreKeeper = new ScoreKeeper(GetComponents<Scorer>());
         }
 

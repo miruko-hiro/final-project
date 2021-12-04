@@ -7,7 +7,7 @@ namespace FinalProject.Architecture
     {
         public void OnCreate(); // 1 use 1
 
-        public void OnInitialize(StorageBase storage, IScene scene); // 2 use only after 1
+        public void OnInitialize(StorageBase storage); // 2 use only after 1
 
         public void OnStart(); // 3 use only after 1 and 2
     }
