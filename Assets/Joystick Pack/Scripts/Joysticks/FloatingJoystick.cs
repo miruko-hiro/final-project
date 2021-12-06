@@ -1,5 +1,4 @@
 ﻿using Joystick_Pack.Scripts.Base;
-using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace Joystick_Pack.Scripts.Joysticks

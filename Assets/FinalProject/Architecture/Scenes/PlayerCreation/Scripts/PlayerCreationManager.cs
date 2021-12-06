@@ -38,7 +38,7 @@ namespace FinalProject.Architecture.Scenes.PlayerCreation.Scripts
             var raceProperties = _gameManager.GetInteractor<PlayerRaceInteractor>().RaceProperties;
             _player.Race = _dispenser.GetHumanoid(raceProperties);
 
-            var bodyProperties = _gameManager.GetInteractor<PlayerBodyInteractor>().BodyProperties;
+            var bodyProperties = _gameManager.GetInteractor<PlayerBodyInteractor>().ArmorProperties;
             _player.BodyArmor = _dispenser.GetBodyArmor(bodyProperties);
 
             var weaponProperties = _gameManager.GetInteractor<PlayerWeaponInteractor>().WeaponProperties;

@@ -6,19 +6,19 @@ using FinalProject.Architecture.Storage.Scripts;
 
 namespace FinalProject.Architecture.Characters.Player.Interactors
 {
-    public class PlayerBodyInteractor: Interactor
+    public class PlayerBodyInteractor: PlayerArmorInteractor
     {
-        public event Action<BodyProperties> ChangeBodyEvent;
+        public override event Action<ArmorProperties> ChangeArmorEvent;
         
         private const string Key = "PLAYER_BODY_PROPERTIES";
         private StorageBase _storage;
 
-        public BodyProperties BodyProperties
+        public override ArmorProperties ArmorProperties
         {
-            get => _storage.Get(Key, new BodyProperties(ArmorType.Light, 0, 0));
+            get => _storage.Get(Key, new ArmorProperties(ItemType.Body, ArmorType.Light, 0, 0, 5, "item"));
             set
             {
-                ChangeBodyEvent?.Invoke(value);
+                ChangeArmorEvent?.Invoke(value);
                 _storage.Set(Key, value);
             } 
         }

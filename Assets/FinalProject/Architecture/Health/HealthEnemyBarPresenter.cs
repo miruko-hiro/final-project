@@ -29,7 +29,7 @@ namespace FinalProject.Architecture.Health
             if (otherHealth > 0)
             {
                 var amount = (float) otherHealth / _maxHealth;
-                _view.ReduceHealth(amount);
+                _view.ReduceHealth(amount, otherHealth, _maxHealth);
             }
             else
             {

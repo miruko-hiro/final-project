@@ -37,6 +37,9 @@ namespace FinalProject.Architecture.Characters.Player.Scripts
             _shieldInteractor = gameManager.GetInteractor<PlayerShieldInteractor>();
             _weaponInteractor = gameManager.GetInteractor<PlayerWeaponInteractor>();
             _healthInspector = gameManager.GetInteractor<PlayerHealthInspector>();
+
+            _healthInspector.Health = 5;
+            
             OnOpen();
         }
 
@@ -46,10 +49,10 @@ namespace FinalProject.Architecture.Characters.Player.Scripts
             SetHair(_hairInteractor.HairProperties);
             SetBeard(_beardInteractor.BeardProperties);
             
-            SetHeadArmor(_headInteractor.HeadProperties);
-            SetBodyArmor(_bodyInteractor.BodyProperties);
-            SetPantsArmor(_pantsInteractor.PantsProperties);
-            SetBootsArmor(_bootsInteractor.BootsProperties);
+            SetHeadArmor(_headInteractor.ArmorProperties);
+            SetBodyArmor(_bodyInteractor.ArmorProperties);
+            SetPantsArmor(_pantsInteractor.ArmorProperties);
+            SetBootsArmor(_bootsInteractor.ArmorProperties);
 
             SetLeftHand(_shieldInteractor.ShieldProperties);
             SetRightHand(_weaponInteractor.WeaponProperties);
@@ -67,10 +70,10 @@ namespace FinalProject.Architecture.Characters.Player.Scripts
             _raceInteractor.ChangeRaceEvent += SetRace;
             _hairInteractor.ChangeHairEvent += SetHair;
             _beardInteractor.ChangeBeardEvent += SetBeard;
-            _headInteractor.ChangeHeadEvent += SetHeadArmor;
-            _bodyInteractor.ChangeBodyEvent += SetBodyArmor;
-            _pantsInteractor.ChangePantsEvent += SetPantsArmor;
-            _bootsInteractor.ChangeBootsEvent += SetBootsArmor;
+            _headInteractor.ChangeArmorEvent += SetHeadArmor;
+            _bodyInteractor.ChangeArmorEvent += SetBodyArmor;
+            _pantsInteractor.ChangeArmorEvent += SetPantsArmor;
+            _bootsInteractor.ChangeArmorEvent += SetBootsArmor;
             _shieldInteractor.ChangeShieldEvent += SetLeftHand;
             _weaponInteractor.ChangeWeaponEvent += SetRightHand;
             _healthInspector.ChangeHealthEvent += Die;
@@ -85,10 +88,10 @@ namespace FinalProject.Architecture.Characters.Player.Scripts
             _raceInteractor.ChangeRaceEvent -= SetRace;
             _hairInteractor.ChangeHairEvent -= SetHair;
             _beardInteractor.ChangeBeardEvent -= SetBeard;
-            _headInteractor.ChangeHeadEvent -= SetHeadArmor;
-            _bodyInteractor.ChangeBodyEvent -= SetBodyArmor;
-            _pantsInteractor.ChangePantsEvent -= SetPantsArmor;
-            _bootsInteractor.ChangeBootsEvent -= SetBootsArmor;
+            _headInteractor.ChangeArmorEvent -= SetHeadArmor;
+            _bodyInteractor.ChangeArmorEvent -= SetBodyArmor;
+            _pantsInteractor.ChangeArmorEvent -= SetPantsArmor;
+            _bootsInteractor.ChangeArmorEvent -= SetBootsArmor;
             _shieldInteractor.ChangeShieldEvent -= SetLeftHand;
             _weaponInteractor.ChangeWeaponEvent -= SetRightHand;
             _healthInspector.ChangeHealthEvent -= Die;
@@ -111,22 +114,22 @@ namespace FinalProject.Architecture.Characters.Player.Scripts
             _view.Beard = _dispenser.GetBeard(beardProperties);
         }
 
-        private void SetHeadArmor(HeadProperties headProperties)
+        private void SetHeadArmor(ArmorProperties headProperties)
         {
             _view.HeadArmor = _dispenser.GetHeadArmor(headProperties);
         }
 
-        private void SetBodyArmor(BodyProperties bodyProperties)
+        private void SetBodyArmor(ArmorProperties bodyProperties)
         {
             _view.BodyArmor = _dispenser.GetBodyArmor(bodyProperties);
         }
 
-        private void SetPantsArmor(PantsProperties pantsProperties)
+        private void SetPantsArmor(ArmorProperties pantsProperties)
         {
             _view.PantsArmor = _dispenser.GetPantsArmor(pantsProperties);
         }
 
-        private void SetBootsArmor(BootsProperties bootsProperties)
+        private void SetBootsArmor(ArmorProperties bootsProperties)
         {
             _view.BootsArmor = _dispenser.GetBootsArmor(bootsProperties);
         }

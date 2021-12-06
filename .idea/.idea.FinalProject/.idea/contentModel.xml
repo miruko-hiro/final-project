@@ -254,12 +254,21 @@
                   </e>
                 </e>
               </e>
+              <e p="NPC" t="Include">
+                <e p="Trader" t="Include">
+                  <e p="Scripts" t="Include">
+                    <e p="TraderPresenter.cs" t="Include" />
+                    <e p="TraderView.cs" t="Include" />
+                  </e>
+                </e>
+              </e>
               <e p="Player" t="Include">
                 <e p="Animation" t="Include">
                   <e p="MeleeAttackAnimation.cs" t="Include" />
                   <e p="MovementAnimation.cs" t="Include" />
                 </e>
                 <e p="Interactors" t="Include">
+                  <e p="PlayerArmorInteractor.cs" t="Include" />
                   <e p="PlayerBeardInteractor.cs" t="Include" />
                   <e p="PlayerBodyInteractor.cs" t="Include" />
                   <e p="PlayerBootsInteractor.cs" t="Include" />
@@ -286,14 +295,11 @@
                   <e p="HumanoidRaceProperties.cs" t="Include" />
                 </e>
                 <e p="Armor" t="Include">
+                  <e p="ArmorProperties.cs" t="Include" />
                   <e p="BodyCollection.cs" t="Include" />
-                  <e p="BodyProperties.cs" t="Include" />
                   <e p="BootsCollection.cs" t="Include" />
-                  <e p="BootsProperties.cs" t="Include" />
                   <e p="HeadCollection.cs" t="Include" />
-                  <e p="HeadProperties.cs" t="Include" />
                   <e p="PantsCollection.cs" t="Include" />
-                  <e p="PantsProperties.cs" t="Include" />
                 </e>
                 <e p="Hair" t="Include">
                   <e p="BeardCollection.cs" t="Include" />
@@ -323,6 +329,7 @@
                   <e p="HairLength.cs" t="Include" />
                   <e p="HumanoidGender.cs" t="Include" />
                   <e p="HumanoidRace.cs" t="Include" />
+                  <e p="ItemType.cs" t="Include" />
                   <e p="Limits.cs" t="Include" />
                   <e p="MagicType.cs" t="Include" />
                   <e p="ShieldType.cs" t="Include" />
@@ -352,6 +359,8 @@
             <e p="Health" t="Include">
               <e p="HealthEnemyBarPresenter.cs" t="Include" />
               <e p="HealthEnemyBarView.cs" t="Include" />
+              <e p="HealthPlayerBarPresenter.cs" t="Include" />
+              <e p="HeathPlayerBarView.cs" t="Include" />
             </e>
             <e p="Helpers" t="Include">
               <e p="Scripts" t="Include">
@@ -380,11 +389,43 @@
             <e p="Items" t="Include">
               <e p="Scripts" t="Include">
                 <e p="Coin.cs" t="Include" />
+                <e p="IItemProperties.cs" t="Include" />
                 <e p="Item.cs" t="Include" />
                 <e p="ItemManager.cs" t="Include" />
               </e>
             </e>
             <e p="Scenes" t="Include">
+              <e p="FreeZone" t="Include">
+                <e p="Scripts" t="Include">
+                  <e p="Buy" t="Include">
+                    <e p="BuyWindow.cs" t="Include" />
+                    <e p="InfoWindow.cs" t="Include" />
+                    <e p="ItemButton.cs" t="Include" />
+                  </e>
+                  <e p="Inventory" t="Include">
+                    <e p="Backpack" t="Include">
+                      <e p="BackpackView.cs" t="Include" />
+                    </e>
+                    <e p="InventoryView.cs" t="Include" />
+                    <e p="ItemArmor" t="Include">
+                      <e p="PlayerArmor.cs" t="Include" />
+                      <e p="PlayerArmorPresenter.cs" t="Include" />
+                    </e>
+                    <e p="LeftHand" t="Include">
+                      <e p="PlayerLeftHand.cs" t="Include" />
+                      <e p="PlayerLeftHandPresenter.cs" t="Include" />
+                    </e>
+                    <e p="PlayerAppearance.cs" t="Include" />
+                    <e p="PlayerAppearancePresenter.cs" t="Include" />
+                    <e p="RightHand" t="Include">
+                      <e p="PlayerRightHand.cs" t="Include" />
+                      <e p="PlayerRightHandPresenter.cs" t="Include" />
+                    </e>
+                  </e>
+                  <e p="ItemsSpawner.cs" t="Include" />
+                  <e p="TraderDialog.cs" t="Include" />
+                </e>
+              </e>
               <e p="LoadingScreen" t="Include">
                 <e p="Scripts" t="Include">
                   <e p="LoadingBarManager.cs" t="Include" />
@@ -490,12 +531,6 @@
           </e>
         </e>
         <e p="Joystick Pack" t="Include">
-          <e p="Editor" t="Include">
-            <e p="DynamicJoystickEditor.cs" t="Include" />
-            <e p="FloatingJoystickEditor.cs" t="Include" />
-            <e p="JoystickEditor.cs" t="Include" />
-            <e p="VariableJoystickEditor.cs" t="Include" />
-          </e>
           <e p="Scripts" t="Include">
             <e p="Base" t="Include">
               <e p="Joystick.cs" t="Include" />

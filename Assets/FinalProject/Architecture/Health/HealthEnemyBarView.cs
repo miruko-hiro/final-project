@@ -32,7 +32,7 @@ namespace FinalProject.Architecture.Health
             SetPosition(transformOwn.position);
         }
 
-        public override void ReduceHealth(float amount)
+        public override void ReduceHealth(float amount, int newHealth, int maxHealth)
         {
             _healthImage.DOFillAmount(amount, _duration);
         }

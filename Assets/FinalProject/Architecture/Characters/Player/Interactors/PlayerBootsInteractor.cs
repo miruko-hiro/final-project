@@ -1,23 +1,23 @@
 ﻿using System;
 using FinalProject.Architecture.Characters.Scripts.Armor;
-using FinalProject.Architecture.Interactors.Scripts;
+using FinalProject.Architecture.Characters.Scripts.Types;
 using FinalProject.Architecture.Storage.Scripts;
 
 namespace FinalProject.Architecture.Characters.Player.Interactors
 {
-    public class PlayerBootsInteractor: Interactor
+    public class PlayerBootsInteractor: PlayerArmorInteractor
     {
-        public event Action<BootsProperties> ChangeBootsEvent;
+        public override event Action<ArmorProperties> ChangeArmorEvent;
         
         private const string Key = "PLAYER_BOOTS_PROPERTIES";
         private StorageBase _storage;
 
-        public BootsProperties BootsProperties
+        public override ArmorProperties ArmorProperties
         {
-            get => _storage.Get(Key, new BootsProperties(-1, 0));
+            get => _storage.Get(Key, new ArmorProperties(ItemType.Boots, ArmorType.None, -1, 0, 5, "item"));
             set
             {
-                ChangeBootsEvent?.Invoke(value);
+                ChangeArmorEvent?.Invoke(value);
                 _storage.Set(Key, value);
             } 
         }

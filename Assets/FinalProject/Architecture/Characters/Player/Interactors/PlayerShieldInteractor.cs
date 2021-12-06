@@ -15,7 +15,7 @@ namespace FinalProject.Architecture.Characters.Player.Interactors
         
         public ShieldProperties ShieldProperties
         {
-            get => _storage.Get(Key, new ShieldProperties(ShieldType.None, 0, 0));
+            get => _storage.Get(Key, new ShieldProperties(ItemType.Shield, ShieldType.None, 0, 0, 5, "item"));
             set
             {
                 ChangeShieldEvent?.Invoke(value);

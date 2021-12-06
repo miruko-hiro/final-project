@@ -18,12 +18,12 @@ namespace FinalProject.Architecture.Characters.Player.Interactors
             get => _storage.Get(Key, 5);
             set
             {
-               var val = _storage.Get<int>(Key);
-               if(val == value) return;
-               if (val > value) ReduceHealthEvent?.Invoke(val - value);
-               else IncreaseHealthEvent?.Invoke(value - val);
-               ChangeHealthEvent?.Invoke(value);
-               _storage.Set(Key, value);
+                var val = _storage.Get<int>(Key); 
+                if(val == value) return; 
+                if (val > value) ReduceHealthEvent?.Invoke(value);
+                else IncreaseHealthEvent?.Invoke(value); 
+                ChangeHealthEvent?.Invoke(value); 
+                _storage.Set(Key, value);
             }
         }
         

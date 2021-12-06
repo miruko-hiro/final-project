@@ -59,10 +59,10 @@ namespace FinalProject.Architecture.Scenes.PlayerCreation.Scripts
 
         private void SetBodyArmor(int index, ArmorType type)
         {
-            var bodyArmorProperties = _bodyInteractor.BodyProperties;
+            var bodyArmorProperties = _bodyInteractor.ArmorProperties;
             bodyArmorProperties.ArmorType = type;
             bodyArmorProperties.SpriteIndex = index;
-            _bodyInteractor.BodyProperties = bodyArmorProperties;
+            _bodyInteractor.ArmorProperties = bodyArmorProperties;
             _player.BodyArmor = _dispenser.GetBodyArmor(bodyArmorProperties);
         }
     }

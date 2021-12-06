@@ -1,4 +1,3 @@
-using System;
 using FinalProject.Architecture.Game.Scripts;
 using FinalProject.Architecture.Helpers.Scripts;
 using UnityEngine;
@@ -27,7 +26,8 @@ namespace FinalProject.Architecture.Scenes.MainMenu.Scripts
         
         public void OnContinue()
         {
-            _gameManager.SceneController.LoadScene(_coroutines, "Battle");
+            //_gameManager.SceneController.LoadScene(_coroutines, "Battle");
+            _gameManager.SceneController.LoadScene(_coroutines, "FreeZone");
         }
 
         public void OnExit()

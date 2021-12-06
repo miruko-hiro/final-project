@@ -15,7 +15,7 @@ namespace FinalProject.Architecture.Characters.Player.Interactors
         
         public WeaponProperties WeaponProperties
         {
-            get => _storage.Get(Key, new WeaponProperties(WeaponType.Sword, MagicType.None, 0, 1));
+            get => _storage.Get(Key, new WeaponProperties(ItemType.Weapon, WeaponType.Sword, MagicType.None, 0, 1, 5, "item"));
             set
             {
                 ChangeWeaponEvent?.Invoke(value);

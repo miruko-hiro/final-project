@@ -24,7 +24,7 @@ namespace FinalProject.Architecture.Characters.Player.Animation
 
             IsPlaying = true;
             
-            _animator.SetBool(IsAttack, IsPlaying);
+            _animator.SetBool(IsAttack, true);
             
             DOTween.Sequence()
                 .Append(_transformOwn.DOLocalMove(direction / 2f, 0.3f))
@@ -38,7 +38,7 @@ namespace FinalProject.Architecture.Characters.Player.Animation
 
             IsPlaying = false;
             
-            _animator.SetBool(IsAttack, IsPlaying);
+            _animator.SetBool(IsAttack, false);
         }
     }
 }

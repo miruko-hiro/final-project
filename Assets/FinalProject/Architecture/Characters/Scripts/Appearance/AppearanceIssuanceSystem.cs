@@ -1,4 +1,5 @@
-﻿using FinalProject.Architecture.Characters.Scripts.Armor;
+﻿using System;
+using FinalProject.Architecture.Characters.Scripts.Armor;
 using FinalProject.Architecture.Characters.Scripts.Hair;
 using FinalProject.Architecture.Characters.Scripts.Types;
 using FinalProject.Architecture.Characters.Scripts.Weapon;
@@ -36,22 +37,22 @@ namespace FinalProject.Architecture.Characters.Scripts.Appearance
             return beardCollection.GetSprite(beardProperties.SpriteIndex, beardProperties.BeardLength, beardProperties.BeardColor);
         }
 
-        public Sprite GetHeadArmor(HeadProperties headProperties)
+        public Sprite GetHeadArmor(ArmorProperties headProperties)
         {
             return headCollection.GetSprite(headProperties.SpriteIndex, headProperties.ArmorType);
         }
 
-        public Sprite GetBodyArmor(BodyProperties bodyProperties)
+        public Sprite GetBodyArmor(ArmorProperties bodyProperties)
         {
             return bodyCollection.GetSprite(bodyProperties.SpriteIndex, bodyProperties.ArmorType);
         }
 
-        public Sprite GetPantsArmor(PantsProperties pantsProperties)
+        public Sprite GetPantsArmor(ArmorProperties pantsProperties)
         {
             return pantsCollection.GetSprite(pantsProperties.SpriteIndex);
         }
 
-        public Sprite GetBootsArmor(BootsProperties bootsProperties)
+        public Sprite GetBootsArmor(ArmorProperties bootsProperties)
         {
             return bootsCollection.GetSprite(bootsProperties.SpriteIndex);
         }
@@ -64,6 +65,30 @@ namespace FinalProject.Architecture.Characters.Scripts.Appearance
         public Sprite GetShield(ShieldProperties shieldProperties)
         {
             return leftHandCollection.GetSprite(shieldProperties.SpriteIndex, shieldProperties.ShieldType);
+        }
+
+        public int GetRandomIndex(ItemType itemType, ArmorType armorType)
+        {
+            return itemType switch
+            {
+                ItemType.Head => headCollection.GetRandomIndex(armorType),
+                ItemType.Body => bodyCollection.GetRandomIndex(armorType),
+                ItemType.Pants => pantsCollection.GetRandomIndex(),
+                ItemType.Boots => bootsCollection.GetRandomIndex(),
+                _ => throw new ArgumentOutOfRangeException(nameof(itemType), itemType, null)
+            };
+        }
+
+        public Sprite GetArmorSprite(ArmorProperties armorProperties)
+        {
+            return armorProperties.ItemType switch
+            {
+                ItemType.Head => GetHeadArmor(armorProperties),
+                ItemType.Body => GetBodyArmor(armorProperties),
+                ItemType.Pants => GetPantsArmor(armorProperties),
+                ItemType.Boots => GetBootsArmor(armorProperties),
+                _ => throw new ArgumentOutOfRangeException(nameof(armorProperties.ItemType), armorProperties.ItemType, null)
+            };
         }
     }
 }

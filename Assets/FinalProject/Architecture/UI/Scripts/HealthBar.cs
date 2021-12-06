@@ -7,6 +7,6 @@ namespace FinalProject.Architecture.UI.Scripts
     {
         [SerializeField] protected Image _healthImage;
 
-        public abstract void ReduceHealth(float amount);
+        public abstract void ReduceHealth(float amount, int newHealth, int maxHealth);
     }
 }

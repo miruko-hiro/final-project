@@ -11,5 +11,10 @@ namespace FinalProject.Architecture.Characters.Scripts.Armor
         {
             return index < 0 ? null : pants[index];
         }
+
+        public int GetRandomIndex()
+        {
+            return Random.Range(0, pants.Length - 1);
+        }
     }
 }
