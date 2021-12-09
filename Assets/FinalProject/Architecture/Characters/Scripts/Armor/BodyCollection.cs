@@ -19,6 +19,7 @@ namespace FinalProject.Architecture.Characters.Scripts.Armor
                 ArmorType.Light => lightArmors[index],
                 ArmorType.Medium => mediumArmors[index],
                 ArmorType.Heavy => heavyArmors[index],
+                ArmorType.None => null,
                 _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
             };
         }

@@ -405,22 +405,33 @@
                   <e p="Inventory" t="Include">
                     <e p="Backpack" t="Include">
                       <e p="BackpackView.cs" t="Include" />
+                      <e p="Item" t="Include">
+                        <e p="ItemArmorPresenter.cs" t="Include" />
+                        <e p="ItemBackground.cs" t="Include" />
+                        <e p="ItemDrag.cs" t="Include" />
+                        <e p="ItemPresenter.cs" t="Include" />
+                        <e p="ItemShieldPresenter.cs" t="Include" />
+                        <e p="ItemView.cs" t="Include" />
+                        <e p="ItemWeaponPresenter.cs" t="Include" />
+                      </e>
                     </e>
                     <e p="InventoryView.cs" t="Include" />
-                    <e p="ItemArmor" t="Include">
-                      <e p="PlayerArmor.cs" t="Include" />
-                      <e p="PlayerArmorPresenter.cs" t="Include" />
-                    </e>
-                    <e p="LeftHand" t="Include">
-                      <e p="PlayerLeftHand.cs" t="Include" />
-                      <e p="PlayerLeftHandPresenter.cs" t="Include" />
-                    </e>
                     <e p="PlayerAppearance.cs" t="Include" />
                     <e p="PlayerAppearancePresenter.cs" t="Include" />
-                    <e p="RightHand" t="Include">
+                    <e p="PlayerItem.cs" t="Include" />
+                    <e p="PlayerItems" t="Include">
+                      <e p="IPlayerArmor.cs" t="Include" />
+                      <e p="PlayerArmorPresenter.cs" t="Include" />
+                      <e p="PlayerBodyArmor.cs" t="Include" />
+                      <e p="PlayerBootsArmor.cs" t="Include" />
+                      <e p="PlayerHeadArmor.cs" t="Include" />
+                      <e p="PlayerLeftHand.cs" t="Include" />
+                      <e p="PlayerLeftHandPresenter.cs" t="Include" />
+                      <e p="PlayerPantsArmor.cs" t="Include" />
                       <e p="PlayerRightHand.cs" t="Include" />
                       <e p="PlayerRightHandPresenter.cs" t="Include" />
                     </e>
+                    <e p="PlayerOutfit.cs" t="Include" />
                   </e>
                   <e p="ItemsSpawner.cs" t="Include" />
                   <e p="TraderDialog.cs" t="Include" />

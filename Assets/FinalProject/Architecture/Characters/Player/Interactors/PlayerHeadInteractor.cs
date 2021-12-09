@@ -2,6 +2,7 @@
 using FinalProject.Architecture.Characters.Scripts.Armor;
 using FinalProject.Architecture.Characters.Scripts.Types;
 using FinalProject.Architecture.Storage.Scripts;
+using UnityEngine;
 
 namespace FinalProject.Architecture.Characters.Player.Interactors
 {

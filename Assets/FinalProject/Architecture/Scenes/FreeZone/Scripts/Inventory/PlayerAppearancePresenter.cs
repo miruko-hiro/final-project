@@ -4,6 +4,7 @@ using FinalProject.Architecture.Characters.Scripts.Armor;
 using FinalProject.Architecture.Characters.Scripts.Hair;
 using FinalProject.Architecture.Characters.Scripts.Weapon;
 using FinalProject.Architecture.Game.Scripts;
+using UnityEngine;
 
 namespace FinalProject.Architecture.Scenes.FreeZone.Scripts.Inventory
 {

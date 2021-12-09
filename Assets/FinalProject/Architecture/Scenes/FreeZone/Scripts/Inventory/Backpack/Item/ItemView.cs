@@ -1,20 +1,16 @@
 ﻿using System;
-using FinalProject.Architecture.Characters.Scripts.Appearance;
-using FinalProject.Architecture.Game.Scripts;
-using FinalProject.Architecture.Scenes.FreeZone.Scripts.Buy;
+using FinalProject.Architecture.Characters.Scripts.Types;
 using UnityEngine;
 using UnityEngine.UI;
-using Zenject;
 
-namespace FinalProject.Architecture.Scenes.FreeZone.Scripts.Inventory.LeftHand
+namespace FinalProject.Architecture.Scenes.FreeZone.Scripts.Inventory.Backpack.Item
 {
-    public class PlayerLeftHand : MonoBehaviour
+    public class ItemView : MonoBehaviour
     {
         public event Action OnAddInfoToInfoWindowEvent;
         
-        [SerializeField] private InfoWindow _infoWindow;
         [SerializeField] private Image _image;
-        private PlayerLeftHandPresenter _presenter;
+        public IItemPresenter Presenter { get; private set; }
         
         public Sprite Sprite
         {
@@ -30,17 +26,18 @@ namespace FinalProject.Architecture.Scenes.FreeZone.Scripts.Inventory.LeftHand
                 SetAlpha(_image, 1f);
             }
         }
-
-
-        [Inject]
-        private void Construct(GameManager gameManager, AppearanceIssuanceSystem dispenser)
-        {
-            _presenter = new PlayerLeftHandPresenter(this, gameManager, dispenser, _infoWindow);
-        }
+        
+        public ItemType ItemType { get; private set; }
         
         private void Awake()
         {
             GetComponent<Button>().onClick.AddListener(AddInfoToInfoWindow);
+        }
+
+        public void Initialize(ItemType type, IItemPresenter presenter)
+        {
+            ItemType = type;
+            Presenter = presenter;
         }
         
         private void AddInfoToInfoWindow()
@@ -57,7 +54,7 @@ namespace FinalProject.Architecture.Scenes.FreeZone.Scripts.Inventory.LeftHand
 
         private void OnDestroy()
         {
-            _presenter = null;
+            Presenter = null;
             GetComponent<Button>().onClick.AddListener(AddInfoToInfoWindow);
         }
     }

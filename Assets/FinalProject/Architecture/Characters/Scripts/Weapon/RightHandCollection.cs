@@ -35,6 +35,7 @@ namespace FinalProject.Architecture.Characters.Scripts.Weapon
         {
             return type switch
             {
+                WeaponType.None => null,
                 WeaponType.Bow => bows[index],
                 WeaponType.Sword => swords[index],
                 WeaponType.Axe => axes[index],

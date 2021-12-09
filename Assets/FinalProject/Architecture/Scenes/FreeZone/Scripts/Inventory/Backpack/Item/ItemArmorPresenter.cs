@@ -1,43 +1,40 @@
-﻿using FinalProject.Architecture.Characters.Player.Interactors;
-using FinalProject.Architecture.Characters.Scripts.Appearance;
+﻿using FinalProject.Architecture.Characters.Scripts.Appearance;
 using FinalProject.Architecture.Characters.Scripts.Armor;
 using FinalProject.Architecture.Scenes.FreeZone.Scripts.Buy;
 
-namespace FinalProject.Architecture.Scenes.FreeZone.Scripts.Inventory.ItemArmor
+namespace FinalProject.Architecture.Scenes.FreeZone.Scripts.Inventory.Backpack.Item
 {
-    public class PlayerArmorPresenter
+    public class ItemArmorPresenter: IItemPresenter
     {
-        private readonly PlayerArmor _view;
-        private AppearanceIssuanceSystem _dispenser;
-        private PlayerArmorInteractor _interactor;
+        private readonly ItemView _view;
+        private readonly AppearanceIssuanceSystem _dispenser;
         private readonly InfoWindow _infoWindow;
+        public ArmorProperties ArmorProperties { get; }
 
-        public PlayerArmorPresenter(PlayerArmor view, PlayerArmorInteractor interactor, AppearanceIssuanceSystem dispenser, InfoWindow infoWindow)
+        public ItemArmorPresenter(ItemView view, ArmorProperties armorProperties, AppearanceIssuanceSystem dispenser, InfoWindow infoWindow)
         {
             _view = view;
+            ArmorProperties = armorProperties;
             _dispenser = dispenser;
-            _interactor = interactor;
             _infoWindow = infoWindow;
             
             OnOpen();
         }
-        
+
         private void LoadData()
         {
-            SetArmor(_interactor.ArmorProperties);
+            SetArmor(ArmorProperties);
         }
 
         private void OnOpen()
         {
             LoadData();
             
-            _interactor.ChangeArmorEvent += SetArmor;
             _view.OnAddInfoToInfoWindowEvent += AddInfoToInfoWindow;
         }
-
+        
         private void OnClose()
         {
-            _interactor.ChangeArmorEvent -= SetArmor;
             _view.OnAddInfoToInfoWindowEvent -= AddInfoToInfoWindow;
         }
 
@@ -48,10 +45,10 @@ namespace FinalProject.Architecture.Scenes.FreeZone.Scripts.Inventory.ItemArmor
         
         private void AddInfoToInfoWindow()
         {
-            _infoWindow.AddInfo(_interactor.ArmorProperties);
+            _infoWindow.AddInfo(ArmorProperties);
         }
 
-        ~PlayerArmorPresenter()
+        ~ItemArmorPresenter()
         {
             OnClose();
         }
