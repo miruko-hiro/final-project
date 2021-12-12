@@ -28,9 +28,10 @@ namespace FinalProject.Architecture.Characters.Scripts.Weapon
 
         public string GetString()
         {
-            return "Item Weapon Type: " + WeaponType + "\n"
+            return "Item Type: Weapon \nType: " + WeaponType + "\n"
                    + "Magic Type: " + MagicType + "\n"
-                   + "Attack Score: " + AttackScore;
+                   + "Attack Score: " + AttackScore + "\n"
+                   + "Price:" + Price;
         }
     }
 }

@@ -20,6 +20,7 @@ namespace FinalProject.Architecture.Scenes.Scripts
         public void Start();
         public void Save();
         public void SaveAsync(Action callback = null);
+        public void DeleteSave();
 
         public T GetInteractor<T>() where T : IInteractor;
         public IEnumerable<T> GetInteractors<T>() where T : IInteractor;

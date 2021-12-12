@@ -71,6 +71,13 @@ namespace FinalProject.Architecture.Storage.Scripts
         
         protected abstract Coroutine SaveStarterInternal(Coroutines coroutines, Action callback = null);
 
+        public void DeleteSave()
+        {
+            DeleteSaveInternal();
+        }
+
+        protected abstract void DeleteSaveInternal();
+
         public void Load()
         {
             LoadInternal();

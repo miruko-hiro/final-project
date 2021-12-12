@@ -219,7 +219,6 @@
               <e p="Scripts" t="Include">
                 <e p="BarrelData.cs" t="Include" />
                 <e p="BarrelPresenter.cs" t="Include" />
-                <e p="BarrelSpawner.cs" t="Include" />
                 <e p="BarrelView.cs" t="Include" />
               </e>
             </e>
@@ -232,7 +231,6 @@
                 <e p="Scripts" t="Include">
                   <e p="EnemyData.cs" t="Include" />
                   <e p="EnemyPresenter.cs" t="Include" />
-                  <e p="EnemySpawner.cs" t="Include" />
                   <e p="EnemyView.cs" t="Include" />
                   <e p="IAttackTrigger.cs" t="Include" />
                 </e>
@@ -276,6 +274,7 @@
                   <e p="PlayerHeadInteractor.cs" t="Include" />
                   <e p="PlayerHealthInspector.cs" t="Include" />
                   <e p="PlayerLevelInteractor.cs" t="Include" />
+                  <e p="PlayerMoneyInteractor.cs" t="Include" />
                   <e p="PlayerPantsInteractor.cs" t="Include" />
                   <e p="PlayerRaceInteractor.cs" t="Include" />
                   <e p="PlayerShieldInteractor.cs" t="Include" />
@@ -386,6 +385,48 @@
                 <e p="Interactor.cs" t="Include" />
               </e>
             </e>
+            <e p="Inventory" t="Include">
+              <e p="Backpack" t="Include">
+                <e p="BackpackPresenter.cs" t="Include" />
+                <e p="BackpackView.cs" t="Include" />
+                <e p="Interactors" t="Include">
+                  <e p="BackpackArmorsInteractor.cs" t="Include" />
+                  <e p="BackpackShieldsInteractor.cs" t="Include" />
+                  <e p="BackpackSpaceOccupiedInteractor.cs" t="Include" />
+                  <e p="BackpackWeaponsInteractor.cs" t="Include" />
+                </e>
+                <e p="Item" t="Include">
+                  <e p="ItemArmorPresenter.cs" t="Include" />
+                  <e p="ItemBackground.cs" t="Include" />
+                  <e p="ItemDrag.cs" t="Include" />
+                  <e p="ItemPresenter.cs" t="Include" />
+                  <e p="ItemShieldPresenter.cs" t="Include" />
+                  <e p="ItemView.cs" t="Include" />
+                  <e p="ItemWeaponPresenter.cs" t="Include" />
+                </e>
+              </e>
+              <e p="InventoryView.cs" t="Include" />
+              <e p="Money" t="Include">
+                <e p="MoneyPresenter.cs" t="Include" />
+                <e p="MoneyView.cs" t="Include" />
+              </e>
+              <e p="PlayerAppearance.cs" t="Include" />
+              <e p="PlayerAppearancePresenter.cs" t="Include" />
+              <e p="PlayerItem.cs" t="Include" />
+              <e p="PlayerItems" t="Include">
+                <e p="IPlayerArmor.cs" t="Include" />
+                <e p="PlayerArmorPresenter.cs" t="Include" />
+                <e p="PlayerBodyArmor.cs" t="Include" />
+                <e p="PlayerBootsArmor.cs" t="Include" />
+                <e p="PlayerHeadArmor.cs" t="Include" />
+                <e p="PlayerLeftHand.cs" t="Include" />
+                <e p="PlayerLeftHandPresenter.cs" t="Include" />
+                <e p="PlayerPantsArmor.cs" t="Include" />
+                <e p="PlayerRightHand.cs" t="Include" />
+                <e p="PlayerRightHandPresenter.cs" t="Include" />
+              </e>
+              <e p="PlayerOutfit.cs" t="Include" />
+            </e>
             <e p="Items" t="Include">
               <e p="Scripts" t="Include">
                 <e p="Coin.cs" t="Include" />
@@ -398,42 +439,19 @@
               <e p="FreeZone" t="Include">
                 <e p="Scripts" t="Include">
                   <e p="Buy" t="Include">
+                    <e p="BuyInfoWindow.cs" t="Include" />
                     <e p="BuyWindow.cs" t="Include" />
                     <e p="InfoWindow.cs" t="Include" />
-                    <e p="ItemButton.cs" t="Include" />
                   </e>
-                  <e p="Inventory" t="Include">
-                    <e p="Backpack" t="Include">
-                      <e p="BackpackView.cs" t="Include" />
-                      <e p="Item" t="Include">
-                        <e p="ItemArmorPresenter.cs" t="Include" />
-                        <e p="ItemBackground.cs" t="Include" />
-                        <e p="ItemDrag.cs" t="Include" />
-                        <e p="ItemPresenter.cs" t="Include" />
-                        <e p="ItemShieldPresenter.cs" t="Include" />
-                        <e p="ItemView.cs" t="Include" />
-                        <e p="ItemWeaponPresenter.cs" t="Include" />
-                      </e>
-                    </e>
-                    <e p="InventoryView.cs" t="Include" />
-                    <e p="PlayerAppearance.cs" t="Include" />
-                    <e p="PlayerAppearancePresenter.cs" t="Include" />
-                    <e p="PlayerItem.cs" t="Include" />
-                    <e p="PlayerItems" t="Include">
-                      <e p="IPlayerArmor.cs" t="Include" />
-                      <e p="PlayerArmorPresenter.cs" t="Include" />
-                      <e p="PlayerBodyArmor.cs" t="Include" />
-                      <e p="PlayerBootsArmor.cs" t="Include" />
-                      <e p="PlayerHeadArmor.cs" t="Include" />
-                      <e p="PlayerLeftHand.cs" t="Include" />
-                      <e p="PlayerLeftHandPresenter.cs" t="Include" />
-                      <e p="PlayerPantsArmor.cs" t="Include" />
-                      <e p="PlayerRightHand.cs" t="Include" />
-                      <e p="PlayerRightHandPresenter.cs" t="Include" />
-                    </e>
-                    <e p="PlayerOutfit.cs" t="Include" />
+                  <e p="Sell" t="Include">
+                    <e p="SellInfoWindow.cs" t="Include" />
+                    <e p="SellWindow.cs" t="Include" />
+                    <e p="SellWindowPresenter.cs" t="Include" />
                   </e>
-                  <e p="ItemsSpawner.cs" t="Include" />
+                  <e p="Teleport" t="Include">
+                    <e p="TeleportScene.cs" t="Include" />
+                    <e p="TeleportZone.cs" t="Include" />
+                  </e>
                   <e p="TraderDialog.cs" t="Include" />
                 </e>
               </e>
@@ -494,16 +512,34 @@
                 <e p="VibrationSettingsData.cs" t="Include" />
               </e>
             </e>
+            <e p="Spawner" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="BarrelSpawner.cs" t="Include" />
+                <e p="BattleSpawner.cs" t="Include" />
+                <e p="EnemySpawner.cs" t="Include" />
+                <e p="SpawnGrid.cs" t="Include" />
+                <e p="TrapSpawner.cs" t="Include" />
+              </e>
+            </e>
             <e p="Storage" t="Include">
               <e p="Scripts" t="Include">
                 <e p="FileStorage.cs" t="Include" />
                 <e p="GameData.cs" t="Include" />
+                <e p="SerializableList.cs" t="Include" />
                 <e p="StorageBase.cs" t="Include" />
                 <e p="Surrogates" t="Include">
                   <e p="QuaternionSerializationSurrogate.cs" t="Include" />
                   <e p="Vector2SerializationSurrogate.cs" t="Include" />
                   <e p="Vector3SerializationSurrogate.cs" t="Include" />
                 </e>
+              </e>
+            </e>
+            <e p="Traps" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="BearTrap.cs" t="Include" />
+                <e p="FireTrap.cs" t="Include" />
+                <e p="SpikeTrap.cs" t="Include" />
+                <e p="Trap.cs" t="Include" />
               </e>
             </e>
             <e p="UI" t="Include">

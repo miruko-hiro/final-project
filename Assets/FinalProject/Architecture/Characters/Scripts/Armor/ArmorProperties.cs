@@ -28,7 +28,8 @@ namespace FinalProject.Architecture.Characters.Scripts.Armor
         {
             return "Item Type: " + ItemType + "\n"
                    + "Armor Type: " + ArmorType + "\n"
-                   + "Protection Score: " + ProtectionScore;
+                   + "Protection Score: " + ProtectionScore + "\n"
+                   + "Price:" + Price;
         }
     }
 }

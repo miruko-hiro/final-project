@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace FinalProject.Architecture.Storage.Scripts
@@ -54,6 +55,13 @@ namespace FinalProject.Architecture.Storage.Scripts
         public void Set<T>(string key, T newValue)
         {
             _dataMap[key] = newValue;
+        }
+
+        public void Remove<T>(T value)
+        {
+            var obj = (object) value;
+            var key = _dataMap.First(kvp => kvp.Value == obj).Key;
+            _dataMap.Remove(key);
         }
 
         public override string ToString()

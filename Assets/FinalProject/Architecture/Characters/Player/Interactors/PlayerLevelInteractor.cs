@@ -13,7 +13,7 @@ namespace FinalProject.Architecture.Characters.Player.Interactors
         
         public int Level
         {
-            get => _storage.Get(Key, 0);
+            get => _storage.Get(Key, 1);
             set
             {
                 ChangeLevelEvent?.Invoke(value);

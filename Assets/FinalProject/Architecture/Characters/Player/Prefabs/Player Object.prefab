@@ -330,6 +330,18 @@ PrefabInstance:
       propertyPath: inputControl
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1828244064821749351, guid: 5185f12bb211ec746a8de437137be6b0, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828244064821749351, guid: 5185f12bb211ec746a8de437137be6b0, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828244064821749351, guid: 5185f12bb211ec746a8de437137be6b0, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2628327178784687246, guid: 5185f12bb211ec746a8de437137be6b0, type: 3}
       propertyPath: _animation
       value: 

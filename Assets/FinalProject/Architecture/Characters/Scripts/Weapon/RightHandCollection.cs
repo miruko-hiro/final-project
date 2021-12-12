@@ -1,6 +1,7 @@
 ﻿using System;
 using FinalProject.Architecture.Characters.Scripts.Types;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace FinalProject.Architecture.Characters.Scripts.Weapon
 {
@@ -43,6 +44,33 @@ namespace FinalProject.Architecture.Characters.Scripts.Weapon
                 WeaponType.Lance => lances[index],
                 WeaponType.Poleaxe => poleaxes[index],
                 WeaponType.Staff => GetMagicSprite(index, magicType),
+                _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
+            };
+        }
+
+        public int GetRandomIndex(WeaponType weaponType, MagicType magicType)
+        {
+            return weaponType switch
+            {
+                WeaponType.Bow => Random.Range(0, bows.Length - 1),
+                WeaponType.Sword => Random.Range(0, swords.Length - 1),
+                WeaponType.Axe => Random.Range(0, axes.Length - 1),
+                WeaponType.Club => Random.Range(0, clubs.Length - 1),
+                WeaponType.Lance => Random.Range(0, lances.Length - 1),
+                WeaponType.Poleaxe => Random.Range(0, poleaxes.Length - 1),
+                WeaponType.Staff => GetRandomIndexToMagicType(magicType),
+                _ => throw new ArgumentOutOfRangeException(nameof(weaponType), weaponType, null)
+            };
+        }
+
+        private int GetRandomIndexToMagicType(MagicType type)
+        {
+            return type switch
+            {
+                MagicType.Fire => Random.Range(0, fireStaffs.Length - 1),
+                MagicType.Ice => Random.Range(0, iceStaffs.Length - 1),
+                MagicType.Void => Random.Range(0, voidStaffs.Length - 1),
+                MagicType.Poison => Random.Range(0, poisonStaffs.Length - 1),
                 _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
             };
         }

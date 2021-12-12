@@ -13,18 +13,6 @@ MonoBehaviour:
   m_Name: BattleSceneConfig
   m_EditorClassIdentifier: 
   _sceneName: Battle
-  _repositoryReferences:
-  - FinalProject.Architecture.Characters.Player.Repositories.PlayerBeardRepository
-  - FinalProject.Architecture.Characters.Player.Repositories.PlayerBodyRepository
-  - FinalProject.Architecture.Characters.Player.Repositories.PlayerBootsRepository
-  - FinalProject.Architecture.Characters.Player.Repositories.PlayerHairRepository
-  - FinalProject.Architecture.Characters.Player.Repositories.PlayerHeadRepository
-  - FinalProject.Architecture.Characters.Player.Repositories.PlayerHealthRepository
-  - FinalProject.Architecture.Characters.Player.Repositories.PlayerPantsRepository
-  - FinalProject.Architecture.Characters.Player.Repositories.PlayerRaceRepository
-  - FinalProject.Architecture.Characters.Player.Repositories.PlayerShieldRepository
-  - FinalProject.Architecture.Characters.Player.Repositories.PlayerWeaponRepository
-  - FinalProject.Architecture.Characters.Player.Repositories.PlayerLevelRepository
   _interactorsReferences:
   - FinalProject.Architecture.Characters.Player.Interactors.PlayerBeardInteractor
   - FinalProject.Architecture.Characters.Player.Interactors.PlayerBodyInteractor
@@ -37,5 +25,10 @@ MonoBehaviour:
   - FinalProject.Architecture.Characters.Player.Interactors.PlayerShieldInteractor
   - FinalProject.Architecture.Characters.Player.Interactors.PlayerWeaponInteractor
   - FinalProject.Architecture.Characters.Player.Interactors.PlayerLevelInteractor
+  - FinalProject.Architecture.Inventory.Backpack.Interactors.BackpackShieldsInteractor
+  - FinalProject.Architecture.Inventory.Backpack.Interactors.BackpackSpaceOccupiedInteractor
+  - FinalProject.Architecture.Inventory.Backpack.Interactors.BackpackWeaponsInteractor
+  - FinalProject.Architecture.Inventory.Backpack.Interactors.BackpackArmorsInteractor
+  - FinalProject.Architecture.Characters.Player.Interactors.PlayerMoneyInteractor
   _saveDataForThisScene: 1
   _saveName: Player.data

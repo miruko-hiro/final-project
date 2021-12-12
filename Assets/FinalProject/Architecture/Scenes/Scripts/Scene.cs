@@ -57,6 +57,11 @@ namespace FinalProject.Architecture.Scenes.Scripts
             Storage?.SaveAsync(callback);
         }
 
+        public void DeleteSave()
+        {
+            Storage?.DeleteSave();
+        }
+
         public T GetInteractor<T>() where T : IInteractor {
             return InteractorsBase.GetComponent<T>();
         }

@@ -4,7 +4,6 @@ using System.IO;
 using System.Threading;
 using FinalProject.Architecture.Helpers.Scripts;
 using UnityEngine;
-using Zenject;
 
 namespace FinalProject.Architecture.Storage.Scripts
 {
@@ -45,7 +44,12 @@ namespace FinalProject.Architecture.Storage.Scripts
         {
             return coroutines.StartRoutine(SaveCoroutine(callback));
         }
-		
+
+        protected override void DeleteSaveInternal()
+        {
+            File.Delete(FilePath);
+        }
+
         private IEnumerator SaveCoroutine(Action callback) {
             var threadEnded = false;
 			

@@ -5,9 +5,9 @@ namespace FinalProject.Architecture.Characters.Scripts.Types
     [Serializable]
     public enum ItemType
     {
-        Head,
         Weapon,
         Shield,
+        Head,
         Body,
         Pants,
         Boots

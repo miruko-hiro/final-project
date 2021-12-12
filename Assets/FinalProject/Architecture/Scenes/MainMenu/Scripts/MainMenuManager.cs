@@ -26,7 +26,6 @@ namespace FinalProject.Architecture.Scenes.MainMenu.Scripts
         
         public void OnContinue()
         {
-            //_gameManager.SceneController.LoadScene(_coroutines, "Battle");
             _gameManager.SceneController.LoadScene(_coroutines, "FreeZone");
         }
 

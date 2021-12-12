@@ -11,7 +11,7 @@ namespace FinalProject.Architecture.Scenes.FreeZone.Scripts
         [SerializeField] private Text _buyText;
         [SerializeField] private Text _sellText;
         private Image _image;
-        private float _duration = 1f;
+        private float _duration = 0.2f;
 
         private void Awake()
         {

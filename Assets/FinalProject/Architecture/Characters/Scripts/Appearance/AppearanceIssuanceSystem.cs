@@ -79,6 +79,16 @@ namespace FinalProject.Architecture.Characters.Scripts.Appearance
             };
         }
 
+        public int GetRandomIndex(WeaponType weaponType, MagicType magicType)
+        {
+            return rightHandCollection.GetRandomIndex(weaponType, magicType);
+        }
+
+        public int GetRandomIndex(ShieldType shieldType)
+        {
+            return leftHandCollection.GetRandomIndex(shieldType);
+        }
+
         public Sprite GetArmorSprite(ArmorProperties armorProperties)
         {
             return armorProperties.ItemType switch

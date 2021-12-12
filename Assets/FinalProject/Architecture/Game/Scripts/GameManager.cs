@@ -70,5 +70,10 @@ namespace FinalProject.Architecture.Game.Scripts
         public IEnumerator SaveGameStarter(Coroutines coroutines, Action callback = null) {
             yield return SceneController.SceneActual.Storage.SaveStarter(coroutines);
         }
+
+        public void DeleteSave()
+        {
+            SceneController.SceneActual.DeleteSave();
+        }
     }
 }

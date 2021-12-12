@@ -6,8 +6,8 @@ namespace FinalProject.Architecture.Characters.Scripts.Types
     public enum WeaponType
     {
         None,
-        Bow,
         Staff,
+        Bow,
         Sword,
         Axe,
         Club,

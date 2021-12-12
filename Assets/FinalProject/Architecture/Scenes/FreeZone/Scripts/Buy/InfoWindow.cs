@@ -1,4 +1,3 @@
-using Codice.CM.SEIDInfo;
 using FinalProject.Architecture.Characters.Scripts.Appearance;
 using FinalProject.Architecture.Characters.Scripts.Armor;
 using FinalProject.Architecture.Characters.Scripts.Types;
@@ -16,6 +15,8 @@ namespace FinalProject.Architecture.Scenes.FreeZone.Scripts.Buy
         [SerializeField] private Text _info;
         [SerializeField] private Image _image;
         private AppearanceIssuanceSystem _dispenser;
+        public IItemProperties ItemProperties { get; private set; }
+        public GameObject ItemObject { get; private set; }
         
         public Sprite Sprite
         {
@@ -45,19 +46,16 @@ namespace FinalProject.Architecture.Scenes.FreeZone.Scripts.Buy
             image.color = tempColor;
         }
         
-        public void OnClickToBasket()
-        {
-            gameObject.SetActive(false);
-        }
-        
         public void OnClickBack()
         {
             gameObject.SetActive(false);
         }
 
-        public void AddInfo<T>(T properties) where T: IItemProperties
+        public void AddInfo<T>(T properties, GameObject gameObj) where T: IItemProperties
         {
             if(properties == null) return;
+            ItemObject = gameObj;
+            ItemProperties = properties;
 
             _name.text = properties.Name;
             _info.text = properties.GetString();

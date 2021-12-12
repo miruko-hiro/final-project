@@ -26,8 +26,9 @@ namespace FinalProject.Architecture.Characters.Scripts.Weapon
         
         public string GetString()
         {
-            return "Item Shield Type: " + ShieldType + "\n"
-                   + "Protection Score: " + ProtectionScore;
+            return "Item Type: Shield \nType: " + ShieldType + "\n"
+                   + "Protection Score: " + ProtectionScore + "\n"
+                   + "Price:" + Price;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using FinalProject.Architecture.Characters.Enemy.Scripts;
 using FinalProject.Architecture.Characters.Enemy.UtilityAI.Score;
 using FinalProject.Architecture.Characters.Enemy.UtilityAI.Scorers;
 using FinalProject.Architecture.Characters.Player.Scripts;
@@ -18,6 +19,8 @@ namespace FinalProject.Architecture.Characters.Enemy.UtilityAI.Action
 
         public override bool IsInterrupted { get; protected set; }
         public override bool IsEnabled { get; protected set; }
+        
+        public int Damage { get; set; }
         
         private ScoreKeeper _scoreKeeper;
         private int _playerLayerIndex;
@@ -60,7 +63,7 @@ namespace FinalProject.Architecture.Characters.Enemy.UtilityAI.Action
             {
                 var player = hit.collider.GetComponentsInChildren<PlayerView>();
                 foreach (var componentsInChild in player) 
-                    componentsInChild.TakeHit(1);
+                    componentsInChild.TakeHit(Damage);
             }
             
             yield return new WaitForSeconds(1.3f);
