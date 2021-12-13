@@ -1,4 +1,5 @@
-﻿using FinalProject.Architecture.Characters.Scripts.Appearance;
+﻿using System;
+using FinalProject.Architecture.Characters.Scripts.Appearance;
 using FinalProject.Architecture.Characters.Scripts.Armor;
 using FinalProject.Architecture.Characters.Scripts.Types;
 using FinalProject.Architecture.Characters.Scripts.Weapon;
@@ -18,6 +19,7 @@ namespace FinalProject.Architecture.Inventory.Backpack
         [SerializeField] private InfoWindow _infoWindow;
         private AppearanceIssuanceSystem _dispenser;
         private ItemBackground[] _itemBackgroundArray;
+        private GameManager _gameManager;
         public BackpackPresenter Presenter { get; private set; }
 
         [Inject]
@@ -25,7 +27,12 @@ namespace FinalProject.Architecture.Inventory.Backpack
         {
             _dispenser = dispenser;
             _itemBackgroundArray = _backpack.GetComponentsInChildren<ItemBackground>();
-            Presenter = new BackpackPresenter(this, gameManager);
+            _gameManager = gameManager;
+        }
+
+        private void Awake()
+        {
+            Presenter = new BackpackPresenter(this, _gameManager);
         }
 
         public void AddWeapon(WeaponProperties weaponProperties)

@@ -8,7 +8,7 @@ namespace FinalProject.Architecture.Health
     {
         private readonly HeathPlayerBarView _view;
         private readonly PlayerHealthInspector _healthInspector;
-        private readonly int _maxHealth;
+        private int _maxHealth;
 
         
         public HealthPlayerBarPresenter(HeathPlayerBarView view, GameManager gameManager)
@@ -26,6 +26,7 @@ namespace FinalProject.Architecture.Health
         private void OnOpen()
         {
             _healthInspector.ReduceHealthEvent += ReduceHealth;
+            _healthInspector.IncreaseHealthEvent += IncreaseHealth;
         }
 
         private void ReduceHealth(int otherHealth)
@@ -34,9 +35,16 @@ namespace FinalProject.Architecture.Health
             _view.ReduceHealth(amount, otherHealth, _maxHealth);
         }
 
+        private void IncreaseHealth(int otherHealth)
+        {
+            _maxHealth = otherHealth;
+            _view.IncreaseHealth(otherHealth, _maxHealth);
+        }
+
         private void OnClose()
         {
             _healthInspector.ReduceHealthEvent -= ReduceHealth;
+            _healthInspector.IncreaseHealthEvent -= IncreaseHealth;
         }
 
         ~HealthPlayerBarPresenter()

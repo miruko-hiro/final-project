@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: MainMenuSceneConfig
   m_EditorClassIdentifier: 
   _sceneName: MainMenu
-  _repositoryReferences: []
   _interactorsReferences: []
-  _saveDataForThisScene: 0
-  _saveName: 
+  _saveDataForThisScene: 1
+  _saveName: Player.data

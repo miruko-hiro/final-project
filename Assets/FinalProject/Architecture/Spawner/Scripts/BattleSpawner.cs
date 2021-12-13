@@ -14,16 +14,9 @@ namespace FinalProject.Architecture.Spawner.Scripts
         {
             var grid = new SpawnGrid().GetGrid(Vector2.zero);
             
-            Debug.Log("grid count " + grid.Count);
             EnemyGeneration(grid);
-
-            Debug.Log("grid count " + grid.Count);
             TrapGeneration(grid);
-
-            Debug.Log("grid count " + grid.Count);
             BarrelGeneration(grid);
-            
-            Debug.Log("grid count " + grid.Count);
         }
 
         private void EnemyGeneration(List<Vector2> grid)
@@ -44,7 +37,7 @@ namespace FinalProject.Architecture.Spawner.Scripts
             var random = new Random();
             var numberOfTrapPrefabs = _trapSpawner.NumberOfTrapPrefabs;
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 1; i++)
             {
                 var randomIndexPosition = random.Next(0, grid.Count);
                 _trapSpawner.Generation(random.Next(0, numberOfTrapPrefabs), grid[randomIndexPosition], 5);
@@ -57,7 +50,7 @@ namespace FinalProject.Architecture.Spawner.Scripts
             var random = new Random();
             var numberOfBarrelPrefabs = _barrelSpawner.NumberOfBarrelPrefabs;
 
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 3; i++)
             {
                 var randomIndexPosition = random.Next(0, grid.Count);
                 _barrelSpawner.Generation(random.Next(0, numberOfBarrelPrefabs), grid[randomIndexPosition]);

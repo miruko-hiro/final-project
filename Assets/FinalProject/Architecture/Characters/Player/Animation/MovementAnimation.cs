@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using FinalProject.Architecture.Characters.Player.Sound;
 using FinalProject.Architecture.Characters.Scripts;
 using UnityEngine;
 
@@ -7,6 +8,7 @@ namespace FinalProject.Architecture.Characters.Player.Animation
     public class MovementAnimation: AnimationBase
     {
         [SerializeField] private Transform _transformOwn;
+        [SerializeField] private MovementSound _movementSound;
         private Sequence _sequence;
         private Vector3 _originalPosition;
         
@@ -17,6 +19,15 @@ namespace FinalProject.Architecture.Characters.Player.Animation
             if(IsPlaying) return;
 
             IsPlaying = true;
+
+            try
+            {
+                _movementSound.SoundEffect();
+            }
+            catch
+            {
+                Debug.Log(_movementSound);
+            }
             
             if(_sequence != null) _sequence.Restart();
             else

@@ -53,17 +53,12 @@ namespace FinalProject.Architecture
                 component.OnStart();
         }
 
-        public Coroutine InitializeAllComponentsStarter(Coroutines coroutines)
-        {
-            return coroutines.StartRoutine(InitializeAllComponentsCoroutine(coroutines));
-        }
-
-        private IEnumerator InitializeAllComponentsCoroutine(Coroutines coroutines)
+        public void InitializeAllComponents()
         {
             var allComponents = _componentMap.Values;
             foreach (var component in allComponents)
                 if (!component.IsInitialized)
-                    yield return component.InitializeStarter(coroutines);
+                    component.InitializeStarter();
         }
 
         public TP GetComponent<TP>() where TP : T

@@ -73,9 +73,8 @@ namespace FinalProject.Architecture.Scenes.PlayerCreation.Scripts.UI
 
         public void OnCreate()
         {
-            _gameManager.DeleteSave();
             _gameManager.SaveGame();
-            _gameManager.SceneController.LoadScene(_coroutines, "FreeZone");
+            _gameManager.SceneController.LoadScene(_coroutines,"FreeZone");
         }
 
         private void OnClose()

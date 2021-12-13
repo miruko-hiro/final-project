@@ -11,17 +11,19 @@ namespace FinalProject.Architecture.Items.Scripts
     {
         [SerializeField] private Coin _coinPrefab;
         private PoolMono<Item> _coinPool;
+        private GameManager _gameManager;
 
         private PlayerLevelInteractor _levelInteractor;
 
         [Inject]
         private void Construct(GameManager gameManager)
         {
-            _levelInteractor = gameManager.GetInteractor<PlayerLevelInteractor>();
+            _gameManager = gameManager;
         }
         
         private void Awake()
         {
+            _levelInteractor = _gameManager.GetInteractor<PlayerLevelInteractor>();
             _coinPool = new PoolMono<Item>(_coinPrefab, 2, transform);
         }
 
@@ -37,12 +39,12 @@ namespace FinalProject.Architecture.Items.Scripts
         {
             return level switch
             {
-                0 => SelectItemLevel0(),
+                1 => SelectItemLevel1(),
                 _ => throw new ArgumentOutOfRangeException(nameof(level), level, null)
             };
         }
 
-        private PoolMono<Item> SelectItemLevel0()
+        private PoolMono<Item> SelectItemLevel1()
         {
             return _coinPool;
         }

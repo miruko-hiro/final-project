@@ -16,7 +16,7 @@ namespace FinalProject.Architecture.Scenes.Scripts
         public StorageBase Storage { get; }
 
         public void SendMessageOnCreate();
-        public Coroutine InitializeStarter(Coroutines coroutines);
+        public void InitializeStarter();
         public void Start();
         public void Save();
         public void SaveAsync(Action callback = null);

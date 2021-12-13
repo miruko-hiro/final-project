@@ -9,6 +9,8 @@ namespace FinalProject.Architecture.Settings.SoundEffects
         private const string Key = "SOUND_EFFECTS_SETTINGS";
         
         public event Action OnVolumeChangedEvent;
+        public event Action OnEnabledEvent;
+        public event Action OnDisabledEvent;
 
         public bool IsEnabled
         {
@@ -16,7 +18,8 @@ namespace FinalProject.Architecture.Settings.SoundEffects
             set
             {
                 _soundEffectsData.IsEnabled = value;
-                OnVolumeChangedEvent?.Invoke();
+                if(value) OnEnabledEvent?.Invoke();
+                else OnDisabledEvent?.Invoke();
             }
         }
 

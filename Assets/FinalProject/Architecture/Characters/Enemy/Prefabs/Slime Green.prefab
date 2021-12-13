@@ -452,6 +452,10 @@ PrefabInstance:
       propertyPath: _animation
       value: 
       objectReference: {fileID: 4912816911373375636}
+    - target: {fileID: 7732869521528983063, guid: 1e1eb3ab569370c4f91837cb6a4e0f09, type: 3}
+      propertyPath: _scorerDistance
+      value: 
+      objectReference: {fileID: 2554232689927000367}
     - target: {fileID: 8301143886720484321, guid: 1e1eb3ab569370c4f91837cb6a4e0f09, type: 3}
       propertyPath: farScore
       value: 0
@@ -523,6 +527,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8603571355710991703, guid: 1e1eb3ab569370c4f91837cb6a4e0f09, type: 3}
   m_PrefabInstance: {fileID: 5783153514103132878}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2554232689927000367 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8301143886720484321, guid: 1e1eb3ab569370c4f91837cb6a4e0f09, type: 3}
+  m_PrefabInstance: {fileID: 5783153514103132878}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb1b14fff4c24658b10cc3d844c193da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4912816911373375636 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1471612238339656282, guid: 1e1eb3ab569370c4f91837cb6a4e0f09, type: 3}

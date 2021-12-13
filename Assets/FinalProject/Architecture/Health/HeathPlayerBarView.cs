@@ -14,17 +14,28 @@ namespace FinalProject.Architecture.Health
         
         private HealthPlayerBarPresenter _presenter;
         private float _duration = 0.5f;
+        private GameManager _gameManager;
 
         [Inject]
         private void Construct(GameManager gameManager)
         {
-            _presenter = new HealthPlayerBarPresenter(this, gameManager);
+            _gameManager = gameManager;
         }
-        
+
+        private void Awake()
+        {
+            _presenter = new HealthPlayerBarPresenter(this, _gameManager);
+        }
+
         public override void ReduceHealth(float amount, int newHealth, int maxHealth)
         {
             _healthText.text = newHealth + " / " + maxHealth;
             _healthImage.DOFillAmount(amount, _duration);
+        }
+
+        public void IncreaseHealth(int newHealth, int maxHealth)
+        {
+            _healthText.text = newHealth + " / " + maxHealth;
         }
 
         private void OnDestroy()

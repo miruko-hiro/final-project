@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace FinalProject.Architecture.Characters.Player
+namespace FinalProject.Architecture.Characters.Player.Scripts
 {
     public class PlayerCreationView : MonoBehaviour
     {

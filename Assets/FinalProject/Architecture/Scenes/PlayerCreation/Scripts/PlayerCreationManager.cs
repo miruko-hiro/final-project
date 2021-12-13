@@ -1,7 +1,11 @@
 using FinalProject.Architecture.Characters.Player;
 using FinalProject.Architecture.Characters.Player.Interactors;
+using FinalProject.Architecture.Characters.Player.Scripts;
 using FinalProject.Architecture.Characters.Scripts.Appearance;
+using FinalProject.Architecture.Characters.Scripts.Types;
+using FinalProject.Architecture.Characters.Scripts.Weapon;
 using FinalProject.Architecture.Game.Scripts;
+using FinalProject.Architecture.Inventory.Backpack.Interactors;
 using FinalProject.Architecture.Scenes.PlayerCreation.Scripts.UI;
 using UnityEngine;
 using Zenject;
@@ -47,6 +51,12 @@ namespace FinalProject.Architecture.Scenes.PlayerCreation.Scripts
             _genderTypeChanger = new GenderTypeChanger(_gameManager, _player, _dispenser);
             _hairChanger = new HairChanger(_gameManager, _player, _dispenser);
             _beardChanger = new BeardChanger(_gameManager, _player, _dispenser);
+            
+            var staff = new WeaponProperties(ItemType.Weapon, WeaponType.Staff, MagicType.Fire, 0, 1, 5, "item");
+            _gameManager.GetInteractor<BackpackWeaponsInteractor>().AddWeapon(staff);
+            
+            var bow = new WeaponProperties(ItemType.Weapon, WeaponType.Bow, MagicType.None, 0, 1, 5, "item");
+            _gameManager.GetInteractor<BackpackWeaponsInteractor>().AddWeapon(bow);
 
             OnOpen();
         }

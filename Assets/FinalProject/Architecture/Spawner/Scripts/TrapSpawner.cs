@@ -12,9 +12,9 @@ namespace FinalProject.Architecture.Spawner.Scripts
         
         public void Generation(int indexTrap, Vector2 position, int damage)
         {
-            var barrel = Instantiate(_trapPrefabs[indexTrap], transform).GetComponent<Trap>();
-            barrel.Damage = damage;
-            barrel.transform.position = position;
+            var trap = Instantiate(_trapPrefabs[indexTrap], transform).GetComponent<Trap>();
+            trap.Damage = damage;
+            trap.transform.position = position;
         }
     }
 }

@@ -18,16 +18,19 @@ namespace FinalProject.Architecture.Inventory.PlayerItems
         [SerializeField] private InfoWindow _infoWindow;
         private PlayerArmorPresenter _presenter;
         private AppearanceIssuanceSystem _dispenser;
+        private GameManager _gameManager;
 
         [Inject]
         private void Construct(GameManager gameManager, AppearanceIssuanceSystem dispenser)
         {
-            _presenter = new PlayerArmorPresenter(this, gameManager.GetInteractor<PlayerPantsInteractor>());
+            _gameManager = gameManager;
             _dispenser = dispenser;
         }
 
         private void Awake()
         {
+            
+            _presenter = new PlayerArmorPresenter(this, _gameManager.GetInteractor<PlayerPantsInteractor>());
             var item = GetComponentInChildren<ItemView>();
             item.Initialize(ItemType.Pants, new ItemArmorPresenter(item, _presenter.ArmorProperties, _dispenser, _infoWindow));
         }

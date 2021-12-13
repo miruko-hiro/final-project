@@ -32,34 +32,33 @@ namespace FinalProject.Architecture.Scenes.Scripts
                 SceneConfigMap[sceneConfig.SceneName] = sceneConfig;
         }
 
-        public Coroutine LoadScene(Coroutines coroutines, string sceneName, UnityAction<SceneConfig> sceneLoadedCallback = null) {
-            return LoadAndInitializeSceneStarter(coroutines, sceneName, sceneLoadedCallback, true);
+        public void LoadScene(Coroutines coroutines, string sceneName, UnityAction<SceneConfig> sceneLoadedCallback = null) {
+            LoadAndInitializeSceneStarter(coroutines, sceneName, sceneLoadedCallback, true);
         }
         
-        public Coroutine InitializeCurrentScene(Coroutines coroutines, UnityAction<SceneConfig> sceneLoadedCallback = null) {
+        public void InitializeCurrentScene(Coroutines coroutines, UnityAction<SceneConfig> sceneLoadedCallback = null) {
             var sceneName = SceneManager.GetActiveScene().name;
-            return LoadAndInitializeSceneStarter(coroutines, sceneName, sceneLoadedCallback, false);
+            LoadAndInitializeSceneStarter(coroutines, sceneName, sceneLoadedCallback, false);
         }
         
-        protected Coroutine LoadAndInitializeSceneStarter(Coroutines coroutines, string sceneName, UnityAction<SceneConfig> sceneLoadedCallback, bool loadNewScene) {
+        protected void LoadAndInitializeSceneStarter(Coroutines coroutines, string sceneName, UnityAction<SceneConfig> sceneLoadedCallback, bool loadNewScene) {
             SceneConfigMap.TryGetValue(sceneName, out SceneConfig config);
             
             if (config == null)
                 throw new NullReferenceException(
                     $"There is no scene ({sceneName}) in the scenes list. The name is wrong or you forget to add it o the list.");
 
-            return coroutines.StartRoutine(LoadSceneCoroutine(coroutines, config, sceneLoadedCallback, loadNewScene));
+            coroutines.StartRoutine(LoadSceneCoroutine(coroutines, config, sceneLoadedCallback, loadNewScene));
         }
         
         protected virtual IEnumerator LoadSceneCoroutine(Coroutines coroutines, SceneConfig config, UnityAction<SceneConfig> sceneLoadedCallback, bool loadNewScene = true) {
             IsLoading = true;
             OnSceneLoadStartedEvent?.Invoke(config);
             
-            yield return coroutines.StartRoutine(InitializeSceneCoroutine(coroutines, config, sceneLoadedCallback));
+            InitializeSceneCoroutine(config, sceneLoadedCallback);
             if (loadNewScene)
                 yield return coroutines.StartRoutine(LoadSceneAsyncCoroutine(config));
-
-            yield return new WaitForSecondsRealtime(1f);
+            
             IsLoading = false;
             OnSceneLoadCompletedEvent?.Invoke(config);
             sceneLoadedCallback?.Invoke(config);
@@ -81,15 +80,13 @@ namespace FinalProject.Architecture.Scenes.Scripts
 
             asyncOperation.allowSceneActivation = true;
         }
-        protected virtual IEnumerator InitializeSceneCoroutine(Coroutines coroutines, SceneConfig config, UnityAction<SceneConfig> sceneLoadedCallback) 
+        protected virtual void InitializeSceneCoroutine(SceneConfig config, UnityAction<SceneConfig> sceneLoadedCallback) 
         {
             SceneActual = new Scene(config);
-            yield return null;
 
             SceneActual.SendMessageOnCreate();
-            yield return null;
             
-            yield return SceneActual.InitializeStarter(coroutines);
+            SceneActual.InitializeStarter();
 
             SceneActual.Start();
         }

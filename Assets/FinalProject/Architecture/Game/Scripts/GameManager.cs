@@ -23,21 +23,14 @@ namespace FinalProject.Architecture.Game.Scripts
             Run(coroutines);
         }
         
-        public void Run(Coroutines coroutines)
-        {
-            coroutines.StartRoutine(RunGameCoroutine(coroutines));
-        }
-        
-        private IEnumerator RunGameCoroutine(Coroutines coroutines) {
+        private void Run(Coroutines coroutines) {
             state = ArchitectureComponentState.Initializing;
 
             InitGameSettings();
-            yield return null;
             
             InitSceneManager();
-            yield return null;
 
-            yield return SceneController.InitializeCurrentScene(coroutines);
+            SceneController.InitializeCurrentScene(coroutines);
 
             state = ArchitectureComponentState.Initialized;
             OnGameInitializedEvent?.Invoke();

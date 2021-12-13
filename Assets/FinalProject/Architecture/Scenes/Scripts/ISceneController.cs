@@ -16,7 +16,7 @@ namespace FinalProject.Architecture.Scenes.Scripts
         public IScene SceneActual { get; }
         public Dictionary<string, SceneConfig> SceneConfigMap { get; }
 
-        Coroutine LoadScene(Coroutines coroutines, string sceneName, UnityAction<SceneConfig> sceneLoadedCallback = null);
-        Coroutine InitializeCurrentScene(Coroutines coroutines, UnityAction<SceneConfig> sceneLoadedCallback = null);
+        public void LoadScene(Coroutines coroutines, string sceneName, UnityAction<SceneConfig> sceneLoadedCallback = null);
+        public void InitializeCurrentScene(Coroutines coroutines, UnityAction<SceneConfig> sceneLoadedCallback = null);
     }
 }

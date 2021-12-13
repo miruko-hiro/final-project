@@ -16,6 +16,8 @@ namespace FinalProject.Architecture.Characters.Enemy.UtilityAI.Scorers
         public float MinDistance => minDistance;
         public float MaxDistance => maxDistance;
         public Vector3 DynamicPosition => transformEnemy.position;
+        
+        public bool IsAggressive { get; set; }
 
         public Transform TransformEnemy
         {
@@ -25,6 +27,9 @@ namespace FinalProject.Architecture.Characters.Enemy.UtilityAI.Scorers
 
         public override float GetScore()
         {
+            if (IsAggressive)
+                return closeScore < farScore ? farScore: closeScore;
+            
             var distance =  Vector3.Distance(transformOwn.position, transformEnemy.position);
 
             if (distance <= minDistance) return closeScore;

@@ -310,8 +310,10 @@
                 <e p="Parameter.cs" t="Include" />
                 <e p="Systems" t="Include">
                   <e p="Attack" t="Include">
-                    <e p="AttackSystem.cs" t="Include" />
-                    <e p="RangeAttackSystem.cs" t="Include" />
+                    <e p="BowAttackSystem.cs" t="Include" />
+                    <e p="FireAttack.cs" t="Include" />
+                    <e p="MeleeAttackSystem.cs" t="Include" />
+                    <e p="StaffAttackSystem.cs" t="Include" />
                   </e>
                   <e p="Movement" t="Include">
                     <e p="AStarPathfindingSystem.cs" t="Include" />
@@ -493,6 +495,8 @@
             <e p="Settings" t="Include">
               <e p="Music" t="Include">
                 <e p="IMusicSettings.cs" t="Include" />
+                <e p="MusicManager.cs" t="Include" />
+                <e p="MusicObject.cs" t="Include" />
                 <e p="MusicSettings.cs" t="Include" />
                 <e p="MusicSettingsData.cs" t="Include" />
               </e>

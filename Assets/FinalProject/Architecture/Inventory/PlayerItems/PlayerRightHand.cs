@@ -17,17 +17,19 @@ namespace FinalProject.Architecture.Inventory.PlayerItems
         [SerializeField] private InfoWindow _infoWindow;
         private PlayerRightHandPresenter _presenter;
         private AppearanceIssuanceSystem _dispenser;
+        private GameManager _gameManager;
 
 
         [Inject]
         private void Construct(GameManager gameManager, AppearanceIssuanceSystem dispenser)
         {
-            _presenter = new PlayerRightHandPresenter(this, gameManager);
+            _gameManager = gameManager;
             _dispenser = dispenser;
         }
 
         private void Awake()
         {
+            _presenter = new PlayerRightHandPresenter(this, _gameManager);
             var item = GetComponentInChildren<ItemView>();
             item.Initialize(ItemType.Weapon, new ItemWeaponPresenter(item, _presenter.WeaponProperties, _dispenser, _infoWindow));
         }

@@ -73,6 +73,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77317a05435f0a64ab89fbab2dfc6369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coroutinesPrefab: {fileID: 1044379154137164434, guid: 3e022d690d708ca48a19e7000612ef40, type: 3}
-  gameStateManagerPrefab: {fileID: 4263926916501395735, guid: ba6513528bd1f8948b20cc9b1a12cfe1, type: 3}
   appearanceIssuanceSystem: {fileID: 7906917334660986787, guid: 0212dc540fa49aa4884c593054f64d0e, type: 3}
+  musicManager: {fileID: 1979013148041607300, guid: 9b2d5f90b07438b469395c61023898d4, type: 3}

@@ -13,17 +13,12 @@ MonoBehaviour:
   m_Name: PlayerCreationSceneConfig
   m_EditorClassIdentifier: 
   _sceneName: PlayerCreation
-  _repositoryReferences:
-  - FinalProject.Architecture.Characters.Player.Repositories.PlayerRaceRepository
-  - FinalProject.Architecture.Characters.Player.Repositories.PlayerHairRepository
-  - FinalProject.Architecture.Characters.Player.Repositories.PlayerBeardRepository
-  - FinalProject.Architecture.Characters.Player.Repositories.PlayerBodyRepository
-  - FinalProject.Architecture.Characters.Player.Repositories.PlayerWeaponRepository
   _interactorsReferences:
   - FinalProject.Architecture.Characters.Player.Interactors.PlayerRaceInteractor
   - FinalProject.Architecture.Characters.Player.Interactors.PlayerHairInteractor
   - FinalProject.Architecture.Characters.Player.Interactors.PlayerBeardInteractor
   - FinalProject.Architecture.Characters.Player.Interactors.PlayerBodyInteractor
   - FinalProject.Architecture.Characters.Player.Interactors.PlayerWeaponInteractor
+  - FinalProject.Architecture.Inventory.Backpack.Interactors.BackpackWeaponsInteractor
   _saveDataForThisScene: 1
   _saveName: Player.data

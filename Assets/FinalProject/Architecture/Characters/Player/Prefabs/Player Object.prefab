@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2044351260030536576}
   - component: {fileID: 6625069600932203374}
   - component: {fileID: 328142454138450632}
+  - component: {fileID: 2314121229313156778}
   m_Layer: 0
   m_Name: Movement System
   m_TagString: Untagged
@@ -88,6 +89,111 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transformOwn: {fileID: 909307855020142694}
+  _movementSound: {fileID: 2314121229313156778}
+--- !u!114 &2314121229313156778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3807439354437917288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a24bda7365fe3de4087016bd1e646798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioClip: {fileID: 8300000, guid: b955e34bb21e47341864386d7117485e, type: 3}
+--- !u!1 &4099067210807898280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 64179173547623254}
+  m_Layer: 11
+  m_Name: Bow Attack System
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &64179173547623254
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4099067210807898280}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8571212742990573416}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4395275985710647586
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7947897080731922058}
+  - component: {fileID: 1689751143279792760}
+  - component: {fileID: 4454984769700818114}
+  m_Layer: 11
+  m_Name: Staff Attack System
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7947897080731922058
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4395275985710647586}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8571212742990573416}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1689751143279792760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4395275985710647586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60cb04f78be3438ca4e911a2626fc53e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputControl: {fileID: 4454984769700818114}
+  _transformPlayer: {fileID: 8571212742990573416}
+  _fireAttackPrefab: {fileID: 5447713982127282846, guid: 64233003f4ed5534e90660b4c0de7647, type: 3}
+  _fireAttackContainer: {fileID: 0}
+--- !u!114 &4454984769700818114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4395275985710647586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c000cfec29c7406fa23571bce7e6dbbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _leftJoystick: {fileID: 0}
 --- !u!1 &5353581390097519289
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,7 +207,7 @@ GameObject:
   - component: {fileID: 1881599876810712348}
   - component: {fileID: 3231925629102714294}
   m_Layer: 0
-  m_Name: Attack System
+  m_Name: Melee Attack System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -193,7 +299,7 @@ Transform:
   m_LocalScale: {x: 7, y: 7, z: 1}
   m_Children: []
   m_Father: {fileID: 8571212742990573416}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3951213370740047286
 SpriteRenderer:
@@ -278,6 +384,8 @@ Transform:
   - {fileID: 909307855020142694}
   - {fileID: 3858557115136405656}
   - {fileID: 5220592240221453162}
+  - {fileID: 7947897080731922058}
+  - {fileID: 64179173547623254}
   - {fileID: 5932315279994353552}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -370,6 +478,18 @@ PrefabInstance:
       propertyPath: _leftJoystick
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5881764260792037001, guid: 5185f12bb211ec746a8de437137be6b0, type: 3}
+      propertyPath: _bowAttackSystem
+      value: 
+      objectReference: {fileID: 4099067210807898280}
+    - target: {fileID: 5881764260792037001, guid: 5185f12bb211ec746a8de437137be6b0, type: 3}
+      propertyPath: _meleeAttackSystem
+      value: 
+      objectReference: {fileID: 5353581390097519289}
+    - target: {fileID: 5881764260792037001, guid: 5185f12bb211ec746a8de437137be6b0, type: 3}
+      propertyPath: _staffAttackSystem
+      value: 
+      objectReference: {fileID: 4395275985710647586}
     - target: {fileID: 7291619558261598550, guid: 5185f12bb211ec746a8de437137be6b0, type: 3}
       propertyPath: leftJoystick
       value: 

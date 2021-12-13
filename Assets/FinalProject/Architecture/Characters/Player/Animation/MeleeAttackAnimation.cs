@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using System.Collections;
+using DG.Tweening;
 using FinalProject.Architecture.Characters.Scripts;
 using UnityEngine;
 
@@ -26,10 +27,19 @@ namespace FinalProject.Architecture.Characters.Player.Animation
             
             _animator.SetBool(IsAttack, true);
             
-            DOTween.Sequence()
-                .Append(_transformOwn.DOLocalMove(direction / 2f, 0.3f))
-                .Append(_transformOwn.DOLocalMove(Vector3.zero, 0.3f))
-                .AppendCallback(Stop);
+            // DOTween.Sequence()
+            //     .Append(_transformOwn.DOLocalMove(direction / 2f, 0.3f))
+            //     .Append(_transformOwn.DOLocalMove(Vector3.zero, 0.3f))
+            //     .AppendCallback(Stop);
+
+            StartCoroutine(CountdownToEndOfAnimationCoroutine());
+        }
+
+        private IEnumerator CountdownToEndOfAnimationCoroutine()
+        {
+            yield return new WaitForSeconds(0.6f);
+            
+            Stop();
         }
 
         public override void Stop()

@@ -1,6 +1,7 @@
 ﻿using System;
 using FinalProject.Architecture.Characters.Player;
 using FinalProject.Architecture.Characters.Player.Interactors;
+using FinalProject.Architecture.Characters.Player.Scripts;
 using FinalProject.Architecture.Characters.Scripts;
 using FinalProject.Architecture.Characters.Scripts.Appearance;
 using FinalProject.Architecture.Characters.Scripts.Types;

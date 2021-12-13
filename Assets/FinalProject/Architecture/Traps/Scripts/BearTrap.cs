@@ -24,10 +24,10 @@ namespace FinalProject.Architecture.Traps.Scripts
             _animator.SetBool(IsActive, true);
             if (other.CompareTag("Player"))
             {
-                other.GetComponent<PlayerView>().TakeHit(_damage);
+                other.GetComponentInChildren<PlayerView>().TakeHit(_damage);
             } else if (other.CompareTag("Enemy"))
             {
-                other.GetComponent<EnemyView>().TakeHit(_damage);
+                other.GetComponentInChildren<EnemyView>().TakeHit(_damage);
             }
         }
     }

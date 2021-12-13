@@ -25,19 +25,19 @@ namespace FinalProject.Architecture.Scenes.Scripts
             InteractorsBase.SendMessageOnCreate();
         }
 
-        public Coroutine InitializeStarter(Coroutines coroutines)
+        public void InitializeStarter()
         {
-            return coroutines.StartRoutine(InitializeCoroutine(coroutines));
+            InitializeCoroutine();
         }
         
-        private IEnumerator InitializeCoroutine(Coroutines coroutines) {
+        private void InitializeCoroutine() {
             // TODO: Load storage here if needed.
             if (SceneConfig.SaveDataForThisScene) {
                 Storage = new FileStorage(SceneConfig.SaveName);
                 Storage.Load();
             }
 
-            yield return InteractorsBase.InitializeAllComponentsStarter(coroutines);
+            InteractorsBase.InitializeAllComponents();
             
             InteractorsBase.SendMessageOnInitialize(Storage);
         }

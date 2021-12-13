@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace FinalProject.Architecture.Characters.Scripts.Systems.Attack
 {
-    public class AttackSystem : MonoBehaviour
+    public class MeleeAttackSystem : MonoBehaviour
     {
         [SerializeField] private InputControl _inputControl;
         [SerializeField] private Transform _attackTransform;
@@ -38,7 +38,7 @@ namespace FinalProject.Architecture.Characters.Scripts.Systems.Attack
                 float angle = Mathf.Atan2(direction.x, -direction.y) * Mathf.Rad2Deg;
                 _attackTransform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-                var denominator = Math.Abs(Mathf.Abs(direction.x) - Mathf.Abs(direction.y)) < 0.01f ? 2f : 1.5f;
+                var denominator = Mathf.Abs(Mathf.Abs(direction.x) - Mathf.Abs(direction.y)) < 0.01f ? 2f : 1.5f;
                 
                 _attackTransform.localPosition = direction / denominator;
                 _animationAttack.Play(direction);

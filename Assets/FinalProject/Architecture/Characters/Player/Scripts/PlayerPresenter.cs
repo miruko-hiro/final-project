@@ -1,8 +1,10 @@
-﻿using FinalProject.Architecture.Characters.Player.Interactors;
+﻿using System;
+using FinalProject.Architecture.Characters.Player.Interactors;
 using FinalProject.Architecture.Characters.Scripts;
 using FinalProject.Architecture.Characters.Scripts.Appearance;
 using FinalProject.Architecture.Characters.Scripts.Armor;
 using FinalProject.Architecture.Characters.Scripts.Hair;
+using FinalProject.Architecture.Characters.Scripts.Types;
 using FinalProject.Architecture.Characters.Scripts.Weapon;
 using FinalProject.Architecture.Game.Scripts;
 
@@ -10,7 +12,7 @@ namespace FinalProject.Architecture.Characters.Player.Scripts
 {
     public class PlayerPresenter
     {
-        private readonly Humanoid _view;
+        private readonly PlayerView _view;
         private readonly PlayerRaceInteractor _raceInteractor;
         private readonly PlayerHairInteractor _hairInteractor;
         private readonly PlayerBeardInteractor _beardInteractor;
@@ -23,7 +25,7 @@ namespace FinalProject.Architecture.Characters.Player.Scripts
         private readonly PlayerHealthInspector _healthInspector;
         private readonly AppearanceIssuanceSystem _dispenser;
 
-        public PlayerPresenter(Humanoid view, GameManager gameManager, AppearanceIssuanceSystem dispenser)
+        public PlayerPresenter(PlayerView view, GameManager gameManager, AppearanceIssuanceSystem dispenser)
         {
             _view = view;
             _dispenser = dispenser;
@@ -37,8 +39,6 @@ namespace FinalProject.Architecture.Characters.Player.Scripts
             _shieldInteractor = gameManager.GetInteractor<PlayerShieldInteractor>();
             _weaponInteractor = gameManager.GetInteractor<PlayerWeaponInteractor>();
             _healthInspector = gameManager.GetInteractor<PlayerHealthInspector>();
-
-            _healthInspector.Health = 5;
             
             OnOpen();
         }
@@ -56,6 +56,8 @@ namespace FinalProject.Architecture.Characters.Player.Scripts
 
             SetLeftHand(_shieldInteractor.ShieldProperties);
             SetRightHand(_weaponInteractor.WeaponProperties);
+
+            SetHealth();
         }
 
         private void SaveData()
@@ -136,12 +138,29 @@ namespace FinalProject.Architecture.Characters.Player.Scripts
 
         private void SetRightHand(WeaponProperties weaponProperties)
         {
+            if (weaponProperties.WeaponType == WeaponType.Staff) 
+                _view.SelectStaffAttackSystem(weaponProperties.MagicType);
+            else if(weaponProperties.WeaponType == WeaponType.Bow)
+                _view.SelectBowAttackSystem();
+            else
+                _view.SelectMeleeAttackSystem();
+
             _view.RightHand = _dispenser.GetWeapon(weaponProperties);
         }
 
         private void SetLeftHand(ShieldProperties shieldProperties)
         {
             _view.LeftHand = _dispenser.GetShield(shieldProperties);
+        }
+
+        private void SetHealth()
+        {
+            _healthInspector.Health = 5 +
+                _shieldInteractor.ShieldProperties.ProtectionScore +
+                _bodyInteractor.ArmorProperties.ProtectionScore +
+                _headInteractor.ArmorProperties.ProtectionScore +
+                _bootsInteractor.ArmorProperties.ProtectionScore +
+                _pantsInteractor.ArmorProperties.ProtectionScore;
         }
         
         private void Die(int health)

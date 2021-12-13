@@ -12,11 +12,13 @@ namespace FinalProject.Architecture.Storage.Scripts
 
         public void Add<T>(T element)
         {
+            _elements ??= new List<object>();
             _elements.Add(element);
         }
 
         public void Remove<T>(T element)
         {
+            _elements ??= new List<object>();
             _elements.Remove(element);
         }
 

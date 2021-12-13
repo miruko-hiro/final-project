@@ -23,7 +23,7 @@ namespace FinalProject.Architecture
 
         public virtual void OnCreate() { }
 
-        public Coroutine InitializeStarter(Coroutines coroutines)
+        public void InitializeStarter()
         {
             if (IsInitialized)
                 throw new Exception($"Component {this.GetType().Name} is already initialized");
@@ -31,12 +31,12 @@ namespace FinalProject.Architecture
             if (State == ArchitectureComponentState.Initializing)
                 throw new Exception($"Component {this.GetType().Name} is initializing now");
 
-            return coroutines.StartRoutine(InitializeCoroutineInternal(coroutines));
+            InitializeCoroutineInternal();
         }
         
-        private IEnumerator InitializeCoroutineInternal(Coroutines coroutines) {
+        private void InitializeCoroutineInternal() {
             State = ArchitectureComponentState.Initializing;
-            yield return coroutines.StartRoutine(InitializeCoroutine());
+            InitializeCoroutine();
             Initialize();
 
             State = ArchitectureComponentState.Initialized;
@@ -47,8 +47,8 @@ namespace FinalProject.Architecture
         /// Initialization contains two parts: with routine and without routine. This method (with routine) runs
         /// BEFORE initialization without routine.
         /// </summary>
-        protected virtual IEnumerator InitializeCoroutine() {
-            yield break;
+        protected virtual void InitializeCoroutine() {
+            
         }
         
         /// <summary>

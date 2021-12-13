@@ -10,6 +10,7 @@ namespace FinalProject.Architecture.Characters.Enemy.UtilityAI.Action
     {
         [SerializeField] private AIPath _aiPath;
         [SerializeField] private AnimationBase _animation;
+        [SerializeField] private ScorerDistanceToDynamicPosition _scorerDistance;
         
         public override bool IsInterrupted { get; protected set; }
         public override bool IsEnabled { get; protected set; }
@@ -30,6 +31,7 @@ namespace FinalProject.Architecture.Characters.Enemy.UtilityAI.Action
         public override void Play()
         {
             if(IsEnabled) return;
+            _scorerDistance.IsAggressive = true;
             IsEnabled = true;
             _aiPath.canMove = true;
             _animation.Play();

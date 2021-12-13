@@ -1,4 +1,5 @@
-﻿using FinalProject.Architecture.Characters.Scripts.Appearance;
+﻿using System;
+using FinalProject.Architecture.Characters.Scripts.Appearance;
 using FinalProject.Architecture.Game.Scripts;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,7 +24,9 @@ namespace FinalProject.Architecture.Inventory
         [SerializeField] protected Image leftHand;
 
         private PlayerAppearancePresenter _presenter;
-        
+        private GameManager _gameManager;
+        private AppearanceIssuanceSystem _dispenser;
+
         public Sprite Race
         {
             get => race.sprite;
@@ -162,7 +165,13 @@ namespace FinalProject.Architecture.Inventory
         [Inject]
         private void Construct(GameManager gameManager, AppearanceIssuanceSystem dispenser)
         {
-            _presenter = new PlayerAppearancePresenter(this, gameManager, dispenser);
+            _gameManager = gameManager;
+            _dispenser = dispenser;
+        }
+
+        private void Awake()
+        {
+            _presenter = new PlayerAppearancePresenter(this, _gameManager, _dispenser);
         }
 
         private void SetAlpha(Image image, float count)

@@ -48,11 +48,21 @@ namespace FinalProject.Architecture.Scenes.FreeZone.Scripts.Buy
         private void GeneratingWeapons(ItemView item, int level)
         {
             var valuesWeaponType = Enum.GetValues(typeof(WeaponType));
-            var weaponTypeRandom = (WeaponType)valuesWeaponType.GetValue(Random.Range(2, valuesWeaponType.Length - 1));
-            var spriteIndexRandom = _dispenser.GetRandomIndex(weaponTypeRandom, MagicType.None);
+            var weaponTypeRandom = (WeaponType)valuesWeaponType.GetValue(Random.Range(1, valuesWeaponType.Length - 1));
+            MagicType type = MagicType.None;
+
+            if (weaponTypeRandom == WeaponType.Staff)
+            {
+                // var valuesMagicType = Enum.GetValues(typeof(MagicType));
+                // type = (MagicType)valuesMagicType.GetValue(Random.Range(1, valuesMagicType.Length - 1));
+                type = MagicType.Fire;
+            }
+            
+            var spriteIndexRandom = _dispenser.GetRandomIndex(weaponTypeRandom, type);
+            
             var attackScoreRandom = Random.Range(1, 3) * level;
             var priceRandom = Random.Range(5, 10) * level;
-            var properties = new WeaponProperties(ItemType.Weapon, weaponTypeRandom, MagicType.None, spriteIndexRandom, attackScoreRandom, priceRandom, "item");
+            var properties = new WeaponProperties(ItemType.Weapon, weaponTypeRandom, type, spriteIndexRandom, attackScoreRandom, priceRandom, "item");
             item.Initialize(ItemType.Weapon, new ItemWeaponPresenter(item, properties, _dispenser, _infoWindow));
         }
 

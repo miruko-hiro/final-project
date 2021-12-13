@@ -12,6 +12,6 @@ namespace FinalProject.Architecture
         public bool IsInitialized { get; }
         public bool IsLoggingEnabled { get; set; }
 
-        public Coroutine InitializeStarter(Coroutines coroutines);
+        public void InitializeStarter();
     }
 }
