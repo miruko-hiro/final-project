@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2044351260030536576}
   - component: {fileID: 6625069600932203374}
   - component: {fileID: 328142454138450632}
-  - component: {fileID: 2314121229313156778}
+  - component: {fileID: 6265241958372072329}
   m_Layer: 0
   m_Name: Movement System
   m_TagString: Untagged
@@ -89,8 +89,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transformOwn: {fileID: 909307855020142694}
-  _movementSound: {fileID: 2314121229313156778}
---- !u!114 &2314121229313156778
+  playerSound: {fileID: 6265241958372072329}
+--- !u!114 &6265241958372072329
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,10 +99,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3807439354437917288}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a24bda7365fe3de4087016bd1e646798, type: 3}
+  m_Script: {fileID: 11500000, guid: a0a970650e6e7074fb81fa2da1c6baca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: b955e34bb21e47341864386d7117485e, type: 3}
+  _audioClip: {fileID: 8300000, guid: 934244230abed764da229392f53d27dc, type: 3}
 --- !u!1 &4099067210807898280
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,6 +112,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 64179173547623254}
+  - component: {fileID: 5667149683138069300}
+  - component: {fileID: 3412897907466866836}
   m_Layer: 11
   m_Name: Bow Attack System
   m_TagString: Untagged
@@ -133,6 +135,35 @@ Transform:
   m_Father: {fileID: 8571212742990573416}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5667149683138069300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4099067210807898280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8910656faaac4fb6b8643b6ab9999220, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputControl: {fileID: 3412897907466866836}
+  _transformPlayer: {fileID: 8571212742990573416}
+  _arrowAttackPrefab: {fileID: 7427577271325787913, guid: 07af77d3853597e40a9d0d6081a4e97a, type: 3}
+  _arrowAttackContainer: {fileID: 0}
+--- !u!114 &3412897907466866836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4099067210807898280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c000cfec29c7406fa23571bce7e6dbbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _leftJoystick: {fileID: 0}
 --- !u!1 &4395275985710647586
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,6 +237,7 @@ GameObject:
   - component: {fileID: 2070586067263297658}
   - component: {fileID: 1881599876810712348}
   - component: {fileID: 3231925629102714294}
+  - component: {fileID: 6095493892938539169}
   m_Layer: 0
   m_Name: Melee Attack System
   m_TagString: Untagged
@@ -270,6 +302,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transformOwn: {fileID: 909307855020142694}
   _effectPrefab: {fileID: 513301210528144938, guid: e534fcc1b90623948bd4a59535ecd6e8, type: 3}
+  playerSound: {fileID: 6095493892938539169}
+--- !u!114 &6095493892938539169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5353581390097519289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0a970650e6e7074fb81fa2da1c6baca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioClip: {fileID: 8300000, guid: 64a88feb500bfe4488162e8389134ba2, type: 3}
 --- !u!1 &5878064037215581738
 GameObject:
   m_ObjectHideFlags: 0

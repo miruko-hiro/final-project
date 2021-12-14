@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4531357002910292696}
   - component: {fileID: 8997784784777109833}
   - component: {fileID: -6485612341417049431}
+  - component: {fileID: 8711187184981777494}
   m_Layer: 12
   m_Name: Barrel1
   m_TagString: Statics
@@ -142,3 +143,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e4cfa88a7d90b84f927d4540ce077a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characterSound: {fileID: 8711187184981777494}
+--- !u!114 &8711187184981777494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5059747186308558092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0a970650e6e7074fb81fa2da1c6baca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioClip: {fileID: 8300000, guid: c6fe1b031e69f5d44a0b6e40bfc1049a, type: 3}

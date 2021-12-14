@@ -1,6 +1,7 @@
 ﻿using System;
 using FinalProject.Architecture.Interactors.Scripts;
 using FinalProject.Architecture.Storage.Scripts;
+using UnityEngine;
 
 namespace FinalProject.Architecture.Characters.Player.Interactors
 {
@@ -19,7 +20,7 @@ namespace FinalProject.Architecture.Characters.Player.Interactors
             set
             {
                 var val = _storage.Get<int>(Key); 
-                if(val == value) return; 
+                if(val == value || value < 0) return; 
                 if (val > value) ReduceHealthEvent?.Invoke(value);
                 else IncreaseHealthEvent?.Invoke(value); 
                 ChangeHealthEvent?.Invoke(value); 

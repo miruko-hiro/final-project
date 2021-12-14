@@ -15,11 +15,13 @@ namespace FinalProject.Architecture.Scenes.MainMenu.Scripts
         [SerializeField] private Image _imageSoundButton;
         private SettingsPanelPresenter _presenter;
         private GameManager _gameManager;
+        private SoundEffectsButtons _soundEffectsButtons;
 
         [Inject]
-        private void Construct(GameManager gameManager)
+        private void Construct(GameManager gameManager, SoundEffectsButtons soundEffectsButtons)
         {
             _gameManager = gameManager;
+            _soundEffectsButtons = soundEffectsButtons;
         }
 
         private void Awake()
@@ -61,17 +63,20 @@ namespace FinalProject.Architecture.Scenes.MainMenu.Scripts
 
         public void OnMusicClick()
         {
+            _soundEffectsButtons.SoundEffectClick();
             OnMusicClickEvent?.Invoke();
         }
 
         public void OnSoundClick()
         {
+            _soundEffectsButtons.SoundEffectClick();
             OnSoundClickEvent?.Invoke();
         }
         
         public void OnBackClick()
         {
-            gameObject.SetActive(false);
+            _soundEffectsButtons.SoundEffectBack();
+            gameObject.SetActive(false);    
         }
 
         private void OnDestroy()

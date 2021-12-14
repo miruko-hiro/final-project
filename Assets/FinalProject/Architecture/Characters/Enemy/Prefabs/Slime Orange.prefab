@@ -180,6 +180,8 @@ GameObject:
   - component: {fileID: -3850424162861828283}
   - component: {fileID: 8801462298047390001}
   - component: {fileID: -289501593815925448}
+  - component: {fileID: 3740775511316396258}
+  - component: {fileID: 1845790175622389445}
   m_Layer: 10
   m_Name: Slime Orange
   m_TagString: Enemy
@@ -342,6 +344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _deathEffect: {fileID: 8417240462441997389}
   _enemyAI: {fileID: -289501593815925448}
+  characterSound: {fileID: 3740775511316396258}
 --- !u!114 &-289501593815925448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,6 +358,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   updateTime: 0.1
+--- !u!114 &3740775511316396258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6961518362336591503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0a970650e6e7074fb81fa2da1c6baca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioClip: {fileID: 8300000, guid: b626808adc578cc459b93473f77f7e7f, type: 3}
+--- !u!114 &1845790175622389445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6961518362336591503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0a970650e6e7074fb81fa2da1c6baca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioClip: {fileID: 8300000, guid: eb2e8ffe48e8f9a4688b2ebfae97c706, type: 3}
 --- !u!1001 &594866778934791547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -615,6 +644,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7620399068226336185}
     m_Modifications:
+    - target: {fileID: 1750209792238300579, guid: 813b681692bc81c49b0907b63c7978d0, type: 3}
+      propertyPath: characterSound
+      value: 
+      objectReference: {fileID: 3009300700412866415}
     - target: {fileID: 1877239236600043104, guid: 813b681692bc81c49b0907b63c7978d0, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -683,6 +716,10 @@ PrefabInstance:
       propertyPath: _transformOwn
       value: 
       objectReference: {fileID: 7620399068226336185}
+    - target: {fileID: 6082192027034704364, guid: 813b681692bc81c49b0907b63c7978d0, type: 3}
+      propertyPath: _audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d4d5244b65d40ea4e85c2fe854fb97a7, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 813b681692bc81c49b0907b63c7978d0, type: 3}
 --- !u!4 &7468706805386060003 stripped
@@ -690,3 +727,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1877239236600043104, guid: 813b681692bc81c49b0907b63c7978d0, type: 3}
   m_PrefabInstance: {fileID: 9055444070430455427}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3009300700412866415 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6082192027034704364, guid: 813b681692bc81c49b0907b63c7978d0, type: 3}
+  m_PrefabInstance: {fileID: 9055444070430455427}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0a970650e6e7074fb81fa2da1c6baca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

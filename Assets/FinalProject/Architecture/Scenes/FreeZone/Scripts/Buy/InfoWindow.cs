@@ -3,6 +3,7 @@ using FinalProject.Architecture.Characters.Scripts.Armor;
 using FinalProject.Architecture.Characters.Scripts.Types;
 using FinalProject.Architecture.Characters.Scripts.Weapon;
 using FinalProject.Architecture.Items.Scripts;
+using FinalProject.Architecture.Scenes.MainMenu.Scripts;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -17,6 +18,7 @@ namespace FinalProject.Architecture.Scenes.FreeZone.Scripts.Buy
         private AppearanceIssuanceSystem _dispenser;
         public IItemProperties ItemProperties { get; private set; }
         public GameObject ItemObject { get; private set; }
+        private SoundEffectsButtons _soundEffectsButtons;
         
         public Sprite Sprite
         {
@@ -34,9 +36,10 @@ namespace FinalProject.Architecture.Scenes.FreeZone.Scripts.Buy
         }
 
         [Inject]
-        private void Construct(AppearanceIssuanceSystem dispenser)
+        private void Construct(AppearanceIssuanceSystem dispenser, SoundEffectsButtons soundEffectsButtons)
         {
             _dispenser = dispenser;
+            _soundEffectsButtons = soundEffectsButtons;
         }
 
         private void SetAlpha(Image image, float count)
@@ -48,6 +51,7 @@ namespace FinalProject.Architecture.Scenes.FreeZone.Scripts.Buy
         
         public void OnClickBack()
         {
+            _soundEffectsButtons.SoundEffectBack();
             gameObject.SetActive(false);
         }
 

@@ -57,6 +57,7 @@ namespace FinalProject.Architecture.Characters.Enemy.UtilityAI.Action
                 _transformOwn.position, 
                 _areaSize, 
                 Vector2.zero, 
+                0f,
                 _playerLayerIndex);
 
             if (hit && hit.collider)

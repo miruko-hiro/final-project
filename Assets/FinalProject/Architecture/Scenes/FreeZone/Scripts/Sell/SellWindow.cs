@@ -7,6 +7,8 @@ using FinalProject.Architecture.Inventory.Backpack;
 using FinalProject.Architecture.Inventory.Backpack.Item;
 using FinalProject.Architecture.Items.Scripts;
 using FinalProject.Architecture.Scenes.FreeZone.Scripts.Buy;
+using FinalProject.Architecture.Scenes.MainMenu.Scripts;
+using FinalProject.Architecture.Settings.SoundEffects;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -21,10 +23,12 @@ namespace FinalProject.Architecture.Scenes.FreeZone.Scripts.Sell
         private SellWindowPresenter _presenter;
         private AppearanceIssuanceSystem _dispenser;
         private ItemBackground[] _itemBackgroundArray;
+        private SoundEffectsButtons _soundEffectsButtons;
         
         [Inject]
-        private void Construct(GameManager gameManager, AppearanceIssuanceSystem dispenser)
+        private void Construct(GameManager gameManager, AppearanceIssuanceSystem dispenser, SoundEffectsButtons soundEffectsButtons)
         {
+            _soundEffectsButtons = soundEffectsButtons;
             _dispenser = dispenser;
             _itemBackgroundArray = GetComponentsInChildren<ItemBackground>();
             _presenter = new SellWindowPresenter(this, gameManager, dispenser);
@@ -74,16 +78,19 @@ namespace FinalProject.Architecture.Scenes.FreeZone.Scripts.Sell
         
         public void OnClick()
         {
+            _soundEffectsButtons.SoundEffectClick();
             _infoWindow.gameObject.SetActive(true);
         }
 
         public void OnClickExit()
         {
+            _soundEffectsButtons.SoundEffectBack();
             gameObject.SetActive(false);
         }
 
         public bool OnClickSell(IItemProperties itemProperties)
         {
+            _soundEffectsButtons.SoundEffectClick();
             return _backpackView.Presenter.Remove(itemProperties);
         }
 

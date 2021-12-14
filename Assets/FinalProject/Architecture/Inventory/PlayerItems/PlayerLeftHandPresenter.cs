@@ -38,7 +38,6 @@ namespace FinalProject.Architecture.Inventory.PlayerItems
 
         private void SetLeftHand(ShieldProperties shieldProperties)
         {
-            
             if (shieldProperties == null)
                 _interactor.ShieldProperties = new ShieldProperties(ItemType.Shield, ShieldType.None, -1, 0, 0, "");
             else

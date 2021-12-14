@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using DG.Tweening;
 using FinalProject.Architecture.Characters.Scripts;
 using UnityEngine;
 
@@ -9,6 +8,7 @@ namespace FinalProject.Architecture.Characters.Player.Animation
     {
         [SerializeField] private Transform _transformOwn;
         [SerializeField] private GameObject _effectPrefab;
+        [SerializeField] private CharacterSound playerSound;
         private Animator _animator;
         private static readonly int IsAttack = Animator.StringToHash("isAttack");
 
@@ -24,6 +24,15 @@ namespace FinalProject.Architecture.Characters.Player.Animation
             if(IsPlaying) return;
 
             IsPlaying = true;
+
+            try
+            {
+                playerSound.SoundEffect();
+            }
+            catch
+            {
+                Debug.Log(playerSound);
+            }
             
             _animator.SetBool(IsAttack, true);
             
@@ -37,7 +46,7 @@ namespace FinalProject.Architecture.Characters.Player.Animation
 
         private IEnumerator CountdownToEndOfAnimationCoroutine()
         {
-            yield return new WaitForSeconds(0.6f);
+            yield return new WaitForSeconds(0.5f);
             
             Stop();
         }

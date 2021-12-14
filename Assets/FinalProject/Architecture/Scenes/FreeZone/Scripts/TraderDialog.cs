@@ -1,6 +1,8 @@
 using DG.Tweening;
+using FinalProject.Architecture.Scenes.MainMenu.Scripts;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace FinalProject.Architecture.Scenes.FreeZone.Scripts
 {
@@ -10,8 +12,15 @@ namespace FinalProject.Architecture.Scenes.FreeZone.Scripts
         [SerializeField] private GameObject _sellWindow;
         [SerializeField] private Text _buyText;
         [SerializeField] private Text _sellText;
+        private SoundEffectsButtons _soundEffectsButtons;
         private Image _image;
         private float _duration = 0.2f;
+
+        [Inject]
+        private void Construct(SoundEffectsButtons soundEffectsButtons)
+        {
+            _soundEffectsButtons = soundEffectsButtons;
+        }
 
         private void Awake()
         {
@@ -37,11 +46,13 @@ namespace FinalProject.Architecture.Scenes.FreeZone.Scripts
 
         public void OnClickBuy()
         {
+            _soundEffectsButtons.SoundEffectClick();
             _buyWindow.SetActive(true);
         }
 
         public void OnClickSell()
         {
+            _soundEffectsButtons.SoundEffectClick();
             _sellWindow.SetActive(true);
         }
     }

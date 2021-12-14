@@ -1,10 +1,21 @@
-﻿using UnityEngine;
+﻿using FinalProject.Architecture.Settings.SoundEffects;
+using UnityEngine;
 using UnityEngine.EventSystems;
+using Zenject;
 
 namespace FinalProject.Architecture.Inventory.Backpack.Item
 {
     public class ItemBackground : MonoBehaviour, IDropHandler
     {
+        [SerializeField] private AudioClip _audioClip;
+        private SoundEffectsCollection _soundEffectsCollection;
+        
+        [Inject]
+        private void Construct(SoundEffectsCollection soundEffectsCollection)
+        {
+            _soundEffectsCollection = soundEffectsCollection;
+        }
+        
         public void OnDrop(PointerEventData eventData)
         {
             var pointer = eventData.pointerDrag;
@@ -25,6 +36,7 @@ namespace FinalProject.Architecture.Inventory.Backpack.Item
             
             otherItemTransform.SetParent(transform);
             otherItemTransform.localPosition = Vector3.zero;
+            _soundEffectsCollection.AddSoundEffect(_audioClip);
         }
     }
 }

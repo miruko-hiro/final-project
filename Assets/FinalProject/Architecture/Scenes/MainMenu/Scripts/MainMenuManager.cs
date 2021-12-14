@@ -12,12 +12,14 @@ namespace FinalProject.Architecture.Scenes.MainMenu.Scripts
         [SerializeField] private Transform _transformMenu;
         private GameManager _gameManager;
         private Coroutines _coroutines;
+        private SoundEffectsButtons _soundEffectsButtons;
 
         [Inject]
-        private void Construct(GameManager gameManager, Coroutines coroutines)
+        private void Construct(GameManager gameManager, Coroutines coroutines, SoundEffectsButtons soundEffectsButtons)
         {
             _gameManager = gameManager;
             _coroutines = coroutines;
+            _soundEffectsButtons = soundEffectsButtons;
         }
 
         private void Start()
@@ -27,12 +29,14 @@ namespace FinalProject.Architecture.Scenes.MainMenu.Scripts
 
         public void OnNewGame()
         {
+            _soundEffectsButtons.SoundEffectClick();
             _gameManager.DeleteSave();
             _gameManager.SceneController.LoadScene(_coroutines, "PlayerCreation");
         }
         
         public void OnContinue()
         {
+            _soundEffectsButtons.SoundEffectClick();
             _gameManager.SceneController.LoadScene(_coroutines, "FreeZone");
         }
     }

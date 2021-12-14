@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1933591120276531419}
   - component: {fileID: 7622795344312824893}
   - component: {fileID: 4960484103533293107}
+  - component: {fileID: 6704156331785157803}
   m_Layer: 0
   m_Name: Spike Trap
   m_TagString: Untagged
@@ -143,3 +144,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 5
+  _sound: {fileID: 6704156331785157803}
+--- !u!114 &6704156331785157803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307172873946662629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0a970650e6e7074fb81fa2da1c6baca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioClip: {fileID: 8300000, guid: ed63c45bb443aa44eb8ce3f0eccc4586, type: 3}

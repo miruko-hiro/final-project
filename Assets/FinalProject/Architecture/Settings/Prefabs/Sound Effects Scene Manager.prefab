@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6070746443862442250}
   - component: {fileID: 886307429477798269}
+  - component: {fileID: 129531950}
   m_Layer: 0
   m_Name: Sound Effects Scene Manager
   m_TagString: Untagged
@@ -43,3 +44,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 830cac0703c144d3885669f0185f451a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &129531950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8624425253419205713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 504ee8e27fe03234db2b33abf6764eec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundClick: {fileID: 8300000, guid: bd7148d1ac07f4c4aaf0fe1995a984d3, type: 3}
+  _soundBack: {fileID: 8300000, guid: ae4cb67f686147b4fb2442f31f571765, type: 3}

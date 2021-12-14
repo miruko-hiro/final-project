@@ -8,6 +8,7 @@ using FinalProject.Architecture.Game.Scripts;
 using FinalProject.Architecture.Inventory.Backpack;
 using FinalProject.Architecture.Inventory.Backpack.Item;
 using FinalProject.Architecture.Items.Scripts;
+using FinalProject.Architecture.Scenes.MainMenu.Scripts;
 using UnityEngine;
 using Zenject;
 using Random = UnityEngine.Random;
@@ -20,12 +21,14 @@ namespace FinalProject.Architecture.Scenes.FreeZone.Scripts.Buy
         [SerializeField] private BackpackView _backpackView;
         private GameManager _gameManager;
         private AppearanceIssuanceSystem _dispenser;
+        private SoundEffectsButtons _soundEffectsButtons;
         
         [Inject]
-        private void Construct(GameManager gameManager, AppearanceIssuanceSystem dispenser)
+        private void Construct(GameManager gameManager, AppearanceIssuanceSystem dispenser, SoundEffectsButtons soundEffectsButtons)
         {
             _gameManager = gameManager;
             _dispenser = dispenser;
+            _soundEffectsButtons = soundEffectsButtons;
         }
         
         private void Awake()
@@ -96,16 +99,19 @@ namespace FinalProject.Architecture.Scenes.FreeZone.Scripts.Buy
 
         public void OnClick()
         {
+            _soundEffectsButtons.SoundEffectClick();
             _infoWindow.gameObject.SetActive(true);
         }
 
         public void OnClickExit()
         {
+            _soundEffectsButtons.SoundEffectBack();
             gameObject.SetActive(false);
         }
 
         public bool OnClickBuy(IItemProperties itemProperties)
         {
+            _soundEffectsButtons.SoundEffectClick();
             return _backpackView.Presenter.Add(itemProperties);
         }
     }

@@ -22,6 +22,7 @@ namespace FinalProject.Architecture.Traps.Scripts
         {
             _collider.enabled = false;
             _animator.SetBool(IsActive, true);
+            _sound.SoundEffect();
             if (other.CompareTag("Player"))
             {
                 other.GetComponentInChildren<PlayerView>().TakeHit(_damage);

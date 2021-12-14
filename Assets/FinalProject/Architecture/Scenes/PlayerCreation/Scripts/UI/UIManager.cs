@@ -1,6 +1,7 @@
 ﻿using System;
 using FinalProject.Architecture.Game.Scripts;
 using FinalProject.Architecture.Helpers.Scripts;
+using FinalProject.Architecture.Scenes.MainMenu.Scripts;
 using FinalProject.Architecture.Scenes.PlayerCreation.Scripts.UI.Selectors;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -24,12 +25,14 @@ namespace FinalProject.Architecture.Scenes.PlayerCreation.Scripts.UI
         
         private GameManager _gameManager;
         private Coroutines _coroutines;
+        private SoundEffectsButtons _soundEffectsButtons;
 
         [Inject]
-        private void Construct(GameManager gameManager, Coroutines coroutines)
+        private void Construct(GameManager gameManager, Coroutines coroutines, SoundEffectsButtons soundEffectsButtons)
         {
             _gameManager = gameManager;
             _coroutines = coroutines;
+            _soundEffectsButtons = soundEffectsButtons;
         }
 
         private void Awake()
@@ -73,6 +76,7 @@ namespace FinalProject.Architecture.Scenes.PlayerCreation.Scripts.UI
 
         public void OnCreate()
         {
+            _soundEffectsButtons.SoundEffectClick();
             _gameManager.SaveGame();
             _gameManager.SceneController.LoadScene(_coroutines,"FreeZone");
         }

@@ -21,12 +21,12 @@ namespace FinalProject.Architecture.Traps.Scripts
 
         private void OnTriggerEnter2D(Collider2D other)
         {
+            _collider.enabled = false;
             StartCoroutine(TrapActiveCoroutine(other));
         }
 
         private IEnumerator TrapActiveCoroutine(Collider2D other)
         {
-            _collider.enabled = false;
             _animator.SetBool(IsActive, true);
             
             yield return new WaitForSeconds(0.25f);
@@ -38,6 +38,7 @@ namespace FinalProject.Architecture.Traps.Scripts
             {
                 other.GetComponentInChildren<EnemyView>().TakeHit(_damage);
             }
+            _sound.SoundEffect();
             
             yield return new WaitForSeconds(0.25f);
             

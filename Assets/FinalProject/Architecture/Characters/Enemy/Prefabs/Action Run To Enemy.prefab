@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7732869521528983063}
   - component: {fileID: 8301143886720484321}
   - component: {fileID: 1471612238339656282}
+  - component: {fileID: 7498694332360536917}
   m_Layer: 10
   m_Name: Action Run To Enemy
   m_TagString: Untagged
@@ -47,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _aiPath: {fileID: 0}
   _animation: {fileID: 0}
+  _scorerDistance: {fileID: 0}
 --- !u!114 &8301143886720484321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,3 +80,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transformOwn: {fileID: 0}
+  playerSound: {fileID: 7498694332360536917}
+--- !u!114 &7498694332360536917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5259851321125020715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0a970650e6e7074fb81fa2da1c6baca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioClip: {fileID: 8300000, guid: aaf9d4b728361f34abe8c6936d463315, type: 3}

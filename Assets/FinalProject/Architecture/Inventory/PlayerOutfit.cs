@@ -1,7 +1,9 @@
 ﻿using FinalProject.Architecture.Characters.Scripts.Types;
 using FinalProject.Architecture.Inventory.Backpack.Item;
+using FinalProject.Architecture.Settings.SoundEffects;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Zenject;
 
 namespace FinalProject.Architecture.Inventory
 {
@@ -13,6 +15,15 @@ namespace FinalProject.Architecture.Inventory
         [SerializeField] private PlayerItem _playerBody;
         [SerializeField] private PlayerItem _playerPants;
         [SerializeField] private PlayerItem _playerBoots;
+        [Space(10)] 
+        [SerializeField] private AudioClip _audioClip;
+        private SoundEffectsCollection _soundEffectsCollection;
+
+        [Inject]
+        private void Construct(SoundEffectsCollection soundEffectsCollection)
+        {
+            _soundEffectsCollection = soundEffectsCollection;
+        }
         
         public void OnDrop(PointerEventData eventData)
         {
@@ -35,6 +46,7 @@ namespace FinalProject.Architecture.Inventory
             otherItemTransform.SetParent(playerOutfit.transform);
             otherItemTransform.localPosition = Vector3.zero;
             playerOutfit.SetItem(newItem);
+            _soundEffectsCollection.AddSoundEffect(_audioClip);
         }
 
         private PlayerItem GetPlayerItem(ItemType type)

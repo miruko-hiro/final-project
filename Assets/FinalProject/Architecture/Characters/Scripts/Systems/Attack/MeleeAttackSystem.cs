@@ -1,7 +1,10 @@
 ﻿using System;
 using FinalProject.Architecture.Characters.Enemy.Scripts;
+using FinalProject.Architecture.Characters.Player.Interactors;
 using FinalProject.Architecture.Characters.Scripts.Systems.Movement;
+using FinalProject.Architecture.Game.Scripts;
 using UnityEngine;
+using Zenject;
 
 namespace FinalProject.Architecture.Characters.Scripts.Systems.Attack
 {
@@ -13,9 +16,18 @@ namespace FinalProject.Architecture.Characters.Scripts.Systems.Attack
         [SerializeField] private Transform _transformPlayer;
         private int _enemyLayerIndex;
         private int _staticsLayerIndex;
+        private GameManager _gameManager;
+        private PlayerAttackInteractor _interactor;
+
+        [Inject]
+        private void Construct(GameManager gameManager)
+        {
+            _gameManager = gameManager;
+        }
 
         private void Awake()
         {
+            _interactor = _gameManager.GetInteractor<PlayerAttackInteractor>();
             _enemyLayerIndex = LayerMask.GetMask("Enemy");
             _staticsLayerIndex = LayerMask.GetMask("Statics");
         }
@@ -62,7 +74,7 @@ namespace FinalProject.Architecture.Characters.Scripts.Systems.Attack
 
             foreach (var hit in hits)
             {
-                hit.collider.GetComponent<IAttackTrigger>().TakeHit(1);
+                hit.collider.GetComponent<IAttackTrigger>().TakeHit(_interactor.Attack);
             }
         }
 

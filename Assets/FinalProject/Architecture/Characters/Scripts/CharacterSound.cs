@@ -2,9 +2,9 @@ using FinalProject.Architecture.Settings.SoundEffects;
 using UnityEngine;
 using Zenject;
 
-namespace FinalProject.Architecture.Characters.Player.Sound
+namespace FinalProject.Architecture.Characters.Scripts
 {
-    public class MovementSound : MonoBehaviour
+    public class CharacterSound : MonoBehaviour
     {
         [SerializeField] private AudioClip _audioClip;
         private SoundEffectsCollection _soundEffectsCollection;

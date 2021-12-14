@@ -30,5 +30,6 @@ MonoBehaviour:
   - FinalProject.Architecture.Inventory.Backpack.Interactors.BackpackWeaponsInteractor
   - FinalProject.Architecture.Inventory.Backpack.Interactors.BackpackArmorsInteractor
   - FinalProject.Architecture.Characters.Player.Interactors.PlayerMoneyInteractor
+  - FinalProject.Architecture.Characters.Player.Interactors.PlayerAttackInteractor
   _saveDataForThisScene: 1
   _saveName: Player.data

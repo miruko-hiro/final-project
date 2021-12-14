@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8979b168c78646e58a740394fd5d72aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audioClip: {fileID: 8300000, guid: beb2a6dfa397bb64d9b36774ffed5403, type: 3}
 --- !u!222 &6081360868415623180
 CanvasRenderer:
   m_ObjectHideFlags: 0

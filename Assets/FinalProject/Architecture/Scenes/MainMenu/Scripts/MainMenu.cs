@@ -11,29 +11,34 @@ namespace FinalProject.Architecture.Scenes.MainMenu.Scripts
         private GameManager _gameManager;
         private Coroutines _coroutines;
         private GameStateHelper _gameStateHelper;
+        private SoundEffectsButtons _soundEffectsButtons;
 
         [Inject]
-        private void Construct(GameManager gameManager, Coroutines coroutines, GameStateHelper gameStateHelper)
+        private void Construct(GameManager gameManager, Coroutines coroutines, GameStateHelper gameStateHelper, SoundEffectsButtons soundEffectsButtons)
         {
             _gameManager = gameManager;
             _coroutines = coroutines;
             _gameStateHelper = gameStateHelper;
+            _soundEffectsButtons = soundEffectsButtons;
         }
 
         public void OnClick()
         {
+            _soundEffectsButtons.SoundEffectClick();
             _gameStateHelper.Pause();
             _mainMenuPanel.SetActive(true);
         }
         
         public void OnNewGame()
         {
+            _soundEffectsButtons.SoundEffectClick();
             _gameManager.DeleteSave();
             _gameManager.SceneController.LoadScene(_coroutines, "PlayerCreation");
         }
         
         public void OnContinue()
         {
+            _soundEffectsButtons.SoundEffectBack();
             _mainMenuPanel.SetActive(false);
             _gameStateHelper.Play();
         }

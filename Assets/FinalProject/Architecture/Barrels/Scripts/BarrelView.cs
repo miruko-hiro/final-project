@@ -1,11 +1,13 @@
 using System;
 using FinalProject.Architecture.Characters.Enemy.Scripts;
+using FinalProject.Architecture.Characters.Scripts;
 using UnityEngine;
 
 namespace FinalProject.Architecture.Barrels.Scripts
 {
     public class BarrelView : MonoBehaviour, IAttackTrigger
     {
+        [SerializeField] private CharacterSound _characterSound;
         public event Action<int> OnTakeDamageEvent;
         
         private BarrelPresenter _presenter;
@@ -22,6 +24,7 @@ namespace FinalProject.Architecture.Barrels.Scripts
 
         public void TakeHit(int damage)
         {
+            _characterSound.SoundEffect();
             OnTakeDamageEvent?.Invoke(damage);
         }
 

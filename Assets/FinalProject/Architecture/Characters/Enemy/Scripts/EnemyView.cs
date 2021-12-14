@@ -1,11 +1,15 @@
 ﻿using System;
 using DG.Tweening;
 using FinalProject.Architecture.Characters.Enemy.UtilityAI;
+using FinalProject.Architecture.Characters.Scripts;
 using FinalProject.Architecture.DamageText;
 using FinalProject.Architecture.DamageText.Scripts;
 using FinalProject.Architecture.Items.Scripts;
+using FinalProject.Architecture.Scenes.MainMenu.Scripts;
+using FinalProject.Architecture.Settings.SoundEffects;
 using Pathfinding;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Zenject;
 
 namespace FinalProject.Architecture.Characters.Enemy.Scripts
@@ -14,6 +18,8 @@ namespace FinalProject.Architecture.Characters.Enemy.Scripts
     {
         [SerializeField] private ParticleSystem _deathEffect;
         [SerializeField] private EnemyAI _enemyAI;
+        [SerializeField] private CharacterSound characterSound;
+        [SerializeField] private CharacterSound _deathSound;
         public event Action<int> OnTakeDamageEvent;
 
         private Transform _transform;
@@ -42,6 +48,7 @@ namespace FinalProject.Architecture.Characters.Enemy.Scripts
 
         public void TakeHit(int damage)
         {
+            characterSound.SoundEffect();
             OnTakeDamageEvent?.Invoke(damage);
         }
 
@@ -68,6 +75,7 @@ namespace FinalProject.Architecture.Characters.Enemy.Scripts
             sequence
                 .InsertCallback(1f, () =>
                 {
+                    _deathSound.SoundEffect();
                     _itemManager.ThrowItem(transform.position);
                     _deathEffect.transform.SetParent(null);
                     _deathEffect.Emit(15);

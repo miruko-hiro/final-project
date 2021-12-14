@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using FinalProject.Architecture.Characters.Player.Scripts;
 using UnityEngine;
 
@@ -9,7 +8,7 @@ namespace FinalProject.Architecture.Items.Scripts
     {
         private CircleCollider2D _collider;
         private Transform _transform;
-        private int _money;
+        private int _money = 1;
 
         private void OnEnable()
         {

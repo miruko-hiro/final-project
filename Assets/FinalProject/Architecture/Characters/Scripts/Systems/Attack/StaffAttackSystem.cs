@@ -3,6 +3,7 @@ using FinalProject.Architecture.Characters.Player.Interactors;
 using FinalProject.Architecture.Characters.Scripts.Systems.Movement;
 using FinalProject.Architecture.Characters.Scripts.Types;
 using FinalProject.Architecture.Game.Scripts;
+using FinalProject.Architecture.Helpers.Scripts;
 using FinalProject.Architecture.Utils;
 using UnityEngine;
 using Zenject;
@@ -15,30 +16,26 @@ namespace FinalProject.Architecture.Characters.Scripts.Systems.Attack
         [SerializeField] private Transform _transformPlayer;
         [SerializeField] private FireAttack _fireAttackPrefab;
         [SerializeField] private Transform _fireAttackContainer;
-        private PoolMono<FireAttack> _firePool;
+        private PoolMonoZenject<FireAttack> _firePool;
         private const float _cooldown = 1f;
         private float _time = -1f;
         private GameManager _gameManager;
-        private PlayerWeaponInteractor _interactor;
-        private int _damage;
+        private PlayerAttackInteractor _interactor;
+        private PrefabFactory _prefabFactory;
         
         public MagicType MagicType { get; set; }
 
         [Inject]
-        private void Construct(GameManager gameManager)
+        private void Construct(GameManager gameManager, PrefabFactory prefabFactory)
         {
             _gameManager = gameManager;
+            _prefabFactory = prefabFactory;
         }
         
         private void Awake()
         {
-            _interactor = _gameManager.GetInteractor<PlayerWeaponInteractor>();
-            _firePool = new PoolMono<FireAttack>(_fireAttackPrefab, 3, _fireAttackContainer);
-        }
-
-        private void OnEnable()
-        {
-            _damage = _interactor.WeaponProperties.AttackScore;
+            _interactor = _gameManager.GetInteractor<PlayerAttackInteractor>();
+            _firePool = new PoolMonoZenject<FireAttack>(_fireAttackPrefab, _prefabFactory, 3, _fireAttackContainer);
         }
 
         private void Update()
@@ -57,7 +54,7 @@ namespace FinalProject.Architecture.Characters.Scripts.Systems.Attack
             {
                 _time = _cooldown;
                 var fireAttack = _firePool.GetFreeElement();
-                fireAttack.Move(direction, _transformPlayer.position, _damage);
+                fireAttack.Move(direction, _transformPlayer.position, _interactor.Attack);
             }
             else
             {

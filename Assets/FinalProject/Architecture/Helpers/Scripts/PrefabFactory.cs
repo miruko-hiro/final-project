@@ -27,5 +27,10 @@ namespace FinalProject.Architecture.Helpers.Scripts
         {
             return _container.InstantiatePrefab(prefab, parent);
         }
+
+        public T Spawn<T>(T prefab, Transform parent) where T : MonoBehaviour
+        {
+            return _container.InstantiatePrefab(prefab, parent).GetComponent<T>();
+        }
     }
 }

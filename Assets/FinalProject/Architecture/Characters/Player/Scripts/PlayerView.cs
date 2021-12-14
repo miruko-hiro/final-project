@@ -101,7 +101,7 @@ namespace FinalProject.Architecture.Characters.Player.Scripts
 
         public override void ShowReceivedDamage(int damage)
         {
-            _damageTextManager.ShowDamageToEnemy(_transform.position, damage);
+            _damageTextManager.ShowDamageToPlayer(_transform.position, damage);
         }
 
         public void SelectMeleeAttackSystem()

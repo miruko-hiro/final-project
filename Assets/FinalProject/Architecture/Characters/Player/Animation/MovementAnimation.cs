@@ -1,5 +1,4 @@
 ﻿using DG.Tweening;
-using FinalProject.Architecture.Characters.Player.Sound;
 using FinalProject.Architecture.Characters.Scripts;
 using UnityEngine;
 
@@ -8,7 +7,7 @@ namespace FinalProject.Architecture.Characters.Player.Animation
     public class MovementAnimation: AnimationBase
     {
         [SerializeField] private Transform _transformOwn;
-        [SerializeField] private MovementSound _movementSound;
+        [SerializeField] private CharacterSound playerSound;
         private Sequence _sequence;
         private Vector3 _originalPosition;
         
@@ -20,22 +19,24 @@ namespace FinalProject.Architecture.Characters.Player.Animation
 
             IsPlaying = true;
 
-            try
-            {
-                _movementSound.SoundEffect();
-            }
-            catch
-            {
-                Debug.Log(_movementSound);
-            }
-            
             if(_sequence != null) _sequence.Restart();
             else
             {
                 _originalPosition = _transformOwn.localPosition;
                 _sequence = _transformOwn.DOLocalJump(direction, 0.2f, 1, 0.3f)
                 .SetLoops(-1, LoopType.Restart)
-                .AppendCallback(() => IsPlaying = false)
+                .AppendCallback(() =>
+                {
+                    try
+                    {
+                        playerSound.SoundEffect();
+                    }
+                    catch
+                    {
+                        Debug.Log(playerSound);
+                    }
+                    IsPlaying = false;
+                })
                 .SetAutoKill(false);
             }
         }

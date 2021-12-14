@@ -6,7 +6,7 @@ namespace FinalProject.Architecture.Settings.SoundEffects
     [Serializable]
     public class SoundEffectsSettingsData
     {
-        public const float MaxVolume = 1f;
+        public const float MaxVolume = 0.4f;
         public const float MinVolume = 0f;
 
         [SerializeField] private bool _isEnabled;

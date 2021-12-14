@@ -3,6 +3,7 @@ using FinalProject.Architecture.Characters.Scripts.Types;
 using FinalProject.Architecture.Characters.Scripts.Weapon;
 using FinalProject.Architecture.Interactors.Scripts;
 using FinalProject.Architecture.Storage.Scripts;
+using UnityEngine;
 
 namespace FinalProject.Architecture.Characters.Player.Interactors
 {
