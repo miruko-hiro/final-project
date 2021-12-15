@@ -46,11 +46,13 @@ namespace FinalProject.Architecture.Scenes.FreeZone.Scripts.Sell
         
         private void OnOpen()
         {
-            OnLoad();
+            //OnLoad();
+
+            _view.OnEnabledEvent += OnLoad;
             
-            _weaponsInteractor.AddWeaponToBackpack += AddWeapon;
-            _shieldsInteractor.AddShieldToBackpack += AddShield;
-            _armorsInteractor.AddArmorToBackpack += AddArmor;
+            // _weaponsInteractor.AddWeaponToBackpack += AddWeapon;
+            // _shieldsInteractor.AddShieldToBackpack += AddShield;
+            // _armorsInteractor.AddArmorToBackpack += AddArmor;
             
             _weaponsInteractor.RemoveWeaponToBackpack += RemoveItem;
             _shieldsInteractor.RemoveShieldToBackpack += RemoveItem;
@@ -59,9 +61,11 @@ namespace FinalProject.Architecture.Scenes.FreeZone.Scripts.Sell
 
         private void OnClose()
         {
-            _weaponsInteractor.AddWeaponToBackpack -= AddWeapon;
-            _shieldsInteractor.AddShieldToBackpack -= AddShield;
-            _armorsInteractor.AddArmorToBackpack -= AddArmor;
+            _view.OnEnabledEvent -= OnLoad;
+            
+            // _weaponsInteractor.AddWeaponToBackpack -= AddWeapon;
+            // _shieldsInteractor.AddShieldToBackpack -= AddShield;
+            // _armorsInteractor.AddArmorToBackpack -= AddArmor;
             
             _weaponsInteractor.RemoveWeaponToBackpack -= RemoveItem;
             _shieldsInteractor.RemoveShieldToBackpack -= RemoveItem;
@@ -72,12 +76,12 @@ namespace FinalProject.Architecture.Scenes.FreeZone.Scripts.Sell
         {
             _view.AddWeapon(weaponProperties);
         }
-
+        
         private void AddShield(ShieldProperties shieldProperties)
         {
             _view.AddShield(shieldProperties);
         }
-
+        
         private void AddArmor(ArmorProperties armorProperties)
         {
             _view.AddArmor(armorProperties);

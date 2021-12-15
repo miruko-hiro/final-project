@@ -1,4 +1,5 @@
-﻿using FinalProject.Architecture.Characters.Scripts.Appearance;
+﻿using System;
+using FinalProject.Architecture.Characters.Scripts.Appearance;
 using FinalProject.Architecture.Characters.Scripts.Armor;
 using FinalProject.Architecture.Characters.Scripts.Types;
 using FinalProject.Architecture.Characters.Scripts.Weapon;
@@ -17,6 +18,8 @@ namespace FinalProject.Architecture.Scenes.FreeZone.Scripts.Sell
 {
     public class SellWindow: MonoBehaviour
     {
+        public event Action OnEnabledEvent;
+        
         [SerializeField] private GameObject _itemPrefab;
         [SerializeField] private InfoWindow _infoWindow;
         [SerializeField] private BackpackView _backpackView;
@@ -40,19 +43,24 @@ namespace FinalProject.Architecture.Scenes.FreeZone.Scripts.Sell
             if(item == null) return;
             item.Initialize(ItemType.Weapon, new ItemWeaponPresenter(item, weaponProperties, _dispenser, _infoWindow));
         }
-
+        
         public void AddShield(ShieldProperties shieldProperties)
         {
             var item = GetFreeItemView();
             if(item == null) return;
             item.Initialize(ItemType.Shield, new ItemShieldPresenter(item, shieldProperties, _dispenser, _infoWindow));
         }
-
+        
         public void AddArmor(ArmorProperties armorProperties)
         {
             var item = GetFreeItemView();
             if(item == null) return;
             item.Initialize(armorProperties.ItemType, new ItemArmorPresenter(item, armorProperties, _dispenser, _infoWindow));
+        }
+        
+        private void OnEnable()
+        {
+            OnEnabledEvent?.Invoke();
         }
 
         public void RemoveItem()
@@ -75,6 +83,18 @@ namespace FinalProject.Architecture.Scenes.FreeZone.Scripts.Sell
 
             return null;
         }
+
+        private void RemoveItems()
+        {
+            foreach (var itemBackground in _itemBackgroundArray)
+            {
+                var item = itemBackground.GetComponentInChildren<ItemView>();
+                if (item != null)
+                {
+                    Destroy(item);
+                }
+            }
+        }
         
         public void OnClick()
         {
@@ -91,7 +111,12 @@ namespace FinalProject.Architecture.Scenes.FreeZone.Scripts.Sell
         public bool OnClickSell(IItemProperties itemProperties)
         {
             _soundEffectsButtons.SoundEffectClick();
-            return _backpackView.Presenter.Remove(itemProperties);
+            return _backpackView.Presenter.Sell(itemProperties);
+        }
+
+        private void OnDisable()
+        {
+            RemoveItems();
         }
 
         private void OnDestroy()

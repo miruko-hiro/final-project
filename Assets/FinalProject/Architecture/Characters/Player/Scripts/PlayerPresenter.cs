@@ -61,6 +61,8 @@ namespace FinalProject.Architecture.Characters.Player.Scripts
             
             SetRightHand(_weaponInteractor.WeaponProperties);
             SetAttack(_weaponInteractor.WeaponProperties);
+
+            _healthInspector.Health = _healthInspector.MaxHealth;
         }
 
         private void OnOpen()
@@ -185,7 +187,7 @@ namespace FinalProject.Architecture.Characters.Player.Scripts
 
         private void SetHealth(ShieldProperties shieldProperties)
         {
-            _healthInspector.Health = 5 + 
+            _healthInspector.MaxHealth = 5 + 
                                       shieldProperties.ProtectionScore +
                                       _bodyInteractor.ArmorProperties.ProtectionScore + 
                                       _headInteractor.ArmorProperties.ProtectionScore + 
@@ -195,7 +197,7 @@ namespace FinalProject.Architecture.Characters.Player.Scripts
 
         private void SetHealth(ArmorProperties armorProperties)
         {
-            _healthInspector.Health = 5 +
+            _healthInspector.MaxHealth = 5 +
                 _shieldInteractor.ShieldProperties.ProtectionScore +
                 (armorProperties.ItemType == ItemType.Body ? armorProperties.ProtectionScore : _bodyInteractor.ArmorProperties.ProtectionScore) + 
                 (armorProperties.ItemType == ItemType.Head ? armorProperties.ProtectionScore : _headInteractor.ArmorProperties.ProtectionScore) + 

@@ -33,9 +33,10 @@ namespace FinalProject.Architecture.Health
             _healthImage.DOFillAmount(amount, _duration);
         }
 
-        public void IncreaseHealth(int newHealth, int maxHealth)
+        public void ChangeHealthEvent(float amount, int newHealth, int maxHealth)
         {
             _healthText.text = newHealth + " / " + maxHealth;
+            _healthImage.DOFillAmount(amount, _duration);
         }
 
         private void OnDestroy()

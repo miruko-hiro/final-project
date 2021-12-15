@@ -71,13 +71,22 @@ namespace FinalProject.Architecture.Inventory.Backpack
             _armorsInteractor.RemoveArmorToBackpack -= RemoveItem;
         }
 
-        public bool Remove(IItemProperties itemProperties)
+        public bool Sell(IItemProperties itemProperties)
         {
             if (itemProperties.ItemType == ItemType.Weapon) RemoveWeaponToBackpack(itemProperties);
             else if (itemProperties.ItemType == ItemType.Shield) RemoveShieldToBackpack(itemProperties);
             else RemoveArmorToBackpack(itemProperties);
             _moneyInteractor.Money += itemProperties.Price;
+            _spaceOccupiedInteractor.SpaceOccupied -= 1;
             return true;
+        }
+
+        public void Remove(IItemProperties itemProperties)
+        {
+            if (itemProperties.ItemType == ItemType.Weapon) RemoveWeaponToBackpack(itemProperties);
+            else if (itemProperties.ItemType == ItemType.Shield) RemoveShieldToBackpack(itemProperties);
+            else RemoveArmorToBackpack(itemProperties);
+            _spaceOccupiedInteractor.SpaceOccupied -= 1;
         }
 
         private void RemoveWeaponToBackpack(IItemProperties itemProperties)
@@ -100,7 +109,7 @@ namespace FinalProject.Architecture.Inventory.Backpack
             _view.RemoveItem(itemProperties);
         }
 
-        public bool Add(IItemProperties itemProperties)
+        public bool Buy(IItemProperties itemProperties)
         {
             if (_moneyInteractor.Money < itemProperties.Price && _spaceOccupiedInteractor.SpaceOccupied >= 30)
                 return false;
@@ -108,8 +117,19 @@ namespace FinalProject.Architecture.Inventory.Backpack
             else if (itemProperties.ItemType == ItemType.Shield) AddShieldToBackpack(itemProperties);
             else AddArmorToBackpack(itemProperties);
             _moneyInteractor.Money -= itemProperties.Price;
+            _spaceOccupiedInteractor.SpaceOccupied += 1;
 
             return true;
+        }
+
+        public void Add(IItemProperties itemProperties)
+        {
+            if (_spaceOccupiedInteractor.SpaceOccupied >= 30)
+                return;
+            if (itemProperties.ItemType == ItemType.Weapon) AddWeaponToBackpack(itemProperties);
+            else if (itemProperties.ItemType == ItemType.Shield) AddShieldToBackpack(itemProperties);
+            else AddArmorToBackpack(itemProperties);
+            _spaceOccupiedInteractor.SpaceOccupied += 1;
         }
 
         private void AddWeaponToBackpack(IItemProperties itemProperties)

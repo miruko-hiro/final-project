@@ -112,7 +112,7 @@ namespace FinalProject.Architecture.Scenes.FreeZone.Scripts.Buy
         public bool OnClickBuy(IItemProperties itemProperties)
         {
             _soundEffectsButtons.SoundEffectClick();
-            return _backpackView.Presenter.Add(itemProperties);
+            return _backpackView.Presenter.Buy(itemProperties);
         }
     }
 }

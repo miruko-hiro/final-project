@@ -400,6 +400,7 @@
             </e>
             <e p="Inventory" t="Include">
               <e p="Backpack" t="Include">
+                <e p="BackpackDrop.cs" t="Include" />
                 <e p="BackpackPresenter.cs" t="Include" />
                 <e p="BackpackView.cs" t="Include" />
                 <e p="Interactors" t="Include">

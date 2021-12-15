@@ -8,7 +8,6 @@ namespace FinalProject.Architecture.Health
     {
         private readonly HeathPlayerBarView _view;
         private readonly PlayerHealthInspector _healthInspector;
-        private int _maxHealth;
 
         
         public HealthPlayerBarPresenter(HeathPlayerBarView view, GameManager gameManager)
@@ -16,9 +15,8 @@ namespace FinalProject.Architecture.Health
             _view = view;
 
             _healthInspector = gameManager.GetInteractor<PlayerHealthInspector>();
-            _maxHealth = _healthInspector.Health;
 
-            _view.ReduceHealth(1f, _maxHealth, _maxHealth);
+            _view.ReduceHealth(1f, _healthInspector.MaxHealth, _healthInspector.MaxHealth);
 
             OnOpen();
         }
@@ -26,25 +24,25 @@ namespace FinalProject.Architecture.Health
         private void OnOpen()
         {
             _healthInspector.ReduceHealthEvent += ReduceHealth;
-            _healthInspector.IncreaseHealthEvent += IncreaseHealth;
+            _healthInspector.ChangeHealthEvent += ChangeHealthEvent;
         }
 
         private void ReduceHealth(int otherHealth)
         {
-            var amount = (float) otherHealth / _maxHealth;
-            _view.ReduceHealth(amount, otherHealth, _maxHealth);
+            var amount = (float) otherHealth / _healthInspector.MaxHealth;
+            _view.ReduceHealth(amount, otherHealth, _healthInspector.MaxHealth);
         }
 
-        private void IncreaseHealth(int otherHealth)
+        private void ChangeHealthEvent(int otherHealth)
         {
-            _maxHealth = otherHealth;
-            _view.IncreaseHealth(otherHealth, _maxHealth);
+            var amount = (float) _healthInspector.Health / otherHealth;
+            _view.ChangeHealthEvent(amount, _healthInspector.Health, otherHealth);
         }
 
         private void OnClose()
         {
             _healthInspector.ReduceHealthEvent -= ReduceHealth;
-            _healthInspector.IncreaseHealthEvent -= IncreaseHealth;
+            _healthInspector.ChangeHealthEvent -= ChangeHealthEvent;
         }
 
         ~HealthPlayerBarPresenter()

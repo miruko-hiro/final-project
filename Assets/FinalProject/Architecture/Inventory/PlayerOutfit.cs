@@ -1,4 +1,5 @@
 ﻿using FinalProject.Architecture.Characters.Scripts.Types;
+using FinalProject.Architecture.Inventory.Backpack;
 using FinalProject.Architecture.Inventory.Backpack.Item;
 using FinalProject.Architecture.Settings.SoundEffects;
 using UnityEngine;
@@ -17,6 +18,7 @@ namespace FinalProject.Architecture.Inventory
         [SerializeField] private PlayerItem _playerBoots;
         [Space(10)] 
         [SerializeField] private AudioClip _audioClip;
+        [SerializeField] private BackpackView _backpackView;
         private SoundEffectsCollection _soundEffectsCollection;
 
         [Inject]
@@ -38,15 +40,15 @@ namespace FinalProject.Architecture.Inventory
             
             if (item != null)
             {
-                var ownItemTransform = item.transform;
-                ownItemTransform.SetParent(otherItemTransform.parent);
-                ownItemTransform.localPosition = Vector3.zero;
+                _backpackView.Presenter.Add(item.Presenter.ItemProperties);
+                Destroy(item.gameObject);
             }
             
             otherItemTransform.SetParent(playerOutfit.transform);
             otherItemTransform.localPosition = Vector3.zero;
             playerOutfit.SetItem(newItem);
             _soundEffectsCollection.AddSoundEffect(_audioClip);
+            _backpackView.Presenter.Remove(newItem.Presenter.ItemProperties);
         }
 
         private PlayerItem GetPlayerItem(ItemType type)

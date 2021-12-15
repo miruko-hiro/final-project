@@ -21,7 +21,7 @@ namespace FinalProject.Architecture.Inventory
 
         private void OnLoad()
         {
-            ChangeHealth(_healthInspector.Health);
+            ChangeHealth(_healthInspector.MaxHealth);
             ChangeAttack(_attackInteractor.Attack);
         }
 
