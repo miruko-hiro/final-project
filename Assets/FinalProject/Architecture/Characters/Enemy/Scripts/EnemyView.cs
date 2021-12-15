@@ -21,6 +21,7 @@ namespace FinalProject.Architecture.Characters.Enemy.Scripts
         [SerializeField] private CharacterSound characterSound;
         [SerializeField] private CharacterSound _deathSound;
         public event Action<int> OnTakeDamageEvent;
+        public event Action OnDiedEvent;
 
         private Transform _transform;
         private Collider2D _collider;
@@ -79,6 +80,7 @@ namespace FinalProject.Architecture.Characters.Enemy.Scripts
                     _itemManager.ThrowItem(transform.position);
                     _deathEffect.transform.SetParent(null);
                     _deathEffect.Emit(15);
+                    OnDiedEvent?.Invoke();
                     Destroy(gameObject);
                 })
                 .Play();

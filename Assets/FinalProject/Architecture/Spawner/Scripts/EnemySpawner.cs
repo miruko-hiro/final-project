@@ -17,7 +17,9 @@ namespace FinalProject.Architecture.Spawner.Scripts
         [SerializeField] private GameObject _healthBarPrefab;
         [SerializeField] private Canvas _canvas;
         [SerializeField] private Camera _camera;
+        [SerializeField] private GameObject _teleport;
         private PrefabFactory _prefabFactory;
+        public int Count { get; set; }
         
         public int NumberOfEnemyPrefabs => _enemyPrefabs.Count;
 
@@ -43,12 +45,24 @@ namespace FinalProject.Architecture.Spawner.Scripts
             var enemyView = enemy.GetComponent<EnemyView>();
             var enemyPresenter = new EnemyPresenter(enemyView, enemyData);
             enemyView.Initialize(enemyPresenter);
+            enemyView.OnDiedEvent += DiedEnemy;
                 
             var healthBar = Instantiate(_healthBarPrefab, _canvas.transform).GetComponent<HealthEnemyBarView>();
             healthBar.transform.SetAsFirstSibling();
             var healthBarPresenter = new HealthEnemyBarPresenter(healthBar, enemyData);
             healthBar.Initialize(healthBarPresenter, enemy.GetComponent<Transform>(), _camera, _canvas.GetComponent<RectTransform>());
+        }
 
+        private void DiedEnemy()
+        {
+            Count -= 1;
+            if (Count > 0) return;
+            _teleport.SetActive(true);
+        }
+
+        public void DestroyEnemies()
+        {
+            _teleport.SetActive(false);
         }
     }
 }

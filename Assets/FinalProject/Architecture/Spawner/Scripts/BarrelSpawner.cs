@@ -11,6 +11,7 @@ namespace FinalProject.Architecture.Spawner.Scripts
 
         public int NumberOfBarrelPrefabs => _barrelPrefabs.Count;
         private PrefabFactory _prefabFactory;
+        private List<GameObject> _barrels = new List<GameObject>();
 
         [Inject]
         private void Construct(PrefabFactory prefabFactory)
@@ -22,6 +23,16 @@ namespace FinalProject.Architecture.Spawner.Scripts
         {
             var barrel = _prefabFactory.Spawn(_barrelPrefabs[indexBarrel], transform);
             barrel.transform.position = position;
+            _barrels.Add(barrel);
+        }
+
+        public void DestroyBarrels()
+        {
+            foreach (var barrel in _barrels)
+            {
+                Destroy(barrel);
+            }
+            _barrels.Clear();
         }
     }
 }

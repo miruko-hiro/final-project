@@ -30,7 +30,13 @@ namespace FinalProject.Architecture.Spawner.Scripts
             }
 
             x = -7f;
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < 3; i++)
+            {
+                _grid.Add(new Vector2(x, -3f));
+                x += 2f;
+            }
+            x = 3f;
+            for (int i = 5; i < 8; i++)
             {
                 _grid.Add(new Vector2(x, -3f));
                 x += 2f;
