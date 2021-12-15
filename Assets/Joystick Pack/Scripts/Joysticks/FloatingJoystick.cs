@@ -8,7 +8,7 @@ namespace Joystick_Pack.Scripts.Joysticks
         protected override void Start()
         {
             base.Start();
-            background.gameObject.SetActive(false);
+            //background.gameObject.SetActive(false);
         }
 
         public override void OnPointerDown(PointerEventData eventData)
@@ -20,7 +20,7 @@ namespace Joystick_Pack.Scripts.Joysticks
 
         public override void OnPointerUp(PointerEventData eventData)
         {
-            background.gameObject.SetActive(false);
+            //background.gameObject.SetActive(false);
             base.OnPointerUp(eventData);
         }
     }
