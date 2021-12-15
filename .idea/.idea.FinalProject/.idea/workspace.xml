@@ -10,23 +10,23 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44998bfc-4b45-4a53-9d09-9eba23699c9d" name="Default Changelist" comment="Добавлены новые враги, система жизней и попадание по врагу">
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/FreeZone/Scripts/Teleport/TeleportAnimation.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/FreeZone/Scripts/Teleport/TeleportAnimation.cs.meta" afterDir="false" />
+    <list default="true" id="44998bfc-4b45-4a53-9d09-9eba23699c9d" name="Default Changelist" comment="Добавлен генератор уровней">
+      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/Interactors.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/Interactors/NewGameInteractor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/Interactors/NewGameInteractor.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FinalProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FinalProject/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FinalProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FinalProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/Prefabs/Death Particle Effect.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/Prefabs/Death Particle Effect.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/Scripts/EnemyView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/Scripts/EnemyView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Battle/Battle.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Battle/Battle.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/FreeZone/Scripts/Teleport/TeleportZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/FreeZone/Scripts/Teleport/TeleportZone.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Homecoming/Scripts/Homecoming.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Homecoming/Scripts/Homecoming.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Inventory/Prefabs/Inventory.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Inventory/Prefabs/Inventory.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Items/Scripts/Coin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Items/Scripts/Coin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/FreeZone/FreeZone.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/FreeZone/FreeZone.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/FreeZone/Scripts/Teleport/TeleportScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/FreeZone/Scripts/Teleport/TeleportScene.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/Resources/SceneConfigs/MainMenuSceneConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/Resources/SceneConfigs/MainMenuSceneConfig.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/Scripts/MainMenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/Scripts/MainMenuManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/PlayerCreation/PlayerCreation.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/PlayerCreation/PlayerCreation.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Spawner/Scripts/BarrelSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Spawner/Scripts/BarrelSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Spawner/Scripts/BattleSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Spawner/Scripts/BattleSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Spawner/Scripts/EnemySpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Spawner/Scripts/EnemySpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Spawner/Scripts/SpawnGrid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Spawner/Scripts/SpawnGrid.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Spawner/Scripts/TrapSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Spawner/Scripts/TrapSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Sprites/Characters/mainlevbuild.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Sprites/Characters/mainlevbuild.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/PlayerCreation/Resources/SceneConfigs/PlayerCreationSceneConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/PlayerCreation/Resources/SceneConfigs/PlayerCreationSceneConfig.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/PlayerCreation/Scripts/UI/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/PlayerCreation/Scripts/UI/UIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Storage/Scripts/FileStorage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Storage/Scripts/FileStorage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,18 +88,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Installer/FreeZoneInstaller.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Storage/Scripts/FileStorage.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Inventory/InventoryView.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Inventory/PlayerOutfit.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Inventory/Backpack/Item/ItemBackground.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/FreeZone/Scripts/Teleport/TeleportScene.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Sound/MeleeAttackSound.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Sound/MovementSound.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Sound/PlayerSound.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/Scripts/EnemySound.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/EnemySound.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/CharacterSound.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/Animation/MeleeAttackSlimeAnimation.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Animation/MeleeAttackAnimation.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Animation/MovementAnimation.cs" />
@@ -130,7 +118,6 @@
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Enemy/UtilityAI/Action/AttackEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Scripts/PlayerPresenter.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Items/Scripts/ItemManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Items/Scripts/Coin.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/FreeZone/Scripts/Teleport/TeleportZone.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Spawner/Scripts/BarrelSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Spawner/Scripts/TrapSpawner.cs" />
@@ -139,6 +126,19 @@
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/FreeZone/Scripts/Teleport/TeleportAnimation.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Spawner/Scripts/SpawnGrid.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Spawner/Scripts/EnemySpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/Scene.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/IScene.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Storage/Scripts/StorageBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Storage/Scripts/FileStorage.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/SceneController.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Scripts/ISceneController.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/Interactors/NewGameInteractors.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/Interactors/NewGameInteractor.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/Scripts/MainMenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/PlayerCreation/Scripts/UI/UIManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/FreeZone/Scripts/Teleport/TeleportScene.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Homecoming/Scripts/Homecoming.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Items/Scripts/Coin.cs" />
       </list>
     </option>
   </component>
@@ -214,7 +214,7 @@
       <workItem from="1639359332189" duration="4314000" />
       <workItem from="1639388565316" duration="22684000" />
       <workItem from="1639487884933" duration="19404000" />
-      <workItem from="1639560081911" duration="4087000" />
+      <workItem from="1639560081911" duration="7529000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1636560270843</created>
@@ -349,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639526078564</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Добавлен генератор уровней">
+      <created>1639564217592</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1639564217592</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,7 +396,8 @@
     <MESSAGE value="Добавлен переход из свободной зоны в зону битвы, добавлены ловушки, добавлена сетка спауана" />
     <MESSAGE value="Добавлено главное меню, менеджеры звука и музыки, возвращение в таверну" />
     <MESSAGE value="Добавлено лузер меню, звуки, характеристики, оружие лук" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлено лузер меню, звуки, характеристики, оружие лук" />
+    <MESSAGE value="Добавлен генератор уровней" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлен генератор уровней" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1638540444949">
@@ -412,10 +420,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1639342151824" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1639526082539">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1639564219460">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1639526082539" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1639564219460" />
     <state x="438" y="0" width="1332" height="1027" key="dock-window-1" timestamp="1637749233215">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

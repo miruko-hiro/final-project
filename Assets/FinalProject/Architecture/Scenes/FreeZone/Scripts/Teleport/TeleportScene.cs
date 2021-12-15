@@ -27,6 +27,7 @@ namespace FinalProject.Architecture.Scenes.FreeZone.Scripts.Teleport
             if (other.CompareTag("Player"))
             {
                 _soundEffectsCollection.AddSoundEffect(_audioClip);
+                _gameManager.SaveGame();
                 _gameManager.SceneController.LoadScene(_coroutines, _sceneName);
             }
         }

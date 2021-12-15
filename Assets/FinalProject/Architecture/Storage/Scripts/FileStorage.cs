@@ -20,7 +20,7 @@ namespace FinalProject.Architecture.Storage.Scripts
 
             FilePath = $"{folderPath}/{fileName}";
         }
-            
+
         protected override void SaveInternal()
         {
             var file = File.Create(FilePath);

@@ -1,6 +1,7 @@
 ﻿using System;
 using FinalProject.Architecture.Game.Scripts;
 using FinalProject.Architecture.Helpers.Scripts;
+using FinalProject.Architecture.Scenes.MainMenu.Interactors;
 using FinalProject.Architecture.Scenes.MainMenu.Scripts;
 using FinalProject.Architecture.Scenes.PlayerCreation.Scripts.UI.Selectors;
 using UnityEngine;
@@ -26,6 +27,7 @@ namespace FinalProject.Architecture.Scenes.PlayerCreation.Scripts.UI
         private GameManager _gameManager;
         private Coroutines _coroutines;
         private SoundEffectsButtons _soundEffectsButtons;
+        private NewGameInteractor _interactor;
 
         [Inject]
         private void Construct(GameManager gameManager, Coroutines coroutines, SoundEffectsButtons soundEffectsButtons)
@@ -37,6 +39,7 @@ namespace FinalProject.Architecture.Scenes.PlayerCreation.Scripts.UI
 
         private void Awake()
         {
+            _interactor = _gameManager.GetInteractor<NewGameInteractor>();
             OnOpen();
         }
 
@@ -77,6 +80,7 @@ namespace FinalProject.Architecture.Scenes.PlayerCreation.Scripts.UI
         public void OnCreate()
         {
             _soundEffectsButtons.SoundEffectClick();
+            _interactor.NewGame = true;
             _gameManager.SaveGame();
             _gameManager.SceneController.LoadScene(_coroutines,"FreeZone");
         }

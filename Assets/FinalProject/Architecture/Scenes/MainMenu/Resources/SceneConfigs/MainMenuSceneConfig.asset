@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: MainMenuSceneConfig
   m_EditorClassIdentifier: 
   _sceneName: MainMenu
-  _interactorsReferences: []
+  _interactorsReferences:
+  - FinalProject.Architecture.Scenes.MainMenu.Interactors.NewGameInteractor
   _saveDataForThisScene: 1
   _saveName: Player.data

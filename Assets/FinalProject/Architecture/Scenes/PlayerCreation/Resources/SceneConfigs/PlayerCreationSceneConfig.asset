@@ -20,5 +20,6 @@ MonoBehaviour:
   - FinalProject.Architecture.Characters.Player.Interactors.PlayerBodyInteractor
   - FinalProject.Architecture.Characters.Player.Interactors.PlayerWeaponInteractor
   - FinalProject.Architecture.Inventory.Backpack.Interactors.BackpackWeaponsInteractor
+  - FinalProject.Architecture.Scenes.MainMenu.Interactors.NewGameInteractor
   _saveDataForThisScene: 1
   _saveName: Player.data

@@ -8,7 +8,7 @@ namespace FinalProject.Architecture.Items.Scripts
     {
         private CircleCollider2D _collider;
         private Transform _transform;
-        private int _money = 1;
+        private int _money;
 
         private void OnEnable()
         {
@@ -17,6 +17,7 @@ namespace FinalProject.Architecture.Items.Scripts
 
         private void Awake()
         {
+            _money = Random.Range(1, 4);
             _collider = GetComponent<CircleCollider2D>();
             _transform = GetComponent<Transform>();
         }

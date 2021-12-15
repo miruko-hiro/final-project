@@ -2,6 +2,7 @@ using System;
 using DG.Tweening;
 using FinalProject.Architecture.Game.Scripts;
 using FinalProject.Architecture.Helpers.Scripts;
+using FinalProject.Architecture.Scenes.MainMenu.Interactors;
 using UnityEngine;
 using Zenject;
 
@@ -13,13 +14,19 @@ namespace FinalProject.Architecture.Scenes.MainMenu.Scripts
         private GameManager _gameManager;
         private Coroutines _coroutines;
         private SoundEffectsButtons _soundEffectsButtons;
-
+        private NewGameInteractor _interactor;
+        
         [Inject]
         private void Construct(GameManager gameManager, Coroutines coroutines, SoundEffectsButtons soundEffectsButtons)
         {
             _gameManager = gameManager;
             _coroutines = coroutines;
             _soundEffectsButtons = soundEffectsButtons;
+        }
+
+        private void Awake()
+        {
+            _interactor = _gameManager.GetInteractor<NewGameInteractor>();
         }
 
         private void Start()
@@ -37,7 +44,8 @@ namespace FinalProject.Architecture.Scenes.MainMenu.Scripts
         public void OnContinue()
         {
             _soundEffectsButtons.SoundEffectClick();
-            _gameManager.SceneController.LoadScene(_coroutines, "FreeZone");
+            if(_interactor.NewGame)
+                _gameManager.SceneController.LoadScene(_coroutines, "FreeZone");
         }
     }
 }
