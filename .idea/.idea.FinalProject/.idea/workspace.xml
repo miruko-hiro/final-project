@@ -11,9 +11,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44998bfc-4b45-4a53-9d09-9eba23699c9d" name="Default Changelist" comment="Исправление багов">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.FinalProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FinalProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Health/Prefabs/HealthPlayerBar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Health/Prefabs/HealthPlayerBar.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Homecoming/Prefabs/Homecoming.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Homecoming/Prefabs/Homecoming.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Inventory/Prefabs/Inventory.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Inventory/Prefabs/Inventory.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Battle/Battle.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Battle/Battle.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/FreeZone/FreeZone.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/FreeZone/FreeZone.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/FreeZone/Scripts/Teleport/TeleportAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/FreeZone/Scripts/Teleport/TeleportAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/Prefabs/Main Menu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/Prefabs/Main Menu.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/Prefabs/Menu Panel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/Prefabs/Menu Panel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/PlayerCreation/PlayerCreation.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/PlayerCreation/PlayerCreation.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Spawner/Scripts/BattleSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Spawner/Scripts/BattleSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +36,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F2625FD8-44AA-4DD5-B6A3-882F24F14D79/ed/41adc166/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Unity/FinalProject/Assets/FinalProject/Architecture/Scenes/Battle/Battle.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F2625FD8-44AA-4DD5-B6A3-882F24F14D79/59/bbcef32c/Random.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD3EAA08-78D9-4CBE-8E45-F9C494D71647/98/ccb795e7/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
@@ -34,7 +45,6 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD3EAA08-78D9-4CBE-8E45-F9C494D71647/19/1670f7e6/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F2625FD8-44AA-4DD5-B6A3-882F24F14D79/dc/15707c59/Assembly.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DE1F8EF4-975B-4EAC-BEB0-ACCC1B22C9B0/f7/12649c0b/ShortcutExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/FinalProject/Assets/FinalProject/Architecture/Scenes/FreeZone/FreeZone.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57400CD4-A097-4F7F-8793-CFB885290FBE/a0/681e1a34/IDropHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B0E795E4-8CF0-4D7A-9193-EA9447AF406A/ea/340b554f/Physics2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD3EAA08-78D9-4CBE-8E45-F9C494D71647/04/f3a9865e/Vector2.cs" root0="SKIP_HIGHLIGHTING" />
@@ -50,8 +60,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/BaseElements/Settings/Vibration/VibrationSettingsData.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/BaseElements/Settings/Vibration/VibrationSettings.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/BaseElements/Settings/Vibration/IVibrationSettings.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/BaseElements/Settings/SoundEffects/SoundEffectsSettingsData.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/BaseElements/Settings/SoundEffects/SoundEffectsSettings.cs" />
@@ -101,6 +109,8 @@
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Scripts/PlayerPresenter.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerHealthInspector.cs" />
         <option value="$PROJECT_DIR$/Assets/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/FreeZone/Scripts/Teleport/TeleportAnimation.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Spawner/Scripts/BattleSpawner.cs" />
       </list>
     </option>
   </component>
@@ -177,7 +187,8 @@
       <workItem from="1639388565316" duration="22684000" />
       <workItem from="1639487884933" duration="19404000" />
       <workItem from="1639560081911" duration="8917000" />
-      <workItem from="1639586358156" duration="6553000" />
+      <workItem from="1639586358156" duration="7885000" />
+      <workItem from="1639644174097" duration="1372000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1636560270843</created>
@@ -333,7 +344,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639593140954</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Исправление багов">
+      <created>1639594246617</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1639594246617</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,10 +416,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1639342151824" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1639593144402">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1639594250129">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1639593144402" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1639594250129" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1639576945496">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

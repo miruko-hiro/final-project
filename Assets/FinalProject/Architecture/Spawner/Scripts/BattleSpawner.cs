@@ -25,6 +25,7 @@ namespace FinalProject.Architecture.Spawner.Scripts
 
         private void AddLevel()
         {
+            _teleportZone.gameObject.SetActive(false);
             _level += 1;
             Generation();
         }

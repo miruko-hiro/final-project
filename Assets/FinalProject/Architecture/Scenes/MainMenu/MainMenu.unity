@@ -917,10 +917,6 @@ PrefabInstance:
       propertyPath: _settingsPanel
       value: 
       objectReference: {fileID: 976054098}
-    - target: {fileID: 2512511592749666341, guid: cd62f33458e7b024c8b154957002e98e, type: 3}
-      propertyPath: m_Color.a
-      value: 0.28235295
-      objectReference: {fileID: 0}
     - target: {fileID: 2512511592749666342, guid: cd62f33458e7b024c8b154957002e98e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1008,10 +1004,6 @@ PrefabInstance:
     - target: {fileID: 2512511592749666343, guid: cd62f33458e7b024c8b154957002e98e, type: 3}
       propertyPath: m_Name
       value: Menu Panel
-      objectReference: {fileID: 0}
-    - target: {fileID: 2512511592749666343, guid: cd62f33458e7b024c8b154957002e98e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2512511593314321431, guid: cd62f33458e7b024c8b154957002e98e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
