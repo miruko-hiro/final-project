@@ -16,6 +16,7 @@ namespace FinalProject.Architecture.Characters.Player.Interactors
             get => _storage.Get(Key, 10);
             set
             {
+                if(value < 0) return;
                 ChangeMoneyEvent?.Invoke(value);
                 _storage.Set(Key, value);
             } 

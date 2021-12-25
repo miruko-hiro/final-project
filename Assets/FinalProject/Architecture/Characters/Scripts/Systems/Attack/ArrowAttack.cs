@@ -8,14 +8,14 @@ namespace FinalProject.Architecture.Characters.Scripts.Systems.Attack
         [SerializeField] private CharacterSound _shootSound;
         private int _damage;
         private float _speed = 0.1f;
-        private CircleCollider2D _collider;
+        private BoxCollider2D _collider;
         private Transform _transform;
         private bool _isFlight = false;
         private Vector2 _direction;
 
         private void Awake()
         {
-            _collider = GetComponent<CircleCollider2D>();
+            _collider = GetComponent<BoxCollider2D>();
             _transform = GetComponent<Transform>();
         }
 

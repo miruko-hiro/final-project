@@ -12,16 +12,18 @@
   <component name="ChangeListManager">
     <list default="true" id="44998bfc-4b45-4a53-9d09-9eba23699c9d" name="Default Changelist" comment="Исправление багов">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FinalProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FinalProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Health/Prefabs/HealthPlayerBar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Health/Prefabs/HealthPlayerBar.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Homecoming/Prefabs/Homecoming.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Homecoming/Prefabs/Homecoming.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Inventory/Prefabs/Inventory.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Inventory/Prefabs/Inventory.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerHealthInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerHealthInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerMoneyInteractor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerMoneyInteractor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Prefabs/ArrowAttack.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Prefabs/ArrowAttack.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Prefabs/Fire Attack.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Prefabs/Fire Attack.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Scripts/PlayerPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Scripts/PlayerPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Scripts/PlayerView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Scripts/PlayerView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Systems/Attack/ArrowAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Systems/Attack/ArrowAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Systems/Attack/FireAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Systems/Attack/FireAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Inventory/Backpack/BackpackPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Inventory/Backpack/BackpackPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Items/Prefab/Coin.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Items/Prefab/Coin.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Items/Scripts/Coin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Items/Scripts/Coin.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Battle/Battle.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/Battle/Battle.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/FreeZone/FreeZone.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/FreeZone/FreeZone.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/FreeZone/Scripts/Teleport/TeleportAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/FreeZone/Scripts/Teleport/TeleportAnimation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/Prefabs/Main Menu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/Prefabs/Main Menu.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/Prefabs/Menu Panel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/MainMenu/Prefabs/Menu Panel.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/PlayerCreation/PlayerCreation.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/PlayerCreation/PlayerCreation.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Spawner/Scripts/BattleSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalProject/Architecture/Spawner/Scripts/BattleSpawner.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
@@ -36,7 +38,6 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F2625FD8-44AA-4DD5-B6A3-882F24F14D79/ed/41adc166/List`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/FinalProject/Assets/FinalProject/Architecture/Scenes/Battle/Battle.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F2625FD8-44AA-4DD5-B6A3-882F24F14D79/59/bbcef32c/Random.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD3EAA08-78D9-4CBE-8E45-F9C494D71647/98/ccb795e7/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
@@ -55,16 +56,12 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD0A7939-8190-48A0-A161-F66558C98867/db/e9f250b2/Animator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.tilemap@1.0.0/Editor/GridPaintPaletteClipboard.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Unity/FinalProject/Assets/FinalProject/Architecture/Characters/Scripts/Systems/Attack/ArrowAttack.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F2625FD8-44AA-4DD5-B6A3-882F24F14D79/30/d867ec52/Object.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/BaseElements/Settings/Vibration/IVibrationSettings.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/BaseElements/Settings/SoundEffects/SoundEffectsSettingsData.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/BaseElements/Settings/SoundEffects/SoundEffectsSettings.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/BaseElements/Settings/SoundEffects/SoundEffectsSceneManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/BaseElements/Settings/SoundEffects/SoundEffectsObject.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/BaseElements/Settings/SoundEffects/SoundEffectsManager.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/BaseElements/Settings/SoundEffects/SoundEffectsCollection.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/BaseElements/Settings/SoundEffects/ISoundEffectsSettings.cs" />
@@ -95,7 +92,6 @@
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Installer/MainMenuInstaller.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Installer/PlayerCreationInstaller.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Installer/ProjectInstaller.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Inventory/Backpack/BackpackPresenter.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Inventory/Backpack/Interactors/BackpackWeaponsInteractor.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Inventory/PlayerOutfit.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Inventory/Backpack/Item/ItemBackground.cs" />
@@ -106,11 +102,17 @@
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Health/HealthPlayerBarPresenter.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Health/HeathPlayerBarView.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Inventory/CharacteristicPresenter.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Scripts/PlayerPresenter.cs" />
-        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerHealthInspector.cs" />
         <option value="$PROJECT_DIR$/Assets/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Scenes/FreeZone/Scripts/Teleport/TeleportAnimation.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Inventory/Backpack/BackpackPresenter.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerMoneyInteractor.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Spawner/Scripts/BattleSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Systems/Attack/FireAttack.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Scripts/Systems/Attack/ArrowAttack.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Items/Scripts/Coin.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Interactors/PlayerHealthInspector.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Scripts/PlayerView.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalProject/Architecture/Characters/Player/Scripts/PlayerPresenter.cs" />
       </list>
     </option>
   </component>
@@ -188,7 +190,10 @@
       <workItem from="1639487884933" duration="19404000" />
       <workItem from="1639560081911" duration="8917000" />
       <workItem from="1639586358156" duration="7885000" />
-      <workItem from="1639644174097" duration="1372000" />
+      <workItem from="1639644174097" duration="2001000" />
+      <workItem from="1639667333627" duration="39000" />
+      <workItem from="1640441080118" duration="16000" />
+      <workItem from="1640441114018" duration="3262000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1636560270843</created>
@@ -351,7 +356,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639594246617</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Исправление ошибок">
+      <created>1639657499504</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1639657499504</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -393,7 +405,8 @@
     <MESSAGE value="Добавлено лузер меню, звуки, характеристики, оружие лук" />
     <MESSAGE value="Добавлен генератор уровней" />
     <MESSAGE value="Исправление багов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправление багов" />
+    <MESSAGE value="Исправление ошибок" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправление ошибок" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1638540444949">
@@ -416,10 +429,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1639342151824" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1639594250129">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1639657502964">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1639594250129" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1639657502964" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1639576945496">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

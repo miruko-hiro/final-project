@@ -111,7 +111,7 @@ namespace FinalProject.Architecture.Inventory.Backpack
 
         public bool Buy(IItemProperties itemProperties)
         {
-            if (_moneyInteractor.Money < itemProperties.Price && _spaceOccupiedInteractor.SpaceOccupied >= 30)
+            if (_moneyInteractor.Money < itemProperties.Price || _spaceOccupiedInteractor.SpaceOccupied >= 30)
                 return false;
             if (itemProperties.ItemType == ItemType.Weapon) AddWeaponToBackpack(itemProperties);
             else if (itemProperties.ItemType == ItemType.Shield) AddShieldToBackpack(itemProperties);

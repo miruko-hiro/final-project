@@ -90,8 +90,6 @@ namespace FinalProject.Architecture.Characters.Player.Scripts
             
             _weaponInteractor.ChangeWeaponEvent += SetRightHand;
             _weaponInteractor.ChangeWeaponEvent += SetAttack;
-            
-            _healthInspector.ChangeHealthEvent += Die;
 
             _view.OnTakeDamageEvent += ChangeHealth;
             _view.OnAddMoneyEvent += AddMoney;
@@ -121,8 +119,6 @@ namespace FinalProject.Architecture.Characters.Player.Scripts
             
             _weaponInteractor.ChangeWeaponEvent -= SetRightHand;
             _weaponInteractor.ChangeWeaponEvent -= SetAttack;
-            
-            _healthInspector.ChangeHealthEvent -= Die;
 
             _view.OnTakeDamageEvent -= ChangeHealth;
             _view.OnAddMoneyEvent -= AddMoney;
@@ -210,9 +206,8 @@ namespace FinalProject.Architecture.Characters.Player.Scripts
             _attackInteractor.Attack = weaponProperties.AttackScore;
         }
         
-        private void Die(int health)
+        private void Die()
         {
-            if (health > 0) return;
             _view.Die();
         }
 
@@ -220,6 +215,8 @@ namespace FinalProject.Architecture.Characters.Player.Scripts
         {
             _healthInspector.Health -= damage;
             _view.ShowReceivedDamage(damage);
+            if(_healthInspector.Health == 0) 
+                Die();
         }
 
         ~PlayerPresenter()

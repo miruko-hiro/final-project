@@ -5,6 +5,7 @@ using FinalProject.Architecture.Characters.Scripts.Systems.Attack;
 using FinalProject.Architecture.Characters.Scripts.Types;
 using FinalProject.Architecture.DamageText.Scripts;
 using FinalProject.Architecture.Game.Scripts;
+using FinalProject.Architecture.Helpers.Scripts;
 using UnityEngine;
 using Zenject;
 
@@ -24,6 +25,7 @@ namespace FinalProject.Architecture.Characters.Player.Scripts
         private Transform _transform;
         private GameManager _gameManager;
         private AppearanceIssuanceSystem _dispenser;
+        private GameStateHelper _gameStateHelper;
 
         public override Sprite Race
         {
@@ -81,17 +83,19 @@ namespace FinalProject.Architecture.Characters.Player.Scripts
 
         [Inject]
         private void Construct(GameManager gameManager, AppearanceIssuanceSystem dispenser,
-            DamageTextManager damageTextManager)
+            DamageTextManager damageTextManager, GameStateHelper gameStateHelper)
         {
             _gameManager = gameManager;
             _dispenser = dispenser;
             _damageTextManager = damageTextManager;
+            _gameStateHelper = gameStateHelper;
         }
 
         private void Awake()
         {
             _presenter = new PlayerPresenter(this, _gameManager, _dispenser);
             _transform = GetComponent<Transform>();
+            _gameStateHelper.Play();
         }
 
         public override void TakeHit(int damage)
@@ -143,7 +147,7 @@ namespace FinalProject.Architecture.Characters.Player.Scripts
 
         public override void Die()
         {
-            
+            _gameStateHelper.Pause();
         }
 
         public override void AddMoney(int money)

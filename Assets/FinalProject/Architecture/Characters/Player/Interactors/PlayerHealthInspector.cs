@@ -20,7 +20,13 @@ namespace FinalProject.Architecture.Characters.Player.Interactors
             get => _health;
             set
             {
-                if(_health == value || value < 0) return; 
+                if(_health == value) return;
+                if (value <= 0)
+                {
+                    ReduceHealthEvent?.Invoke(0);
+                    _health = 0;
+                    return;
+                }
                 if (_health > value) ReduceHealthEvent?.Invoke(value);
                 else IncreaseHealthEvent?.Invoke(value);
                 _health = value;

@@ -31,14 +31,14 @@ namespace FinalProject.Architecture.Items.Scripts
         {
             if (other.collider.CompareTag("Player"))
             {
-                StartCoroutine(GoToPlayerCoroutine(other.transform, other.gameObject.GetComponentInChildren<PlayerView>()));
+                StartCoroutine(MoveToPlayerCoroutine(other.transform, other.gameObject.GetComponentInChildren<PlayerView>()));
                 _collider.enabled = false;
             }
         }
 
-        private IEnumerator GoToPlayerCoroutine(Transform playerTransform, PlayerView playerView)
+        private IEnumerator MoveToPlayerCoroutine(Transform playerTransform, PlayerView playerView)
         {
-            var step =  3f * Time.fixedDeltaTime; 
+            var step =  10f * Time.fixedDeltaTime; 
             
             while (Vector2.Distance(_transform.position, playerTransform.position) > 0.1f)
             {

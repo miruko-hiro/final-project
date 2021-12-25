@@ -10,7 +10,7 @@ namespace FinalProject.Architecture.Characters.Scripts.Systems.Attack
         [SerializeField] private CharacterSound _explosionSound;
         private int _damage;
         private float _speed = 0.1f;
-        private CircleCollider2D _collider;
+        private BoxCollider2D _collider;
         private Animator _animator;
         private Transform _transform;
         private bool _isFlight = false;
@@ -20,7 +20,7 @@ namespace FinalProject.Architecture.Characters.Scripts.Systems.Attack
         private void Awake()
         {
             _animator = GetComponent<Animator>();
-            _collider = GetComponent<CircleCollider2D>();
+            _collider = GetComponent<BoxCollider2D>();
             _transform = GetComponent<Transform>();
         }
 
